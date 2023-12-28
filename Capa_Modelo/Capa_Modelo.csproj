@@ -48,6 +48,7 @@
     <Compile Include="ViewModel\Facturacion_Model.cs" />
     <Compile Include="ViewModel\Paciente_Model.cs" />
     <Compile Include="ViewModel\Permiso_Model.cs" />
+    <Compile Include="ViewModel\Roles_Model.cs" />
     <Compile Include="ViewModel\Usuario_Model.cs" />
   </ItemGroup>
   <ItemGroup />

@@ -50,6 +50,7 @@
     <Compile Include="Data\Facturacion\FacturacionData.cs" />
     <Compile Include="Data\Paciente\PacienteData.cs" />
     <Compile Include="Data\Permisos\PermisosData.cs" />
+    <Compile Include="Data\Roles\RolesData.cs" />
     <Compile Include="Data\Usuario\UsuarioData.cs" />
     <Compile Include="Model\Detalle_Usuario.cs" />
     <Compile Include="Model\Permiso.cs" />

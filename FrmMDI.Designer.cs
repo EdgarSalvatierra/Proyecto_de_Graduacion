@@ -31,13 +31,19 @@
             this.components = new System.ComponentModel.Container();
             this.PnlCerrarMaximizar = new System.Windows.Forms.Panel();
             this.LblSistemaLab = new System.Windows.Forms.Label();
-            this.Btnmin = new FontAwesome.Sharp.IconButton();
             this.button1 = new System.Windows.Forms.Button();
             this.PnlSistema = new System.Windows.Forms.Panel();
             this.BtnCerrarFormulario = new System.Windows.Forms.Button();
             this.LblMenu = new System.Windows.Forms.Label();
-            this.ICNMenu = new FontAwesome.Sharp.IconPictureBox();
             this.PnlDesplegable = new System.Windows.Forms.Panel();
+            this.PnlLinea2 = new System.Windows.Forms.Panel();
+            this.PnlLogo = new System.Windows.Forms.Panel();
+            this.LblLaboratorio = new System.Windows.Forms.Label();
+            this.panelDesktop = new System.Windows.Forms.Panel();
+            this.Tmr = new System.Windows.Forms.Timer(this.components);
+            this.lblHora = new System.Windows.Forms.Label();
+            this.LblFecha = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.BtnConf = new FontAwesome.Sharp.IconButton();
             this.BtnCitas = new FontAwesome.Sharp.IconButton();
             this.BtnAd_Usuario = new FontAwesome.Sharp.IconButton();
@@ -47,26 +53,16 @@
             this.BtnReg_pas = new FontAwesome.Sharp.IconButton();
             this.BtnFac_m = new FontAwesome.Sharp.IconButton();
             this.BtnHome = new FontAwesome.Sharp.IconButton();
-            this.PnlLinea2 = new System.Windows.Forms.Panel();
-            this.PnlLogo = new System.Windows.Forms.Panel();
             this.PcLaboratorio = new System.Windows.Forms.PictureBox();
-            this.LblLaboratorio = new System.Windows.Forms.Label();
-            this.PnlTiempo = new System.Windows.Forms.Panel();
-            this.ICNTimes = new FontAwesome.Sharp.IconPictureBox();
-            this.ICNCalendary = new FontAwesome.Sharp.IconPictureBox();
-            this.lblHora = new System.Windows.Forms.Label();
-            this.LblFecha = new System.Windows.Forms.Label();
-            this.panelDesktop = new System.Windows.Forms.Panel();
-            this.Tmr = new System.Windows.Forms.Timer(this.components);
+            this.ICNMenu = new FontAwesome.Sharp.IconPictureBox();
+            this.Btnmin = new FontAwesome.Sharp.IconButton();
+            this.IcnCerrarSesion = new FontAwesome.Sharp.IconButton();
             this.PnlCerrarMaximizar.SuspendLayout();
             this.PnlSistema.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ICNMenu)).BeginInit();
             this.PnlDesplegable.SuspendLayout();
             this.PnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PcLaboratorio)).BeginInit();
-            this.PnlTiempo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ICNTimes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ICNCalendary)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ICNMenu)).BeginInit();
             this.SuspendLayout();
             // 
             // PnlCerrarMaximizar
@@ -92,24 +88,6 @@
             this.LblSistemaLab.Size = new System.Drawing.Size(246, 23);
             this.LblSistemaLab.TabIndex = 4;
             this.LblSistemaLab.Text = "Sistema Socorro Lab";
-            // 
-            // Btnmin
-            // 
-            this.Btnmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Btnmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
-            this.Btnmin.FlatAppearance.BorderSize = 0;
-            this.Btnmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btnmin.IconChar = FontAwesome.Sharp.IconChar.Minus;
-            this.Btnmin.IconColor = System.Drawing.Color.White;
-            this.Btnmin.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Btnmin.IconSize = 20;
-            this.Btnmin.Location = new System.Drawing.Point(1179, 3);
-            this.Btnmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Btnmin.Name = "Btnmin";
-            this.Btnmin.Size = new System.Drawing.Size(36, 34);
-            this.Btnmin.TabIndex = 3;
-            this.Btnmin.UseVisualStyleBackColor = false;
-            this.Btnmin.Click += new System.EventHandler(this.Btnmin_Click);
             // 
             // button1
             // 
@@ -163,27 +141,14 @@
             this.LblMenu.TabIndex = 4;
             this.LblMenu.Text = "Menu Principal";
             // 
-            // ICNMenu
-            // 
-            this.ICNMenu.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.ICNMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(60)))), ((int)(((byte)(165)))));
-            this.ICNMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ICNMenu.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ICNMenu.IconChar = FontAwesome.Sharp.IconChar.Navicon;
-            this.ICNMenu.IconColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ICNMenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ICNMenu.IconSize = 30;
-            this.ICNMenu.Location = new System.Drawing.Point(23, 16);
-            this.ICNMenu.Name = "ICNMenu";
-            this.ICNMenu.Size = new System.Drawing.Size(36, 30);
-            this.ICNMenu.TabIndex = 0;
-            this.ICNMenu.TabStop = false;
-            this.ICNMenu.Click += new System.EventHandler(this.ICNMenu_Click);
-            // 
             // PnlDesplegable
             // 
             this.PnlDesplegable.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.PnlDesplegable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PnlDesplegable.Controls.Add(this.IcnCerrarSesion);
+            this.PnlDesplegable.Controls.Add(this.panel1);
+            this.PnlDesplegable.Controls.Add(this.lblHora);
+            this.PnlDesplegable.Controls.Add(this.LblFecha);
             this.PnlDesplegable.Controls.Add(this.BtnConf);
             this.PnlDesplegable.Controls.Add(this.BtnCitas);
             this.PnlDesplegable.Controls.Add(this.BtnAd_Usuario);
@@ -195,13 +160,91 @@
             this.PnlDesplegable.Controls.Add(this.BtnHome);
             this.PnlDesplegable.Controls.Add(this.PnlLinea2);
             this.PnlDesplegable.Controls.Add(this.PnlLogo);
-            this.PnlDesplegable.Controls.Add(this.PnlTiempo);
             this.PnlDesplegable.Cursor = System.Windows.Forms.Cursors.Default;
             this.PnlDesplegable.Dock = System.Windows.Forms.DockStyle.Left;
             this.PnlDesplegable.Location = new System.Drawing.Point(0, 102);
             this.PnlDesplegable.Name = "PnlDesplegable";
-            this.PnlDesplegable.Size = new System.Drawing.Size(341, 665);
+            this.PnlDesplegable.Size = new System.Drawing.Size(304, 713);
             this.PnlDesplegable.TabIndex = 2;
+            // 
+            // PnlLinea2
+            // 
+            this.PnlLinea2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.PnlLinea2.Location = new System.Drawing.Point(3, 150);
+            this.PnlLinea2.Name = "PnlLinea2";
+            this.PnlLinea2.Size = new System.Drawing.Size(341, 1);
+            this.PnlLinea2.TabIndex = 16;
+            // 
+            // PnlLogo
+            // 
+            this.PnlLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PnlLogo.Controls.Add(this.PcLaboratorio);
+            this.PnlLogo.Controls.Add(this.LblLaboratorio);
+            this.PnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PnlLogo.Location = new System.Drawing.Point(0, 0);
+            this.PnlLogo.Name = "PnlLogo";
+            this.PnlLogo.Size = new System.Drawing.Size(302, 76);
+            this.PnlLogo.TabIndex = 6;
+            // 
+            // LblLaboratorio
+            // 
+            this.LblLaboratorio.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.LblLaboratorio.AutoSize = true;
+            this.LblLaboratorio.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblLaboratorio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
+            this.LblLaboratorio.Location = new System.Drawing.Point(92, 24);
+            this.LblLaboratorio.Name = "LblLaboratorio";
+            this.LblLaboratorio.Size = new System.Drawing.Size(204, 24);
+            this.LblLaboratorio.TabIndex = 7;
+            this.LblLaboratorio.Text = "Laboratorio El Socorro";
+            // 
+            // panelDesktop
+            // 
+            this.panelDesktop.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDesktop.Location = new System.Drawing.Point(304, 102);
+            this.panelDesktop.Name = "panelDesktop";
+            this.panelDesktop.Size = new System.Drawing.Size(961, 713);
+            this.panelDesktop.TabIndex = 3;
+            // 
+            // Tmr
+            // 
+            this.Tmr.Tick += new System.EventHandler(this.Tmr_Tick);
+            // 
+            // lblHora
+            // 
+            this.lblHora.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblHora.AutoSize = true;
+            this.lblHora.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblHora.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
+            this.lblHora.Location = new System.Drawing.Point(21, 669);
+            this.lblHora.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(44, 22);
+            this.lblHora.TabIndex = 26;
+            this.lblHora.Text = "--:--";
+            // 
+            // LblFecha
+            // 
+            this.LblFecha.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.LblFecha.AutoSize = true;
+            this.LblFecha.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblFecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
+            this.LblFecha.Location = new System.Drawing.Point(18, 632);
+            this.LblFecha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblFecha.Name = "LblFecha";
+            this.LblFecha.Size = new System.Drawing.Size(55, 22);
+            this.LblFecha.TabIndex = 27;
+            this.LblFecha.Text = "d/m/a";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel1.Location = new System.Drawing.Point(2, 601);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(300, 1);
+            this.panel1.TabIndex = 28;
             // 
             // BtnConf
             // 
@@ -217,11 +260,11 @@
             this.BtnConf.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnConf.IconSize = 30;
             this.BtnConf.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnConf.Location = new System.Drawing.Point(0, 489);
+            this.BtnConf.Location = new System.Drawing.Point(0, 484);
             this.BtnConf.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnConf.Name = "BtnConf";
             this.BtnConf.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BtnConf.Size = new System.Drawing.Size(339, 56);
+            this.BtnConf.Size = new System.Drawing.Size(302, 56);
             this.BtnConf.TabIndex = 25;
             this.BtnConf.Tag = "Configuracion";
             this.BtnConf.Text = "Configuracion";
@@ -243,11 +286,11 @@
             this.BtnCitas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnCitas.IconSize = 30;
             this.BtnCitas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnCitas.Location = new System.Drawing.Point(0, 438);
+            this.BtnCitas.Location = new System.Drawing.Point(0, 433);
             this.BtnCitas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnCitas.Name = "BtnCitas";
             this.BtnCitas.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BtnCitas.Size = new System.Drawing.Size(339, 51);
+            this.BtnCitas.Size = new System.Drawing.Size(302, 51);
             this.BtnCitas.TabIndex = 24;
             this.BtnCitas.Tag = "Citas";
             this.BtnCitas.Text = "Citas";
@@ -270,11 +313,11 @@
             this.BtnAd_Usuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnAd_Usuario.IconSize = 30;
             this.BtnAd_Usuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnAd_Usuario.Location = new System.Drawing.Point(0, 387);
+            this.BtnAd_Usuario.Location = new System.Drawing.Point(0, 382);
             this.BtnAd_Usuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnAd_Usuario.Name = "BtnAd_Usuario";
             this.BtnAd_Usuario.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BtnAd_Usuario.Size = new System.Drawing.Size(339, 51);
+            this.BtnAd_Usuario.Size = new System.Drawing.Size(302, 51);
             this.BtnAd_Usuario.TabIndex = 23;
             this.BtnAd_Usuario.Tag = "Administracion de Usuario";
             this.BtnAd_Usuario.Text = "Administracion de Usuarios";
@@ -298,11 +341,11 @@
             this.BtnGesti_Exa.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnGesti_Exa.IconSize = 30;
             this.BtnGesti_Exa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnGesti_Exa.Location = new System.Drawing.Point(0, 336);
+            this.BtnGesti_Exa.Location = new System.Drawing.Point(0, 331);
             this.BtnGesti_Exa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnGesti_Exa.Name = "BtnGesti_Exa";
             this.BtnGesti_Exa.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BtnGesti_Exa.Size = new System.Drawing.Size(339, 51);
+            this.BtnGesti_Exa.Size = new System.Drawing.Size(302, 51);
             this.BtnGesti_Exa.TabIndex = 22;
             this.BtnGesti_Exa.Tag = "Gestion de Examenes";
             this.BtnGesti_Exa.Text = "Gestion de Examenes";
@@ -325,11 +368,11 @@
             this.BtnRes_Ex.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnRes_Ex.IconSize = 30;
             this.BtnRes_Ex.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnRes_Ex.Location = new System.Drawing.Point(0, 285);
+            this.BtnRes_Ex.Location = new System.Drawing.Point(0, 280);
             this.BtnRes_Ex.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnRes_Ex.Name = "BtnRes_Ex";
             this.BtnRes_Ex.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BtnRes_Ex.Size = new System.Drawing.Size(339, 51);
+            this.BtnRes_Ex.Size = new System.Drawing.Size(302, 51);
             this.BtnRes_Ex.TabIndex = 21;
             this.BtnRes_Ex.Tag = "Resultados ";
             this.BtnRes_Ex.Text = "Resultados";
@@ -351,11 +394,11 @@
             this.BtnCompras.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnCompras.IconSize = 30;
             this.BtnCompras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnCompras.Location = new System.Drawing.Point(0, 234);
+            this.BtnCompras.Location = new System.Drawing.Point(0, 229);
             this.BtnCompras.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnCompras.Name = "BtnCompras";
             this.BtnCompras.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BtnCompras.Size = new System.Drawing.Size(339, 51);
+            this.BtnCompras.Size = new System.Drawing.Size(302, 51);
             this.BtnCompras.TabIndex = 20;
             this.BtnCompras.Tag = "Compras";
             this.BtnCompras.Text = "Compras";
@@ -379,11 +422,11 @@
             this.BtnReg_pas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnReg_pas.IconSize = 30;
             this.BtnReg_pas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnReg_pas.Location = new System.Drawing.Point(0, 183);
+            this.BtnReg_pas.Location = new System.Drawing.Point(0, 178);
             this.BtnReg_pas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnReg_pas.Name = "BtnReg_pas";
             this.BtnReg_pas.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BtnReg_pas.Size = new System.Drawing.Size(339, 51);
+            this.BtnReg_pas.Size = new System.Drawing.Size(302, 51);
             this.BtnReg_pas.TabIndex = 19;
             this.BtnReg_pas.Tag = "Registro del Paciente";
             this.BtnReg_pas.Text = "Registro de paciente";
@@ -406,11 +449,11 @@
             this.BtnFac_m.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnFac_m.IconSize = 30;
             this.BtnFac_m.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnFac_m.Location = new System.Drawing.Point(0, 132);
+            this.BtnFac_m.Location = new System.Drawing.Point(0, 127);
             this.BtnFac_m.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnFac_m.Name = "BtnFac_m";
             this.BtnFac_m.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BtnFac_m.Size = new System.Drawing.Size(339, 51);
+            this.BtnFac_m.Size = new System.Drawing.Size(302, 51);
             this.BtnFac_m.TabIndex = 18;
             this.BtnFac_m.Tag = "Facturacion";
             this.BtnFac_m.Text = "Facturacion";
@@ -432,143 +475,92 @@
             this.BtnHome.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.BtnHome.IconSize = 30;
             this.BtnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnHome.Location = new System.Drawing.Point(0, 81);
+            this.BtnHome.Location = new System.Drawing.Point(0, 76);
             this.BtnHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnHome.Name = "BtnHome";
             this.BtnHome.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BtnHome.Size = new System.Drawing.Size(339, 51);
+            this.BtnHome.Size = new System.Drawing.Size(302, 51);
             this.BtnHome.TabIndex = 17;
             this.BtnHome.Tag = "Home";
             this.BtnHome.Text = "Home";
             this.BtnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnHome.UseVisualStyleBackColor = true;
             // 
-            // PnlLinea2
-            // 
-            this.PnlLinea2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.PnlLinea2.Location = new System.Drawing.Point(3, 150);
-            this.PnlLinea2.Name = "PnlLinea2";
-            this.PnlLinea2.Size = new System.Drawing.Size(341, 1);
-            this.PnlLinea2.TabIndex = 16;
-            // 
-            // PnlLogo
-            // 
-            this.PnlLogo.Controls.Add(this.PcLaboratorio);
-            this.PnlLogo.Controls.Add(this.LblLaboratorio);
-            this.PnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PnlLogo.Location = new System.Drawing.Point(0, 0);
-            this.PnlLogo.Name = "PnlLogo";
-            this.PnlLogo.Size = new System.Drawing.Size(339, 81);
-            this.PnlLogo.TabIndex = 6;
-            // 
             // PcLaboratorio
             // 
             this.PcLaboratorio.Image = global::Proyecto_de_Graduacion.Properties.Resources.Laboratorio;
-            this.PcLaboratorio.Location = new System.Drawing.Point(11, 18);
+            this.PcLaboratorio.Location = new System.Drawing.Point(10, 13);
             this.PcLaboratorio.Name = "PcLaboratorio";
             this.PcLaboratorio.Size = new System.Drawing.Size(65, 57);
             this.PcLaboratorio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PcLaboratorio.TabIndex = 8;
             this.PcLaboratorio.TabStop = false;
             // 
-            // LblLaboratorio
+            // ICNMenu
             // 
-            this.LblLaboratorio.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.LblLaboratorio.AutoSize = true;
-            this.LblLaboratorio.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblLaboratorio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
-            this.LblLaboratorio.Location = new System.Drawing.Point(92, 27);
-            this.LblLaboratorio.Name = "LblLaboratorio";
-            this.LblLaboratorio.Size = new System.Drawing.Size(204, 24);
-            this.LblLaboratorio.TabIndex = 7;
-            this.LblLaboratorio.Text = "Laboratorio El Socorro";
+            this.ICNMenu.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.ICNMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(60)))), ((int)(((byte)(165)))));
+            this.ICNMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ICNMenu.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ICNMenu.IconChar = FontAwesome.Sharp.IconChar.Navicon;
+            this.ICNMenu.IconColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ICNMenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ICNMenu.IconSize = 30;
+            this.ICNMenu.Location = new System.Drawing.Point(23, 16);
+            this.ICNMenu.Name = "ICNMenu";
+            this.ICNMenu.Size = new System.Drawing.Size(36, 30);
+            this.ICNMenu.TabIndex = 0;
+            this.ICNMenu.TabStop = false;
+            this.ICNMenu.Click += new System.EventHandler(this.ICNMenu_Click);
             // 
-            // PnlTiempo
+            // Btnmin
             // 
-            this.PnlTiempo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PnlTiempo.Controls.Add(this.ICNTimes);
-            this.PnlTiempo.Controls.Add(this.ICNCalendary);
-            this.PnlTiempo.Controls.Add(this.lblHora);
-            this.PnlTiempo.Controls.Add(this.LblFecha);
-            this.PnlTiempo.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PnlTiempo.Location = new System.Drawing.Point(0, 550);
-            this.PnlTiempo.Name = "PnlTiempo";
-            this.PnlTiempo.Size = new System.Drawing.Size(339, 113);
-            this.PnlTiempo.TabIndex = 4;
+            this.Btnmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Btnmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
+            this.Btnmin.FlatAppearance.BorderSize = 0;
+            this.Btnmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btnmin.IconChar = FontAwesome.Sharp.IconChar.Minus;
+            this.Btnmin.IconColor = System.Drawing.Color.White;
+            this.Btnmin.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Btnmin.IconSize = 20;
+            this.Btnmin.Location = new System.Drawing.Point(1179, 3);
+            this.Btnmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Btnmin.Name = "Btnmin";
+            this.Btnmin.Size = new System.Drawing.Size(36, 34);
+            this.Btnmin.TabIndex = 3;
+            this.Btnmin.UseVisualStyleBackColor = false;
+            this.Btnmin.Click += new System.EventHandler(this.Btnmin_Click);
             // 
-            // ICNTimes
+            // IcnCerrarSesion
             // 
-            this.ICNTimes.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ICNTimes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(60)))), ((int)(((byte)(165)))));
-            this.ICNTimes.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
-            this.ICNTimes.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(60)))), ((int)(((byte)(165)))));
-            this.ICNTimes.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ICNTimes.Location = new System.Drawing.Point(10, 67);
-            this.ICNTimes.Name = "ICNTimes";
-            this.ICNTimes.Size = new System.Drawing.Size(32, 32);
-            this.ICNTimes.TabIndex = 15;
-            this.ICNTimes.TabStop = false;
-            // 
-            // ICNCalendary
-            // 
-            this.ICNCalendary.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.ICNCalendary.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ICNCalendary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(60)))), ((int)(((byte)(165)))));
-            this.ICNCalendary.IconChar = FontAwesome.Sharp.IconChar.CalendarDay;
-            this.ICNCalendary.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(60)))), ((int)(((byte)(165)))));
-            this.ICNCalendary.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ICNCalendary.Location = new System.Drawing.Point(10, 12);
-            this.ICNCalendary.Name = "ICNCalendary";
-            this.ICNCalendary.Size = new System.Drawing.Size(32, 32);
-            this.ICNCalendary.TabIndex = 14;
-            this.ICNCalendary.TabStop = false;
-            // 
-            // lblHora
-            // 
-            this.lblHora.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblHora.AutoSize = true;
-            this.lblHora.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblHora.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
-            this.lblHora.Location = new System.Drawing.Point(124, 67);
-            this.lblHora.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(44, 22);
-            this.lblHora.TabIndex = 12;
-            this.lblHora.Text = "--:--";
-            // 
-            // LblFecha
-            // 
-            this.LblFecha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LblFecha.AutoSize = true;
-            this.LblFecha.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblFecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
-            this.LblFecha.Location = new System.Drawing.Point(113, 12);
-            this.LblFecha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LblFecha.Name = "LblFecha";
-            this.LblFecha.Size = new System.Drawing.Size(55, 22);
-            this.LblFecha.TabIndex = 13;
-            this.LblFecha.Text = "d/m/a";
-            // 
-            // panelDesktop
-            // 
-            this.panelDesktop.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktop.Location = new System.Drawing.Point(341, 102);
-            this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(924, 665);
-            this.panelDesktop.TabIndex = 3;
-            // 
-            // Tmr
-            // 
-            this.Tmr.Tick += new System.EventHandler(this.Tmr_Tick);
+            this.IcnCerrarSesion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.IcnCerrarSesion.FlatAppearance.BorderSize = 0;
+            this.IcnCerrarSesion.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.IcnCerrarSesion.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.IcnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.IcnCerrarSesion.Font = new System.Drawing.Font("Corbel", 10.8F);
+            this.IcnCerrarSesion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
+            this.IcnCerrarSesion.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.IcnCerrarSesion.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
+            this.IcnCerrarSesion.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.IcnCerrarSesion.IconSize = 30;
+            this.IcnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.IcnCerrarSesion.Location = new System.Drawing.Point(0, 540);
+            this.IcnCerrarSesion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.IcnCerrarSesion.Name = "IcnCerrarSesion";
+            this.IcnCerrarSesion.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.IcnCerrarSesion.Size = new System.Drawing.Size(302, 56);
+            this.IcnCerrarSesion.TabIndex = 29;
+            this.IcnCerrarSesion.Tag = "CerrarSesion";
+            this.IcnCerrarSesion.Text = "CerrarSesion";
+            this.IcnCerrarSesion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.IcnCerrarSesion.UseVisualStyleBackColor = true;
+            this.IcnCerrarSesion.Click += new System.EventHandler(this.IcnCerrarSesion_Click);
             // 
             // FrmMDI
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1265, 767);
+            this.ClientSize = new System.Drawing.Size(1265, 815);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.PnlDesplegable);
             this.Controls.Add(this.PnlSistema);
@@ -582,15 +574,12 @@
             this.PnlCerrarMaximizar.PerformLayout();
             this.PnlSistema.ResumeLayout(false);
             this.PnlSistema.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ICNMenu)).EndInit();
             this.PnlDesplegable.ResumeLayout(false);
+            this.PnlDesplegable.PerformLayout();
             this.PnlLogo.ResumeLayout(false);
             this.PnlLogo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PcLaboratorio)).EndInit();
-            this.PnlTiempo.ResumeLayout(false);
-            this.PnlTiempo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ICNTimes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ICNCalendary)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ICNMenu)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -610,12 +599,7 @@
         private System.Windows.Forms.Panel PnlLogo;
         private System.Windows.Forms.PictureBox PcLaboratorio;
         private System.Windows.Forms.Timer Tmr;
-        private System.Windows.Forms.Panel PnlTiempo;
-        private System.Windows.Forms.Label LblFecha;
-        private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Panel PnlLinea2;
-        private FontAwesome.Sharp.IconPictureBox ICNTimes;
-        private FontAwesome.Sharp.IconPictureBox ICNCalendary;
         private System.Windows.Forms.Button BtnCerrarFormulario;
         private FontAwesome.Sharp.IconButton BtnGesti_Exa;
         private FontAwesome.Sharp.IconButton BtnRes_Ex;
@@ -626,5 +610,9 @@
         private FontAwesome.Sharp.IconButton BtnCitas;
         private FontAwesome.Sharp.IconButton BtnAd_Usuario;
         private FontAwesome.Sharp.IconButton BtnCompras;
+        private System.Windows.Forms.Label lblHora;
+        private System.Windows.Forms.Label LblFecha;
+        private System.Windows.Forms.Panel panel1;
+        private FontAwesome.Sharp.IconButton IcnCerrarSesion;
     }
 }

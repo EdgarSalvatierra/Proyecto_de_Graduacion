@@ -129,17 +129,27 @@ namespace Proyecto_de_Graduacion
                 {
                     PnlDesplegable.Width = 100;
                     PcLaboratorio.Width = 50;
+                    LblFecha.Visible = false;
+                    lblHora.Visible = false;
                     foreach (Button menubut in PnlDesplegable.Controls.OfType<Button>())
                     {
                         menubut.Text = "";
                         menubut.ImageAlign = ContentAlignment.MiddleCenter;
                         menubut.Padding = new Padding(0);
                     }
+                    foreach (Label item in LblFecha.Controls.OfType<Label>())
+                    {
+
+                        item.ImageAlign = ContentAlignment.MiddleLeft;
+                        item.Padding = new Padding(0);
+                    }
                 }
                 else 
                 {
                     PnlDesplegable.Width = 341;//Menu Desplasado
                     PcLaboratorio.Width = 84;
+                    LblFecha.Visible = true;
+                    lblHora.Visible = true;
                     foreach (Button menubut in PnlDesplegable.Controls.OfType<Button>())
                     {
                         menubut.Text = "" + menubut.Tag.ToString();
@@ -239,6 +249,14 @@ namespace Proyecto_de_Graduacion
             LblMenu.Text = "Modulo de Gestion de Examenes";
 
             DespleMenu();
+        }
+        private void IcnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            FrmLogin login = new FrmLogin();
+
+            login.Show();
         }
         private void BtnCitas_Click(object sender, EventArgs e)
         {

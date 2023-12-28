@@ -30,22 +30,10 @@ namespace Capa_Datos.Data.Citas
         }
         public void Insertar(string nombre, DateTime Nacimiento, long telefono, string motivo, DateTime fecha, DateTime hora)
         {
+            string query = $@"insert into tbl_Reservacion_Citas(nombre_completo,Fecha_de_Nacimiento,telefono,motivo,fecha_realizacion,hora_de_realizacion,Estado)
+                            values('{nombre}',Convert(date,'{Nacimiento}'),'{telefono}','{motivo}',Convert(date,'{fecha}'),'{hora.TimeOfDay}',1)";
 
-            command = new SqlCommand("Sp_Reservacion_Insert", conexion.abrirconexion());
-
-            command.CommandType = CommandType.StoredProcedure;
-
-            command.Parameters.Add(new SqlParameter("@nombre_completo", nombre));
-
-            command.Parameters.Add(new SqlParameter("@Fecha_de_Nacimiento", Nacimiento.Date));
-
-            command.Parameters.Add(new SqlParameter("@telefono", telefono));
-
-            command.Parameters.Add(new SqlParameter("@motivo", motivo));
-
-            command.Parameters.Add(new SqlParameter("@fecha_realizacion", fecha.Date));
-
-            command.Parameters.Add(new SqlParameter("@hora_realizacion", hora.TimeOfDay));
+            command = new SqlCommand(query, conexion.abrirconexion());
 
             command.ExecuteNonQuery();
 
@@ -54,7 +42,8 @@ namespace Capa_Datos.Data.Citas
         public DataTable Read()
         {
             string query = $@"Select cod_cita as 'Codigo',nombre_completo as 'Nombre',Fecha_de_Nacimiento as 'Fecha de Nacimiento',
-             telefono as 'Telefono',motivo as 'Motivo',fecha_realizacion as 'Fecha de Cita',hora_de_realizacion as 'Hora de Cita' From tbl_Reservacion_Citas";
+             telefono as 'Telefono',motivo as 'Motivo',fecha_realizacion as 'Fecha de Cita',hora_de_realizacion as 'Hora de Cita' From tbl_Reservacion_Citas
+             where Estado = 1";
 
             command = new SqlCommand(query, conexion.abrirconexion());
 
@@ -70,32 +59,11 @@ namespace Capa_Datos.Data.Citas
 
             return data;
         }
-        public DataTable Buscador(int Codigo, string Paciente, long Telefono)
+        public DataTable Buscador(string Paciente, long Telefono)
         {
-            string query = "";
-
-            if (Codigo != 0)
-            {
-                query = $@"Select cod_cita as 'Codigo',nombre_completo as 'Nombre',Fecha_de_Nacimiento as 'Fecha de Nacimiento',
+            string query = $@"Select cod_cita as 'Codigo',nombre_completo as 'Nombre',Fecha_de_Nacimiento as 'Fecha de Nacimiento',
                         telefono as 'Telefono',motivo as 'Motivo',fecha_realizacion as 'Fecha de Cita',hora_de_realizacion as 'Hora de Cita' 
-                        From tbl_Reservacion_Citas where cod_cita Like '%' + '{Codigo}' + '%' ";
-            }
-            else if (Paciente != "")
-            {
-                query = $@"Select cod_cita as 'Codigo',nombre_completo as 'Nombre',Fecha_de_Nacimiento as 'Fecha de Nacimiento',
-                        telefono as 'Telefono',motivo as 'Motivo',fecha_realizacion as 'Fecha de Cita',hora_de_realizacion as 'Hora de Cita' 
-                        From tbl_Reservacion_Citas where nombre_completo Like '%' + '{Paciente}' + '%' ";
-            }
-            else if (Telefono != 9)
-            {
-                query = $@"Select cod_cita as 'Codigo',nombre_completo as 'Nombre',Fecha_de_Nacimiento as 'Fecha de Nacimiento',
-                        telefono as 'Telefono',motivo as 'Motivo',fecha_realizacion as 'Fecha de Cita',hora_de_realizacion as 'Hora de Cita' 
-                        From tbl_Reservacion_Citas where telefono Like '%' + '{Telefono}' + '%' ";
-            }
-            else
-            {
-                conexion.cerrarconexion();
-            }
+                        From tbl_Reservacion_Citas where nombre_completo Like '%' + '{Paciente}' + '%' or Telefono Like '%' + '{Telefono}' + '%'";
 
             command = new SqlCommand(query, conexion.abrirconexion());
 

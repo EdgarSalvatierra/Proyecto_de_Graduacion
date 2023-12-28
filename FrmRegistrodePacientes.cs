@@ -32,5 +32,26 @@ namespace Proyecto_de_Graduacion
         {
             DtgPaciente.DataSource = paciente.LeerPacientes();
         }
+        private void ICNBuscador_Click(object sender, EventArgs e)
+        {
+            if (!int.TryParse(TxtBuscarPaciente.Text, out _))
+            {
+                string Paciente = TxtBuscarPaciente.Text;
+
+                DtgPaciente.DataSource =  paciente.LeerPacientesporId(Paciente);
+            }
+            else
+            {
+                MessageBox.Show("No existe tal dato","SQL Server",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void TxtBuscarPaciente_Enter(object sender, EventArgs e)
+        {
+            if (TxtBuscarPaciente.Text == "Buscar Paciente")
+            {
+                TxtBuscarPaciente.Text = "";
+            }
+        }
     }
 }

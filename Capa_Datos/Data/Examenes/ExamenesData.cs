@@ -32,7 +32,7 @@ namespace Capa_Datos.Data.Examenes
             string query = $@"select examen.cod_examen as 'Codigo Examen',categoria.categoria_Nombre as 'Categoria',
             examen.nombre as 'Examen',cast(examen.precio as integer) as 'Precio del examen'
             From tbl_Examen as examen inner join tbl_Categoria_Examen as categoria 
-            on categoria.cod_area = examen.cod_categoria";
+            on categoria.cod_area = examen.cod_categoria where categoria.Estado = 1";
 
             command = new SqlCommand(query, conexion.abrirconexion());
 

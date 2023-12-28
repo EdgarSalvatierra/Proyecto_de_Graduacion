@@ -20,20 +20,26 @@ namespace Capa_Datos.Data.Usuario
 
         SqlDataReader reader;
 
-        public void Insertar(string usuario, string contraseña, string Nombre, string Apellido, long telefono, DateTime Nacimento, string Roles)
+        public void InsertarUsuario(string usuario, string contraseña, string Nombre, string Apellido, long telefono, string Nacimento, string Roles)
         {
-            string query = $@"declare @cod_usuario int declare @IdRol int
-             set @IdRol = (select Nom_Roles From tbl_Roles where  Nom_Roles = @Nom_Roles)
-             insert into tbl_User(Usuario,Contraseña,IdRol)
-             values('{usuario}',{contraseña},@IdRol)
+           
+            command = new SqlCommand("sp_usuario_insert", conexion.abrirconexion());
 
-            set @cod_usuario = @@IDENTITY
+            command.CommandType = CommandType.StoredProcedure;           ;
 
-            insert into tbl_Detalles_Usuario(Cod_User,Nombre,Apellido,Fecha_de_Nacimiento,Telefono)
-            values(@cod_usuario,'{Nombre}','{Apellido}','{Nacimento.Date}','{telefono}')";
+            command.Parameters.Add(new SqlParameter("@Nombre", Nombre));
 
+            command.Parameters.Add(new SqlParameter("@Apellido", Apellido));
 
-            command = new SqlCommand(query, conexion.abrirconexion());
+            command.Parameters.Add(new SqlParameter("@Telefono", telefono));
+
+            command.Parameters.Add(new SqlParameter("@Fecha_de_Nacimiento", Nacimento));
+
+            command.Parameters.Add(new SqlParameter("@Usuario", usuario));
+
+            command.Parameters.Add(new SqlParameter("@Password", contraseña));
+
+            command.Parameters.Add(new SqlParameter("@Nom_Roles", Roles));
 
             command.ExecuteNonQuery();
 
@@ -41,10 +47,10 @@ namespace Capa_Datos.Data.Usuario
         }
         public DataTable Read()
         {
-            string query = $@"select Codigo_Usuario as 'Codigo',detalles.Fecha_de_Nacimiento as 'Nacimiento',detalles.Nombre + ' ' + detalles.Apellido as 'Nombre Completo',detalles.Edad,detalles.Telefono,
+            string query = $@"select us.Cod_User as 'Codigo',detalles.Nombre + ' ' + detalles.Apellido as 'Nombre',detalles.Edad,detalles.Telefono,
                            us.Usuario,us.Contraseña,rol.Nom_Roles as 'Roles de Usuario', us.Estado as 'Estado'
                            From tbl_Detalles_Usuario as detalles inner join tbl_User as us on us.Cod_User= detalles.Cod_User
-                           inner join tbl_Roles as rol on rol.cod_rol = us.IdRol";
+                           inner join tbl_Roles as rol on rol.cod_rol = us.IdRol where us.Estado = 1";
 
             command = new SqlCommand(query, conexion.abrirconexion());
 
@@ -61,16 +67,12 @@ namespace Capa_Datos.Data.Usuario
             return data;
         }
 
-        public DataTable ReadForId(int Codigo, string Usuario, string Nombre, string Roles)
+        public DataTable ReadForId(string Roles,string Nombre)
         {
-            string query = $@"select Codigo_Usuario as 'Codigo',detalles.Fecha_de_Nacimiento as 'Nacimiento',detalles.Nombre,detalles.Apellido,detalles.Edad,detalles.Telefono,
-us.Usuario,us.Contraseña,rol.Nom_Roles as 'Roles de Usuario'
-From tbl_Detalles_Usuario as detalles 
+            string query = $@"select us.Cod_User as 'Codigo',detalles.Nombre + ' ' + detalles.Apellido as 'Nombre',detalles.Edad,detalles.Telefono,
+us.Usuario,us.Contraseña,rol.Nom_Roles as 'Roles de Usuario',us.Estado as 'Estado' From tbl_Detalles_Usuario as detalles 
 inner join tbl_User as us on us.Cod_User = detalles.Cod_User
-inner join tbl_Roles as rol on rol.cod_rol = us.IdRol
-
-where us.Cod_User Like '%'+ '{Codigo}'+ '%' or us.Usuario Like '%' + '{Usuario}' + '%' 
-or detalles.Nombre Like '%' + '{Nombre}' + '%' or rol.Nom_Roles Like '%' + '{Roles}' + '%'";
+inner join tbl_Roles as rol on rol.cod_rol = us.IdRol where rol.Nom_Roles Like '%' + '{Roles}' + '%' or detalles.Nombre Like '%' + '{Nombre}' + '%' and us.Estado = 1";
 
             command = new SqlCommand(query, conexion.abrirconexion());
 
@@ -92,7 +94,7 @@ or detalles.Nombre Like '%' + '{Nombre}' + '%' or rol.Nom_Roles Like '%' + '{Rol
             return data;
         }
        
-        public void Update(int cod_user, string usuario, string contraseña, string Nombre, string Apellido)
+        public void Update(int cod_user, string usuario, string contraseña, string Nombre, int Edad,long Telefono,string Roles)
         {
             command = new SqlCommand("sp_usuario_update", conexion.abrirconexion());
 
@@ -102,11 +104,15 @@ or detalles.Nombre Like '%' + '{Nombre}' + '%' or rol.Nom_Roles Like '%' + '{Rol
 
             command.Parameters.Add(new SqlParameter("@Nombre", Nombre));
 
-            command.Parameters.Add(new SqlParameter("@Apellido", Apellido));
+            command.Parameters.Add(new SqlParameter("@Edad", Edad));
+
+            command.Parameters.Add(new SqlParameter("@Telefono", Telefono));
 
             command.Parameters.Add(new SqlParameter("@Usuario", usuario));
 
             command.Parameters.Add(new SqlParameter("@Password", contraseña));
+
+            command.Parameters.Add(new SqlParameter("@Nom_Roles", Roles));
 
             command.ExecuteNonQuery();
 
@@ -124,8 +130,8 @@ or detalles.Nombre Like '%' + '{Nombre}' + '%' or rol.Nom_Roles Like '%' + '{Rol
         }
         public bool Login(string Usuario, string Contraseña)
         {
-            string query = $@"if(exists(select * From tbl_User where Usuario = '{Usuario}' and Contraseña = '{Contraseña}'))
-                            Select Cod_User From tbl_User where Usuario = '{Usuario}' and Contraseña = '{Contraseña}'
+            string query = $@"if(exists(select * From tbl_User where Usuario = '{Usuario}' and Contraseña = '{Contraseña}' and Estado = 1))
+                            Select Cod_User From tbl_User where Usuario = '{Usuario}' and Contraseña = '{Contraseña}' and Estado = 1
                    else 
                      select '0'
                ";

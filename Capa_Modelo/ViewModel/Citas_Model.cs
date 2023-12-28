@@ -19,9 +19,9 @@ namespace Capa_Modelo.ViewModel
         {
             return citas.Read();
         }
-        public Object Search(int Codigo, string Paciente, long Telefono)
+        public Object Search(string Paciente, long Telefono)
         {
-            return citas.Buscador(Codigo, Paciente, Telefono);
+            return citas.Buscador(Paciente, Telefono);
         }
         public void ActualizarCitas(int cod_cita, string nombre, DateTime Nacimiento, long telefono, string motivo, DateTime fecha, DateTime hora)
         {

@@ -12,9 +12,9 @@ namespace Capa_Modelo.ViewModel
     {
         UsuarioData usuariot = new UsuarioData();
 
-        public void InsertarUsuario(string usuario, string contraseña, string Nombre, string Apellido, long telefono, DateTime Nacimento, string Roles)
+        public void InsertarUsuario(string usuario, string contraseña, string Nombre, string Apellido, long telefono, string Nacimento, string Roles)
         {
-            usuariot.Insertar(usuario, contraseña, Nombre, Apellido, telefono, Nacimento, Roles);
+            usuariot.InsertarUsuario(usuario, contraseña, Nombre, Apellido, telefono, Nacimento, Roles);
         }
         public Object LeerUsuario()
         {
@@ -24,13 +24,13 @@ namespace Capa_Modelo.ViewModel
         {
             return usuariot.Login(Usuario, Contraseña);
         }
-        public Object LeerUsuarioporId(int Codigo, string Usuario, string Nombre, string Roles)
+        public Object LeerUsuarioporId(string Nombre, string Roles)
         {
-            return usuariot.ReadForId(Codigo, Usuario, Nombre, Roles);
+            return usuariot.ReadForId(Nombre, Roles);
         }
-        public void ActualizarUsuario(int cod_user, string usuario, string contraseña, string Nombre, string Apellido)
+        public void ActualizarUsuario(int cod_user, string usuario, string contraseña, string Nombre, int Edad,long Telefono,string Roles)
         {
-            usuariot.Update(cod_user, usuario, contraseña, Nombre, Apellido);
+            usuariot.Update(cod_user, usuario, contraseña, Nombre, Edad,Telefono,Roles);
         }
         public void DardebajaUsuario(string usuario)
         {

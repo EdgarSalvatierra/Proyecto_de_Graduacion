@@ -63,6 +63,16 @@ namespace Proyecto_de_Graduacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Iconousuario_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("Iconousuario-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Laboratorio {
             get {
                 object obj = ResourceManager.GetObject("Laboratorio", resourceCulture);
@@ -76,6 +86,16 @@ namespace Proyecto_de_Graduacion.Properties {
         internal static System.Drawing.Bitmap Laboratorio_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("Laboratorio-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap paciente_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("paciente-removebg-preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

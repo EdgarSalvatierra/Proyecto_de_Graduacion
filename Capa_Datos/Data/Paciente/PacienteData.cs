@@ -32,10 +32,10 @@ namespace Capa_Datos.Data.Paciente
             conexion.cerrarconexion();
         }
 
-        public void Insert(string Nombre, long telefono, DateTime FechadeNacimiento, string sexo, string correo)
+        public void Insert(string Nombre, long telefono, DateTime FechadeNacimiento, string sexo)
         {
-            string query = $@"insert into tbl_Registros_de_Pacientes(Nombre,Fecha_de_Nacimiento,Sexo,Telefono,Correo) 
-            values('{Nombre}','{FechadeNacimiento}','{sexo}','{telefono}','{correo}')";
+            string query = $@"Insert into tbl_Registros_de_Pacientes(Nombre,Fecha_de_Nacimiento,Edad,Sexo,Telefono,Estado) 
+             values('{Nombre}','{FechadeNacimiento}', DATEDIFF(YEAR, CONVERT(date, '{FechadeNacimiento}'), GETDATE()),'{sexo}','{telefono}',1)";
 
             command = new SqlCommand(query, conexion.abrirconexion());
 
@@ -45,8 +45,8 @@ namespace Capa_Datos.Data.Paciente
         }
         public DataTable Read()
         {
-            string query = $@"Select Cod_paciente as 'Codigo',Nombre as 'Paciente',Fecha_de_Nacimiento as 'Fecha de Nacimiento',Edad as 'Edad',Sexo as 'Sexo',Telefono as 'Telefono',Correo as 'Correo Electronico'
-                           From tbl_Registros_de_Pacientes";
+            string query = $@"Select Cod_paciente as 'Codigo',Nombre as 'Paciente',Fecha_de_Nacimiento as 'Fecha de Nacimiento',Edad as 'Edad',Sexo as 'Sexo',Telefono as 'Telefono'
+                           From tbl_Registros_de_Pacientes where Estado = 1";
 
             command = new SqlCommand(query, conexion.abrirconexion());
 
@@ -83,7 +83,7 @@ namespace Capa_Datos.Data.Paciente
         }
         public DataTable ReadForName(string Codigo)
         {
-            string query = $@"select Cod_paciente,Nombre,Fecha_de_Nacimiento,Sexo,Telefono,Correo From tbl_Registros_de_Pacientes where Nombre Like '{Codigo}'";
+            string query = $@"select Cod_paciente as 'Codigo',Nombre,Fecha_de_Nacimiento as 'Fecha de Nacimiento',Sexo,Telefono From tbl_Registros_de_Pacientes where Nombre Like '%' + '{Codigo}' + '%'";
 
             command = new SqlCommand(query, conexion.abrirconexion()); ;
 
@@ -95,14 +95,13 @@ namespace Capa_Datos.Data.Paciente
             {
                 data.Load(reader);
             }
-
             conexion.cerrarconexion();
 
             return data;
         }
         public void Update(int Id, string Nombre, DateTime date, long telefono, string sexo, string correo)
         {
-            string query = $@"Update tbl_Registros_de_Pacientes set Nombre = '{Nombre}',Fecha_de_Nacimiento = '{date.Date}',Sexo = '{sexo}', Telefono = '{telefono}, Correo = '{correo}' where Cod_paciente = '{Id}'";
+            string query = $@"Update tbl_Registros_de_Pacientes set Nombre = '{Nombre}',Fecha_de_Nacimiento = '{date.Date}',Sexo = '{sexo}', Telefono = '{telefono} where Cod_paciente = '{Id}'";
 
             command = new SqlCommand(query, conexion.abrirconexion());
 
