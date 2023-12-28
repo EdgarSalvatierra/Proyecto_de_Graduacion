@@ -32,7 +32,9 @@ namespace Proyecto_de_Graduacion
         }
         private void FrmMDI_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
 
+            
             foreach (Control control in PnlDesplegable.Controls)
             {
                 if (control is IconButton item)
@@ -257,6 +259,19 @@ namespace Proyecto_de_Graduacion
             FrmLogin login = new FrmLogin();
 
             login.Show();
+        }
+
+        private void BtnHome_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void BtnRes_Ex_Click(object sender, EventArgs e)
+        {
+            AbrirPanel<FrmResultados>();
+
+            LblMenu.Text = "Modulo de Resultados";
+
+            DespleMenu();
         }
         private void BtnCitas_Click(object sender, EventArgs e)
         {

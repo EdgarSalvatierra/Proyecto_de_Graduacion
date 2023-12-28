@@ -31,19 +31,17 @@
             this.components = new System.ComponentModel.Container();
             this.PnlCerrarMaximizar = new System.Windows.Forms.Panel();
             this.LblSistemaLab = new System.Windows.Forms.Label();
+            this.Btnmin = new FontAwesome.Sharp.IconButton();
             this.button1 = new System.Windows.Forms.Button();
             this.PnlSistema = new System.Windows.Forms.Panel();
             this.BtnCerrarFormulario = new System.Windows.Forms.Button();
             this.LblMenu = new System.Windows.Forms.Label();
+            this.ICNMenu = new FontAwesome.Sharp.IconPictureBox();
             this.PnlDesplegable = new System.Windows.Forms.Panel();
-            this.PnlLinea2 = new System.Windows.Forms.Panel();
-            this.PnlLogo = new System.Windows.Forms.Panel();
-            this.LblLaboratorio = new System.Windows.Forms.Label();
-            this.panelDesktop = new System.Windows.Forms.Panel();
-            this.Tmr = new System.Windows.Forms.Timer(this.components);
+            this.IcnCerrarSesion = new FontAwesome.Sharp.IconButton();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.lblHora = new System.Windows.Forms.Label();
             this.LblFecha = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.BtnConf = new FontAwesome.Sharp.IconButton();
             this.BtnCitas = new FontAwesome.Sharp.IconButton();
             this.BtnAd_Usuario = new FontAwesome.Sharp.IconButton();
@@ -53,16 +51,17 @@
             this.BtnReg_pas = new FontAwesome.Sharp.IconButton();
             this.BtnFac_m = new FontAwesome.Sharp.IconButton();
             this.BtnHome = new FontAwesome.Sharp.IconButton();
+            this.PnlLogo = new System.Windows.Forms.Panel();
             this.PcLaboratorio = new System.Windows.Forms.PictureBox();
-            this.ICNMenu = new FontAwesome.Sharp.IconPictureBox();
-            this.Btnmin = new FontAwesome.Sharp.IconButton();
-            this.IcnCerrarSesion = new FontAwesome.Sharp.IconButton();
+            this.LblLaboratorio = new System.Windows.Forms.Label();
+            this.panelDesktop = new System.Windows.Forms.Panel();
+            this.Tmr = new System.Windows.Forms.Timer(this.components);
             this.PnlCerrarMaximizar.SuspendLayout();
             this.PnlSistema.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ICNMenu)).BeginInit();
             this.PnlDesplegable.SuspendLayout();
             this.PnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PcLaboratorio)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ICNMenu)).BeginInit();
             this.SuspendLayout();
             // 
             // PnlCerrarMaximizar
@@ -88,6 +87,24 @@
             this.LblSistemaLab.Size = new System.Drawing.Size(246, 23);
             this.LblSistemaLab.TabIndex = 4;
             this.LblSistemaLab.Text = "Sistema Socorro Lab";
+            // 
+            // Btnmin
+            // 
+            this.Btnmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Btnmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
+            this.Btnmin.FlatAppearance.BorderSize = 0;
+            this.Btnmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btnmin.IconChar = FontAwesome.Sharp.IconChar.Minus;
+            this.Btnmin.IconColor = System.Drawing.Color.White;
+            this.Btnmin.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Btnmin.IconSize = 20;
+            this.Btnmin.Location = new System.Drawing.Point(1179, 3);
+            this.Btnmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Btnmin.Name = "Btnmin";
+            this.Btnmin.Size = new System.Drawing.Size(36, 34);
+            this.Btnmin.TabIndex = 3;
+            this.Btnmin.UseVisualStyleBackColor = false;
+            this.Btnmin.Click += new System.EventHandler(this.Btnmin_Click);
             // 
             // button1
             // 
@@ -141,6 +158,23 @@
             this.LblMenu.TabIndex = 4;
             this.LblMenu.Text = "Menu Principal";
             // 
+            // ICNMenu
+            // 
+            this.ICNMenu.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.ICNMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(60)))), ((int)(((byte)(165)))));
+            this.ICNMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ICNMenu.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ICNMenu.IconChar = FontAwesome.Sharp.IconChar.Navicon;
+            this.ICNMenu.IconColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ICNMenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ICNMenu.IconSize = 30;
+            this.ICNMenu.Location = new System.Drawing.Point(23, 16);
+            this.ICNMenu.Name = "ICNMenu";
+            this.ICNMenu.Size = new System.Drawing.Size(36, 30);
+            this.ICNMenu.TabIndex = 0;
+            this.ICNMenu.TabStop = false;
+            this.ICNMenu.Click += new System.EventHandler(this.ICNMenu_Click);
+            // 
             // PnlDesplegable
             // 
             this.PnlDesplegable.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -158,7 +192,6 @@
             this.PnlDesplegable.Controls.Add(this.BtnReg_pas);
             this.PnlDesplegable.Controls.Add(this.BtnFac_m);
             this.PnlDesplegable.Controls.Add(this.BtnHome);
-            this.PnlDesplegable.Controls.Add(this.PnlLinea2);
             this.PnlDesplegable.Controls.Add(this.PnlLogo);
             this.PnlDesplegable.Cursor = System.Windows.Forms.Cursors.Default;
             this.PnlDesplegable.Dock = System.Windows.Forms.DockStyle.Left;
@@ -167,53 +200,47 @@
             this.PnlDesplegable.Size = new System.Drawing.Size(304, 713);
             this.PnlDesplegable.TabIndex = 2;
             // 
-            // PnlLinea2
+            // IcnCerrarSesion
             // 
-            this.PnlLinea2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.PnlLinea2.Location = new System.Drawing.Point(3, 150);
-            this.PnlLinea2.Name = "PnlLinea2";
-            this.PnlLinea2.Size = new System.Drawing.Size(341, 1);
-            this.PnlLinea2.TabIndex = 16;
+            this.IcnCerrarSesion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.IcnCerrarSesion.FlatAppearance.BorderSize = 0;
+            this.IcnCerrarSesion.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.IcnCerrarSesion.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.IcnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.IcnCerrarSesion.Font = new System.Drawing.Font("Corbel", 10.8F);
+            this.IcnCerrarSesion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
+            this.IcnCerrarSesion.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.IcnCerrarSesion.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
+            this.IcnCerrarSesion.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.IcnCerrarSesion.IconSize = 30;
+            this.IcnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.IcnCerrarSesion.Location = new System.Drawing.Point(0, 540);
+            this.IcnCerrarSesion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.IcnCerrarSesion.Name = "IcnCerrarSesion";
+            this.IcnCerrarSesion.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.IcnCerrarSesion.Size = new System.Drawing.Size(302, 56);
+            this.IcnCerrarSesion.TabIndex = 29;
+            this.IcnCerrarSesion.Tag = "CerrarSesion";
+            this.IcnCerrarSesion.Text = "CerrarSesion";
+            this.IcnCerrarSesion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.IcnCerrarSesion.UseVisualStyleBackColor = true;
+            this.IcnCerrarSesion.Click += new System.EventHandler(this.IcnCerrarSesion_Click);
             // 
-            // PnlLogo
+            // panel1
             // 
-            this.PnlLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PnlLogo.Controls.Add(this.PcLaboratorio);
-            this.PnlLogo.Controls.Add(this.LblLaboratorio);
-            this.PnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PnlLogo.Location = new System.Drawing.Point(0, 0);
-            this.PnlLogo.Name = "PnlLogo";
-            this.PnlLogo.Size = new System.Drawing.Size(302, 76);
-            this.PnlLogo.TabIndex = 6;
-            // 
-            // LblLaboratorio
-            // 
-            this.LblLaboratorio.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.LblLaboratorio.AutoSize = true;
-            this.LblLaboratorio.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblLaboratorio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
-            this.LblLaboratorio.Location = new System.Drawing.Point(92, 24);
-            this.LblLaboratorio.Name = "LblLaboratorio";
-            this.LblLaboratorio.Size = new System.Drawing.Size(204, 24);
-            this.LblLaboratorio.TabIndex = 7;
-            this.LblLaboratorio.Text = "Laboratorio El Socorro";
-            // 
-            // panelDesktop
-            // 
-            this.panelDesktop.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktop.Location = new System.Drawing.Point(304, 102);
-            this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(961, 713);
-            this.panelDesktop.TabIndex = 3;
-            // 
-            // Tmr
-            // 
-            this.Tmr.Tick += new System.EventHandler(this.Tmr_Tick);
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel1.Location = new System.Drawing.Point(2, 601);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(300, 1);
+            this.panel1.TabIndex = 28;
             // 
             // lblHora
             // 
-            this.lblHora.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblHora.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.lblHora.AutoSize = true;
             this.lblHora.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblHora.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -227,7 +254,8 @@
             // 
             // LblFecha
             // 
-            this.LblFecha.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.LblFecha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.LblFecha.AutoSize = true;
             this.LblFecha.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblFecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
@@ -238,17 +266,9 @@
             this.LblFecha.TabIndex = 27;
             this.LblFecha.Text = "d/m/a";
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(2, 601);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(300, 1);
-            this.panel1.TabIndex = 28;
-            // 
             // BtnConf
             // 
-            this.BtnConf.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnConf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnConf.FlatAppearance.BorderSize = 0;
             this.BtnConf.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
             this.BtnConf.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
@@ -274,7 +294,7 @@
             // 
             // BtnCitas
             // 
-            this.BtnCitas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnCitas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnCitas.FlatAppearance.BorderSize = 0;
             this.BtnCitas.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
             this.BtnCitas.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
@@ -301,7 +321,7 @@
             // 
             // BtnAd_Usuario
             // 
-            this.BtnAd_Usuario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnAd_Usuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnAd_Usuario.FlatAppearance.BorderSize = 0;
             this.BtnAd_Usuario.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
             this.BtnAd_Usuario.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
@@ -328,8 +348,8 @@
             // 
             // BtnGesti_Exa
             // 
+            this.BtnGesti_Exa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnGesti_Exa.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BtnGesti_Exa.Dock = System.Windows.Forms.DockStyle.Top;
             this.BtnGesti_Exa.FlatAppearance.BorderSize = 0;
             this.BtnGesti_Exa.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
             this.BtnGesti_Exa.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
@@ -356,7 +376,7 @@
             // 
             // BtnRes_Ex
             // 
-            this.BtnRes_Ex.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnRes_Ex.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnRes_Ex.FlatAppearance.BorderSize = 0;
             this.BtnRes_Ex.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
             this.BtnRes_Ex.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
@@ -379,10 +399,11 @@
             this.BtnRes_Ex.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnRes_Ex.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnRes_Ex.UseVisualStyleBackColor = true;
+            this.BtnRes_Ex.Click += new System.EventHandler(this.BtnRes_Ex_Click);
             // 
             // BtnCompras
             // 
-            this.BtnCompras.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnCompras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnCompras.FlatAppearance.BorderSize = 0;
             this.BtnCompras.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
             this.BtnCompras.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
@@ -409,8 +430,8 @@
             // 
             // BtnReg_pas
             // 
+            this.BtnReg_pas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnReg_pas.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BtnReg_pas.Dock = System.Windows.Forms.DockStyle.Top;
             this.BtnReg_pas.FlatAppearance.BorderSize = 0;
             this.BtnReg_pas.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
             this.BtnReg_pas.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
@@ -437,7 +458,7 @@
             // 
             // BtnFac_m
             // 
-            this.BtnFac_m.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnFac_m.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnFac_m.FlatAppearance.BorderSize = 0;
             this.BtnFac_m.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
             this.BtnFac_m.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
@@ -463,7 +484,7 @@
             // 
             // BtnHome
             // 
-            this.BtnHome.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnHome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnHome.FlatAppearance.BorderSize = 0;
             this.BtnHome.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
             this.BtnHome.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
@@ -485,6 +506,18 @@
             this.BtnHome.Text = "Home";
             this.BtnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnHome.UseVisualStyleBackColor = true;
+            this.BtnHome.Click += new System.EventHandler(this.BtnHome_Click);
+            // 
+            // PnlLogo
+            // 
+            this.PnlLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PnlLogo.Controls.Add(this.PcLaboratorio);
+            this.PnlLogo.Controls.Add(this.LblLaboratorio);
+            this.PnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PnlLogo.Location = new System.Drawing.Point(0, 0);
+            this.PnlLogo.Name = "PnlLogo";
+            this.PnlLogo.Size = new System.Drawing.Size(302, 76);
+            this.PnlLogo.TabIndex = 6;
             // 
             // PcLaboratorio
             // 
@@ -496,66 +529,30 @@
             this.PcLaboratorio.TabIndex = 8;
             this.PcLaboratorio.TabStop = false;
             // 
-            // ICNMenu
+            // LblLaboratorio
             // 
-            this.ICNMenu.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.ICNMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(60)))), ((int)(((byte)(165)))));
-            this.ICNMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ICNMenu.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ICNMenu.IconChar = FontAwesome.Sharp.IconChar.Navicon;
-            this.ICNMenu.IconColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ICNMenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ICNMenu.IconSize = 30;
-            this.ICNMenu.Location = new System.Drawing.Point(23, 16);
-            this.ICNMenu.Name = "ICNMenu";
-            this.ICNMenu.Size = new System.Drawing.Size(36, 30);
-            this.ICNMenu.TabIndex = 0;
-            this.ICNMenu.TabStop = false;
-            this.ICNMenu.Click += new System.EventHandler(this.ICNMenu_Click);
+            this.LblLaboratorio.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.LblLaboratorio.AutoSize = true;
+            this.LblLaboratorio.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblLaboratorio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
+            this.LblLaboratorio.Location = new System.Drawing.Point(92, 24);
+            this.LblLaboratorio.Name = "LblLaboratorio";
+            this.LblLaboratorio.Size = new System.Drawing.Size(204, 24);
+            this.LblLaboratorio.TabIndex = 7;
+            this.LblLaboratorio.Text = "Laboratorio El Socorro";
             // 
-            // Btnmin
+            // panelDesktop
             // 
-            this.Btnmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Btnmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
-            this.Btnmin.FlatAppearance.BorderSize = 0;
-            this.Btnmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btnmin.IconChar = FontAwesome.Sharp.IconChar.Minus;
-            this.Btnmin.IconColor = System.Drawing.Color.White;
-            this.Btnmin.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Btnmin.IconSize = 20;
-            this.Btnmin.Location = new System.Drawing.Point(1179, 3);
-            this.Btnmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Btnmin.Name = "Btnmin";
-            this.Btnmin.Size = new System.Drawing.Size(36, 34);
-            this.Btnmin.TabIndex = 3;
-            this.Btnmin.UseVisualStyleBackColor = false;
-            this.Btnmin.Click += new System.EventHandler(this.Btnmin_Click);
+            this.panelDesktop.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDesktop.Location = new System.Drawing.Point(304, 102);
+            this.panelDesktop.Name = "panelDesktop";
+            this.panelDesktop.Size = new System.Drawing.Size(961, 713);
+            this.panelDesktop.TabIndex = 3;
             // 
-            // IcnCerrarSesion
+            // Tmr
             // 
-            this.IcnCerrarSesion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.IcnCerrarSesion.FlatAppearance.BorderSize = 0;
-            this.IcnCerrarSesion.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.IcnCerrarSesion.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.IcnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.IcnCerrarSesion.Font = new System.Drawing.Font("Corbel", 10.8F);
-            this.IcnCerrarSesion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
-            this.IcnCerrarSesion.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
-            this.IcnCerrarSesion.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
-            this.IcnCerrarSesion.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.IcnCerrarSesion.IconSize = 30;
-            this.IcnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.IcnCerrarSesion.Location = new System.Drawing.Point(0, 540);
-            this.IcnCerrarSesion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.IcnCerrarSesion.Name = "IcnCerrarSesion";
-            this.IcnCerrarSesion.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.IcnCerrarSesion.Size = new System.Drawing.Size(302, 56);
-            this.IcnCerrarSesion.TabIndex = 29;
-            this.IcnCerrarSesion.Tag = "CerrarSesion";
-            this.IcnCerrarSesion.Text = "CerrarSesion";
-            this.IcnCerrarSesion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.IcnCerrarSesion.UseVisualStyleBackColor = true;
-            this.IcnCerrarSesion.Click += new System.EventHandler(this.IcnCerrarSesion_Click);
+            this.Tmr.Tick += new System.EventHandler(this.Tmr_Tick);
             // 
             // FrmMDI
             // 
@@ -574,12 +571,12 @@
             this.PnlCerrarMaximizar.PerformLayout();
             this.PnlSistema.ResumeLayout(false);
             this.PnlSistema.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ICNMenu)).EndInit();
             this.PnlDesplegable.ResumeLayout(false);
             this.PnlDesplegable.PerformLayout();
             this.PnlLogo.ResumeLayout(false);
             this.PnlLogo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PcLaboratorio)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ICNMenu)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -599,7 +596,6 @@
         private System.Windows.Forms.Panel PnlLogo;
         private System.Windows.Forms.PictureBox PcLaboratorio;
         private System.Windows.Forms.Timer Tmr;
-        private System.Windows.Forms.Panel PnlLinea2;
         private System.Windows.Forms.Button BtnCerrarFormulario;
         private FontAwesome.Sharp.IconButton BtnGesti_Exa;
         private FontAwesome.Sharp.IconButton BtnRes_Ex;
