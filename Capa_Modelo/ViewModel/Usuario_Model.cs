@@ -12,9 +12,13 @@ namespace Capa_Modelo.ViewModel
     {
         UsuarioData usuariot = new UsuarioData();
 
-        public void InsertarUsuario(string usuario, string contraseña, string Nombre, string Apellido, long telefono, string Nacimento, string Roles)
+        public void InsertarUsuario(string usuario, string contraseña, string Roles)
         {
-            usuariot.InsertarUsuario(usuario, contraseña, Nombre, Apellido, telefono, Nacimento, Roles);
+            usuariot.InsertarUsuario(usuario,contraseña,Roles);
+        }
+        public void InsertarDetalles(string usuario,string Nombre, string Apellido, DateTime Nacimento, long Telefono)
+        {
+            usuariot.InsertarDetalles(usuario,Nombre,Apellido,Nacimento,Telefono);
         }
         public Object LeerUsuario()
         {

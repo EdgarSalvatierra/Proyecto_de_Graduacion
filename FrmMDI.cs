@@ -34,7 +34,6 @@ namespace Proyecto_de_Graduacion
         {
             this.WindowState = FormWindowState.Maximized;
 
-            
             foreach (Control control in PnlDesplegable.Controls)
             {
                 if (control is IconButton item)
@@ -123,6 +122,21 @@ namespace Proyecto_de_Graduacion
         {
             this.WindowState = FormWindowState.Minimized;
         }
+        private void AjustarBotonesAlMaximizar()
+        {
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                LblFecha.Font = new Font(LblFecha.Font.FontFamily, 15f);
+                lblHora.Font = new Font(lblHora.Font.FontFamily, 15f);
+
+                    foreach (Button menubut in PnlDesplegable.Controls.OfType<Button>())
+                    {
+                        menubut.Size = new Size(302,60);
+                        menubut.Font = new Font(menubut.Font.FontFamily, 13f); // Establece el tamaño de la fuente deseado
+                        menubut.Padding = new Padding(0);
+                    }
+            }
+        }
         private void DespleMenu()
         {
             try
@@ -138,13 +152,7 @@ namespace Proyecto_de_Graduacion
                         menubut.Text = "";
                         menubut.ImageAlign = ContentAlignment.MiddleCenter;
                         menubut.Padding = new Padding(0);
-                    }
-                    foreach (Label item in LblFecha.Controls.OfType<Label>())
-                    {
-
-                        item.ImageAlign = ContentAlignment.MiddleLeft;
-                        item.Padding = new Padding(0);
-                    }
+                    }                 
                 }
                 else 
                 {
@@ -272,6 +280,15 @@ namespace Proyecto_de_Graduacion
             LblMenu.Text = "Modulo de Resultados";
 
             DespleMenu();
+        }
+
+        private void PnlDesplegable_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private void FrmMDI_Resize(object sender, EventArgs e)
+        {
+            AjustarBotonesAlMaximizar();
         }
         private void BtnCitas_Click(object sender, EventArgs e)
         {

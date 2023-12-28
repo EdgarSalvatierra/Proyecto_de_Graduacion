@@ -20,26 +20,37 @@ namespace Capa_Datos.Data.Usuario
 
         SqlDataReader reader;
 
-        public void InsertarUsuario(string usuario, string contraseña, string Nombre, string Apellido, long telefono, string Nacimento, string Roles)
+        public void InsertarUsuario(string usuario, string contraseña, string Roles)
         {
-           
             command = new SqlCommand("sp_usuario_insert", conexion.abrirconexion());
 
-            command.CommandType = CommandType.StoredProcedure;           ;
-
-            command.Parameters.Add(new SqlParameter("@Nombre", Nombre));
-
-            command.Parameters.Add(new SqlParameter("@Apellido", Apellido));
-
-            command.Parameters.Add(new SqlParameter("@Telefono", telefono));
-
-            command.Parameters.Add(new SqlParameter("@Fecha_de_Nacimiento", Nacimento));
+            command.CommandType = CommandType.StoredProcedure; 
 
             command.Parameters.Add(new SqlParameter("@Usuario", usuario));
 
             command.Parameters.Add(new SqlParameter("@Password", contraseña));
 
             command.Parameters.Add(new SqlParameter("@Nom_Roles", Roles));
+
+            command.ExecuteNonQuery();
+
+            conexion.cerrarconexion();
+        }
+        public void InsertarDetalles(string usuario, string Nombre, string Apellido, DateTime Nacimento, long Telefono)
+        {
+            command = new SqlCommand("Sp_Detalles_Insert", conexion.abrirconexion());
+
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.Add(new SqlParameter("@Nombre", Nombre));
+
+            command.Parameters.Add(new SqlParameter("@Apellido", Apellido));
+
+            command.Parameters.Add(new SqlParameter("@Fecha_de_Nacimiento", Nacimento));
+
+            command.Parameters.Add(new SqlParameter("@Usuario", usuario));
+
+            command.Parameters.Add(new SqlParameter("@Telefono", Telefono));
 
             command.ExecuteNonQuery();
 

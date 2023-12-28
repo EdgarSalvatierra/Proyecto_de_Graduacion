@@ -46,7 +46,7 @@
             this.CmBRoles = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.BtnGuardar = new FontAwesome.Sharp.IconButton();
-            this.TxtFechaNacimiento = new System.Windows.Forms.TextBox();
+            this.DtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PcBox)).BeginInit();
             this.gbdatosdelusuario.SuspendLayout();
@@ -55,7 +55,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.TxtFechaNacimiento);
+            this.panel2.Controls.Add(this.DtpFechaNacimiento);
             this.panel2.Controls.Add(this.LblFecha);
             this.panel2.Controls.Add(this.PcBox);
             this.panel2.Location = new System.Drawing.Point(447, 36);
@@ -261,14 +261,12 @@
             this.BtnGuardar.UseVisualStyleBackColor = false;
             this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
-            // TxtFechaNacimiento
+            // DtpFechaNacimiento
             // 
-            this.TxtFechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtFechaNacimiento.Location = new System.Drawing.Point(34, 212);
-            this.TxtFechaNacimiento.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.TxtFechaNacimiento.Name = "TxtFechaNacimiento";
-            this.TxtFechaNacimiento.Size = new System.Drawing.Size(211, 27);
-            this.TxtFechaNacimiento.TabIndex = 45;
+            this.DtpFechaNacimiento.Location = new System.Drawing.Point(33, 213);
+            this.DtpFechaNacimiento.Name = "DtpFechaNacimiento";
+            this.DtpFechaNacimiento.Size = new System.Drawing.Size(200, 22);
+            this.DtpFechaNacimiento.TabIndex = 45;
             // 
             // FrmNuevoUsuario
             // 
@@ -314,6 +312,6 @@
         private System.Windows.Forms.PictureBox PcBox;
         private FontAwesome.Sharp.IconButton BtnGuardar;
         private System.Windows.Forms.Label LblFecha;
-        private System.Windows.Forms.TextBox TxtFechaNacimiento;
+        private System.Windows.Forms.DateTimePicker DtpFechaNacimiento;
     }
 }

@@ -30,10 +30,23 @@ namespace Capa_Datos.Data.Citas
         }
         public void Insertar(string nombre, DateTime Nacimiento, long telefono, string motivo, DateTime fecha, DateTime hora)
         {
-            string query = $@"insert into tbl_Reservacion_Citas(nombre_completo,Fecha_de_Nacimiento,telefono,motivo,fecha_realizacion,hora_de_realizacion,Estado)
-                            values('{nombre}',Convert(date,'{Nacimiento}'),'{telefono}','{motivo}',Convert(date,'{fecha}'),'{hora.TimeOfDay}',1)";
+            command = new SqlCommand("Sp_Reservacion_Insert", conexion.abrirconexion());
 
-            command = new SqlCommand(query, conexion.abrirconexion());
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.Add(new SqlParameter("@nombre_completo",nombre));
+
+            command.Parameters.Add(new SqlParameter("@Fecha_de_Nacimiento", Nacimiento));
+
+            command.Parameters.Add(new SqlParameter("@telefono", telefono));
+
+            command.Parameters.Add(new SqlParameter("@motivo", motivo));
+
+            command.Parameters.Add(new SqlParameter("@fecha_realizacion", fecha));
+
+            command.Parameters.Add(new SqlParameter("@hora_realizacion", hora.TimeOfDay));
+
+            command.Parameters.Add(new SqlParameter("@motivo", motivo));
 
             command.ExecuteNonQuery();
 

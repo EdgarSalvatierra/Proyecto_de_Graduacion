@@ -44,7 +44,7 @@ namespace Proyecto_de_Graduacion
 
                     string Apellido = txtApellido.Text;
 
-                    string fechanacimiento = TxtFechaNacimiento.Text;
+                    DateTime fechanacimiento = Convert.ToDateTime(DtpFechaNacimiento.Text);
 
                     long telefono = Convert.ToInt64(txttelefono.Text);
 
@@ -54,7 +54,9 @@ namespace Proyecto_de_Graduacion
 
                     string Roles = CmBRoles.Text;
 
-                    usuario_Model.InsertarUsuario(Usuario, contraseña, Nombre, Apellido, telefono, fechanacimiento, Roles);
+                    usuario_Model.InsertarUsuario(Usuario,contraseña,Roles);
+
+                    usuario_Model.InsertarDetalles(Usuario,Nombre,Apellido,fechanacimiento,telefono);
 
                     MessageBox.Show("Guardado  Correctamente", "SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }

@@ -199,13 +199,15 @@
             this.PnlDesplegable.Name = "PnlDesplegable";
             this.PnlDesplegable.Size = new System.Drawing.Size(304, 713);
             this.PnlDesplegable.TabIndex = 2;
+            this.PnlDesplegable.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlDesplegable_Paint);
             // 
             // IcnCerrarSesion
             // 
-            this.IcnCerrarSesion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.IcnCerrarSesion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.IcnCerrarSesion.FlatAppearance.BorderSize = 0;
             this.IcnCerrarSesion.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.IcnCerrarSesion.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.IcnCerrarSesion.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
             this.IcnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.IcnCerrarSesion.Font = new System.Drawing.Font("Corbel", 10.8F);
             this.IcnCerrarSesion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
@@ -214,11 +216,11 @@
             this.IcnCerrarSesion.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.IcnCerrarSesion.IconSize = 30;
             this.IcnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.IcnCerrarSesion.Location = new System.Drawing.Point(0, 540);
+            this.IcnCerrarSesion.Location = new System.Drawing.Point(3, 546);
             this.IcnCerrarSesion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.IcnCerrarSesion.Name = "IcnCerrarSesion";
             this.IcnCerrarSesion.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.IcnCerrarSesion.Size = new System.Drawing.Size(302, 56);
+            this.IcnCerrarSesion.Size = new System.Drawing.Size(302, 50);
             this.IcnCerrarSesion.TabIndex = 29;
             this.IcnCerrarSesion.Tag = "CerrarSesion";
             this.IcnCerrarSesion.Text = "CerrarSesion";
@@ -228,9 +230,7 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.Location = new System.Drawing.Point(2, 601);
             this.panel1.Name = "panel1";
@@ -239,8 +239,7 @@
             // 
             // lblHora
             // 
-            this.lblHora.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblHora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblHora.AutoSize = true;
             this.lblHora.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblHora.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -254,12 +253,12 @@
             // 
             // LblFecha
             // 
-            this.LblFecha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.LblFecha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.LblFecha.AutoSize = true;
             this.LblFecha.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblFecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
-            this.LblFecha.Location = new System.Drawing.Point(18, 632);
+            this.LblFecha.Location = new System.Drawing.Point(18, 625);
             this.LblFecha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblFecha.Name = "LblFecha";
             this.LblFecha.Size = new System.Drawing.Size(55, 22);
@@ -268,10 +267,11 @@
             // 
             // BtnConf
             // 
-            this.BtnConf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnConf.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnConf.FlatAppearance.BorderSize = 0;
             this.BtnConf.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.BtnConf.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.BtnConf.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
             this.BtnConf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnConf.Font = new System.Drawing.Font("Corbel", 10.8F);
             this.BtnConf.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
@@ -284,7 +284,7 @@
             this.BtnConf.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnConf.Name = "BtnConf";
             this.BtnConf.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BtnConf.Size = new System.Drawing.Size(302, 56);
+            this.BtnConf.Size = new System.Drawing.Size(302, 50);
             this.BtnConf.TabIndex = 25;
             this.BtnConf.Tag = "Configuracion";
             this.BtnConf.Text = "Configuracion";
@@ -294,10 +294,11 @@
             // 
             // BtnCitas
             // 
-            this.BtnCitas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnCitas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnCitas.FlatAppearance.BorderSize = 0;
             this.BtnCitas.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.BtnCitas.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.BtnCitas.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
             this.BtnCitas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCitas.Font = new System.Drawing.Font("Corbel", 10.8F);
             this.BtnCitas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
@@ -306,11 +307,11 @@
             this.BtnCitas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnCitas.IconSize = 30;
             this.BtnCitas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnCitas.Location = new System.Drawing.Point(0, 433);
+            this.BtnCitas.Location = new System.Drawing.Point(0, 437);
             this.BtnCitas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnCitas.Name = "BtnCitas";
             this.BtnCitas.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BtnCitas.Size = new System.Drawing.Size(302, 51);
+            this.BtnCitas.Size = new System.Drawing.Size(302, 49);
             this.BtnCitas.TabIndex = 24;
             this.BtnCitas.Tag = "Citas";
             this.BtnCitas.Text = "Citas";
@@ -321,10 +322,11 @@
             // 
             // BtnAd_Usuario
             // 
-            this.BtnAd_Usuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnAd_Usuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnAd_Usuario.FlatAppearance.BorderSize = 0;
             this.BtnAd_Usuario.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.BtnAd_Usuario.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.BtnAd_Usuario.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
             this.BtnAd_Usuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAd_Usuario.Font = new System.Drawing.Font("Corbel", 10.8F);
             this.BtnAd_Usuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
@@ -337,7 +339,7 @@
             this.BtnAd_Usuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnAd_Usuario.Name = "BtnAd_Usuario";
             this.BtnAd_Usuario.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BtnAd_Usuario.Size = new System.Drawing.Size(302, 51);
+            this.BtnAd_Usuario.Size = new System.Drawing.Size(302, 50);
             this.BtnAd_Usuario.TabIndex = 23;
             this.BtnAd_Usuario.Tag = "Administracion de Usuario";
             this.BtnAd_Usuario.Text = "Administracion de Usuarios";
@@ -348,7 +350,8 @@
             // 
             // BtnGesti_Exa
             // 
-            this.BtnGesti_Exa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnGesti_Exa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnGesti_Exa.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BtnGesti_Exa.FlatAppearance.BorderSize = 0;
             this.BtnGesti_Exa.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
@@ -365,7 +368,7 @@
             this.BtnGesti_Exa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnGesti_Exa.Name = "BtnGesti_Exa";
             this.BtnGesti_Exa.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BtnGesti_Exa.Size = new System.Drawing.Size(302, 51);
+            this.BtnGesti_Exa.Size = new System.Drawing.Size(302, 50);
             this.BtnGesti_Exa.TabIndex = 22;
             this.BtnGesti_Exa.Tag = "Gestion de Examenes";
             this.BtnGesti_Exa.Text = "Gestion de Examenes";
@@ -376,10 +379,11 @@
             // 
             // BtnRes_Ex
             // 
-            this.BtnRes_Ex.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnRes_Ex.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnRes_Ex.FlatAppearance.BorderSize = 0;
             this.BtnRes_Ex.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.BtnRes_Ex.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.BtnRes_Ex.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
             this.BtnRes_Ex.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnRes_Ex.Font = new System.Drawing.Font("Corbel", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnRes_Ex.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
@@ -392,7 +396,7 @@
             this.BtnRes_Ex.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnRes_Ex.Name = "BtnRes_Ex";
             this.BtnRes_Ex.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BtnRes_Ex.Size = new System.Drawing.Size(302, 51);
+            this.BtnRes_Ex.Size = new System.Drawing.Size(302, 50);
             this.BtnRes_Ex.TabIndex = 21;
             this.BtnRes_Ex.Tag = "Resultados ";
             this.BtnRes_Ex.Text = "Resultados";
@@ -403,10 +407,11 @@
             // 
             // BtnCompras
             // 
-            this.BtnCompras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnCompras.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnCompras.FlatAppearance.BorderSize = 0;
             this.BtnCompras.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.BtnCompras.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.BtnCompras.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
             this.BtnCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCompras.Font = new System.Drawing.Font("Corbel", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCompras.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
@@ -419,7 +424,7 @@
             this.BtnCompras.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnCompras.Name = "BtnCompras";
             this.BtnCompras.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BtnCompras.Size = new System.Drawing.Size(302, 51);
+            this.BtnCompras.Size = new System.Drawing.Size(302, 50);
             this.BtnCompras.TabIndex = 20;
             this.BtnCompras.Tag = "Compras";
             this.BtnCompras.Text = "Compras";
@@ -430,7 +435,8 @@
             // 
             // BtnReg_pas
             // 
-            this.BtnReg_pas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnReg_pas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnReg_pas.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BtnReg_pas.FlatAppearance.BorderSize = 0;
             this.BtnReg_pas.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
@@ -447,7 +453,7 @@
             this.BtnReg_pas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnReg_pas.Name = "BtnReg_pas";
             this.BtnReg_pas.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BtnReg_pas.Size = new System.Drawing.Size(302, 51);
+            this.BtnReg_pas.Size = new System.Drawing.Size(302, 50);
             this.BtnReg_pas.TabIndex = 19;
             this.BtnReg_pas.Tag = "Registro del Paciente";
             this.BtnReg_pas.Text = "Registro de paciente";
@@ -458,10 +464,11 @@
             // 
             // BtnFac_m
             // 
-            this.BtnFac_m.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnFac_m.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnFac_m.FlatAppearance.BorderSize = 0;
-            this.BtnFac_m.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.BtnFac_m.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.BtnFac_m.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Highlight;
+            this.BtnFac_m.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
             this.BtnFac_m.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnFac_m.Font = new System.Drawing.Font("Corbel", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnFac_m.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
@@ -474,7 +481,7 @@
             this.BtnFac_m.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnFac_m.Name = "BtnFac_m";
             this.BtnFac_m.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BtnFac_m.Size = new System.Drawing.Size(302, 51);
+            this.BtnFac_m.Size = new System.Drawing.Size(302, 50);
             this.BtnFac_m.TabIndex = 18;
             this.BtnFac_m.Tag = "Facturacion";
             this.BtnFac_m.Text = "Facturacion";
@@ -484,10 +491,11 @@
             // 
             // BtnHome
             // 
-            this.BtnHome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnHome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnHome.FlatAppearance.BorderSize = 0;
             this.BtnHome.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.BtnHome.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.BtnHome.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
             this.BtnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnHome.Font = new System.Drawing.Font("Corbel", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnHome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
@@ -500,7 +508,7 @@
             this.BtnHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnHome.Name = "BtnHome";
             this.BtnHome.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BtnHome.Size = new System.Drawing.Size(302, 51);
+            this.BtnHome.Size = new System.Drawing.Size(302, 50);
             this.BtnHome.TabIndex = 17;
             this.BtnHome.Tag = "Home";
             this.BtnHome.Text = "Home";
@@ -567,6 +575,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmMDI";
             this.Load += new System.EventHandler(this.FrmMDI_Load);
+            this.Resize += new System.EventHandler(this.FrmMDI_Resize);
             this.PnlCerrarMaximizar.ResumeLayout(false);
             this.PnlCerrarMaximizar.PerformLayout();
             this.PnlSistema.ResumeLayout(false);
