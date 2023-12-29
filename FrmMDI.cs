@@ -32,8 +32,6 @@ namespace Proyecto_de_Graduacion
         }
         private void FrmMDI_Load(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
-
             foreach (Control control in PnlDesplegable.Controls)
             {
                 if (control is IconButton item)

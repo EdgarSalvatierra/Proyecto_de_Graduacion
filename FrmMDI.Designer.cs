@@ -56,12 +56,17 @@
             this.LblLaboratorio = new System.Windows.Forms.Label();
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.Tmr = new System.Windows.Forms.Timer(this.components);
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.PnlCerrarMaximizar.SuspendLayout();
             this.PnlSistema.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ICNMenu)).BeginInit();
             this.PnlDesplegable.SuspendLayout();
             this.PnlLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PcLaboratorio)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // PnlCerrarMaximizar
@@ -179,8 +184,10 @@
             // 
             this.PnlDesplegable.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.PnlDesplegable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PnlDesplegable.Controls.Add(this.panel2);
+            this.PnlDesplegable.Controls.Add(this.iconPictureBox2);
+            this.PnlDesplegable.Controls.Add(this.iconPictureBox1);
             this.PnlDesplegable.Controls.Add(this.IcnCerrarSesion);
-            this.PnlDesplegable.Controls.Add(this.panel1);
             this.PnlDesplegable.Controls.Add(this.lblHora);
             this.PnlDesplegable.Controls.Add(this.LblFecha);
             this.PnlDesplegable.Controls.Add(this.BtnConf);
@@ -203,20 +210,19 @@
             // 
             // IcnCerrarSesion
             // 
-            this.IcnCerrarSesion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.IcnCerrarSesion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.IcnCerrarSesion.FlatAppearance.BorderSize = 0;
             this.IcnCerrarSesion.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
             this.IcnCerrarSesion.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
             this.IcnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.IcnCerrarSesion.Font = new System.Drawing.Font("Corbel", 10.8F);
+            this.IcnCerrarSesion.Font = new System.Drawing.Font("Corbel", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IcnCerrarSesion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
             this.IcnCerrarSesion.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
             this.IcnCerrarSesion.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
             this.IcnCerrarSesion.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.IcnCerrarSesion.IconSize = 30;
             this.IcnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.IcnCerrarSesion.Location = new System.Drawing.Point(3, 546);
+            this.IcnCerrarSesion.Location = new System.Drawing.Point(3, 540);
             this.IcnCerrarSesion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.IcnCerrarSesion.Name = "IcnCerrarSesion";
             this.IcnCerrarSesion.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -232,7 +238,7 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(2, 601);
+            this.panel1.Location = new System.Drawing.Point(2, 67);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(300, 1);
             this.panel1.TabIndex = 28;
@@ -244,7 +250,7 @@
             this.lblHora.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblHora.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
-            this.lblHora.Location = new System.Drawing.Point(21, 669);
+            this.lblHora.Location = new System.Drawing.Point(113, 668);
             this.lblHora.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHora.Name = "lblHora";
             this.lblHora.Size = new System.Drawing.Size(44, 22);
@@ -256,24 +262,23 @@
             this.LblFecha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LblFecha.AutoSize = true;
-            this.LblFecha.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblFecha.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblFecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
-            this.LblFecha.Location = new System.Drawing.Point(18, 625);
+            this.LblFecha.Location = new System.Drawing.Point(113, 624);
             this.LblFecha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblFecha.Name = "LblFecha";
-            this.LblFecha.Size = new System.Drawing.Size(55, 22);
+            this.LblFecha.Size = new System.Drawing.Size(57, 23);
             this.LblFecha.TabIndex = 27;
             this.LblFecha.Text = "d/m/a";
             // 
             // BtnConf
             // 
-            this.BtnConf.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnConf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnConf.FlatAppearance.BorderSize = 0;
             this.BtnConf.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
             this.BtnConf.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
             this.BtnConf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnConf.Font = new System.Drawing.Font("Corbel", 10.8F);
+            this.BtnConf.Font = new System.Drawing.Font("Corbel", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnConf.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
             this.BtnConf.IconChar = FontAwesome.Sharp.IconChar.Gear;
             this.BtnConf.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
@@ -294,13 +299,12 @@
             // 
             // BtnCitas
             // 
-            this.BtnCitas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnCitas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnCitas.FlatAppearance.BorderSize = 0;
             this.BtnCitas.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
             this.BtnCitas.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
             this.BtnCitas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCitas.Font = new System.Drawing.Font("Corbel", 10.8F);
+            this.BtnCitas.Font = new System.Drawing.Font("Corbel", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCitas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
             this.BtnCitas.IconChar = FontAwesome.Sharp.IconChar.CalendarCheck;
             this.BtnCitas.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
@@ -328,7 +332,7 @@
             this.BtnAd_Usuario.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
             this.BtnAd_Usuario.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
             this.BtnAd_Usuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAd_Usuario.Font = new System.Drawing.Font("Corbel", 10.8F);
+            this.BtnAd_Usuario.Font = new System.Drawing.Font("Corbel", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAd_Usuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
             this.BtnAd_Usuario.IconChar = FontAwesome.Sharp.IconChar.ClipboardUser;
             this.BtnAd_Usuario.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
@@ -357,7 +361,7 @@
             this.BtnGesti_Exa.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
             this.BtnGesti_Exa.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
             this.BtnGesti_Exa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnGesti_Exa.Font = new System.Drawing.Font("Corbel", 10.8F);
+            this.BtnGesti_Exa.Font = new System.Drawing.Font("Corbel", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnGesti_Exa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
             this.BtnGesti_Exa.IconChar = FontAwesome.Sharp.IconChar.LinesLeaning;
             this.BtnGesti_Exa.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
@@ -385,7 +389,7 @@
             this.BtnRes_Ex.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
             this.BtnRes_Ex.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
             this.BtnRes_Ex.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnRes_Ex.Font = new System.Drawing.Font("Corbel", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRes_Ex.Font = new System.Drawing.Font("Corbel", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnRes_Ex.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
             this.BtnRes_Ex.IconChar = FontAwesome.Sharp.IconChar.FileSignature;
             this.BtnRes_Ex.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
@@ -413,7 +417,7 @@
             this.BtnCompras.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
             this.BtnCompras.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
             this.BtnCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCompras.Font = new System.Drawing.Font("Corbel", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCompras.Font = new System.Drawing.Font("Corbel", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCompras.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
             this.BtnCompras.IconChar = FontAwesome.Sharp.IconChar.BoxesAlt;
             this.BtnCompras.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
@@ -442,7 +446,7 @@
             this.BtnReg_pas.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
             this.BtnReg_pas.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
             this.BtnReg_pas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnReg_pas.Font = new System.Drawing.Font("Corbel", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnReg_pas.Font = new System.Drawing.Font("Corbel", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnReg_pas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
             this.BtnReg_pas.IconChar = FontAwesome.Sharp.IconChar.Portrait;
             this.BtnReg_pas.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
@@ -464,13 +468,12 @@
             // 
             // BtnFac_m
             // 
-            this.BtnFac_m.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnFac_m.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnFac_m.FlatAppearance.BorderSize = 0;
             this.BtnFac_m.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Highlight;
             this.BtnFac_m.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Highlight;
             this.BtnFac_m.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnFac_m.Font = new System.Drawing.Font("Corbel", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnFac_m.Font = new System.Drawing.Font("Corbel", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnFac_m.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
             this.BtnFac_m.IconChar = FontAwesome.Sharp.IconChar.FileInvoice;
             this.BtnFac_m.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
@@ -491,13 +494,12 @@
             // 
             // BtnHome
             // 
-            this.BtnHome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnHome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnHome.FlatAppearance.BorderSize = 0;
             this.BtnHome.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
             this.BtnHome.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
             this.BtnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnHome.Font = new System.Drawing.Font("Corbel", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnHome.Font = new System.Drawing.Font("Corbel", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnHome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
             this.BtnHome.IconChar = FontAwesome.Sharp.IconChar.HomeLg;
             this.BtnHome.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
@@ -521,16 +523,17 @@
             this.PnlLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PnlLogo.Controls.Add(this.PcLaboratorio);
             this.PnlLogo.Controls.Add(this.LblLaboratorio);
+            this.PnlLogo.Controls.Add(this.panel1);
             this.PnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.PnlLogo.Location = new System.Drawing.Point(0, 0);
             this.PnlLogo.Name = "PnlLogo";
-            this.PnlLogo.Size = new System.Drawing.Size(302, 76);
+            this.PnlLogo.Size = new System.Drawing.Size(302, 71);
             this.PnlLogo.TabIndex = 6;
             // 
             // PcLaboratorio
             // 
             this.PcLaboratorio.Image = global::Proyecto_de_Graduacion.Properties.Resources.Laboratorio;
-            this.PcLaboratorio.Location = new System.Drawing.Point(10, 13);
+            this.PcLaboratorio.Location = new System.Drawing.Point(10, 4);
             this.PcLaboratorio.Name = "PcLaboratorio";
             this.PcLaboratorio.Size = new System.Drawing.Size(65, 57);
             this.PcLaboratorio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -543,7 +546,7 @@
             this.LblLaboratorio.AutoSize = true;
             this.LblLaboratorio.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblLaboratorio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
-            this.LblLaboratorio.Location = new System.Drawing.Point(92, 24);
+            this.LblLaboratorio.Location = new System.Drawing.Point(92, 21);
             this.LblLaboratorio.Name = "LblLaboratorio";
             this.LblLaboratorio.Size = new System.Drawing.Size(204, 24);
             this.LblLaboratorio.TabIndex = 7;
@@ -551,6 +554,7 @@
             // 
             // panelDesktop
             // 
+            this.panelDesktop.AutoScroll = true;
             this.panelDesktop.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(304, 102);
@@ -561,6 +565,43 @@
             // Tmr
             // 
             this.Tmr.Tick += new System.EventHandler(this.Tmr_Tick);
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.iconPictureBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.iconPictureBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(60)))), ((int)(((byte)(165)))));
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.CalendarDay;
+            this.iconPictureBox1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(60)))), ((int)(((byte)(165)))));
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.Location = new System.Drawing.Point(11, 615);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(32, 32);
+            this.iconPictureBox1.TabIndex = 30;
+            this.iconPictureBox1.TabStop = false;
+            // 
+            // iconPictureBox2
+            // 
+            this.iconPictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.iconPictureBox2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.iconPictureBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(60)))), ((int)(((byte)(165)))));
+            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
+            this.iconPictureBox2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(60)))), ((int)(((byte)(165)))));
+            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox2.Location = new System.Drawing.Point(11, 668);
+            this.iconPictureBox2.Name = "iconPictureBox2";
+            this.iconPictureBox2.Size = new System.Drawing.Size(32, 32);
+            this.iconPictureBox2.TabIndex = 31;
+            this.iconPictureBox2.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel2.Location = new System.Drawing.Point(3, 595);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(300, 1);
+            this.panel2.TabIndex = 29;
             // 
             // FrmMDI
             // 
@@ -586,6 +627,8 @@
             this.PnlLogo.ResumeLayout(false);
             this.PnlLogo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PcLaboratorio)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -619,5 +662,8 @@
         private System.Windows.Forms.Label LblFecha;
         private System.Windows.Forms.Panel panel1;
         private FontAwesome.Sharp.IconButton IcnCerrarSesion;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
+        private System.Windows.Forms.Panel panel2;
     }
 }
