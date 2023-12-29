@@ -78,10 +78,5 @@ namespace Proyecto_de_Graduacion
 
             servicio.Show();
         }
-
-        private void DtgFactura_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

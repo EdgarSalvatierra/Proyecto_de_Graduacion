@@ -36,34 +36,33 @@
             this.PnlBudc = new System.Windows.Forms.Panel();
             this.PbLogomodu = new FontAwesome.Sharp.IconPictureBox();
             this.BtnRefrescar = new FontAwesome.Sharp.IconButton();
-            this.BtnNuevoPaciente = new FontAwesome.Sharp.IconButton();
             this.ICNBuscador = new FontAwesome.Sharp.IconButton();
             this.PnlBuscare = new System.Windows.Forms.Panel();
             this.TxtBuscarPaciente = new System.Windows.Forms.TextBox();
             this.PnlGrid = new System.Windows.Forms.Panel();
             this.DtgPaciente = new System.Windows.Forms.DataGridView();
-            this.pnlopcioens = new System.Windows.Forms.Panel();
+            this.GbOpciones = new System.Windows.Forms.GroupBox();
             this.Btndardebaja = new FontAwesome.Sharp.IconButton();
             this.BtnEditar = new FontAwesome.Sharp.IconButton();
+            this.BtnNuevoPaciente = new FontAwesome.Sharp.IconButton();
             this.PnlBudc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbLogomodu)).BeginInit();
             this.PnlBuscare.SuspendLayout();
             this.PnlGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DtgPaciente)).BeginInit();
-            this.pnlopcioens.SuspendLayout();
+            this.GbOpciones.SuspendLayout();
             this.SuspendLayout();
             // 
             // PnlBudc
             // 
             this.PnlBudc.Controls.Add(this.PbLogomodu);
             this.PnlBudc.Controls.Add(this.BtnRefrescar);
-            this.PnlBudc.Controls.Add(this.BtnNuevoPaciente);
             this.PnlBudc.Controls.Add(this.ICNBuscador);
             this.PnlBudc.Controls.Add(this.PnlBuscare);
             this.PnlBudc.Dock = System.Windows.Forms.DockStyle.Top;
             this.PnlBudc.Location = new System.Drawing.Point(0, 0);
             this.PnlBudc.Name = "PnlBudc";
-            this.PnlBudc.Size = new System.Drawing.Size(924, 78);
+            this.PnlBudc.Size = new System.Drawing.Size(1097, 78);
             this.PnlBudc.TabIndex = 3;
             // 
             // PbLogomodu
@@ -76,7 +75,7 @@
             this.PbLogomodu.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
             this.PbLogomodu.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.PbLogomodu.IconSize = 49;
-            this.PbLogomodu.Location = new System.Drawing.Point(863, 12);
+            this.PbLogomodu.Location = new System.Drawing.Point(1036, 12);
             this.PbLogomodu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PbLogomodu.Name = "PbLogomodu";
             this.PbLogomodu.Size = new System.Drawing.Size(49, 50);
@@ -99,28 +98,6 @@
             this.BtnRefrescar.TabIndex = 76;
             this.BtnRefrescar.UseVisualStyleBackColor = false;
             this.BtnRefrescar.Click += new System.EventHandler(this.BtnRefrescar_Click);
-            // 
-            // BtnNuevoPaciente
-            // 
-            this.BtnNuevoPaciente.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.BtnNuevoPaciente.BackColor = System.Drawing.Color.White;
-            this.BtnNuevoPaciente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.BtnNuevoPaciente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnNuevoPaciente.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnNuevoPaciente.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.BtnNuevoPaciente.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
-            this.BtnNuevoPaciente.IconColor = System.Drawing.SystemColors.Highlight;
-            this.BtnNuevoPaciente.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.BtnNuevoPaciente.IconSize = 20;
-            this.BtnNuevoPaciente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnNuevoPaciente.Location = new System.Drawing.Point(490, 25);
-            this.BtnNuevoPaciente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.BtnNuevoPaciente.Name = "BtnNuevoPaciente";
-            this.BtnNuevoPaciente.Size = new System.Drawing.Size(209, 37);
-            this.BtnNuevoPaciente.TabIndex = 50;
-            this.BtnNuevoPaciente.Text = "Nuevo Paciente";
-            this.BtnNuevoPaciente.UseVisualStyleBackColor = false;
-            this.BtnNuevoPaciente.Click += new System.EventHandler(this.BtnNuevoPaciente_Click);
             // 
             // ICNBuscador
             // 
@@ -164,12 +141,14 @@
             // 
             // PnlGrid
             // 
+            this.PnlGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.PnlGrid.Controls.Add(this.DtgPaciente);
-            this.PnlGrid.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PnlGrid.Location = new System.Drawing.Point(0, 78);
+            this.PnlGrid.Location = new System.Drawing.Point(12, 85);
             this.PnlGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PnlGrid.Name = "PnlGrid";
-            this.PnlGrid.Size = new System.Drawing.Size(924, 503);
+            this.PnlGrid.Size = new System.Drawing.Size(1073, 518);
             this.PnlGrid.TabIndex = 79;
             // 
             // DtgPaciente
@@ -185,7 +164,6 @@
             this.DtgPaciente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DtgPaciente.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DtgPaciente.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.DtgPaciente.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DtgPaciente.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.DtgPaciente.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -208,7 +186,7 @@
             this.DtgPaciente.DefaultCellStyle = dataGridViewCellStyle8;
             this.DtgPaciente.EnableHeadersVisualStyles = false;
             this.DtgPaciente.GridColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.DtgPaciente.Location = new System.Drawing.Point(12, 27);
+            this.DtgPaciente.Location = new System.Drawing.Point(18, 14);
             this.DtgPaciente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DtgPaciente.Name = "DtgPaciente";
             this.DtgPaciente.ReadOnly = true;
@@ -230,19 +208,23 @@
             this.DtgPaciente.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.DtgPaciente.RowTemplate.Height = 24;
             this.DtgPaciente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DtgPaciente.Size = new System.Drawing.Size(900, 457);
-            this.DtgPaciente.TabIndex = 1;
+            this.DtgPaciente.Size = new System.Drawing.Size(1040, 479);
+            this.DtgPaciente.TabIndex = 2;
             // 
-            // pnlopcioens
+            // GbOpciones
             // 
-            this.pnlopcioens.Controls.Add(this.Btndardebaja);
-            this.pnlopcioens.Controls.Add(this.BtnEditar);
-            this.pnlopcioens.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlopcioens.Location = new System.Drawing.Point(0, 589);
-            this.pnlopcioens.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pnlopcioens.Name = "pnlopcioens";
-            this.pnlopcioens.Size = new System.Drawing.Size(924, 76);
-            this.pnlopcioens.TabIndex = 80;
+            this.GbOpciones.Controls.Add(this.Btndardebaja);
+            this.GbOpciones.Controls.Add(this.BtnEditar);
+            this.GbOpciones.Controls.Add(this.BtnNuevoPaciente);
+            this.GbOpciones.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.GbOpciones.Font = new System.Drawing.Font("Corbel", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GbOpciones.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.GbOpciones.Location = new System.Drawing.Point(0, 597);
+            this.GbOpciones.Name = "GbOpciones";
+            this.GbOpciones.Size = new System.Drawing.Size(1097, 100);
+            this.GbOpciones.TabIndex = 80;
+            this.GbOpciones.TabStop = false;
+            this.GbOpciones.Text = "Opciones";
             // 
             // Btndardebaja
             // 
@@ -250,18 +232,18 @@
             this.Btndardebaja.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.Btndardebaja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.Btndardebaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btndardebaja.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btndardebaja.Font = new System.Drawing.Font("Corbel", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btndardebaja.ForeColor = System.Drawing.SystemColors.Highlight;
             this.Btndardebaja.IconChar = FontAwesome.Sharp.IconChar.FileCircleMinus;
             this.Btndardebaja.IconColor = System.Drawing.SystemColors.Highlight;
             this.Btndardebaja.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.Btndardebaja.IconSize = 20;
             this.Btndardebaja.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btndardebaja.Location = new System.Drawing.Point(694, 24);
+            this.Btndardebaja.Location = new System.Drawing.Point(857, 32);
             this.Btndardebaja.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Btndardebaja.Name = "Btndardebaja";
-            this.Btndardebaja.Size = new System.Drawing.Size(191, 39);
-            this.Btndardebaja.TabIndex = 54;
+            this.Btndardebaja.Size = new System.Drawing.Size(216, 44);
+            this.Btndardebaja.TabIndex = 57;
             this.Btndardebaja.Text = "Dar de Baja";
             this.Btndardebaja.UseVisualStyleBackColor = false;
             // 
@@ -271,27 +253,49 @@
             this.BtnEditar.BackColor = System.Drawing.Color.WhiteSmoke;
             this.BtnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.BtnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEditar.Font = new System.Drawing.Font("Corbel", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnEditar.Font = new System.Drawing.Font("Corbel", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEditar.ForeColor = System.Drawing.SystemColors.Highlight;
             this.BtnEditar.IconChar = FontAwesome.Sharp.IconChar.FileEdit;
             this.BtnEditar.IconColor = System.Drawing.SystemColors.Highlight;
             this.BtnEditar.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.BtnEditar.IconSize = 20;
             this.BtnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnEditar.Location = new System.Drawing.Point(27, 24);
+            this.BtnEditar.Location = new System.Drawing.Point(30, 32);
             this.BtnEditar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BtnEditar.Name = "BtnEditar";
-            this.BtnEditar.Size = new System.Drawing.Size(215, 39);
-            this.BtnEditar.TabIndex = 51;
+            this.BtnEditar.Size = new System.Drawing.Size(215, 44);
+            this.BtnEditar.TabIndex = 56;
             this.BtnEditar.Text = "Editar Paciente";
             this.BtnEditar.UseVisualStyleBackColor = false;
+            // 
+            // BtnNuevoPaciente
+            // 
+            this.BtnNuevoPaciente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.BtnNuevoPaciente.BackColor = System.Drawing.Color.White;
+            this.BtnNuevoPaciente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.BtnNuevoPaciente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnNuevoPaciente.Font = new System.Drawing.Font("Corbel", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnNuevoPaciente.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.BtnNuevoPaciente.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
+            this.BtnNuevoPaciente.IconColor = System.Drawing.SystemColors.Highlight;
+            this.BtnNuevoPaciente.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.BtnNuevoPaciente.IconSize = 20;
+            this.BtnNuevoPaciente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnNuevoPaciente.Location = new System.Drawing.Point(452, 32);
+            this.BtnNuevoPaciente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BtnNuevoPaciente.Name = "BtnNuevoPaciente";
+            this.BtnNuevoPaciente.Size = new System.Drawing.Size(209, 44);
+            this.BtnNuevoPaciente.TabIndex = 55;
+            this.BtnNuevoPaciente.Text = "Nuevo Paciente";
+            this.BtnNuevoPaciente.UseVisualStyleBackColor = false;
             // 
             // FrmRegistrodePacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(924, 665);
-            this.Controls.Add(this.pnlopcioens);
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ClientSize = new System.Drawing.Size(1097, 697);
+            this.Controls.Add(this.GbOpciones);
             this.Controls.Add(this.PnlGrid);
             this.Controls.Add(this.PnlBudc);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -304,7 +308,7 @@
             this.PnlBuscare.PerformLayout();
             this.PnlGrid.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DtgPaciente)).EndInit();
-            this.pnlopcioens.ResumeLayout(false);
+            this.GbOpciones.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -314,14 +318,14 @@
         private System.Windows.Forms.Panel PnlBudc;
         private FontAwesome.Sharp.IconPictureBox PbLogomodu;
         private FontAwesome.Sharp.IconButton BtnRefrescar;
-        private FontAwesome.Sharp.IconButton BtnNuevoPaciente;
         private FontAwesome.Sharp.IconButton ICNBuscador;
         private System.Windows.Forms.Panel PnlBuscare;
         private System.Windows.Forms.TextBox TxtBuscarPaciente;
         private System.Windows.Forms.Panel PnlGrid;
         private System.Windows.Forms.DataGridView DtgPaciente;
-        private System.Windows.Forms.Panel pnlopcioens;
+        private System.Windows.Forms.GroupBox GbOpciones;
         private FontAwesome.Sharp.IconButton Btndardebaja;
         private FontAwesome.Sharp.IconButton BtnEditar;
+        private FontAwesome.Sharp.IconButton BtnNuevoPaciente;
     }
 }

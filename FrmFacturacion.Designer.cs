@@ -28,44 +28,190 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PnlBudc = new System.Windows.Forms.Panel();
-            this.ICNServicio = new FontAwesome.Sharp.IconButton();
-            this.BtnRefrescar = new FontAwesome.Sharp.IconButton();
-            this.ICNBuscador = new FontAwesome.Sharp.IconButton();
             this.PnlBuscare = new System.Windows.Forms.Panel();
             this.TxtBuscarFactura = new System.Windows.Forms.TextBox();
             this.PnlGrid = new System.Windows.Forms.Panel();
             this.DtgFactura = new System.Windows.Forms.DataGridView();
-            this.Pnlopciones = new System.Windows.Forms.Panel();
-            this.BtnImprimir = new FontAwesome.Sharp.IconButton();
-            this.BtnDardebaja = new FontAwesome.Sharp.IconButton();
             this.BtnEditar = new FontAwesome.Sharp.IconButton();
+            this.BtnDardebaja = new FontAwesome.Sharp.IconButton();
+            this.BtnImprimir = new FontAwesome.Sharp.IconButton();
+            this.ICNServicio = new FontAwesome.Sharp.IconButton();
+            this.BtnRefrescar = new FontAwesome.Sharp.IconButton();
+            this.ICNBuscador = new FontAwesome.Sharp.IconButton();
+            this.gbopciones = new System.Windows.Forms.GroupBox();
             this.PnlBudc.SuspendLayout();
             this.PnlBuscare.SuspendLayout();
             this.PnlGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DtgFactura)).BeginInit();
-            this.Pnlopciones.SuspendLayout();
+            this.gbopciones.SuspendLayout();
             this.SuspendLayout();
             // 
             // PnlBudc
             // 
-            this.PnlBudc.Controls.Add(this.ICNServicio);
             this.PnlBudc.Controls.Add(this.BtnRefrescar);
             this.PnlBudc.Controls.Add(this.ICNBuscador);
             this.PnlBudc.Controls.Add(this.PnlBuscare);
             this.PnlBudc.Dock = System.Windows.Forms.DockStyle.Top;
             this.PnlBudc.Location = new System.Drawing.Point(0, 0);
             this.PnlBudc.Name = "PnlBudc";
-            this.PnlBudc.Size = new System.Drawing.Size(924, 78);
+            this.PnlBudc.Size = new System.Drawing.Size(1298, 78);
             this.PnlBudc.TabIndex = 1;
+            // 
+            // PnlBuscare
+            // 
+            this.PnlBuscare.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.PnlBuscare.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PnlBuscare.Controls.Add(this.TxtBuscarFactura);
+            this.PnlBuscare.Location = new System.Drawing.Point(11, 25);
+            this.PnlBuscare.Name = "PnlBuscare";
+            this.PnlBuscare.Size = new System.Drawing.Size(371, 35);
+            this.PnlBuscare.TabIndex = 0;
+            // 
+            // TxtBuscarFactura
+            // 
+            this.TxtBuscarFactura.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.TxtBuscarFactura.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtBuscarFactura.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.TxtBuscarFactura.Location = new System.Drawing.Point(15, 10);
+            this.TxtBuscarFactura.Name = "TxtBuscarFactura";
+            this.TxtBuscarFactura.Size = new System.Drawing.Size(351, 15);
+            this.TxtBuscarFactura.TabIndex = 0;
+            this.TxtBuscarFactura.Text = "Buscar Factura";
+            // 
+            // PnlGrid
+            // 
+            this.PnlGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PnlGrid.Controls.Add(this.DtgFactura);
+            this.PnlGrid.Location = new System.Drawing.Point(0, 78);
+            this.PnlGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.PnlGrid.Name = "PnlGrid";
+            this.PnlGrid.Size = new System.Drawing.Size(1298, 485);
+            this.PnlGrid.TabIndex = 77;
+            // 
+            // DtgFactura
+            // 
+            this.DtgFactura.AllowUserToAddRows = false;
+            this.DtgFactura.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.DtgFactura.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.DtgFactura.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DtgFactura.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DtgFactura.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.DtgFactura.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DtgFactura.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.DtgFactura.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DtgFactura.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.DtgFactura.ColumnHeadersHeight = 40;
+            this.DtgFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DtgFactura.DefaultCellStyle = dataGridViewCellStyle3;
+            this.DtgFactura.EnableHeadersVisualStyles = false;
+            this.DtgFactura.GridColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DtgFactura.Location = new System.Drawing.Point(12, 27);
+            this.DtgFactura.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.DtgFactura.Name = "DtgFactura";
+            this.DtgFactura.ReadOnly = true;
+            this.DtgFactura.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.DtgFactura.RowHeadersWidth = 65;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.DtgFactura.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.DtgFactura.RowTemplate.Height = 24;
+            this.DtgFactura.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DtgFactura.Size = new System.Drawing.Size(1274, 454);
+            this.DtgFactura.TabIndex = 1;
+            // 
+            // BtnEditar
+            // 
+            this.BtnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.BtnEditar.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BtnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.BtnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnEditar.Font = new System.Drawing.Font("Rockwell", 10.2F);
+            this.BtnEditar.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.BtnEditar.IconChar = FontAwesome.Sharp.IconChar.FileEdit;
+            this.BtnEditar.IconColor = System.Drawing.SystemColors.Highlight;
+            this.BtnEditar.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.BtnEditar.IconSize = 20;
+            this.BtnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnEditar.Location = new System.Drawing.Point(409, 38);
+            this.BtnEditar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BtnEditar.Name = "BtnEditar";
+            this.BtnEditar.Size = new System.Drawing.Size(177, 48);
+            this.BtnEditar.TabIndex = 54;
+            this.BtnEditar.Text = "Editar Factura";
+            this.BtnEditar.UseVisualStyleBackColor = false;
+            // 
+            // BtnDardebaja
+            // 
+            this.BtnDardebaja.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.BtnDardebaja.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BtnDardebaja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.BtnDardebaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnDardebaja.Font = new System.Drawing.Font("Rockwell", 10.2F);
+            this.BtnDardebaja.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.BtnDardebaja.IconChar = FontAwesome.Sharp.IconChar.TurnDown;
+            this.BtnDardebaja.IconColor = System.Drawing.SystemColors.Highlight;
+            this.BtnDardebaja.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.BtnDardebaja.IconSize = 20;
+            this.BtnDardebaja.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnDardebaja.Location = new System.Drawing.Point(605, 38);
+            this.BtnDardebaja.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BtnDardebaja.Name = "BtnDardebaja";
+            this.BtnDardebaja.Size = new System.Drawing.Size(181, 48);
+            this.BtnDardebaja.TabIndex = 55;
+            this.BtnDardebaja.Text = "Dar de Baja";
+            this.BtnDardebaja.UseVisualStyleBackColor = false;
+            // 
+            // BtnImprimir
+            // 
+            this.BtnImprimir.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.BtnImprimir.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BtnImprimir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.BtnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnImprimir.Font = new System.Drawing.Font("Rockwell", 10.2F);
+            this.BtnImprimir.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.BtnImprimir.IconChar = FontAwesome.Sharp.IconChar.Dropbox;
+            this.BtnImprimir.IconColor = System.Drawing.SystemColors.Highlight;
+            this.BtnImprimir.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.BtnImprimir.IconSize = 20;
+            this.BtnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnImprimir.Location = new System.Drawing.Point(1080, 38);
+            this.BtnImprimir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BtnImprimir.Name = "BtnImprimir";
+            this.BtnImprimir.Size = new System.Drawing.Size(206, 48);
+            this.BtnImprimir.TabIndex = 56;
+            this.BtnImprimir.Text = "Impresion";
+            this.BtnImprimir.UseVisualStyleBackColor = false;
             // 
             // ICNServicio
             // 
-            this.ICNServicio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ICNServicio.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.ICNServicio.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ICNServicio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.ICNServicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -76,10 +222,10 @@
             this.ICNServicio.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.ICNServicio.IconSize = 20;
             this.ICNServicio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ICNServicio.Location = new System.Drawing.Point(732, 24);
+            this.ICNServicio.Location = new System.Drawing.Point(12, 42);
             this.ICNServicio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ICNServicio.Name = "ICNServicio";
-            this.ICNServicio.Size = new System.Drawing.Size(180, 37);
+            this.ICNServicio.Size = new System.Drawing.Size(211, 44);
             this.ICNServicio.TabIndex = 78;
             this.ICNServicio.Text = "Nuevo Servicio";
             this.ICNServicio.UseVisualStyleBackColor = false;
@@ -119,173 +265,29 @@
             this.ICNBuscador.UseVisualStyleBackColor = false;
             this.ICNBuscador.Click += new System.EventHandler(this.ICNBuscador_Click);
             // 
-            // PnlBuscare
+            // gbopciones
             // 
-            this.PnlBuscare.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.PnlBuscare.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PnlBuscare.Controls.Add(this.TxtBuscarFactura);
-            this.PnlBuscare.Location = new System.Drawing.Point(11, 25);
-            this.PnlBuscare.Name = "PnlBuscare";
-            this.PnlBuscare.Size = new System.Drawing.Size(371, 35);
-            this.PnlBuscare.TabIndex = 0;
-            // 
-            // TxtBuscarFactura
-            // 
-            this.TxtBuscarFactura.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.TxtBuscarFactura.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtBuscarFactura.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.TxtBuscarFactura.Location = new System.Drawing.Point(15, 10);
-            this.TxtBuscarFactura.Name = "TxtBuscarFactura";
-            this.TxtBuscarFactura.Size = new System.Drawing.Size(351, 15);
-            this.TxtBuscarFactura.TabIndex = 0;
-            this.TxtBuscarFactura.Text = "Buscar Factura";
-            // 
-            // PnlGrid
-            // 
-            this.PnlGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.PnlGrid.Controls.Add(this.DtgFactura);
-            this.PnlGrid.Location = new System.Drawing.Point(0, 78);
-            this.PnlGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.PnlGrid.Name = "PnlGrid";
-            this.PnlGrid.Size = new System.Drawing.Size(924, 522);
-            this.PnlGrid.TabIndex = 77;
-            // 
-            // DtgFactura
-            // 
-            this.DtgFactura.AllowUserToAddRows = false;
-            this.DtgFactura.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            this.DtgFactura.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.DtgFactura.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.DtgFactura.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DtgFactura.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.DtgFactura.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.DtgFactura.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.DtgFactura.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DtgFactura.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.DtgFactura.ColumnHeadersHeight = 40;
-            this.DtgFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DtgFactura.DefaultCellStyle = dataGridViewCellStyle7;
-            this.DtgFactura.EnableHeadersVisualStyles = false;
-            this.DtgFactura.GridColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.DtgFactura.Location = new System.Drawing.Point(12, 27);
-            this.DtgFactura.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.DtgFactura.Name = "DtgFactura";
-            this.DtgFactura.ReadOnly = true;
-            this.DtgFactura.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.DtgFactura.RowHeadersWidth = 65;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            this.DtgFactura.RowsDefaultCellStyle = dataGridViewCellStyle8;
-            this.DtgFactura.RowTemplate.Height = 24;
-            this.DtgFactura.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DtgFactura.Size = new System.Drawing.Size(900, 475);
-            this.DtgFactura.TabIndex = 1;
-            this.DtgFactura.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgFactura_CellContentClick);
-            // 
-            // Pnlopciones
-            // 
-            this.Pnlopciones.Controls.Add(this.BtnImprimir);
-            this.Pnlopciones.Controls.Add(this.BtnDardebaja);
-            this.Pnlopciones.Controls.Add(this.BtnEditar);
-            this.Pnlopciones.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Pnlopciones.Location = new System.Drawing.Point(0, 598);
-            this.Pnlopciones.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Pnlopciones.Name = "Pnlopciones";
-            this.Pnlopciones.Size = new System.Drawing.Size(924, 67);
-            this.Pnlopciones.TabIndex = 78;
-            // 
-            // BtnImprimir
-            // 
-            this.BtnImprimir.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.BtnImprimir.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnImprimir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.BtnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnImprimir.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnImprimir.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.BtnImprimir.IconChar = FontAwesome.Sharp.IconChar.Dropbox;
-            this.BtnImprimir.IconColor = System.Drawing.SystemColors.Highlight;
-            this.BtnImprimir.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.BtnImprimir.IconSize = 20;
-            this.BtnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnImprimir.Location = new System.Drawing.Point(689, 13);
-            this.BtnImprimir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.BtnImprimir.Name = "BtnImprimir";
-            this.BtnImprimir.Size = new System.Drawing.Size(210, 37);
-            this.BtnImprimir.TabIndex = 53;
-            this.BtnImprimir.Text = "Impresion";
-            this.BtnImprimir.UseVisualStyleBackColor = false;
-            this.BtnImprimir.Click += new System.EventHandler(this.BtnImprimir_Click);
-            // 
-            // BtnDardebaja
-            // 
-            this.BtnDardebaja.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.BtnDardebaja.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnDardebaja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.BtnDardebaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnDardebaja.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnDardebaja.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.BtnDardebaja.IconChar = FontAwesome.Sharp.IconChar.TurnDown;
-            this.BtnDardebaja.IconColor = System.Drawing.SystemColors.Highlight;
-            this.BtnDardebaja.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.BtnDardebaja.IconSize = 20;
-            this.BtnDardebaja.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnDardebaja.Location = new System.Drawing.Point(374, 13);
-            this.BtnDardebaja.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.BtnDardebaja.Name = "BtnDardebaja";
-            this.BtnDardebaja.Size = new System.Drawing.Size(210, 35);
-            this.BtnDardebaja.TabIndex = 52;
-            this.BtnDardebaja.Text = "Dar de Baja";
-            this.BtnDardebaja.UseVisualStyleBackColor = false;
-            // 
-            // BtnEditar
-            // 
-            this.BtnEditar.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.BtnEditar.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.BtnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEditar.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEditar.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.BtnEditar.IconChar = FontAwesome.Sharp.IconChar.FileEdit;
-            this.BtnEditar.IconColor = System.Drawing.SystemColors.Highlight;
-            this.BtnEditar.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.BtnEditar.IconSize = 20;
-            this.BtnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnEditar.Location = new System.Drawing.Point(28, 13);
-            this.BtnEditar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.BtnEditar.Name = "BtnEditar";
-            this.BtnEditar.Size = new System.Drawing.Size(236, 37);
-            this.BtnEditar.TabIndex = 51;
-            this.BtnEditar.Text = "Editar Factura";
-            this.BtnEditar.UseVisualStyleBackColor = false;
+            this.gbopciones.Controls.Add(this.BtnImprimir);
+            this.gbopciones.Controls.Add(this.BtnDardebaja);
+            this.gbopciones.Controls.Add(this.BtnEditar);
+            this.gbopciones.Controls.Add(this.ICNServicio);
+            this.gbopciones.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.gbopciones.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbopciones.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.gbopciones.Location = new System.Drawing.Point(0, 586);
+            this.gbopciones.Name = "gbopciones";
+            this.gbopciones.Size = new System.Drawing.Size(1298, 119);
+            this.gbopciones.TabIndex = 78;
+            this.gbopciones.TabStop = false;
+            this.gbopciones.Text = "Opciones";
             // 
             // FrmFacturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(924, 665);
-            this.Controls.Add(this.Pnlopciones);
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ClientSize = new System.Drawing.Size(1298, 705);
+            this.Controls.Add(this.gbopciones);
             this.Controls.Add(this.PnlGrid);
             this.Controls.Add(this.PnlBudc);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -297,7 +299,7 @@
             this.PnlBuscare.PerformLayout();
             this.PnlGrid.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DtgFactura)).EndInit();
-            this.Pnlopciones.ResumeLayout(false);
+            this.gbopciones.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -312,9 +314,9 @@
         private System.Windows.Forms.TextBox TxtBuscarFactura;
         private System.Windows.Forms.Panel PnlGrid;
         private System.Windows.Forms.DataGridView DtgFactura;
-        private System.Windows.Forms.Panel Pnlopciones;
         private FontAwesome.Sharp.IconButton BtnImprimir;
         private FontAwesome.Sharp.IconButton BtnDardebaja;
         private FontAwesome.Sharp.IconButton BtnEditar;
+        private System.Windows.Forms.GroupBox gbopciones;
     }
 }
