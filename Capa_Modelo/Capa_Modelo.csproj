@@ -44,10 +44,12 @@
     <Compile Include="Model\Detalle_Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\Citas_Model.cs" />
+    <Compile Include="ViewModel\Compras_Model.cs" />
     <Compile Include="ViewModel\Examen_Model.cs" />
     <Compile Include="ViewModel\Facturacion_Model.cs" />
     <Compile Include="ViewModel\Paciente_Model.cs" />
     <Compile Include="ViewModel\Permiso_Model.cs" />
+    <Compile Include="ViewModel\Proveedor_Model.cs" />
     <Compile Include="ViewModel\Roles_Model.cs" />
     <Compile Include="ViewModel\Usuario_Model.cs" />
   </ItemGroup>

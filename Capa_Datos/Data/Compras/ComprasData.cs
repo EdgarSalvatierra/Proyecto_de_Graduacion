@@ -45,7 +45,7 @@ namespace Capa_Datos.Data.Compras
 
             command.Parameters.Add(new SqlParameter("@Total", Total));
 
-            command.Parameters.Add(new SqlParameter("@Nom_Proveedor", Proveedor)););
+            command.Parameters.Add(new SqlParameter("@Nom_Proveedor", Proveedor));
 
             command.ExecuteNonQuery();
 
