@@ -23,7 +23,7 @@ namespace Capa_Datos.Data.Compras
 
             command.CommandType = System.Data.CommandType.StoredProcedure;
 
-            command.Parameters.Add(new SqlParameter("@Cod_Pedidos", Cod_Pedidos));
+            command.Parameters.Add(new SqlParameter("@Codigo", Cod_Pedidos));
 
             command.ExecuteNonQuery();
 
@@ -69,6 +69,7 @@ namespace Capa_Datos.Data.Compras
 
             return data;
         }
+       
         public void Update(int Cod_Pedidos, string Nom_Producto, decimal Precio, int Cantidad, decimal SubTotal, decimal Total)
         {
             command = new SqlCommand("Ms_Pedidos_Detalles_Update", conexion.abrirconexion());
