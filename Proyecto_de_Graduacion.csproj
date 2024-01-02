@@ -107,6 +107,12 @@
     <Compile Include="FrmMDI.Designer.cs">
       <DependentUpon>FrmMDI.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmNuevaCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNuevaCompra.Designer.cs">
+      <DependentUpon>FrmNuevaCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmNuevoPaciente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMDI.resx">
       <DependentUpon>FrmMDI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNuevaCompra.resx">
+      <DependentUpon>FrmNuevaCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmNuevoPaciente.resx">
       <DependentUpon>FrmNuevoPaciente.cs</DependentUpon>

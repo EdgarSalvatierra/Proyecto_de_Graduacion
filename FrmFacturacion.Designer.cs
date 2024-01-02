@@ -33,6 +33,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PnlBudc = new System.Windows.Forms.Panel();
+            this.BtnRefrescar = new FontAwesome.Sharp.IconButton();
+            this.ICNBuscador = new FontAwesome.Sharp.IconButton();
             this.PnlBuscare = new System.Windows.Forms.Panel();
             this.TxtBuscarFactura = new System.Windows.Forms.TextBox();
             this.PnlGrid = new System.Windows.Forms.Panel();
@@ -41,8 +43,6 @@
             this.BtnDardebaja = new FontAwesome.Sharp.IconButton();
             this.BtnImprimir = new FontAwesome.Sharp.IconButton();
             this.ICNServicio = new FontAwesome.Sharp.IconButton();
-            this.BtnRefrescar = new FontAwesome.Sharp.IconButton();
-            this.ICNBuscador = new FontAwesome.Sharp.IconButton();
             this.gbopciones = new System.Windows.Forms.GroupBox();
             this.PnlBudc.SuspendLayout();
             this.PnlBuscare.SuspendLayout();
@@ -61,6 +61,40 @@
             this.PnlBudc.Name = "PnlBudc";
             this.PnlBudc.Size = new System.Drawing.Size(1298, 78);
             this.PnlBudc.TabIndex = 1;
+            // 
+            // BtnRefrescar
+            // 
+            this.BtnRefrescar.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BtnRefrescar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnRefrescar.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.BtnRefrescar.IconChar = FontAwesome.Sharp.IconChar.Repeat;
+            this.BtnRefrescar.IconColor = System.Drawing.SystemColors.Highlight;
+            this.BtnRefrescar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnRefrescar.IconSize = 25;
+            this.BtnRefrescar.Location = new System.Drawing.Point(438, 24);
+            this.BtnRefrescar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BtnRefrescar.Name = "BtnRefrescar";
+            this.BtnRefrescar.Size = new System.Drawing.Size(46, 38);
+            this.BtnRefrescar.TabIndex = 76;
+            this.BtnRefrescar.UseVisualStyleBackColor = false;
+            this.BtnRefrescar.Click += new System.EventHandler(this.BtnRefrescar_Click);
+            // 
+            // ICNBuscador
+            // 
+            this.ICNBuscador.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ICNBuscador.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ICNBuscador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ICNBuscador.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.ICNBuscador.IconChar = FontAwesome.Sharp.IconChar.Searchengin;
+            this.ICNBuscador.IconColor = System.Drawing.SystemColors.Highlight;
+            this.ICNBuscador.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ICNBuscador.IconSize = 30;
+            this.ICNBuscador.Location = new System.Drawing.Point(387, 25);
+            this.ICNBuscador.Name = "ICNBuscador";
+            this.ICNBuscador.Size = new System.Drawing.Size(45, 37);
+            this.ICNBuscador.TabIndex = 1;
+            this.ICNBuscador.UseVisualStyleBackColor = false;
+            this.ICNBuscador.Click += new System.EventHandler(this.ICNBuscador_Click);
             // 
             // PnlBuscare
             // 
@@ -187,6 +221,7 @@
             this.BtnDardebaja.TabIndex = 55;
             this.BtnDardebaja.Text = "Dar de Baja";
             this.BtnDardebaja.UseVisualStyleBackColor = false;
+            this.BtnDardebaja.Click += new System.EventHandler(this.BtnDardebaja_Click);
             // 
             // BtnImprimir
             // 
@@ -208,6 +243,7 @@
             this.BtnImprimir.TabIndex = 56;
             this.BtnImprimir.Text = "Impresion";
             this.BtnImprimir.UseVisualStyleBackColor = false;
+            this.BtnImprimir.Click += new System.EventHandler(this.BtnImprimir_Click_1);
             // 
             // ICNServicio
             // 
@@ -230,40 +266,6 @@
             this.ICNServicio.Text = "Nuevo Servicio";
             this.ICNServicio.UseVisualStyleBackColor = false;
             this.ICNServicio.Click += new System.EventHandler(this.ICNServicio_Click);
-            // 
-            // BtnRefrescar
-            // 
-            this.BtnRefrescar.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnRefrescar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnRefrescar.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.BtnRefrescar.IconChar = FontAwesome.Sharp.IconChar.Repeat;
-            this.BtnRefrescar.IconColor = System.Drawing.SystemColors.Highlight;
-            this.BtnRefrescar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnRefrescar.IconSize = 25;
-            this.BtnRefrescar.Location = new System.Drawing.Point(438, 24);
-            this.BtnRefrescar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.BtnRefrescar.Name = "BtnRefrescar";
-            this.BtnRefrescar.Size = new System.Drawing.Size(46, 38);
-            this.BtnRefrescar.TabIndex = 76;
-            this.BtnRefrescar.UseVisualStyleBackColor = false;
-            this.BtnRefrescar.Click += new System.EventHandler(this.BtnRefrescar_Click);
-            // 
-            // ICNBuscador
-            // 
-            this.ICNBuscador.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ICNBuscador.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ICNBuscador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ICNBuscador.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.ICNBuscador.IconChar = FontAwesome.Sharp.IconChar.Searchengin;
-            this.ICNBuscador.IconColor = System.Drawing.SystemColors.Highlight;
-            this.ICNBuscador.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ICNBuscador.IconSize = 30;
-            this.ICNBuscador.Location = new System.Drawing.Point(387, 25);
-            this.ICNBuscador.Name = "ICNBuscador";
-            this.ICNBuscador.Size = new System.Drawing.Size(45, 37);
-            this.ICNBuscador.TabIndex = 1;
-            this.ICNBuscador.UseVisualStyleBackColor = false;
-            this.ICNBuscador.Click += new System.EventHandler(this.ICNBuscador_Click);
             // 
             // gbopciones
             // 

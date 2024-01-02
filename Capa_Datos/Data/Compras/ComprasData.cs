@@ -91,25 +91,12 @@ namespace Capa_Datos.Data.Compras
             conexion.cerrarconexion();
 
             return data;
-
         }
-        public void Update(int Cod_Pedidos, string Nom_Producto, decimal Precio, int Cantidad, decimal SubTotal, decimal Total)
+        public void OffEstado(int CodigoPedidos)
         {
-            command = new SqlCommand("Ms_Pedidos_Detalles_Update", conexion.abrirconexion());
+            string query = $@"Update tbl_Pedidos set Estado = 0 where Cod_Pedidos = '{CodigoPedidos}'";
 
-            command.CommandType = CommandType.StoredProcedure;
-
-            command.Parameters.Add(new SqlParameter("@Cod_Pedidos", Cod_Pedidos));
-
-            command.Parameters.Add(new SqlParameter("@Nom_Producto", Nom_Producto));
-
-            command.Parameters.Add(new SqlParameter("@Precio", Precio));
-
-            command.Parameters.Add(new SqlParameter("@Cantidad", Cantidad));
-
-            command.Parameters.Add(new SqlParameter("@SubTotal", SubTotal));
-
-            command.Parameters.Add(new SqlParameter("@Total", Total));
+            command = new SqlCommand(query, conexion.abrirconexion());
 
             command.ExecuteNonQuery();
 

@@ -48,8 +48,36 @@ namespace Proyecto_de_Graduacion
         private void BtnRefrescar_Click(object sender, EventArgs e)
         {
             DtgFactura.DataSource = Facturacion.LeerFacturas();
+        }     
+        private void ICNServicio_Click(object sender, EventArgs e)
+        {
+            FrmNuevoServicio servicio = new FrmNuevoServicio();
+
+            servicio.Show();
         }
-        private void BtnImprimir_Click(object sender, EventArgs e)
+        private void BtnDardebaja_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("¿Quieres realizar esta acción?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+            if (resultado == DialogResult.Yes)
+            {
+                if (DtgFactura.SelectedRows.Count > 0)
+                {
+                    DataGridViewRow data = DtgFactura.SelectedRows[0];
+
+                    int numeroruc = Convert.ToInt32(data.Cells[0].Value);
+
+                    Facturacion.ActualizarFacturas(numeroruc);
+
+                    MessageBox.Show("El Registro fue dado de baja", "SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("La Tabla esta vacia, no puede dar de baja", "SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        private void BtnImprimir_Click_1(object sender, EventArgs e)
         {
             if (DtgFactura.SelectedRows.Count > 0)
             {
@@ -71,12 +99,6 @@ namespace Proyecto_de_Graduacion
 
                 frmNuevo.Show();
             }
-        }
-        private void ICNServicio_Click(object sender, EventArgs e)
-        {
-            FrmNuevoServicio servicio = new FrmNuevoServicio();
-
-            servicio.Show();
         }
     }
 }

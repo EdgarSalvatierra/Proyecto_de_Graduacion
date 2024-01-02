@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Capa_Modelo.ViewModel
 {
-    internal class Compras_Model
+    public class Compras_Model
     {
         ComprasData compras = new ComprasData();
         public void InsertarPedidos(string Nom_Producto, decimal Precio, int Cantidad, decimal SubTotal, decimal Total, string Proveedor)
@@ -21,6 +21,10 @@ namespace Capa_Modelo.ViewModel
         public Object LeerPedidosporNombre(string Proveedor, string Producto)
         {
             return compras.ReadForName(Proveedor,Producto);
+        }
+        public void DarDebaja(int Codigo)
+        {
+            compras.OffEstado(Codigo);
         }
         public void EliminarPedidos(int Codigo)
         {
