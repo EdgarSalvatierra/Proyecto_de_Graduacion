@@ -69,7 +69,30 @@ namespace Capa_Datos.Data.Compras
 
             return data;
         }
-       
+        public DataTable ReadForName(string Proveedor, string Producto)
+        {
+            command = new SqlCommand("Ms_Pedidos_Detalles_ReadForName", conexion.abrirconexion());
+
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.Add(new SqlParameter("@proveedor", Proveedor));
+
+            command.Parameters.Add(new SqlParameter("@Nom_Producto", Producto));
+
+            DataTable data = new DataTable();
+
+            reader = command.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                data.Load(reader);
+            }
+
+            conexion.cerrarconexion();
+
+            return data;
+
+        }
         public void Update(int Cod_Pedidos, string Nom_Producto, decimal Precio, int Cantidad, decimal SubTotal, decimal Total)
         {
             command = new SqlCommand("Ms_Pedidos_Detalles_Update", conexion.abrirconexion());

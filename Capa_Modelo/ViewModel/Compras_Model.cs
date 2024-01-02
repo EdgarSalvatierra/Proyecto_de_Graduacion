@@ -14,5 +14,17 @@ namespace Capa_Modelo.ViewModel
         {
             compras.Insert(Nom_Producto,Precio,Cantidad,SubTotal,Total,Proveedor);
         }
+        public Object LeerPedidos()
+        {
+            return compras.Read();
+        }
+        public Object LeerPedidosporNombre(string Proveedor, string Producto)
+        {
+            return compras.ReadForName(Proveedor,Producto);
+        }
+        public void EliminarPedidos(int Codigo)
+        {
+            compras.Delete(Codigo);
+        }
     }
 }

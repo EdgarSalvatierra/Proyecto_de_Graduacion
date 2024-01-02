@@ -16,5 +16,10 @@ namespace Proyecto_de_Graduacion
         {
             InitializeComponent();
         }
+
+        private void ICNBuscador_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

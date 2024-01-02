@@ -39,14 +39,14 @@
             this.PnlBuscare = new System.Windows.Forms.Panel();
             this.TxtBuscarCompra = new System.Windows.Forms.TextBox();
             this.PnlGrid = new System.Windows.Forms.Panel();
-            this.DtgExamen = new System.Windows.Forms.DataGridView();
+            this.DtgCompras = new System.Windows.Forms.DataGridView();
             this.Pnlopciones = new System.Windows.Forms.Panel();
             this.BtnDardebaja = new FontAwesome.Sharp.IconButton();
             this.BtnEditar = new FontAwesome.Sharp.IconButton();
             this.PnlBudc.SuspendLayout();
             this.PnlBuscare.SuspendLayout();
             this.PnlGrid.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DtgExamen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DtgCompras)).BeginInit();
             this.Pnlopciones.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -114,6 +114,7 @@
             this.ICNBuscador.Size = new System.Drawing.Size(45, 37);
             this.ICNBuscador.TabIndex = 1;
             this.ICNBuscador.UseVisualStyleBackColor = false;
+            this.ICNBuscador.Click += new System.EventHandler(this.ICNBuscador_Click);
             // 
             // PnlBuscare
             // 
@@ -138,7 +139,7 @@
             // 
             // PnlGrid
             // 
-            this.PnlGrid.Controls.Add(this.DtgExamen);
+            this.PnlGrid.Controls.Add(this.DtgCompras);
             this.PnlGrid.Dock = System.Windows.Forms.DockStyle.Top;
             this.PnlGrid.Location = new System.Drawing.Point(0, 78);
             this.PnlGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -146,56 +147,56 @@
             this.PnlGrid.Size = new System.Drawing.Size(924, 500);
             this.PnlGrid.TabIndex = 77;
             // 
-            // DtgExamen
+            // DtgCompras
             // 
-            this.DtgExamen.AllowUserToAddRows = false;
-            this.DtgExamen.AllowUserToDeleteRows = false;
+            this.DtgCompras.AllowUserToAddRows = false;
+            this.DtgCompras.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.DtgExamen.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.DtgExamen.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.DtgCompras.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.DtgCompras.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DtgExamen.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DtgExamen.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.DtgExamen.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.DtgExamen.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.DtgExamen.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.DtgCompras.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DtgCompras.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.DtgCompras.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DtgCompras.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.DtgCompras.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DtgExamen.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.DtgExamen.ColumnHeadersHeight = 40;
-            this.DtgExamen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.DtgCompras.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.DtgCompras.ColumnHeadersHeight = 40;
+            this.DtgCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DtgExamen.DefaultCellStyle = dataGridViewCellStyle3;
-            this.DtgExamen.EnableHeadersVisualStyles = false;
-            this.DtgExamen.GridColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.DtgExamen.Location = new System.Drawing.Point(12, 27);
-            this.DtgExamen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.DtgExamen.Name = "DtgExamen";
-            this.DtgExamen.ReadOnly = true;
-            this.DtgExamen.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.DtgExamen.RowHeadersWidth = 65;
+            this.DtgCompras.DefaultCellStyle = dataGridViewCellStyle3;
+            this.DtgCompras.EnableHeadersVisualStyles = false;
+            this.DtgCompras.GridColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DtgCompras.Location = new System.Drawing.Point(12, 27);
+            this.DtgCompras.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.DtgCompras.Name = "DtgCompras";
+            this.DtgCompras.ReadOnly = true;
+            this.DtgCompras.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.DtgCompras.RowHeadersWidth = 65;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.DtgExamen.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.DtgExamen.RowTemplate.Height = 24;
-            this.DtgExamen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DtgExamen.Size = new System.Drawing.Size(900, 469);
-            this.DtgExamen.TabIndex = 1;
+            this.DtgCompras.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.DtgCompras.RowTemplate.Height = 24;
+            this.DtgCompras.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DtgCompras.Size = new System.Drawing.Size(900, 469);
+            this.DtgCompras.TabIndex = 1;
             // 
             // Pnlopciones
             // 
@@ -266,7 +267,7 @@
             this.PnlBuscare.ResumeLayout(false);
             this.PnlBuscare.PerformLayout();
             this.PnlGrid.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DtgExamen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DtgCompras)).EndInit();
             this.Pnlopciones.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -281,7 +282,7 @@
         private System.Windows.Forms.Panel PnlBuscare;
         private System.Windows.Forms.TextBox TxtBuscarCompra;
         private System.Windows.Forms.Panel PnlGrid;
-        private System.Windows.Forms.DataGridView DtgExamen;
+        private System.Windows.Forms.DataGridView DtgCompras;
         private System.Windows.Forms.Panel Pnlopciones;
         private FontAwesome.Sharp.IconButton BtnDardebaja;
         private FontAwesome.Sharp.IconButton BtnEditar;
