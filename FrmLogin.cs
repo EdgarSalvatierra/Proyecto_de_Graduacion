@@ -48,7 +48,7 @@ namespace Proyecto_de_Graduacion
         }
         private void BtnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
         private void Btnmin_Click(object sender, EventArgs e)
         {
