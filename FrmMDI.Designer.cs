@@ -261,8 +261,8 @@
             // 
             this.IcnCerrarSesion.Dock = System.Windows.Forms.DockStyle.Top;
             this.IcnCerrarSesion.FlatAppearance.BorderSize = 0;
-            this.IcnCerrarSesion.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.IcnCerrarSesion.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.IcnCerrarSesion.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.IcnCerrarSesion.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.IcnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.IcnCerrarSesion.Font = new System.Drawing.Font("Corbel", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IcnCerrarSesion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
@@ -286,8 +286,8 @@
             // 
             this.Btnrespaldo.Dock = System.Windows.Forms.DockStyle.Top;
             this.Btnrespaldo.FlatAppearance.BorderSize = 0;
-            this.Btnrespaldo.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.Btnrespaldo.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.Btnrespaldo.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Btnrespaldo.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Btnrespaldo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btnrespaldo.Font = new System.Drawing.Font("Corbel", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btnrespaldo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
@@ -311,8 +311,8 @@
             // 
             this.BtnConf.Dock = System.Windows.Forms.DockStyle.Top;
             this.BtnConf.FlatAppearance.BorderSize = 0;
-            this.BtnConf.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.BtnConf.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.BtnConf.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BtnConf.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BtnConf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnConf.Font = new System.Drawing.Font("Corbel", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnConf.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));

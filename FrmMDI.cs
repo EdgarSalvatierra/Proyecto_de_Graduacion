@@ -301,7 +301,6 @@ namespace Proyecto_de_Graduacion
 
         private void BtnConf_Click(object sender, EventArgs e)
         {
-
             AbrirPanel<FrmConfiguracion>();
 
             LblMenu.Text = "Configuracion";
