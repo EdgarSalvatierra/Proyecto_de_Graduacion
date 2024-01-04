@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -29,6 +30,17 @@ namespace Proyecto_de_Graduacion
             usuario = Usuario;
 
             contraseña = Contraseña;
+        }
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+        private void PanelTitleBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+
         }
         private void FrmMDI_Load(object sender, EventArgs e)
         {
@@ -70,7 +82,35 @@ namespace Proyecto_de_Graduacion
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
+        }
+        private void ajustforms()
+        {
+            try
+            {
+                switch (this.WindowState)
+                {
+                    case FormWindowState.Normal:
+                        if (this.Padding.Top == borderSize)
+                        {
+
+
+                            this.Padding = new Padding(borderSize);
+                        }
+                        break;
+
+                    case FormWindowState.Maximized:
+                        this.Padding = new Padding(8, 8, 8, 0);
+                        break;
+
+                }
+            }
+
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
         }
         private void CerrarPanel<frm>() where frm : Form
         {
@@ -390,6 +430,12 @@ namespace Proyecto_de_Graduacion
             // Realiza alguna acción relacionada con el despliegue del menú (no proporcionada en el código actual).
             DespleMenu();
         }
+
+        private void FrmMDI_Resize(object sender, EventArgs e)
+        {
+            ajustforms();
+        }
+
         private void BtnCerrarFormulario_Click(object sender, EventArgs e)
         {
             if (FormularioActivo<FrmFacturacion>())

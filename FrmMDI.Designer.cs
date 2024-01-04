@@ -42,6 +42,8 @@
             this.LblFecha = new System.Windows.Forms.Label();
             this.ICNTimes = new FontAwesome.Sharp.IconPictureBox();
             this.PnlDesplegable = new System.Windows.Forms.Panel();
+            this.IcnCerrarSesion = new FontAwesome.Sharp.IconButton();
+            this.Btnrespaldo = new FontAwesome.Sharp.IconButton();
             this.BtnConf = new FontAwesome.Sharp.IconButton();
             this.BtnCitas = new FontAwesome.Sharp.IconButton();
             this.BtnAd_Usuario = new FontAwesome.Sharp.IconButton();
@@ -62,8 +64,6 @@
             this.LblMenu = new System.Windows.Forms.Label();
             this.ICNMenu = new FontAwesome.Sharp.IconPictureBox();
             this.Tmr = new System.Windows.Forms.Timer(this.components);
-            this.Btnrespaldo = new FontAwesome.Sharp.IconButton();
-            this.IcnCerrarSesion = new FontAwesome.Sharp.IconButton();
             this.PnlCerrarMaximizar.SuspendLayout();
             this.panelDesktop.SuspendLayout();
             this.PnlMenu.SuspendLayout();
@@ -256,6 +256,56 @@
             this.PnlDesplegable.Name = "PnlDesplegable";
             this.PnlDesplegable.Size = new System.Drawing.Size(308, 558);
             this.PnlDesplegable.TabIndex = 31;
+            // 
+            // IcnCerrarSesion
+            // 
+            this.IcnCerrarSesion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.IcnCerrarSesion.FlatAppearance.BorderSize = 0;
+            this.IcnCerrarSesion.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.IcnCerrarSesion.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.IcnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.IcnCerrarSesion.Font = new System.Drawing.Font("Corbel", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IcnCerrarSesion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
+            this.IcnCerrarSesion.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.IcnCerrarSesion.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
+            this.IcnCerrarSesion.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.IcnCerrarSesion.IconSize = 30;
+            this.IcnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.IcnCerrarSesion.Location = new System.Drawing.Point(0, 514);
+            this.IcnCerrarSesion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.IcnCerrarSesion.Name = "IcnCerrarSesion";
+            this.IcnCerrarSesion.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.IcnCerrarSesion.Size = new System.Drawing.Size(308, 44);
+            this.IcnCerrarSesion.TabIndex = 31;
+            this.IcnCerrarSesion.Tag = "CerrarSesion";
+            this.IcnCerrarSesion.Text = "CerrarSesion";
+            this.IcnCerrarSesion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.IcnCerrarSesion.UseVisualStyleBackColor = true;
+            // 
+            // Btnrespaldo
+            // 
+            this.Btnrespaldo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Btnrespaldo.FlatAppearance.BorderSize = 0;
+            this.Btnrespaldo.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.Btnrespaldo.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.Btnrespaldo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btnrespaldo.Font = new System.Drawing.Font("Corbel", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btnrespaldo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
+            this.Btnrespaldo.IconChar = FontAwesome.Sharp.IconChar.Database;
+            this.Btnrespaldo.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
+            this.Btnrespaldo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Btnrespaldo.IconSize = 30;
+            this.Btnrespaldo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btnrespaldo.Location = new System.Drawing.Point(0, 452);
+            this.Btnrespaldo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Btnrespaldo.Name = "Btnrespaldo";
+            this.Btnrespaldo.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.Btnrespaldo.Size = new System.Drawing.Size(308, 62);
+            this.Btnrespaldo.TabIndex = 30;
+            this.Btnrespaldo.Tag = "Respaldo";
+            this.Btnrespaldo.Text = "Respaldo";
+            this.Btnrespaldo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Btnrespaldo.UseVisualStyleBackColor = true;
             // 
             // BtnConf
             // 
@@ -637,56 +687,6 @@
             // 
             this.Tmr.Tick += new System.EventHandler(this.Tmr_Tick);
             // 
-            // Btnrespaldo
-            // 
-            this.Btnrespaldo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Btnrespaldo.FlatAppearance.BorderSize = 0;
-            this.Btnrespaldo.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.Btnrespaldo.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.Btnrespaldo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btnrespaldo.Font = new System.Drawing.Font("Corbel", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btnrespaldo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
-            this.Btnrespaldo.IconChar = FontAwesome.Sharp.IconChar.Database;
-            this.Btnrespaldo.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
-            this.Btnrespaldo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Btnrespaldo.IconSize = 30;
-            this.Btnrespaldo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btnrespaldo.Location = new System.Drawing.Point(0, 452);
-            this.Btnrespaldo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Btnrespaldo.Name = "Btnrespaldo";
-            this.Btnrespaldo.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.Btnrespaldo.Size = new System.Drawing.Size(308, 62);
-            this.Btnrespaldo.TabIndex = 30;
-            this.Btnrespaldo.Tag = "Respaldo";
-            this.Btnrespaldo.Text = "Respaldo";
-            this.Btnrespaldo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Btnrespaldo.UseVisualStyleBackColor = true;
-            // 
-            // IcnCerrarSesion
-            // 
-            this.IcnCerrarSesion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.IcnCerrarSesion.FlatAppearance.BorderSize = 0;
-            this.IcnCerrarSesion.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.IcnCerrarSesion.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.IcnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.IcnCerrarSesion.Font = new System.Drawing.Font("Corbel", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IcnCerrarSesion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
-            this.IcnCerrarSesion.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
-            this.IcnCerrarSesion.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
-            this.IcnCerrarSesion.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.IcnCerrarSesion.IconSize = 30;
-            this.IcnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.IcnCerrarSesion.Location = new System.Drawing.Point(0, 514);
-            this.IcnCerrarSesion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.IcnCerrarSesion.Name = "IcnCerrarSesion";
-            this.IcnCerrarSesion.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.IcnCerrarSesion.Size = new System.Drawing.Size(308, 44);
-            this.IcnCerrarSesion.TabIndex = 31;
-            this.IcnCerrarSesion.Tag = "CerrarSesion";
-            this.IcnCerrarSesion.Text = "CerrarSesion";
-            this.IcnCerrarSesion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.IcnCerrarSesion.UseVisualStyleBackColor = true;
-            // 
             // FrmMDI
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -698,6 +698,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmMDI";
             this.Load += new System.EventHandler(this.FrmMDI_Load);
+            this.Resize += new System.EventHandler(this.FrmMDI_Resize);
             this.PnlCerrarMaximizar.ResumeLayout(false);
             this.PnlCerrarMaximizar.PerformLayout();
             this.panelDesktop.ResumeLayout(false);
