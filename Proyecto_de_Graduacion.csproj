@@ -48,10 +48,14 @@
     <Reference Include="itextsharp.xmlworker, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>packages\itextsharp.xmlworker.5.5.13.3\lib\itextsharp.xmlworker.dll</HintPath>
     </Reference>
+    <Reference Include="MaterialSkin, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\MaterialSkin.2.2.3.1\lib\net461\MaterialSkin.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Drawing.Common, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Drawing.Common.7.0.0\lib\net462\System.Drawing.Common.dll</HintPath>
     </Reference>
@@ -68,47 +72,23 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmCitas.cs">
+    <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmCitas.Designer.cs">
-      <DependentUpon>FrmCitas.cs</DependentUpon>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmCompras.cs">
+    <Compile Include="FrmCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmCompras.Designer.cs">
-      <DependentUpon>FrmCompras.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmConfiguracion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmConfiguracion.Designer.cs">
-      <DependentUpon>FrmConfiguracion.cs</DependentUpon>
+    <Compile Include="FrmCategoria.Designer.cs">
+      <DependentUpon>FrmCategoria.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmEditarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmEditarUsuario.Designer.cs">
       <DependentUpon>FrmEditarUsuario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmExamen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmExamen.Designer.cs">
-      <DependentUpon>FrmExamen.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmFacturacion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmFacturacion.Designer.cs">
-      <DependentUpon>FrmFacturacion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmHome.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmHome.Designer.cs">
-      <DependentUpon>FrmHome.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
@@ -146,17 +126,17 @@
     <Compile Include="FrmNuevoUsuario.Designer.cs">
       <DependentUpon>FrmNuevoUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProveedor.Designer.cs">
+      <DependentUpon>FrmProveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmRegistrodePacientes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmRegistrodePacientes.Designer.cs">
       <DependentUpon>FrmRegistrodePacientes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmResultados.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmResultados.Designer.cs">
-      <DependentUpon>FrmResultados.cs</DependentUpon>
     </Compile>
     <Compile Include="Frmservicio2.cs">
       <SubType>Form</SubType>
@@ -164,34 +144,16 @@
     <Compile Include="Frmservicio2.Designer.cs">
       <DependentUpon>Frmservicio2.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmUsuario.Designer.cs">
-      <DependentUpon>FrmUsuario.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmCitas.resx">
-      <DependentUpon>FrmCitas.cs</DependentUpon>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCompras.resx">
-      <DependentUpon>FrmCompras.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmConfiguracion.resx">
-      <DependentUpon>FrmConfiguracion.cs</DependentUpon>
+    <EmbeddedResource Include="FrmCategoria.resx">
+      <DependentUpon>FrmCategoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmEditarUsuario.resx">
       <DependentUpon>FrmEditarUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmExamen.resx">
-      <DependentUpon>FrmExamen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmFacturacion.resx">
-      <DependentUpon>FrmFacturacion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmHome.resx">
-      <DependentUpon>FrmHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
@@ -214,14 +176,8 @@
     <EmbeddedResource Include="FrmRegistrodePacientes.resx">
       <DependentUpon>FrmRegistrodePacientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmResultados.resx">
-      <DependentUpon>FrmResultados.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Frmservicio2.resx">
       <DependentUpon>Frmservicio2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmUsuario.resx">
-      <DependentUpon>FrmUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

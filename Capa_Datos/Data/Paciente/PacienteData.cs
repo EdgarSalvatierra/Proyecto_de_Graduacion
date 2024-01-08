@@ -200,6 +200,9 @@ namespace Capa_Datos.Data.Paciente
                     }
                 }
             }
+
+            conexion.cerrarconexion();
+
             return lista.FirstOrDefault().Telefono;
         }
     }

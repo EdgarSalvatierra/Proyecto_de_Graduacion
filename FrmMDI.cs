@@ -222,32 +222,6 @@ namespace Proyecto_de_Graduacion
         {
             DespleMenu();
         }
-        private void BtnCitas_Click(object sender, EventArgs e)
-        {
-            // Cuando se hace clic en el botón "BtnCitas", se ejecuta este método.
-
-            // Abre el panel asociado al formulario FrmCitas.
-            AbrirPanel<FrmCitas>();
-
-            // Actualiza el texto de la etiqueta LblMenu con "Modulo de Reservacion de Citas".
-            LblMenu.Text = "Modulo de Reservacion de Citas";
-
-            // Realiza alguna acción relacionada con el despliegue del menú (no proporcionada en el código actual).
-            DespleMenu();
-        }
-        private void BtnRes_Ex_Click_1(object sender, EventArgs e)
-        {
-            // Cuando se hace clic en el botón "BtnRes_Ex", se ejecuta este método.
-
-            // Abre el panel asociado al formulario FrmResultados.
-            AbrirPanel<FrmResultados>();
-
-            // Actualiza el texto de la etiqueta LblMenu con "Modulo de Resultados".
-            LblMenu.Text = "Modulo de Resultados";
-
-            // Realiza alguna acción relacionada con el despliegue del menú (no proporcionada en el código actual).
-            DespleMenu();
-        }
         private void IcnCerrarSesion_Click(object sender, EventArgs e)
         {
             // Cuando se hace clic en el elemento "IcnCerrarSesion", se ejecuta este método.
@@ -260,15 +234,6 @@ namespace Proyecto_de_Graduacion
 
             // Muestra el formulario de inicio de sesión.
             login.Show();
-        }
-        private void BtnAd_Usuario_Click(object sender, EventArgs e)
-        {
-
-            AbrirPanel<FrmExamen>();
-
-            LblMenu.Text = "Modulo de Gestion de Examenes";
-
-            DespleMenu();
         }
         private void ICNMenu_MouseHover(object sender, EventArgs e)
         {
@@ -361,40 +326,15 @@ namespace Proyecto_de_Graduacion
             toolTip.SetToolTip(PnlMenu, "Menu Lateral");
         }
        
-        private void BtnGesti_Exa_Click(object sender, EventArgs e)
-        {
-            // Cuando se hace clic en el botón "BtnCitas", se ejecuta este método.
-
-            // Abre el panel asociado al formulario FrmCitas.
-            AbrirPanel<FrmExamen>();
-
-            // Actualiza el texto de la etiqueta LblMenu con "Modulo de Reservacion de Citas".
-            LblMenu.Text = "Modulo de Gestion de Examenes";
-
-            // Realiza alguna acción relacionada con el despliegue del menú (no proporcionada en el código actual).
-            DespleMenu();
-        }
-
         private void FrmMDI_Resize(object sender, EventArgs e)
         {
             ajustforms();
-        }
-        private void BtnConf_Click_1(object sender, EventArgs e)
+        }    
+        private void Pnluser_Paint(object sender, PaintEventArgs e)
         {
-            AbrirPanel<FrmConfiguracion>();
 
-            LblMenu.Text = "Configuracion";
-
-            DespleMenu();
         }
-        private void BtnFac_m_Click_1(object sender, EventArgs e)
-        {
-            AbrirPanel<FrmFacturacion>();
 
-            LblMenu.Text = "Modulo de Rececpion de Facturacion";
-
-            DespleMenu();
-        }
         private void BtnReg_pas_Click_1(object sender, EventArgs e)
         {
             AbrirPanel<FrmRegistrodePacientes>();
@@ -403,20 +343,7 @@ namespace Proyecto_de_Graduacion
 
             DespleMenu();
         }
-
-        private void BtnCompras_Click_1(object sender, EventArgs e)
-        {
-            // Cuando se hace clic en el botón "BtnCompras", se ejecuta este método.
-
-            // Abre el panel asociado al formulario FrmCompras.
-            AbrirPanel<FrmCompras>();
-
-            // Actualiza el texto de la etiqueta LblMenu con "Modulo de Recepcion de Compras".
-            LblMenu.Text = "Modulo de Recepcion de Compras";
-
-            // Realiza alguna acción relacionada con el despliegue del menú (no proporcionada en el código actual).
-            DespleMenu();
-        }
+        /*
         private void BtnCerrarFormulario_Click(object sender, EventArgs e)
         {
             if (FormularioActivo<FrmFacturacion>())
@@ -452,5 +379,6 @@ namespace Proyecto_de_Graduacion
                 CerrarPanel<FrmResultados>();
             }
         }
+        */
     }
 }

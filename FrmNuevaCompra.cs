@@ -88,6 +88,16 @@ namespace Proyecto_de_Graduacion
 
                             pdf.Add(new Phrase(""));
 
+                            iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(Properties.Resources.Laboratorio1, System.Drawing.Imaging.ImageFormat.Png);
+
+                            img.ScaleToFit(80, 60);
+
+                            img.Alignment = iTextSharp.text.Image.UNDERLYING;
+
+                            img.SetAbsolutePosition(pdf.LeftMargin, pdf.Top - 60);
+
+                            pdf.Add(img);
+
                             using (StringReader sr = new StringReader(texto_html))
                             {
                                 XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdf, sr);

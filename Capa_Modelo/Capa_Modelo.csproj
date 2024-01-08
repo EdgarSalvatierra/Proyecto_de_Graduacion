@@ -48,6 +48,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\Categoria_Model.cs" />
     <Compile Include="ViewModel\Citas_Model.cs" />
     <Compile Include="ViewModel\Compras_Model.cs" />
     <Compile Include="ViewModel\Configuracion_Model.cs" />
@@ -71,8 +72,6 @@
       <Name>Capa_Datos</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

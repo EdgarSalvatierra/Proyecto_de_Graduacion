@@ -160,6 +160,7 @@
             this.Pnluser.Name = "Pnluser";
             this.Pnluser.Size = new System.Drawing.Size(1453, 927);
             this.Pnluser.TabIndex = 3;
+            this.Pnluser.Paint += new System.Windows.Forms.PaintEventHandler(this.Pnluser_Paint);
             // 
             // PnlMenu
             // 
@@ -371,7 +372,6 @@
             this.BtnCompras.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnCompras.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnCompras.UseVisualStyleBackColor = false;
-            this.BtnCompras.Click += new System.EventHandler(this.BtnCompras_Click_1);
             // 
             // BtnReg_pas
             // 
@@ -425,7 +425,6 @@
             this.BtnFac_m.Text = "Facturacion";
             this.BtnFac_m.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnFac_m.UseVisualStyleBackColor = true;
-            this.BtnFac_m.Click += new System.EventHandler(this.BtnFac_m_Click_1);
             // 
             // BtnHome
             // 
@@ -679,7 +678,6 @@
             this.BtnCerrarFormulario.TabIndex = 5;
             this.BtnCerrarFormulario.Text = "Cerrar Formulario";
             this.BtnCerrarFormulario.UseVisualStyleBackColor = true;
-            this.BtnCerrarFormulario.Click += new System.EventHandler(this.BtnCerrarFormulario_Click);
             this.BtnCerrarFormulario.MouseHover += new System.EventHandler(this.BtnCerrarFormulario_MouseHover);
             // 
             // LblMenu

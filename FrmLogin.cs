@@ -45,7 +45,7 @@ namespace Proyecto_de_Graduacion
 
                 this.Hide();
 
-                FrmMDI mDI = new FrmMDI(TxtUser.Text, TxtContraseña.Text);
+                Form1 mDI = new Form1(TxtUser.Text, TxtContraseña.Text);
 
                 mDI.Show();
             }

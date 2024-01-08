@@ -326,8 +326,8 @@ namespace Proyecto_de_Graduacion
                         texto_Html = texto_Html.Replace("@ClienteTelefono", paciente.CargarTelefono(CmbPacientes.Text).ToString());
                         DateTime Fecha = Convert.ToDateTime(DtpFecha.Text);
                         DateTime Hora = Convert.ToDateTime(DtpHora.Text);
-                        texto_Html = texto_Html.Replace("@Fecha", Fecha.DayOfWeek.ToString());
-                        texto_Html = texto_Html.Replace("@Hora", Hora.ToString());
+                        texto_Html = texto_Html.Replace("@Fecha", Fecha.Date.ToString());
+                        texto_Html = texto_Html.Replace("@Hora", Hora.TimeOfDay.ToString());
                         string filas = string.Empty;
 
                         foreach (DataGridViewRow item in DtgDetallesdeFactura.Rows)
@@ -354,6 +354,16 @@ namespace Proyecto_de_Graduacion
                                 pdf.Open();
 
                                 pdf.Add(new Phrase(""));
+
+                                iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(Properties.Resources.Laboratorio1, System.Drawing.Imaging.ImageFormat.Png);
+
+                                img.ScaleToFit(80, 60);
+
+                                img.Alignment = iTextSharp.text.Image.UNDERLYING;
+
+                                img.SetAbsolutePosition(pdf.LeftMargin, pdf.Top - 60);
+
+                                pdf.Add(img);
 
                                 using (StringReader sr = new StringReader(texto_Html))
                                 {
