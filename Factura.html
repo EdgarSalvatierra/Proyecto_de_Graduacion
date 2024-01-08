@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factura de Negocio</title>
+    <link rel="stylesheet" href="Factura.css">
+</head>
+<body>
+
+    <div class="invoice">
+        <div class="header">
+            <h1>Factura</h1>
+            <p>Número de factura: <span id="invoiceNumber">123456</span></p>
+            <p>Fecha: <span id="invoiceDate">07/01/2024</span></p>
+        </div>
+
+        <div class="customer-info">
+            <h2>Información del Cliente</h2>
+            <p>Nombre: <span id="customerName">Nombre del Cliente</span></p>
+            <p>Sexo: <span id="customerAddress">Sexo del Cliente</span></p>
+            <p>Telefono: <span id="customerAddress">Telefono del Cliente</span></p>
+            <!-- Agrega más campos según sea necesario -->
+        </div>
+
+        <div class="invoice-items">
+            <h2>Examenes/Servicios</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Examenes</th>
+                        <th>Precio</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se insertarán las filas de productos/servicios dinámicamente con JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="total">
+            <p>Total a pagar: <span id="totalAmount">0.00</span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

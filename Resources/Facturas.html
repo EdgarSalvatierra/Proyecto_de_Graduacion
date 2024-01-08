@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Factura</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        header {
+            text-align: center;
+            color: #333;
+        }
+
+        #logo {
+            max-width: 100px;
+            max-height: 100px;
+        }
+
+        #info-negocio {
+            margin-top: 20px;
+        }
+
+        .invoice {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+
+        .customer-info, .invoice-items, .total {
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        .total {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+        #entrega-salida {
+            margin-top: 20px;
+        }
+
+        footer {
+            margin-top: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img id="logo" src="Laboratorio1.png" alt="Logo del Negocio" />
+        <h1>Laboratorio Clinico El Soccorro</h1>
+        <p>Dirección: Del Parque Central cuadra y media al oeste | Teléfono: 77614114-58827054 | Ciudad: Masatepe - Masaya</p>
+    </header>
+
+    <div class="invoice">
+        <div class="header">
+            <h1>Factura</h1>
+            <p>Número de factura: <span id="invoiceNumber">@NumeroRuc</span></p>
+            <p>Fecha: <span id="invoiceDate">@Fecha_Actual</span></p>
+        </div>
+
+        <div class="customer-info info-negocio">
+            <h2>Información del Cliente</h2>
+            <p>Cliente: <span id="customerName">@ClienteNombre</span></p>
+            <p>Edad: <span id="customerAddress">@ClienteEdad</span></p>
+            <p>Telefono: <span id="customerAddress">@ClienteTelefono</span></p>
+            <!-- Agrega más campos según sea necesario -->
+        </div>
+        <div class="invoice-items">
+            <h2>Examenes/Servicios</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Examenes</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @filas
+                </tbody>
+            </table>
+        </div>
+        <div class="margin-top: 20px;font-size: 1.2em;">
+            <p>Total a pagar: <span id="totalAmount">@total</span></p>
+        </div>
+    </div>
+
+    <div id="entrega-salida">
+        <p>Fecha de Entrega de los Resultados: @Fecha</p>
+        <p>Hora de Entrega  de los Resultados: @Hora</p>
+    </div>
+
+    <footer>
+        <p>¡Gracias por tu compra!</p>
+    </footer>
+</body>
+</html>

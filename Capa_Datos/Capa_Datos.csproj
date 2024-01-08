@@ -47,6 +47,7 @@
     <Compile Include="Data\Citas\CitasData.cs" />
     <Compile Include="Data\Compras\ComprasData.cs" />
     <Compile Include="Data\Conexion\ConexionSql.cs" />
+    <Compile Include="Data\Configuracion\ConfiguracionData.cs" />
     <Compile Include="Data\Examenes\ExamenesData.cs" />
     <Compile Include="Data\Facturacion\FacturacionData.cs" />
     <Compile Include="Data\Paciente\PacienteData.cs" />
@@ -54,7 +55,11 @@
     <Compile Include="Data\Proveedores\ProveedorData.cs" />
     <Compile Include="Data\Roles\RolesData.cs" />
     <Compile Include="Data\Usuario\UsuarioData.cs" />
+    <Compile Include="Model\Configuracion.cs" />
     <Compile Include="Model\Detalle_Usuario.cs" />
+    <Compile Include="Model\Facturacion_list.cs" />
+    <Compile Include="Model\Informacion_Entidad.cs" />
+    <Compile Include="Model\Registro_Paciente.cs" />
     <Compile Include="Model\Permiso.cs" />
     <Compile Include="Model\Rol.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

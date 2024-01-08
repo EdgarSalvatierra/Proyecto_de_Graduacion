@@ -27,6 +27,14 @@ namespace Capa_Modelo.ViewModel
         {
             return facturas.ReadForId(numeroruc);
         }
+        public DateTime CargarFecha(int numeroruc)
+        {
+            return facturas.CargarFechaEntrega(numeroruc);
+        }
+        public DateTime CargarHora(int numeroruc)
+        {
+            return facturas.CargarHoraEntrega(numeroruc);
+        }
         public Object BuscarFacturas(int numeroFactura)
         {
             return facturas.BuscarporNumeroFactura(numeroFactura);

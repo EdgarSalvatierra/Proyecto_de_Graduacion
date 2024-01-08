@@ -63,6 +63,148 @@ namespace Proyecto_de_Graduacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap box_arrow_in_right {
+            get {
+                object obj = ResourceManager.GetObject("box-arrow-in-right", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap box_arrow_in_right1 {
+            get {
+                object obj = ResourceManager.GetObject("box-arrow-in-right1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;!DOCTYPE html&gt;
+        ///&lt;html lang=&quot;es&quot;&gt;
+        ///&lt;head&gt;
+        ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
+        ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+        ///    &lt;title&gt;Factura de Pedido&lt;/title&gt;
+        ///    &lt;style&gt;
+        ///        body {
+        ///            font-family: &apos;Arial&apos;, sans-serif;
+        ///            margin: 20px;
+        ///            background-color: #f4f4f4;
+        ///        }
+        ///
+        ///        .invoice {
+        ///            max-width: 600px;
+        ///            margin: 0 auto;
+        ///            background-color: #fff;
+        ///            padding: 20px;
+        ///            border-radius: [resto de la cadena truncado]&quot;;.
+        /// </summary>
+        internal static string FacturaPedido {
+            get {
+                return ResourceManager.GetString("FacturaPedido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a &lt;!DOCTYPE html&gt;
+        ///&lt;html lang=&quot;es&quot;&gt;
+        ///&lt;head&gt;
+        ///    &lt;title&gt;Factura&lt;/title&gt;
+        ///    &lt;style&gt;
+        ///        body {
+        ///            font-family: Arial, sans-serif;
+        ///            margin: 20px;
+        ///        }
+        ///
+        ///        header {
+        ///            text-align: center;
+        ///            color: #333;
+        ///        }
+        ///
+        ///        #logo {
+        ///            max-width: 100px;
+        ///            max-height: 100px;
+        ///        }
+        ///
+        ///        #info-negocio {
+        ///            margin-top: 20px;
+        ///        }
+        ///
+        ///        .invoice {
+        ///            max-width: 800px;
+        ///            margin: 0 au [resto de la cadena truncado]&quot;;.
+        /// </summary>
+        internal static string Facturas {
+            get {
+                return ResourceManager.GetString("Facturas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondo {
+            get {
+                object obj = ResourceManager.GetObject("fondo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondo2 {
+            get {
+                object obj = ResourceManager.GetObject("fondo2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondo3 {
+            get {
+                object obj = ResourceManager.GetObject("fondo3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icono {
+            get {
+                object obj = ResourceManager.GetObject("icono", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icono_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("icono-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconodecandado_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("iconodecandado-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Iconousuario_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("Iconousuario-removebg-preview", resourceCulture);
@@ -93,9 +235,69 @@ namespace Proyecto_de_Graduacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Laboratorio_removebg_preview1 {
+            get {
+                object obj = ResourceManager.GetObject("Laboratorio-removebg-preview1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Laboratorio_removebg_preview2 {
+            get {
+                object obj = ResourceManager.GetObject("Laboratorio-removebg-preview2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Laboratorio1 {
+            get {
+                object obj = ResourceManager.GetObject("Laboratorio1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo {
+            get {
+                object obj = ResourceManager.GetObject("logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap paciente_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("paciente-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Byte[].
+        /// </summary>
+        internal static byte[] Plantilla {
+            get {
+                object obj = ResourceManager.GetObject("Plantilla", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap usuario_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("usuario-removebg-preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

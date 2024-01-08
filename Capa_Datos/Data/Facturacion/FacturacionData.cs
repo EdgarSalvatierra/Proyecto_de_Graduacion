@@ -6,6 +6,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Capa_Datos.Model;
+using System.Collections;
 
 namespace Capa_Datos.Data.Facturacion
 {
@@ -134,6 +136,62 @@ on detalles.Cod_Examen = examen.cod_examen where facturas.Cod_Facturacion = '{Nu
             command.ExecuteNonQuery();
 
             conexion.cerrarconexion();
+        }
+        public DateTime CargarFechaEntrega(int NumeroRuc)
+        {
+            List<Facturacion_list> lista = new List<Facturacion_list>();
+
+            string query = $@"select Fecha_de_Entrega From tbl_Facturacion where  Cod_Facturacion = @NumeroRuc";
+
+            command = new SqlCommand(query, conexion.abrirconexion());
+
+            command.Parameters.Add(new SqlParameter("@NumeroRuc", NumeroRuc));
+
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    // Verificar si la columna existe antes de intentar leerla
+                    if (reader.HasRows)
+                    {
+                        lista.Add(new Facturacion_list
+                        {
+                           Fecha_de_Entrega = Convert.ToDateTime(reader["Fecha_de_Entrega"])
+                        });
+                    }
+                }
+            }
+            conexion.cerrarconexion();
+
+            return lista.FirstOrDefault().Fecha_de_Entrega;
+        }
+        public DateTime CargarHoraEntrega(int NumeroRuc)
+        {
+            List<Facturacion_list> lista = new List<Facturacion_list>();
+
+            string query = $@"select Hora_de_Entrega From tbl_Facturacion where  Cod_Facturacion = @NumeroRuc";
+
+            command = new SqlCommand(query, conexion.abrirconexion());
+
+            command.Parameters.Add(new SqlParameter("@NumeroRuc", NumeroRuc));
+
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    // Verificar si la columna existe antes de intentar leerla
+                    if (reader.HasRows)
+                    {
+                        lista.Add(new Facturacion_list
+                        {
+                            HoradeEntrega = Convert.ToDateTime(reader["Hora_de_Entrega"].ToString())
+                        });
+                    }
+                }
+            }
+            conexion.cerrarconexion();
+
+            return lista.FirstOrDefault().HoradeEntrega;
         }
     }
 }

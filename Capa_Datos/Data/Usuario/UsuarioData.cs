@@ -24,7 +24,7 @@ namespace Capa_Datos.Data.Usuario
         {
             command = new SqlCommand("sp_usuario_insert", conexion.abrirconexion());
 
-            command.CommandType = CommandType.StoredProcedure; 
+            command.CommandType = CommandType.StoredProcedure;
 
             command.Parameters.Add(new SqlParameter("@Usuario", usuario));
 
@@ -78,7 +78,7 @@ namespace Capa_Datos.Data.Usuario
             return data;
         }
 
-        public DataTable ReadForId(string Roles,string Nombre)
+        public DataTable ReadForId(string Roles, string Nombre)
         {
             string query = $@"select us.Cod_User as 'Codigo',detalles.Nombre + ' ' + detalles.Apellido as 'Nombre',detalles.Edad,detalles.Telefono,
 us.Usuario,us.Contraseña,rol.Nom_Roles as 'Roles de Usuario',us.Estado as 'Estado' From tbl_Detalles_Usuario as detalles 
@@ -104,8 +104,8 @@ inner join tbl_Roles as rol on rol.cod_rol = us.IdRol where rol.Nom_Roles Like '
 
             return data;
         }
-       
-        public void Update(int cod_user, string usuario, string contraseña, string Nombre, int Edad,long Telefono,string Roles)
+
+        public void Update(int cod_user, string usuario, string contraseña, string Nombre, int Edad, long Telefono, string Roles)
         {
             command = new SqlCommand("sp_usuario_update", conexion.abrirconexion());
 
@@ -147,7 +147,7 @@ inner join tbl_Roles as rol on rol.cod_rol = us.IdRol where rol.Nom_Roles Like '
                      select '0'
                ";
 
-            command = new SqlCommand(query,conexion.abrirconexion());
+            command = new SqlCommand(query, conexion.abrirconexion());
 
             int IdUsuario = Convert.ToInt32(command.ExecuteScalar().ToString());
 
@@ -174,6 +174,39 @@ inner join tbl_Roles as rol on rol.cod_rol = us.IdRol where rol.Nom_Roles Like '
             }
 
             return Sb.ToString();
+        }
+        public string CargarUsuario(string usuario)
+        {
+            List<Detalle_Usuario> lista = new List<Detalle_Usuario>();
+
+            string query = @"SELECT detalles.Nombre + ' ' + detalles.Apellido AS NombreCompleto 
+                    FROM tbl_Detalles_Usuario AS detalles 
+                    INNER JOIN tbl_User AS us ON us.Cod_User = detalles.Cod_User 
+                    WHERE us.Usuario = @Usuario";
+
+            using (SqlConnection connection = conexion.abrirconexion())
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Usuario", usuario);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            // Verificar si la columna existe antes de intentar leerla
+                            if (reader.HasRows)
+                            {
+                                lista.Add(new Detalle_Usuario
+                                {
+                                    Nombre = reader["NombreCompleto"].ToString()
+                                });
+                            }
+                        }
+                    }
+                }
+            }
+            return lista.FirstOrDefault()?.Nombre;
         }
     }
 }

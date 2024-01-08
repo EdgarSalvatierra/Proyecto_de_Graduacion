@@ -53,7 +53,7 @@
             // 
             // PnlBudc
             // 
-            this.PnlBudc.BackColor = System.Drawing.SystemColors.Control;
+            this.PnlBudc.BackColor = System.Drawing.SystemColors.ControlLight;
             this.PnlBudc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PnlBudc.Controls.Add(this.ICNCategoria);
             this.PnlBudc.Controls.Add(this.BtnRefrescar);
@@ -64,11 +64,12 @@
             this.PnlBudc.Name = "PnlBudc";
             this.PnlBudc.Size = new System.Drawing.Size(924, 78);
             this.PnlBudc.TabIndex = 1;
+            this.PnlBudc.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlBudc_Paint);
             // 
             // ICNCategoria
             // 
             this.ICNCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ICNCategoria.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ICNCategoria.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ICNCategoria.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.ICNCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ICNCategoria.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -88,7 +89,7 @@
             // 
             // BtnRefrescar
             // 
-            this.BtnRefrescar.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BtnRefrescar.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BtnRefrescar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnRefrescar.ForeColor = System.Drawing.SystemColors.Highlight;
             this.BtnRefrescar.IconChar = FontAwesome.Sharp.IconChar.Repeat;
@@ -105,7 +106,7 @@
             // 
             // ICNBuscador
             // 
-            this.ICNBuscador.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ICNBuscador.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ICNBuscador.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ICNBuscador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ICNBuscador.ForeColor = System.Drawing.SystemColors.Highlight;
@@ -144,7 +145,7 @@
             // 
             // PnlGrid
             // 
-            this.PnlGrid.BackColor = System.Drawing.SystemColors.Control;
+            this.PnlGrid.BackColor = System.Drawing.SystemColors.ControlLight;
             this.PnlGrid.Controls.Add(this.dgvMostrar);
             this.PnlGrid.Dock = System.Windows.Forms.DockStyle.Top;
             this.PnlGrid.Location = new System.Drawing.Point(0, 78);
@@ -165,7 +166,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvMostrar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMostrar.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvMostrar.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvMostrar.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvMostrar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvMostrar.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvMostrar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -215,6 +216,7 @@
             // 
             // PnlOpciones
             // 
+            this.PnlOpciones.BackColor = System.Drawing.SystemColors.ControlLight;
             this.PnlOpciones.Controls.Add(this.BtnDardebaja);
             this.PnlOpciones.Controls.Add(this.BtnEditar);
             this.PnlOpciones.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -227,7 +229,7 @@
             // BtnDardebaja
             // 
             this.BtnDardebaja.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnDardebaja.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BtnDardebaja.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BtnDardebaja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.BtnDardebaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnDardebaja.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -248,7 +250,7 @@
             // BtnEditar
             // 
             this.BtnEditar.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.BtnEditar.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BtnEditar.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BtnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.BtnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEditar.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

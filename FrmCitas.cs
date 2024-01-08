@@ -16,7 +16,7 @@ namespace Proyecto_de_Graduacion
         Citas_Model Citas = new Citas_Model();
         public FrmCitas()
         {
-            InitializeComponent();
+            InitializeComponent();         
         }
         private void FrmCitas_Load(object sender, EventArgs e)
         {
@@ -51,6 +51,11 @@ namespace Proyecto_de_Graduacion
             {
                 txtBusquedaCita.Text = "";
             }
+        }
+
+        private void PnlBudc_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

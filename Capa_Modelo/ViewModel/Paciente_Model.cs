@@ -11,9 +11,9 @@ namespace Capa_Modelo.ViewModel
     {
         PacienteData paciente = new PacienteData();
 
-        public void InsertarPacientes(string Nombre, long telefono, DateTime fecha, string sexo)
+        public void InsertarPacientes(string Nombre, string Apellido, long telefono, DateTime FechadeNacimiento, string sexo)
         {
-            paciente.Insert(Nombre, telefono, fecha, sexo);
+            paciente.Insert(Nombre,Apellido ,telefono, FechadeNacimiento, sexo);
         }
         public Object LeerPacientes()
         {
@@ -27,9 +27,21 @@ namespace Capa_Modelo.ViewModel
         {
             return paciente.ReadForName(Codigo);
         }
-        public void ActualizarPacientes(int id, string Nombre, long telefono, DateTime fecha, string sexo, string correo)
+        public int CargarEdad(string Nombre)
         {
-            paciente.Update(id, Nombre, fecha, telefono, sexo, correo);
+            return paciente.CargarPacienteEdad(Nombre);
+        }
+        public string CargarSexo(string Nombre)
+        {
+            return paciente.CargarPacienteSexo(Nombre);
+        }
+        public long CargarTelefono(string Nombre)
+        {
+            return paciente.CargarPacienteTelefono(Nombre);
+        }
+        public void ActualizarEstado(DateTime Numero)
+        {
+            paciente.UpdateEstado(Numero);
         }
         public void EliminarPacientes(int id)
         {

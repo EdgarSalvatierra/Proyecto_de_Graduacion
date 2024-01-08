@@ -130,7 +130,7 @@
             this.BtnNuevoUsuario.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.BtnNuevoUsuario.IconSize = 20;
             this.BtnNuevoUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnNuevoUsuario.Location = new System.Drawing.Point(496, 472);
+            this.BtnNuevoUsuario.Location = new System.Drawing.Point(496, 466);
             this.BtnNuevoUsuario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BtnNuevoUsuario.Name = "BtnNuevoUsuario";
             this.BtnNuevoUsuario.Size = new System.Drawing.Size(210, 37);
@@ -151,7 +151,7 @@
             this.PnlGrid.Location = new System.Drawing.Point(0, 78);
             this.PnlGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PnlGrid.Name = "PnlGrid";
-            this.PnlGrid.Size = new System.Drawing.Size(1120, 521);
+            this.PnlGrid.Size = new System.Drawing.Size(1120, 515);
             this.PnlGrid.TabIndex = 78;
             // 
             // Btndardebaja
@@ -167,7 +167,7 @@
             this.Btndardebaja.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.Btndardebaja.IconSize = 20;
             this.Btndardebaja.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btndardebaja.Location = new System.Drawing.Point(920, 471);
+            this.Btndardebaja.Location = new System.Drawing.Point(920, 465);
             this.Btndardebaja.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Btndardebaja.Name = "Btndardebaja";
             this.Btndardebaja.Size = new System.Drawing.Size(191, 36);
@@ -232,7 +232,7 @@
             this.DtgUsuarios.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.DtgUsuarios.RowTemplate.Height = 24;
             this.DtgUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DtgUsuarios.Size = new System.Drawing.Size(1096, 421);
+            this.DtgUsuarios.Size = new System.Drawing.Size(1096, 415);
             this.DtgUsuarios.TabIndex = 1;
             // 
             // BtnEditar
@@ -248,7 +248,7 @@
             this.BtnEditar.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.BtnEditar.IconSize = 20;
             this.BtnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnEditar.Location = new System.Drawing.Point(722, 471);
+            this.BtnEditar.Location = new System.Drawing.Point(722, 465);
             this.BtnEditar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BtnEditar.Name = "BtnEditar";
             this.BtnEditar.Size = new System.Drawing.Size(192, 36);
@@ -262,7 +262,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1132, 665);
+            this.ClientSize = new System.Drawing.Size(1132, 659);
             this.Controls.Add(this.PnlGrid);
             this.Controls.Add(this.PnlBudc);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

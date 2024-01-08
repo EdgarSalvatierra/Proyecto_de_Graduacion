@@ -6,6 +6,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Capa_Datos.Model;
+using System.Collections;
 
 namespace Capa_Datos.Data.Paciente
 {
@@ -32,12 +34,21 @@ namespace Capa_Datos.Data.Paciente
             conexion.cerrarconexion();
         }
 
-        public void Insert(string Nombre, long telefono, DateTime FechadeNacimiento, string sexo)
+        public void Insert(string Nombre, string Apellido,long telefono, DateTime FechadeNacimiento, string sexo)
         {
-            string query = $@"Insert into tbl_Registros_de_Pacientes(Nombre,Fecha_de_Nacimiento,Edad,Sexo,Telefono,Estado) 
-             values('{Nombre}','{FechadeNacimiento}', DATEDIFF(YEAR, CONVERT(date, '{FechadeNacimiento}'), GETDATE()),'{sexo}','{telefono}',1)";
+            command = new SqlCommand("Sp_Paciente_Insert", conexion.abrirconexion());
 
-            command = new SqlCommand(query, conexion.abrirconexion());
+            command.CommandType = CommandType.StoredProcedure;
+
+            command.Parameters.Add(new SqlParameter("@Nombre",Nombre));
+
+            command.Parameters.Add(new SqlParameter("@Apellido", Apellido));
+
+            command.Parameters.Add(new SqlParameter("@Fecha_de_Nacimiento", FechadeNacimiento));
+
+            command.Parameters.Add(new SqlParameter("@Telefono", telefono));
+
+            command.Parameters.Add(new SqlParameter("@Sexo", sexo));
 
             command.ExecuteNonQuery();
 
@@ -45,7 +56,7 @@ namespace Capa_Datos.Data.Paciente
         }
         public DataTable Read()
         {
-            string query = $@"Select Cod_paciente as 'Codigo',Nombre as 'Paciente',Fecha_de_Nacimiento as 'Fecha de Nacimiento',Edad as 'Edad',Sexo as 'Sexo',Telefono as 'Telefono'
+            string query = $@"Select Cod_paciente as 'Codigo',Nombre as 'Nombre',Apellido as 'Apellido',Fecha_de_Nacimiento as 'Fecha de Nacimiento',Edad as 'Edad',Sexo as 'Sexo',Telefono as 'Telefono'
                            From tbl_Registros_de_Pacientes where Estado = 1";
 
             command = new SqlCommand(query, conexion.abrirconexion());
@@ -99,15 +110,97 @@ namespace Capa_Datos.Data.Paciente
 
             return data;
         }
-        public void Update(int Id, string Nombre, DateTime date, long telefono, string sexo, string correo)
+        public void UpdateEstado(DateTime Numero)
         {
-            string query = $@"Update tbl_Registros_de_Pacientes set Nombre = '{Nombre}',Fecha_de_Nacimiento = '{date.Date}',Sexo = '{sexo}', Telefono = '{telefono} where Cod_paciente = '{Id}'";
+            string query = $@"Update tbl_Registros_de_Pacientes set Estado = 0 where Fecha_de_Nacimiento = Convert(date,@Numero) ";
 
             command = new SqlCommand(query, conexion.abrirconexion());
+
+            command.Parameters.Add(new SqlParameter("@Numero",Numero));
 
             command.ExecuteNonQuery();
 
             conexion.cerrarconexion();
+        }
+        public int CargarPacienteEdad(string Nombre)
+        {
+            List<Registro_Paciente> lista = new List<Registro_Paciente>();
+
+            string query = $@"select Edad From tbl_Registros_de_Pacientes where Nombre = @Nombre";
+
+            command = new SqlCommand(query,conexion.abrirconexion());
+
+            command.Parameters.Add(new SqlParameter("@Nombre",Nombre));
+
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    // Verificar si la columna existe antes de intentar leerla
+                    if (reader.HasRows)
+                    {
+                        lista.Add(new Registro_Paciente
+                        {
+                            Edad = Convert.ToInt32(reader["Edad"])
+                        });
+                    }
+                }
+            }
+            conexion.cerrarconexion();
+
+            return lista.FirstOrDefault().Edad;
+        }
+        public string CargarPacienteSexo(string Nombre)
+        {
+            List<Registro_Paciente> lista = new List<Registro_Paciente>();
+
+            string query = $@"select Sexo From tbl_Registros_de_Pacientes where Nombre = @Nombre";
+
+            command = new SqlCommand(query, conexion.abrirconexion());
+
+            command.Parameters.Add(new SqlParameter("@Nombre", Nombre));
+
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    // Verificar si la columna existe antes de intentar leerla
+                    if (reader.HasRows)
+                    {
+                        lista.Add(new Registro_Paciente
+                        {
+                            Sexo = reader["Sexo"].ToString()
+                        });
+                    }
+                }
+            }
+            return lista.FirstOrDefault()?.Sexo;
+        }
+        public long CargarPacienteTelefono(string Nombre)
+        {
+            List<Registro_Paciente> lista = new List<Registro_Paciente>();
+
+            string query = $@"select Telefono From tbl_Registros_de_Pacientes where Nombre = @Nombre";
+
+            command = new SqlCommand(query, conexion.abrirconexion());
+
+            command.Parameters.Add(new SqlParameter("@Nombre", Nombre));
+
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    // Verificar si la columna existe antes de intentar leerla
+                    if (reader.HasRows)
+                    {
+                        lista.Add(new Registro_Paciente
+                        {
+                            Telefono = Convert.ToInt64(reader["Telefono"])
+                        });
+                    }
+                }
+            }
+            return lista.FirstOrDefault().Telefono;
         }
     }
 }

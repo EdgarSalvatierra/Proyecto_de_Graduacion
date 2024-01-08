@@ -32,19 +32,21 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frmservicio2));
             this.PnlFacturacion = new System.Windows.Forms.Panel();
+            this.BtnX = new FontAwesome.Sharp.IconButton();
             this.LblFecha = new System.Windows.Forms.Label();
             this.LbTitulo = new System.Windows.Forms.Label();
             this.LblFech = new System.Windows.Forms.Label();
             this.Pnllista = new System.Windows.Forms.Panel();
+            this.TxtPrecio = new System.Windows.Forms.Label();
+            this.TxtExamen = new System.Windows.Forms.Label();
+            this.TxtCodigoFactura = new System.Windows.Forms.Label();
+            this.TxtPacientes = new System.Windows.Forms.Label();
             this.LblCliente = new System.Windows.Forms.Label();
             this.LblCodigoFactura = new System.Windows.Forms.Label();
             this.LblExamen = new System.Windows.Forms.Label();
             this.LblPrecio = new System.Windows.Forms.Label();
-            this.TxtPacientes = new System.Windows.Forms.Label();
-            this.TxtCodigoFactura = new System.Windows.Forms.Label();
-            this.TxtExamen = new System.Windows.Forms.Label();
-            this.TxtPrecio = new System.Windows.Forms.Label();
             this.GbDetallesdefactura = new System.Windows.Forms.GroupBox();
             this.PnlTotal = new System.Windows.Forms.Panel();
             this.lbl001 = new System.Windows.Forms.Label();
@@ -54,7 +56,6 @@
             this.DtgDetallesdeFactura = new System.Windows.Forms.DataGridView();
             this.PnlOpciones = new System.Windows.Forms.Panel();
             this.BtnImprimir = new FontAwesome.Sharp.IconButton();
-            this.BtnX = new FontAwesome.Sharp.IconButton();
             this.PnlFacturacion.SuspendLayout();
             this.Pnllista.SuspendLayout();
             this.GbDetallesdefactura.SuspendLayout();
@@ -77,14 +78,32 @@
             this.PnlFacturacion.Size = new System.Drawing.Size(943, 60);
             this.PnlFacturacion.TabIndex = 2;
             // 
+            // BtnX
+            // 
+            this.BtnX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnX.BackColor = System.Drawing.Color.SteelBlue;
+            this.BtnX.FlatAppearance.BorderSize = 0;
+            this.BtnX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnX.IconChar = FontAwesome.Sharp.IconChar.X;
+            this.BtnX.IconColor = System.Drawing.Color.White;
+            this.BtnX.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnX.IconSize = 20;
+            this.BtnX.Location = new System.Drawing.Point(893, 1);
+            this.BtnX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnX.Name = "BtnX";
+            this.BtnX.Size = new System.Drawing.Size(51, 56);
+            this.BtnX.TabIndex = 29;
+            this.BtnX.UseVisualStyleBackColor = false;
+            this.BtnX.Click += new System.EventHandler(this.BtnX_Click);
+            // 
             // LblFecha
             // 
             this.LblFecha.AutoSize = true;
-            this.LblFecha.Font = new System.Drawing.Font("Rockwell", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblFecha.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblFecha.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LblFecha.Location = new System.Drawing.Point(798, 15);
+            this.LblFecha.Location = new System.Drawing.Point(676, 19);
             this.LblFecha.Name = "LblFecha";
-            this.LblFecha.Size = new System.Drawing.Size(29, 20);
+            this.LblFecha.Size = new System.Drawing.Size(24, 17);
             this.LblFecha.TabIndex = 7;
             this.LblFecha.Text = "....";
             // 
@@ -94,7 +113,7 @@
             this.LbTitulo.AutoSize = true;
             this.LbTitulo.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbTitulo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LbTitulo.Location = new System.Drawing.Point(332, 15);
+            this.LbTitulo.Location = new System.Drawing.Point(287, 15);
             this.LbTitulo.Name = "LbTitulo";
             this.LbTitulo.Size = new System.Drawing.Size(274, 24);
             this.LbTitulo.TabIndex = 28;
@@ -105,7 +124,7 @@
             this.LblFech.AutoSize = true;
             this.LblFech.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblFech.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LblFech.Location = new System.Drawing.Point(728, 15);
+            this.LblFech.Location = new System.Drawing.Point(614, 19);
             this.LblFech.Name = "LblFech";
             this.LblFech.Size = new System.Drawing.Size(56, 20);
             this.LblFech.TabIndex = 6;
@@ -127,6 +146,47 @@
             this.Pnllista.Name = "Pnllista";
             this.Pnllista.Size = new System.Drawing.Size(943, 106);
             this.Pnllista.TabIndex = 11;
+            // 
+            // TxtPrecio
+            // 
+            this.TxtPrecio.AutoSize = true;
+            this.TxtPrecio.Font = new System.Drawing.Font("Corbel", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtPrecio.Location = new System.Drawing.Point(664, 69);
+            this.TxtPrecio.Name = "TxtPrecio";
+            this.TxtPrecio.Size = new System.Drawing.Size(30, 21);
+            this.TxtPrecio.TabIndex = 12;
+            this.TxtPrecio.Text = ".....";
+            // 
+            // TxtExamen
+            // 
+            this.TxtExamen.AutoSize = true;
+            this.TxtExamen.Font = new System.Drawing.Font("Corbel", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtExamen.Location = new System.Drawing.Point(664, 22);
+            this.TxtExamen.Name = "TxtExamen";
+            this.TxtExamen.Size = new System.Drawing.Size(30, 21);
+            this.TxtExamen.TabIndex = 11;
+            this.TxtExamen.Text = ".....";
+            // 
+            // TxtCodigoFactura
+            // 
+            this.TxtCodigoFactura.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.TxtCodigoFactura.AutoSize = true;
+            this.TxtCodigoFactura.Font = new System.Drawing.Font("Corbel", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtCodigoFactura.Location = new System.Drawing.Point(192, 23);
+            this.TxtCodigoFactura.Name = "TxtCodigoFactura";
+            this.TxtCodigoFactura.Size = new System.Drawing.Size(30, 21);
+            this.TxtCodigoFactura.TabIndex = 10;
+            this.TxtCodigoFactura.Text = ".....";
+            // 
+            // TxtPacientes
+            // 
+            this.TxtPacientes.AutoSize = true;
+            this.TxtPacientes.Font = new System.Drawing.Font("Corbel", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtPacientes.Location = new System.Drawing.Point(192, 72);
+            this.TxtPacientes.Name = "TxtPacientes";
+            this.TxtPacientes.Size = new System.Drawing.Size(30, 21);
+            this.TxtPacientes.TabIndex = 9;
+            this.TxtPacientes.Text = ".....";
             // 
             // LblCliente
             // 
@@ -154,7 +214,7 @@
             // 
             this.LblExamen.AutoSize = true;
             this.LblExamen.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblExamen.Location = new System.Drawing.Point(624, 25);
+            this.LblExamen.Location = new System.Drawing.Point(575, 23);
             this.LblExamen.Name = "LblExamen";
             this.LblExamen.Size = new System.Drawing.Size(73, 20);
             this.LblExamen.TabIndex = 6;
@@ -164,52 +224,11 @@
             // 
             this.LblPrecio.AutoSize = true;
             this.LblPrecio.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblPrecio.Location = new System.Drawing.Point(624, 72);
+            this.LblPrecio.Location = new System.Drawing.Point(575, 70);
             this.LblPrecio.Name = "LblPrecio";
             this.LblPrecio.Size = new System.Drawing.Size(60, 20);
             this.LblPrecio.TabIndex = 7;
             this.LblPrecio.Text = "Precio";
-            // 
-            // TxtPacientes
-            // 
-            this.TxtPacientes.AutoSize = true;
-            this.TxtPacientes.Font = new System.Drawing.Font("Corbel", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPacientes.Location = new System.Drawing.Point(192, 72);
-            this.TxtPacientes.Name = "TxtPacientes";
-            this.TxtPacientes.Size = new System.Drawing.Size(30, 21);
-            this.TxtPacientes.TabIndex = 9;
-            this.TxtPacientes.Text = ".....";
-            // 
-            // TxtCodigoFactura
-            // 
-            this.TxtCodigoFactura.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.TxtCodigoFactura.AutoSize = true;
-            this.TxtCodigoFactura.Font = new System.Drawing.Font("Corbel", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCodigoFactura.Location = new System.Drawing.Point(192, 23);
-            this.TxtCodigoFactura.Name = "TxtCodigoFactura";
-            this.TxtCodigoFactura.Size = new System.Drawing.Size(30, 21);
-            this.TxtCodigoFactura.TabIndex = 10;
-            this.TxtCodigoFactura.Text = ".....";
-            // 
-            // TxtExamen
-            // 
-            this.TxtExamen.AutoSize = true;
-            this.TxtExamen.Font = new System.Drawing.Font("Corbel", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtExamen.Location = new System.Drawing.Point(713, 24);
-            this.TxtExamen.Name = "TxtExamen";
-            this.TxtExamen.Size = new System.Drawing.Size(30, 21);
-            this.TxtExamen.TabIndex = 11;
-            this.TxtExamen.Text = ".....";
-            // 
-            // TxtPrecio
-            // 
-            this.TxtPrecio.AutoSize = true;
-            this.TxtPrecio.Font = new System.Drawing.Font("Corbel", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPrecio.Location = new System.Drawing.Point(713, 71);
-            this.TxtPrecio.Name = "TxtPrecio";
-            this.TxtPrecio.Size = new System.Drawing.Size(30, 21);
-            this.TxtPrecio.TabIndex = 12;
-            this.TxtPrecio.Text = ".....";
             // 
             // GbDetallesdefactura
             // 
@@ -242,7 +261,7 @@
             // 
             this.lbl001.AutoSize = true;
             this.lbl001.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl001.Location = new System.Drawing.Point(411, 20);
+            this.lbl001.Location = new System.Drawing.Point(624, 20);
             this.lbl001.Name = "lbl001";
             this.lbl001.Size = new System.Drawing.Size(60, 22);
             this.lbl001.TabIndex = 7;
@@ -252,7 +271,7 @@
             // 
             this.LblTotal.AutoSize = true;
             this.LblTotal.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTotal.Location = new System.Drawing.Point(350, 22);
+            this.LblTotal.Location = new System.Drawing.Point(563, 22);
             this.LblTotal.Name = "LblTotal";
             this.LblTotal.Size = new System.Drawing.Size(48, 20);
             this.LblTotal.TabIndex = 8;
@@ -262,7 +281,7 @@
             // 
             this.SubTotal.AutoSize = true;
             this.SubTotal.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SubTotal.Location = new System.Drawing.Point(29, 22);
+            this.SubTotal.Location = new System.Drawing.Point(242, 22);
             this.SubTotal.Name = "SubTotal";
             this.SubTotal.Size = new System.Drawing.Size(77, 20);
             this.SubTotal.TabIndex = 6;
@@ -272,7 +291,7 @@
             // 
             this.LBlsubtotal.AutoSize = true;
             this.LBlsubtotal.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBlsubtotal.Location = new System.Drawing.Point(146, 20);
+            this.LBlsubtotal.Location = new System.Drawing.Point(359, 20);
             this.LBlsubtotal.Name = "LBlsubtotal";
             this.LBlsubtotal.Size = new System.Drawing.Size(60, 22);
             this.LBlsubtotal.TabIndex = 6;
@@ -323,7 +342,7 @@
             this.DtgDetallesdeFactura.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.DtgDetallesdeFactura.RowTemplate.Height = 24;
             this.DtgDetallesdeFactura.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DtgDetallesdeFactura.Size = new System.Drawing.Size(1012, 316);
+            this.DtgDetallesdeFactura.Size = new System.Drawing.Size(920, 316);
             this.DtgDetallesdeFactura.TabIndex = 1;
             this.DtgDetallesdeFactura.Click += new System.EventHandler(this.DtgDetallesdeFactura_Click);
             // 
@@ -359,34 +378,16 @@
             this.BtnImprimir.UseVisualStyleBackColor = false;
             this.BtnImprimir.Click += new System.EventHandler(this.BtnImprimir_Click);
             // 
-            // BtnX
-            // 
-            this.BtnX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnX.BackColor = System.Drawing.Color.SteelBlue;
-            this.BtnX.FlatAppearance.BorderSize = 0;
-            this.BtnX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnX.IconChar = FontAwesome.Sharp.IconChar.X;
-            this.BtnX.IconColor = System.Drawing.Color.White;
-            this.BtnX.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnX.IconSize = 20;
-            this.BtnX.Location = new System.Drawing.Point(893, 1);
-            this.BtnX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BtnX.Name = "BtnX";
-            this.BtnX.Size = new System.Drawing.Size(51, 56);
-            this.BtnX.TabIndex = 29;
-            this.BtnX.UseVisualStyleBackColor = false;
-            this.BtnX.Click += new System.EventHandler(this.BtnX_Click);
-            // 
             // Frmservicio2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(943, 664);
             this.Controls.Add(this.PnlOpciones);
             this.Controls.Add(this.GbDetallesdefactura);
             this.Controls.Add(this.Pnllista);
             this.Controls.Add(this.PnlFacturacion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frmservicio2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Frmservicio2_Load);

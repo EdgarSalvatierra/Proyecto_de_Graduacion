@@ -28,234 +28,233 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.PnlLogin = new System.Windows.Forms.Panel();
-            this.Btnmin = new FontAwesome.Sharp.IconButton();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.BtnClose = new System.Windows.Forms.Button();
-            this.Pnlloginh2 = new System.Windows.Forms.Panel();
-            this.BtnEntrar = new FontAwesome.Sharp.IconButton();
+            this.BtnEntrar = new System.Windows.Forms.Button();
+            this.Lblsesion = new System.Windows.Forms.Label();
+            this.Btnmin = new System.Windows.Forms.Button();
+            this.icncandado = new System.Windows.Forms.PictureBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.Pnlcontraseña = new System.Windows.Forms.Panel();
+            this.pccandado = new System.Windows.Forms.PictureBox();
             this.TxtContraseña = new System.Windows.Forms.TextBox();
-            this.PnlBuscare = new System.Windows.Forms.Panel();
+            this.pnltec = new System.Windows.Forms.Panel();
+            this.pcusuario = new System.Windows.Forms.PictureBox();
             this.TxtUser = new System.Windows.Forms.TextBox();
-            this.LblContraseñas = new System.Windows.Forms.Label();
-            this.LblUsuario = new System.Windows.Forms.Label();
-            this.LblIniciosesion = new System.Windows.Forms.Label();
-            this.ICNUser = new FontAwesome.Sharp.IconPictureBox();
-            this.PnlLogin.SuspendLayout();
-            this.Pnlloginh2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.icncandado)).BeginInit();
+            this.panel3.SuspendLayout();
             this.Pnlcontraseña.SuspendLayout();
-            this.PnlBuscare.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ICNUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pccandado)).BeginInit();
+            this.pnltec.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcusuario)).BeginInit();
             this.SuspendLayout();
-            // 
-            // PnlLogin
-            // 
-            this.PnlLogin.BackColor = System.Drawing.SystemColors.Control;
-            this.PnlLogin.Controls.Add(this.Btnmin);
-            this.PnlLogin.Controls.Add(this.BtnClose);
-            this.PnlLogin.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PnlLogin.Location = new System.Drawing.Point(0, 0);
-            this.PnlLogin.Name = "PnlLogin";
-            this.PnlLogin.Size = new System.Drawing.Size(496, 40);
-            this.PnlLogin.TabIndex = 1;
-            // 
-            // Btnmin
-            // 
-            this.Btnmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Btnmin.BackColor = System.Drawing.SystemColors.Control;
-            this.Btnmin.FlatAppearance.BorderSize = 0;
-            this.Btnmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btnmin.IconChar = FontAwesome.Sharp.IconChar.Minus;
-            this.Btnmin.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Btnmin.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Btnmin.IconSize = 20;
-            this.Btnmin.Location = new System.Drawing.Point(412, 2);
-            this.Btnmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Btnmin.Name = "Btnmin";
-            this.Btnmin.Size = new System.Drawing.Size(36, 32);
-            this.Btnmin.TabIndex = 5;
-            this.Btnmin.UseVisualStyleBackColor = false;
-            this.Btnmin.Click += new System.EventHandler(this.Btnmin_Click);
             // 
             // BtnClose
             // 
             this.BtnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnClose.FlatAppearance.BorderSize = 0;
             this.BtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnClose.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BtnClose.Location = new System.Drawing.Point(454, 3);
+            this.BtnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnClose.Location = new System.Drawing.Point(508, 0);
             this.BtnClose.Name = "BtnClose";
-            this.BtnClose.Size = new System.Drawing.Size(41, 33);
-            this.BtnClose.TabIndex = 4;
+            this.BtnClose.Size = new System.Drawing.Size(55, 48);
+            this.BtnClose.TabIndex = 1;
             this.BtnClose.Text = "X";
             this.BtnClose.UseVisualStyleBackColor = true;
             this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
-            // Pnlloginh2
-            // 
-            this.Pnlloginh2.BackColor = System.Drawing.SystemColors.Control;
-            this.Pnlloginh2.Controls.Add(this.BtnEntrar);
-            this.Pnlloginh2.Controls.Add(this.Pnlcontraseña);
-            this.Pnlloginh2.Controls.Add(this.PnlBuscare);
-            this.Pnlloginh2.Controls.Add(this.LblContraseñas);
-            this.Pnlloginh2.Controls.Add(this.LblUsuario);
-            this.Pnlloginh2.Controls.Add(this.LblIniciosesion);
-            this.Pnlloginh2.Controls.Add(this.ICNUser);
-            this.Pnlloginh2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Pnlloginh2.Location = new System.Drawing.Point(0, 40);
-            this.Pnlloginh2.Name = "Pnlloginh2";
-            this.Pnlloginh2.Size = new System.Drawing.Size(496, 427);
-            this.Pnlloginh2.TabIndex = 2;
-            // 
             // BtnEntrar
             // 
-            this.BtnEntrar.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.BtnEntrar.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.BtnEntrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.BtnEntrar.BackColor = System.Drawing.Color.SteelBlue;
+            this.BtnEntrar.FlatAppearance.BorderSize = 0;
+            this.BtnEntrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BtnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEntrar.Font = new System.Drawing.Font("Corbel", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEntrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
-            this.BtnEntrar.IconChar = FontAwesome.Sharp.IconChar.SignIn;
-            this.BtnEntrar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(75)))), ((int)(((byte)(194)))));
-            this.BtnEntrar.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.BtnEntrar.IconSize = 20;
-            this.BtnEntrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnEntrar.Location = new System.Drawing.Point(129, 366);
-            this.BtnEntrar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BtnEntrar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BtnEntrar.Location = new System.Drawing.Point(116, 434);
             this.BtnEntrar.Name = "BtnEntrar";
-            this.BtnEntrar.Size = new System.Drawing.Size(284, 51);
-            this.BtnEntrar.TabIndex = 52;
-            this.BtnEntrar.Text = "Entrar Sesion";
+            this.BtnEntrar.Size = new System.Drawing.Size(341, 40);
+            this.BtnEntrar.TabIndex = 8;
+            this.BtnEntrar.Text = "Verificar Usuario";
             this.BtnEntrar.UseVisualStyleBackColor = false;
             this.BtnEntrar.Click += new System.EventHandler(this.BtnEntrar_Click);
             // 
+            // Lblsesion
+            // 
+            this.Lblsesion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.Lblsesion.AutoSize = true;
+            this.Lblsesion.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lblsesion.Location = new System.Drawing.Point(77, 205);
+            this.Lblsesion.Name = "Lblsesion";
+            this.Lblsesion.Size = new System.Drawing.Size(143, 24);
+            this.Lblsesion.TabIndex = 9;
+            this.Lblsesion.Text = "Inicio de Sesion";
+            // 
+            // Btnmin
+            // 
+            this.Btnmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Btnmin.FlatAppearance.BorderSize = 0;
+            this.Btnmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btnmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btnmin.Location = new System.Drawing.Point(462, 0);
+            this.Btnmin.Name = "Btnmin";
+            this.Btnmin.Size = new System.Drawing.Size(55, 48);
+            this.Btnmin.TabIndex = 10;
+            this.Btnmin.Text = "_";
+            this.Btnmin.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Btnmin.UseVisualStyleBackColor = true;
+            this.Btnmin.Click += new System.EventHandler(this.Btnmin_Click_1);
+            // 
+            // icncandado
+            // 
+            this.icncandado.Image = global::Proyecto_de_Graduacion.Properties.Resources.icono_removebg_preview;
+            this.icncandado.Location = new System.Drawing.Point(351, 68);
+            this.icncandado.Name = "icncandado";
+            this.icncandado.Size = new System.Drawing.Size(138, 122);
+            this.icncandado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.icncandado.TabIndex = 0;
+            this.icncandado.TabStop = false;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel3.Controls.Add(this.panel2);
+            this.panel3.Controls.Add(this.panel1);
+            this.panel3.Controls.Add(this.Pnlcontraseña);
+            this.panel3.Controls.Add(this.pnltec);
+            this.panel3.Location = new System.Drawing.Point(116, 265);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(341, 131);
+            this.panel3.TabIndex = 14;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Black;
+            this.panel2.Location = new System.Drawing.Point(17, 109);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(304, 3);
+            this.panel2.TabIndex = 17;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Location = new System.Drawing.Point(17, 45);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(303, 3);
+            this.panel1.TabIndex = 16;
+            // 
             // Pnlcontraseña
             // 
-            this.Pnlcontraseña.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Pnlcontraseña.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Pnlcontraseña.BackColor = System.Drawing.Color.Gainsboro;
+            this.Pnlcontraseña.Controls.Add(this.pccandado);
             this.Pnlcontraseña.Controls.Add(this.TxtContraseña);
-            this.Pnlcontraseña.Location = new System.Drawing.Point(129, 292);
+            this.Pnlcontraseña.Location = new System.Drawing.Point(17, 72);
             this.Pnlcontraseña.Name = "Pnlcontraseña";
-            this.Pnlcontraseña.Size = new System.Drawing.Size(284, 35);
-            this.Pnlcontraseña.TabIndex = 25;
+            this.Pnlcontraseña.Size = new System.Drawing.Size(304, 36);
+            this.Pnlcontraseña.TabIndex = 15;
+            // 
+            // pccandado
+            // 
+            this.pccandado.BackColor = System.Drawing.Color.LightGray;
+            this.pccandado.Image = global::Proyecto_de_Graduacion.Properties.Resources.iconodecandado_removebg_preview;
+            this.pccandado.Location = new System.Drawing.Point(0, 3);
+            this.pccandado.Name = "pccandado";
+            this.pccandado.Size = new System.Drawing.Size(40, 28);
+            this.pccandado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pccandado.TabIndex = 2;
+            this.pccandado.TabStop = false;
             // 
             // TxtContraseña
             // 
+            this.TxtContraseña.BackColor = System.Drawing.Color.Gainsboro;
             this.TxtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtContraseña.Location = new System.Drawing.Point(3, 10);
+            this.TxtContraseña.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtContraseña.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.TxtContraseña.Location = new System.Drawing.Point(50, 9);
             this.TxtContraseña.Name = "TxtContraseña";
-            this.TxtContraseña.Size = new System.Drawing.Size(276, 20);
-            this.TxtContraseña.TabIndex = 0;
+            this.TxtContraseña.Size = new System.Drawing.Size(212, 19);
+            this.TxtContraseña.TabIndex = 1;
+            this.TxtContraseña.Text = "Ingrese su contraseña";
+            this.TxtContraseña.Enter += new System.EventHandler(this.TxtContraseña_Enter);
             // 
-            // PnlBuscare
+            // pnltec
             // 
-            this.PnlBuscare.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.PnlBuscare.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PnlBuscare.Controls.Add(this.TxtUser);
-            this.PnlBuscare.Location = new System.Drawing.Point(129, 206);
-            this.PnlBuscare.Name = "PnlBuscare";
-            this.PnlBuscare.Size = new System.Drawing.Size(284, 35);
-            this.PnlBuscare.TabIndex = 24;
+            this.pnltec.BackColor = System.Drawing.Color.Gainsboro;
+            this.pnltec.Controls.Add(this.pcusuario);
+            this.pnltec.Controls.Add(this.TxtUser);
+            this.pnltec.Location = new System.Drawing.Point(17, 11);
+            this.pnltec.Name = "pnltec";
+            this.pnltec.Size = new System.Drawing.Size(304, 33);
+            this.pnltec.TabIndex = 14;
+            // 
+            // pcusuario
+            // 
+            this.pcusuario.Image = global::Proyecto_de_Graduacion.Properties.Resources.usuario_removebg_preview;
+            this.pcusuario.Location = new System.Drawing.Point(0, 3);
+            this.pcusuario.Name = "pcusuario";
+            this.pcusuario.Size = new System.Drawing.Size(40, 24);
+            this.pcusuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcusuario.TabIndex = 1;
+            this.pcusuario.TabStop = false;
             // 
             // TxtUser
             // 
-            this.TxtUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtUser.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.TxtUser.BackColor = System.Drawing.Color.Gainsboro;
             this.TxtUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtUser.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.TxtUser.Location = new System.Drawing.Point(3, 8);
+            this.TxtUser.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtUser.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.TxtUser.Location = new System.Drawing.Point(50, 7);
             this.TxtUser.Name = "TxtUser";
-            this.TxtUser.Size = new System.Drawing.Size(276, 20);
+            this.TxtUser.Size = new System.Drawing.Size(210, 19);
             this.TxtUser.TabIndex = 0;
-            this.TxtUser.Enter += new System.EventHandler(this.TxtUser_Enter);
-            // 
-            // LblContraseñas
-            // 
-            this.LblContraseñas.AutoSize = true;
-            this.LblContraseñas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblContraseñas.ForeColor = System.Drawing.Color.Black;
-            this.LblContraseñas.Location = new System.Drawing.Point(12, 298);
-            this.LblContraseñas.Name = "LblContraseñas";
-            this.LblContraseñas.Size = new System.Drawing.Size(103, 22);
-            this.LblContraseñas.TabIndex = 23;
-            this.LblContraseñas.Text = "Contraseña";
-            // 
-            // LblUsuario
-            // 
-            this.LblUsuario.AutoSize = true;
-            this.LblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblUsuario.ForeColor = System.Drawing.Color.Black;
-            this.LblUsuario.Location = new System.Drawing.Point(12, 206);
-            this.LblUsuario.Name = "LblUsuario";
-            this.LblUsuario.Size = new System.Drawing.Size(72, 22);
-            this.LblUsuario.TabIndex = 22;
-            this.LblUsuario.Text = "Usuario";
-            // 
-            // LblIniciosesion
-            // 
-            this.LblIniciosesion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.LblIniciosesion.AutoSize = true;
-            this.LblIniciosesion.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblIniciosesion.Location = new System.Drawing.Point(175, 13);
-            this.LblIniciosesion.Name = "LblIniciosesion";
-            this.LblIniciosesion.Size = new System.Drawing.Size(124, 22);
-            this.LblIniciosesion.TabIndex = 6;
-            this.LblIniciosesion.Text = "Inicio Sesion";
-            // 
-            // ICNUser
-            // 
-            this.ICNUser.BackColor = System.Drawing.SystemColors.Control;
-            this.ICNUser.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ICNUser.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
-            this.ICNUser.IconColor = System.Drawing.SystemColors.ControlText;
-            this.ICNUser.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ICNUser.IconSize = 112;
-            this.ICNUser.Location = new System.Drawing.Point(172, 46);
-            this.ICNUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ICNUser.Name = "ICNUser";
-            this.ICNUser.Size = new System.Drawing.Size(127, 112);
-            this.ICNUser.TabIndex = 21;
-            this.ICNUser.TabStop = false;
+            this.TxtUser.Text = "Ingrese su usuario";
+            this.TxtUser.Enter += new System.EventHandler(this.TxtUser_Enter_1);
             // 
             // FrmLogin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(496, 470);
-            this.Controls.Add(this.Pnlloginh2);
-            this.Controls.Add(this.PnlLogin);
+            this.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.ClientSize = new System.Drawing.Size(562, 490);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.Btnmin);
+            this.Controls.Add(this.Lblsesion);
+            this.Controls.Add(this.BtnEntrar);
+            this.Controls.Add(this.BtnClose);
+            this.Controls.Add(this.icncandado);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.PnlLogin.ResumeLayout(false);
-            this.Pnlloginh2.ResumeLayout(false);
-            this.Pnlloginh2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.icncandado)).EndInit();
+            this.panel3.ResumeLayout(false);
             this.Pnlcontraseña.ResumeLayout(false);
             this.Pnlcontraseña.PerformLayout();
-            this.PnlBuscare.ResumeLayout(false);
-            this.PnlBuscare.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ICNUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pccandado)).EndInit();
+            this.pnltec.ResumeLayout(false);
+            this.pnltec.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcusuario)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel PnlLogin;
-        private FontAwesome.Sharp.IconButton Btnmin;
+        private System.Windows.Forms.PictureBox icncandado;
         private System.Windows.Forms.Button BtnClose;
-        private System.Windows.Forms.Panel Pnlloginh2;
-        private System.Windows.Forms.Label LblIniciosesion;
-        private FontAwesome.Sharp.IconPictureBox ICNUser;
-        private System.Windows.Forms.Label LblContraseñas;
-        private System.Windows.Forms.Label LblUsuario;
+        private System.Windows.Forms.Button BtnEntrar;
+        private System.Windows.Forms.Label Lblsesion;
+        private System.Windows.Forms.Button Btnmin;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel Pnlcontraseña;
+        private System.Windows.Forms.PictureBox pccandado;
         private System.Windows.Forms.TextBox TxtContraseña;
-        private System.Windows.Forms.Panel PnlBuscare;
+        private System.Windows.Forms.Panel pnltec;
+        private System.Windows.Forms.PictureBox pcusuario;
         private System.Windows.Forms.TextBox TxtUser;
-        private FontAwesome.Sharp.IconButton BtnEntrar;
     }
 }

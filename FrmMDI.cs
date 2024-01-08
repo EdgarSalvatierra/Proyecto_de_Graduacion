@@ -46,10 +46,12 @@ namespace Proyecto_de_Graduacion
         {
             /*Programacion para los Privilegios del Usuario */
 
+            Lbluser.Text = Usuario_.CargarElUsuario(usuario);
+
             this.WindowState = FormWindowState.Maximized;
 
             // Itera a través de todos los controles en el panel PnlDesplegable.
-            foreach (Control control in PnlDesplegable.Controls)
+            foreach (Control control in PnlMenuDesplegable.Controls)
             {
                 // Verifica si el control actual es un IconButton.
                 if (control is IconButton item)
@@ -93,9 +95,7 @@ namespace Proyecto_de_Graduacion
                     case FormWindowState.Normal:
                         if (this.Padding.Top == borderSize)
                         {
-
-
-                            this.Padding = new Padding(borderSize);
+                           this.Padding = new Padding(borderSize);
                         }
                         break;
 
@@ -116,14 +116,14 @@ namespace Proyecto_de_Graduacion
         {
             /*Programacion para Cerrar Formulario Emergente*/
 
-            Form formu = panelDesktop.Controls.OfType<frm>().FirstOrDefault();
+            Form formu = Pnluser.Controls.OfType<frm>().FirstOrDefault();
 
             // Si el formulario existe, ciérralo
             if (formu != null)
             {
                 formu.Close();
 
-                panelDesktop.BackColor= Color.White;
+                Pnluser.BackColor= Color.White;
             }
         }
         private void AbrirPanel<frm>() where frm : Form, new()
@@ -131,15 +131,15 @@ namespace Proyecto_de_Graduacion
             /*Programacion para Abrir un Formulario */
 
             Form formu;
-            formu = panelDesktop.Controls.OfType<frm>().FirstOrDefault();//Busca la coleccion de los formularios
+            formu = Pnluser.Controls.OfType<frm>().FirstOrDefault();//Busca la coleccion de los formularios
                                                                          //si el formulario  no existe
             if (formu == null)
             {
                 formu = new frm();
                 formu.TopLevel = false;
                 formu.Dock = DockStyle.Fill;
-                panelDesktop.Controls.Add(formu);
-                panelDesktop.Tag = formu;
+                Pnluser.Controls.Add(formu);
+                Pnluser.Tag = formu;
                 formu.Show();
                 formu.BringToFront();
 
@@ -156,7 +156,6 @@ namespace Proyecto_de_Graduacion
             // Calcular minutos y segundos
             int minutos = segundos / 60;
             int segundosRestantes = segundos % 60;
-
 
             // Mostrar en el Label la hora con formato HH:mm:ss
             lblHora.Text = DateTime.Now.AddMinutes(minutos).AddSeconds(segundosRestantes).ToString("HH:mm:ss");
@@ -178,18 +177,15 @@ namespace Proyecto_de_Graduacion
             try
             {
                 // Verifica si el ancho del panel desplegable es mayor que 200 (menú contraído).
-                if (this.PnlDesplegable.Width > 200)
+                if (this.PnlMenuDesplegable.Width > 200)
                 {
                     // Ajusta el ancho del panel desplegable y del menú a 90 píxeles.
-                    PnlDesplegable.Width = 90;
+                    PnlMenuDesplegable.Width = 90;
                     PnlMenu.Width = 90;
 
-                    // Oculta las etiquetas "LblFecha" y "lblHora".
-                    LblFecha.Visible = false;
-                    lblHora.Visible = false;
-
+                    // Oculta las etiquetas "LblFecha" y "lblHora".                
                     // Configura cada botón en el panel desplegable.
-                    foreach (Button menubut in PnlDesplegable.Controls.OfType<Button>())
+                    foreach (Button menubut in PnlMenuDesplegable.Controls.OfType<Button>())
                     {
                         menubut.Text = "";
                         menubut.ImageAlign = ContentAlignment.MiddleCenter;
@@ -199,15 +195,11 @@ namespace Proyecto_de_Graduacion
                 else
                 {
                     // Menú desplegado: Ajusta el ancho del panel desplegable y del menú a 346 píxeles.
-                    PnlDesplegable.Width = 346;
+                    PnlMenuDesplegable.Width = 346;
                     PnlMenu.Width = 346;
 
-                    // Muestra las etiquetas "LblFecha" y "lblHora".
-                    LblFecha.Visible = true;
-                    lblHora.Visible = true;
-
                     // Configura cada botón en el panel desplegable.
-                    foreach (Button menubut in PnlDesplegable.Controls.OfType<Button>())
+                    foreach (Button menubut in PnlMenuDesplegable.Controls.OfType<Button>())
                     {
                         menubut.Text = "" + menubut.Tag.ToString();
                         menubut.ImageAlign = ContentAlignment.MiddleLeft;
@@ -224,7 +216,7 @@ namespace Proyecto_de_Graduacion
         private bool FormularioActivo<frm>() where frm : Form
         {
             // Verificar si el formulario activo pertenece a los controles del panelDesktop
-            return panelDesktop.Controls.OfType<frm>().Any(f => f.Visible);
+            return Pnluser.Controls.OfType<frm>().Any(f => f.Visible);
         } 
         private void ICNMenu_Click_1(object sender, EventArgs e)
         {
@@ -268,44 +260,6 @@ namespace Proyecto_de_Graduacion
 
             // Muestra el formulario de inicio de sesión.
             login.Show();
-        }
-        private void BtnCompras_Click(object sender, EventArgs e)
-        {
-            // Cuando se hace clic en el botón "BtnCompras", se ejecuta este método.
-
-            // Abre el panel asociado al formulario FrmCompras.
-            AbrirPanel<FrmCompras>();
-
-            // Actualiza el texto de la etiqueta LblMenu con "Modulo de Recepcion de Compras".
-            LblMenu.Text = "Modulo de Recepcion de Compras";
-
-            // Realiza alguna acción relacionada con el despliegue del menú (no proporcionada en el código actual).
-            DespleMenu();
-        }
-        private void BtnFac_m_Click(object sender, EventArgs e)
-        {
-            AbrirPanel<FrmFacturacion>();
-
-            LblMenu.Text = "Modulo de Rececpion de Facturacion";
-
-            DespleMenu();
-        }
-        private void BtnReg_pas_Click(object sender, EventArgs e)
-        {
-            AbrirPanel<FrmRegistrodePacientes>();
-
-            LblMenu.Text = "Modulo de Registros de Pacientes";
-
-            DespleMenu();
-        }
-
-        private void BtnConf_Click(object sender, EventArgs e)
-        {
-            AbrirPanel<FrmConfiguracion>();
-
-            LblMenu.Text = "Configuracion";
-
-            DespleMenu();
         }
         private void BtnAd_Usuario_Click(object sender, EventArgs e)
         {
@@ -400,22 +354,13 @@ namespace Proyecto_de_Graduacion
         {
             ToolTip toolTip = new ToolTip();
             toolTip.SetToolTip(BtnCerrarFormulario, "Cerrar Formulario Emergente");
-        }
-        private void PcLogo_MouseHover(object sender, EventArgs e)
-        {
-            ToolTip toolTip = new ToolTip();
-            toolTip.SetToolTip(PcLogo, "Laboratorio Clinico El Soccorro");
-        }
+        }   
         private void PnlMenu_MouseHover(object sender, EventArgs e)
         {
             ToolTip toolTip = new ToolTip();
             toolTip.SetToolTip(PnlMenu, "Menu Lateral");
         }
-        private void IcnUsers_MouseHover(object sender, EventArgs e)
-        {
-            ToolTip toolTip = new ToolTip();
-            toolTip.SetToolTip(IcnUsers, "Usuario: ");
-        }
+       
         private void BtnGesti_Exa_Click(object sender, EventArgs e)
         {
             // Cuando se hace clic en el botón "BtnCitas", se ejecuta este método.
@@ -434,7 +379,44 @@ namespace Proyecto_de_Graduacion
         {
             ajustforms();
         }
+        private void BtnConf_Click_1(object sender, EventArgs e)
+        {
+            AbrirPanel<FrmConfiguracion>();
 
+            LblMenu.Text = "Configuracion";
+
+            DespleMenu();
+        }
+        private void BtnFac_m_Click_1(object sender, EventArgs e)
+        {
+            AbrirPanel<FrmFacturacion>();
+
+            LblMenu.Text = "Modulo de Rececpion de Facturacion";
+
+            DespleMenu();
+        }
+        private void BtnReg_pas_Click_1(object sender, EventArgs e)
+        {
+            AbrirPanel<FrmRegistrodePacientes>();
+
+            LblMenu.Text = "Modulo de Registros de Pacientes";
+
+            DespleMenu();
+        }
+
+        private void BtnCompras_Click_1(object sender, EventArgs e)
+        {
+            // Cuando se hace clic en el botón "BtnCompras", se ejecuta este método.
+
+            // Abre el panel asociado al formulario FrmCompras.
+            AbrirPanel<FrmCompras>();
+
+            // Actualiza el texto de la etiqueta LblMenu con "Modulo de Recepcion de Compras".
+            LblMenu.Text = "Modulo de Recepcion de Compras";
+
+            // Realiza alguna acción relacionada con el despliegue del menú (no proporcionada en el código actual).
+            DespleMenu();
+        }
         private void BtnCerrarFormulario_Click(object sender, EventArgs e)
         {
             if (FormularioActivo<FrmFacturacion>())

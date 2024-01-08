@@ -33,7 +33,7 @@ namespace Proyecto_de_Graduacion
                 {
                     string Nombre = TxtNombre.Text;
 
-                    DateTime Nacimiento = Convert.ToDateTime(TxtFecha.Text);
+                    DateTime Nacimiento = Convert.ToDateTime(DtpFecha.Text);
 
                     long telefono = Convert.ToInt64(txtTelefono.Text);
 

@@ -19,6 +19,18 @@ namespace Proyecto_de_Graduacion
         {
             InitializeComponent();
         }
+        private void BtnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        private void TxtUser_Enter(object sender, EventArgs e)
+        {
+            if (TxtUser.Text == "Ingrese su usuario")
+            {
+                TxtUser.Text = "";
+                TxtUser.ForeColor = Color.Black;
+            }
+        }
         private void BtnEntrar_Click(object sender, EventArgs e)
         {
             string usuario = TxtUser.Text;
@@ -29,11 +41,11 @@ namespace Proyecto_de_Graduacion
 
             if (res)
             {
-                MessageBox.Show("Usuario verificado, puede entrar al sistema","SQL Server",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Usuario verificado, puede entrar al sistema", "SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 this.Hide();
 
-                FrmMDI mDI = new FrmMDI(TxtUser.Text,TxtContraseña.Text);
+                FrmMDI mDI = new FrmMDI(TxtUser.Text, TxtContraseña.Text);
 
                 mDI.Show();
             }
@@ -46,20 +58,26 @@ namespace Proyecto_de_Graduacion
                 MessageBox.Show("El Usuario no existe,intente comunicarse con el Administrador", "SQl Server", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void BtnClose_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-        private void Btnmin_Click(object sender, EventArgs e)
+        private void Btnmin_Click_1(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
-        private void TxtUser_Enter(object sender, EventArgs e)
+        private void TxtUser_Enter_1(object sender, EventArgs e)
         {
-            if (TxtUser.Text == "Usuario")
+
+            if (TxtUser.Text == "Ingrese su usuario")
             {
                 TxtUser.Text = "";
+                TxtUser.ForeColor = Color.Black;
+            }
+        }
+
+        private void TxtContraseña_Enter(object sender, EventArgs e)
+        {
+            if (TxtContraseña.Text == "Ingrese su contraseña")
+            {
+                TxtContraseña.Text = "";
+                TxtContraseña.ForeColor = Color.Black;
             }
         }
     }

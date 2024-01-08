@@ -16,5 +16,17 @@ namespace Proyecto_de_Graduacion
         {
             InitializeComponent();
         }
+        private void FrmNuevaCompra_Load(object sender, EventArgs e)
+        {
+            LblFecha.Text = DateTime.Now.ToLongDateString();
+        }
+
+        private void BtnGuardar_Click(object sender, EventArgs e)
+        {
+            if (true)
+            {
+
+            }
+        }
     }
 }

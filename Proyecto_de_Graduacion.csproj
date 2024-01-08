@@ -32,14 +32,29 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Laboratorio.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="FontAwesome.Sharp, Version=6.3.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
       <HintPath>packages\FontAwesome.Sharp.6.3.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>packages\itextsharp.xmlworker.5.5.13.3\lib\itextsharp.xmlworker.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Common, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Drawing.Common.7.0.0\lib\net462\System.Drawing.Common.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -113,11 +128,11 @@
     <Compile Include="FrmNuevaCompra.Designer.cs">
       <DependentUpon>FrmNuevaCompra.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmNuevoPaciente.cs">
+    <Compile Include="FrmNuevaConfiguracion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmNuevoPaciente.Designer.cs">
-      <DependentUpon>FrmNuevoPaciente.cs</DependentUpon>
+    <Compile Include="FrmNuevaConfiguracion.Designer.cs">
+      <DependentUpon>FrmNuevaConfiguracion.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmNuevoServicio.cs">
       <SubType>Form</SubType>
@@ -187,8 +202,8 @@
     <EmbeddedResource Include="FrmNuevaCompra.resx">
       <DependentUpon>FrmNuevaCompra.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmNuevoPaciente.resx">
-      <DependentUpon>FrmNuevoPaciente.cs</DependentUpon>
+    <EmbeddedResource Include="FrmNuevaConfiguracion.resx">
+      <DependentUpon>FrmNuevaConfiguracion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmNuevoServicio.resx">
       <DependentUpon>FrmNuevoServicio.cs</DependentUpon>
@@ -249,6 +264,25 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Iconousuario-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Laboratorio.ico" />
+    <None Include="Resources\FacturaPedido.html" />
+    <None Include="Resources\Facturas.html" />
+    <None Include="Resources\logo.jpg" />
+    <None Include="Resources\Laboratorio1.png" />
+    <None Include="Resources\box-arrow-in-right1.png" />
+    <None Include="Resources\box-arrow-in-right.png" />
+    <None Include="Resources\iconodecandado-removebg-preview.png" />
+    <None Include="Resources\Plantilla.docx" />
+    <None Include="Resources\usuario-removebg-preview.png" />
+    <None Include="Resources\icono-removebg-preview.png" />
+    <None Include="Resources\icono.jpg" />
+    <None Include="Resources\fondo3.jpg" />
+    <None Include="Resources\Laboratorio-removebg-preview2.png" />
+    <None Include="Resources\fondo2.jpg" />
+    <None Include="Resources\fondo.jpg" />
+    <None Include="Resources\Laboratorio-removebg-preview1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

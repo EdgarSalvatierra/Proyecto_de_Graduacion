@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factura de Pedido</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .invoice {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .invoice-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .invoice-header h1 {
+            color: #333;
+        }
+
+        .invoice-details {
+            margin-bottom: 20px;
+        }
+
+        .invoice-details p {
+            margin: 5px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .total {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .thank-you {
+            text-align: center;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="invoice">
+        <div class="invoice-header">
+            <h1>Factura de Pedido</h1>
+            <p>Fecha: 7 de enero de 2024</p>
+        </div>
+
+        <div class="invoice-details">
+            <p>Cliente: Nombre del Cliente</p>
+            <p>Dirección: Dirección del Cliente</p>
+            <p>Email: cliente@example.com</p>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio Unitario</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Producto 1</td>
+                    <td>2</td>
+                    <td>$20.00</td>
+                    <td>$40.00</td>
+                </tr>
+                <tr>
+                    <td>Producto 2</td>
+                    <td>1</td>
+                    <td>$30.00</td>
+                    <td>$30.00</td>
+                </tr>
+                <!-- Agregar más filas según sea necesario -->
+            </tbody>
+        </table>
+
+        <div class="total">Total: $70.00</div>
+
+        <div class="thank-you">
+            <p>¡Gracias por su pedido!</p>
+        </div>
+    </div>
+
+</body>
+</html>

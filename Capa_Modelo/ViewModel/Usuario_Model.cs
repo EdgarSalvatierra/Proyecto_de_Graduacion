@@ -24,6 +24,10 @@ namespace Capa_Modelo.ViewModel
         {
             return usuariot.Read();
         }
+        public string CargarElUsuario(string Usuario)
+        {
+            return usuariot.CargarUsuario(Usuario);
+        }
         public bool InicioSesion(string Usuario, string Contraseña)
         {
             return usuariot.Login(Usuario, Contraseña);
