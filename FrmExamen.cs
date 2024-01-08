@@ -25,6 +25,19 @@ namespace Proyecto_de_Graduacion
         private void BtnEditar_Click(object sender, EventArgs e)
         {
 
+        } 
+        private void ICNCategoria_Click(object sender, EventArgs e)
+        {
+            FrmCategoria categoria = new FrmCategoria();
+
+            categoria.Show();
+        }
+
+        private void ICNBuscador_Click(object sender, EventArgs e)
+        {
+            string examen = TxtBuscarExamen.Text;
+
+            DtgExamen.DataSource = Examen.BuscarporExamen(examen);
         }
     }
 }

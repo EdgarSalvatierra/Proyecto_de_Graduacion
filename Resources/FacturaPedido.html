@@ -10,6 +10,19 @@
             margin: 20px;
             background-color: #f4f4f4;
         }
+        header {
+            text-align: center;
+            color: #333;
+        }
+
+        #logo {
+            max-width: 100px;
+            max-height: 100px;
+        }
+
+        #info-negocio {
+            margin-top: 20px;
+        }
 
         .invoice {
             max-width: 600px;
@@ -67,51 +80,37 @@
     </style>
 </head>
 <body>
+    <header>
+        <img id="logo" src="Laboratorio1.png" alt="Logo del Negocio" />
+        <h1>Laboratorio Clinico El Soccorro</h1>
+        <p>Dirección: Del Parque Central cuadra y media al oeste | Teléfono: 77614114-58827054 | Ciudad: Masatepe - Masaya</p>
+    </header>
 
     <div class="invoice">
         <div class="invoice-header">
             <h1>Factura de Pedido</h1>
-            <p>Fecha: 7 de enero de 2024</p>
+            <p>Fecha: @Fecha</p>
         </div>
 
         <div class="invoice-details">
-            <p>Cliente: Nombre del Cliente</p>
-            <p>Dirección: Dirección del Cliente</p>
-            <p>Email: cliente@example.com</p>
+            <p>Proveedor: @Proveedor</p>
+            <p>Distribuidora: @Distribuidora</p>
         </div>
-
         <table>
             <thead>
                 <tr>
                     <th>Producto</th>
                     <th>Cantidad</th>
                     <th>Precio Unitario</th>
-                    <th>Total</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Producto 1</td>
-                    <td>2</td>
-                    <td>$20.00</td>
-                    <td>$40.00</td>
-                </tr>
-                <tr>
-                    <td>Producto 2</td>
-                    <td>1</td>
-                    <td>$30.00</td>
-                    <td>$30.00</td>
-                </tr>
+                @filas
                 <!-- Agregar más filas según sea necesario -->
             </tbody>
         </table>
 
-        <div class="total">Total: $70.00</div>
-
-        <div class="thank-you">
-            <p>¡Gracias por su pedido!</p>
-        </div>
+        <div class="total">Total: @total</div>
     </div>
-
 </body>
 </html>

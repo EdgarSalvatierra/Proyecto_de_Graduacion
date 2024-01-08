@@ -35,13 +35,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PnlBudc = new System.Windows.Forms.Panel();
+            this.BtnRefrescar = new FontAwesome.Sharp.IconButton();
+            this.ICNBuscador = new FontAwesome.Sharp.IconButton();
             this.PnlBuscare = new System.Windows.Forms.Panel();
             this.TxtBuscarExamen = new System.Windows.Forms.TextBox();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.PnlGrid = new System.Windows.Forms.Panel();
             this.DtgExamen = new System.Windows.Forms.DataGridView();
-            this.BtnRefrescar = new FontAwesome.Sharp.IconButton();
-            this.ICNBuscador = new FontAwesome.Sharp.IconButton();
             this.gbopciones = new System.Windows.Forms.GroupBox();
             this.BtnNuevoExamen = new FontAwesome.Sharp.IconButton();
             this.BtnEditar = new FontAwesome.Sharp.IconButton();
@@ -64,6 +64,39 @@
             this.PnlBudc.Name = "PnlBudc";
             this.PnlBudc.Size = new System.Drawing.Size(1043, 78);
             this.PnlBudc.TabIndex = 0;
+            // 
+            // BtnRefrescar
+            // 
+            this.BtnRefrescar.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BtnRefrescar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnRefrescar.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.BtnRefrescar.IconChar = FontAwesome.Sharp.IconChar.Repeat;
+            this.BtnRefrescar.IconColor = System.Drawing.SystemColors.Highlight;
+            this.BtnRefrescar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnRefrescar.IconSize = 25;
+            this.BtnRefrescar.Location = new System.Drawing.Point(438, 24);
+            this.BtnRefrescar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BtnRefrescar.Name = "BtnRefrescar";
+            this.BtnRefrescar.Size = new System.Drawing.Size(46, 38);
+            this.BtnRefrescar.TabIndex = 76;
+            this.BtnRefrescar.UseVisualStyleBackColor = false;
+            // 
+            // ICNBuscador
+            // 
+            this.ICNBuscador.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ICNBuscador.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ICNBuscador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ICNBuscador.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.ICNBuscador.IconChar = FontAwesome.Sharp.IconChar.Searchengin;
+            this.ICNBuscador.IconColor = System.Drawing.SystemColors.Highlight;
+            this.ICNBuscador.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ICNBuscador.IconSize = 30;
+            this.ICNBuscador.Location = new System.Drawing.Point(387, 25);
+            this.ICNBuscador.Name = "ICNBuscador";
+            this.ICNBuscador.Size = new System.Drawing.Size(45, 37);
+            this.ICNBuscador.TabIndex = 1;
+            this.ICNBuscador.UseVisualStyleBackColor = false;
+            this.ICNBuscador.Click += new System.EventHandler(this.ICNBuscador_Click);
             // 
             // PnlBuscare
             // 
@@ -162,38 +195,6 @@
             this.DtgExamen.Size = new System.Drawing.Size(1019, 405);
             this.DtgExamen.TabIndex = 1;
             // 
-            // BtnRefrescar
-            // 
-            this.BtnRefrescar.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnRefrescar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnRefrescar.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.BtnRefrescar.IconChar = FontAwesome.Sharp.IconChar.Repeat;
-            this.BtnRefrescar.IconColor = System.Drawing.SystemColors.Highlight;
-            this.BtnRefrescar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnRefrescar.IconSize = 25;
-            this.BtnRefrescar.Location = new System.Drawing.Point(438, 24);
-            this.BtnRefrescar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.BtnRefrescar.Name = "BtnRefrescar";
-            this.BtnRefrescar.Size = new System.Drawing.Size(46, 38);
-            this.BtnRefrescar.TabIndex = 76;
-            this.BtnRefrescar.UseVisualStyleBackColor = false;
-            // 
-            // ICNBuscador
-            // 
-            this.ICNBuscador.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ICNBuscador.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ICNBuscador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ICNBuscador.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.ICNBuscador.IconChar = FontAwesome.Sharp.IconChar.Searchengin;
-            this.ICNBuscador.IconColor = System.Drawing.SystemColors.Highlight;
-            this.ICNBuscador.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ICNBuscador.IconSize = 30;
-            this.ICNBuscador.Location = new System.Drawing.Point(387, 25);
-            this.ICNBuscador.Name = "ICNBuscador";
-            this.ICNBuscador.Size = new System.Drawing.Size(45, 37);
-            this.ICNBuscador.TabIndex = 1;
-            this.ICNBuscador.UseVisualStyleBackColor = false;
-            // 
             // gbopciones
             // 
             this.gbopciones.Controls.Add(this.BtnNuevoExamen);
@@ -272,6 +273,7 @@
             this.ICNCategoria.TabIndex = 82;
             this.ICNCategoria.Text = "Nuevo Categoria";
             this.ICNCategoria.UseVisualStyleBackColor = false;
+            this.ICNCategoria.Click += new System.EventHandler(this.ICNCategoria_Click);
             // 
             // BtnDardebaja
             // 

@@ -65,5 +65,11 @@ namespace Proyecto_de_Graduacion
                 }
             }
         }
+        private void ICNCompra_Click(object sender, EventArgs e)
+        {
+            FrmNuevaCompra compras = new FrmNuevaCompra();
+
+            compras.Show();
+        }
     }
 }
