@@ -234,7 +234,6 @@ namespace Proyecto_de_Graduacion
         {
             DtgUsuarios.DataSource = Usuario_.LeerUsuario();
         }
-
         private void BtnNuevoUsuario_Click(object sender, EventArgs e)
         {
             FrmNuevoUsuario frmNuevo = new FrmNuevoUsuario();
@@ -437,6 +436,35 @@ namespace Proyecto_de_Graduacion
             ToolTip toolTip = new ToolTip();
             toolTip.SetToolTip(BtnRes_Ex, "Modulo de Gestion de Resultados");
         }
+        private void BtnNuevoExamen_Click(object sender, EventArgs e)
+        {
+            FrmNuevoExamen examen = new FrmNuevoExamen();
+
+            examen.Show();
+        }
+
+        private void BtnEditarExamen_Click(object sender, EventArgs e)
+        {
+            if (DtgExamen.Rows.Count > 0)
+            {
+                DataGridViewRow data = DtgExamen.SelectedRows[0];
+
+                int Numero = Convert.ToInt32(data.Cells[0].Value);
+
+                string Categoria = data.Cells[1].Value.ToString();
+
+                string Examen = data.Cells[2].Value.ToString();
+
+                string Plantilla = data.Cells[3].Value.ToString();
+
+                decimal Precio = Convert.ToDecimal(data.Cells[4].Value);
+
+                FrmEditarExamen editarExamen = new FrmEditarExamen(Numero,Categoria,Examen,Plantilla,Precio);
+
+                editarExamen.Show();
+            }
+        }
+
         private void ICNServicio_Click(object sender, EventArgs e)
         {
             FrmNuevoServicio servicio = new FrmNuevoServicio();

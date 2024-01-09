@@ -54,6 +54,7 @@
     <Compile Include="Data\Paciente\PacienteData.cs" />
     <Compile Include="Data\Permisos\PermisosData.cs" />
     <Compile Include="Data\Proveedores\ProveedorData.cs" />
+    <Compile Include="Data\Resultados\ResultadosData.cs" />
     <Compile Include="Data\Roles\RolesData.cs" />
     <Compile Include="Data\Usuario\UsuarioData.cs" />
     <Compile Include="Model\Configuracion.cs" />

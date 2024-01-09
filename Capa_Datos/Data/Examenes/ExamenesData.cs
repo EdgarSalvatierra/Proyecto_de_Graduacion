@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Capa_Datos.Model;
 
 namespace Capa_Datos.Data.Examenes
 {
@@ -16,12 +17,22 @@ namespace Capa_Datos.Data.Examenes
         public DataTable data;
         public SqlDataReader reader;
 
-        public void Insertar(int cod_area, string nombre, decimal precio)
+        public void Insertar(int cod_area, string nombre,byte[] Documento,string Extension,decimal precio)
         {
-            string query = $@"insert into tbl_Examen(cod_categoria,nombre,precio) 
-            values((Select cod_area From  tbl_Categoria_Examen where cod_area = '{cod_area}'),'{nombre}','{precio}')";
+            string query = $@"insert into tbl_Examen(cod_categoria,nombre,documento,Extension,precio,cantidad,Estado) 
+            values((Select cod_area From  tbl_Categoria_Examen where cod_area = @codarea),@nombre,@documento,@extension,@precio,1,1)";
 
             command = new SqlCommand(query, conexion.abrirconexion());
+
+            command.Parameters.Add(new SqlParameter("@codarea",cod_area));
+
+            command.Parameters.Add(new SqlParameter("@nombre", nombre));
+
+            command.Parameters.Add(new SqlParameter("@documento", Documento));
+
+            command.Parameters.Add(new SqlParameter("@extension", Extension));
+
+            command.Parameters.Add(new SqlParameter("@precio", precio));
 
             command.ExecuteNonQuery();
 
@@ -30,7 +41,7 @@ namespace Capa_Datos.Data.Examenes
         public DataTable Read()
         {
             string query = $@"select examen.cod_examen as 'Codigo Examen',categoria.categoria_Nombre as 'Categoria',
-            examen.nombre as 'Examen',cast(examen.precio as integer) as 'Precio del examen'
+            examen.nombre as 'Examen',examen.extension as 'Plantilla',cast(examen.precio as integer) as 'Precio del examen' 
             From tbl_Examen as examen inner join tbl_Categoria_Examen as categoria 
             on categoria.cod_area = examen.cod_categoria where categoria.Estado = 1";
 
@@ -47,7 +58,7 @@ namespace Capa_Datos.Data.Examenes
             conexion.cerrarconexion();
 
             return data;
-        }
+        }      
         public DataTable BuscarporExamen(string Examen)
         {
             string query = $@"select cod_examen,cod_categoria,nombre,precio from tbl_Examen where  nombre Like '%' + '{Examen}' + '%'";

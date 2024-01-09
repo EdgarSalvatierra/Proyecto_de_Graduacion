@@ -84,6 +84,12 @@
     <Compile Include="FrmCategoria.Designer.cs">
       <DependentUpon>FrmCategoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmEditarExamen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEditarExamen.Designer.cs">
+      <DependentUpon>FrmEditarExamen.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmEditarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,12 @@
     </Compile>
     <Compile Include="FrmNuevaConfiguracion.Designer.cs">
       <DependentUpon>FrmNuevaConfiguracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNuevoExamen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNuevoExamen.Designer.cs">
+      <DependentUpon>FrmNuevoExamen.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmNuevoServicio.cs">
       <SubType>Form</SubType>
@@ -152,6 +164,9 @@
     <EmbeddedResource Include="FrmCategoria.resx">
       <DependentUpon>FrmCategoria.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmEditarExamen.resx">
+      <DependentUpon>FrmEditarExamen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmEditarUsuario.resx">
       <DependentUpon>FrmEditarUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -166,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmNuevaConfiguracion.resx">
       <DependentUpon>FrmNuevaConfiguracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNuevoExamen.resx">
+      <DependentUpon>FrmNuevoExamen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmNuevoServicio.resx">
       <DependentUpon>FrmNuevoServicio.cs</DependentUpon>
