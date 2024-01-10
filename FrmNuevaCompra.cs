@@ -30,6 +30,8 @@ namespace Proyecto_de_Graduacion
         }
         private void FrmNuevaCompra_Load(object sender, EventArgs e)
         {
+            TxtPrecio.Enabled = false;
+
             TxtFecha.Text = DateTime.Now.ToShortDateString();
 
             Source.DataSource = Proveedor.CargarProductos();
@@ -41,6 +43,8 @@ namespace Proyecto_de_Graduacion
                 CmbProducto.DisplayMember = "Producto";
 
                 CmbProducto.ValueMember = "Codigo";
+
+                CmbProducto.Enabled = true;
             }
             else
             {
@@ -50,88 +54,96 @@ namespace Proyecto_de_Graduacion
         }
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
-            if ((!string.IsNullOrWhiteSpace(TxtCantidad.Text)
-                && !string.IsNullOrWhiteSpace(TxtSubTotal.Text)
-                && !string.IsNullOrWhiteSpace(TxtTotal.Text) &&
-                !string.IsNullOrWhiteSpace(TxtPrecio.Text) &&
-                !string.IsNullOrWhiteSpace(CmbProducto.Text)))
+
+            if (DtgCompra.Rows.Count == 0)
             {
-                if (DtgCompra.Rows.Count == 0)
-                {
-                    MessageBox.Show("No ha elegido ningun examen, por favor elija uno", "SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("No ha elegido ningun examen, por favor elija uno", "SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
-                    error.SetError(DtgCompra, "Error");
+                error.SetError(DtgCompra, "Error");
+            }
+            else
+            {
+                decimal total = 0;
+
+                SaveFileDialog saveFile = new SaveFileDialog();
+
+                saveFile.FileName = $@"PedidoaDistribuidora: {Proveedor.CargarProveedor(Convert.ToInt32(CmbProducto.SelectedValue))}.pdf ";
+
+                string texto_html = Properties.Resources.FacturaPedido;
+
+                texto_html = texto_html.Replace("@Fecha", DateTime.Now.ToLongDateString());
+
+                texto_html = texto_html.Replace("@Proveedor", Proveedor.CargarProveedor(Convert.ToInt32(CmbProducto.SelectedValue)));
+
+                texto_html = texto_html.Replace("@Distribuidora", Proveedor.CargarCasa(Convert.ToInt32(CmbProducto.SelectedValue)));
+
+                string filas = string.Empty;
+
+                foreach (DataGridViewRow item in DtgCompra.Rows)
+                {
+                    filas += "<tr>";
+                    filas += "<td>" + item.Cells[0].Value.ToString() + "</td>";
+                    filas += "<td>" + item.Cells[1].Value.ToString() + "</td>";
+                    filas += "<td>" + item.Cells[2].Value.ToString() + "</td>";
+                    filas += "<td>" + item.Cells[3].Value.ToString() + "</td>";
+                    filas += "</tr>";
+                    total += decimal.Parse(item.Cells[3].Value.ToString());
                 }
-                else
+                texto_html = texto_html.Replace("@filas", filas);
+
+                texto_html = texto_html.Replace("@total", total.ToString());
+
+                if (saveFile.ShowDialog() == DialogResult.OK)
                 {
-                    decimal total = 0;
-
-                    SaveFileDialog saveFile = new SaveFileDialog();
-
-                    saveFile.FileName = $@"PedidoaDistribuidora: {Proveedor.CargarProveedor(CmbProducto.SelectedValue.ToString())}.pdf ";
-
-                    string texto_html = Properties.Resources.FacturaPedido;
-
-                    texto_html = texto_html.Replace("@Fecha", DateTime.Now.ToLongDateString());
-
-                    texto_html = texto_html.Replace("@Proveedor", Proveedor.CargarProveedor(CmbProducto.SelectedValue.ToString()));
-
-                    texto_html = texto_html.Replace("@Distribuidora", Proveedor.CargarCasa(CmbProducto.SelectedValue.ToString()));
-
-                    string filas = string.Empty;
-
-                    foreach (DataGridViewRow item in DtgCompra.Rows)
+                    using (FileStream stream = new FileStream(saveFile.FileName, FileMode.Create))
                     {
-                        filas += "<tr>";
-                        filas += "<td>" + item.Cells[0].Value.ToString() + "</td>";
-                        filas += "<td>" + item.Cells[1].Value.ToString() + "</td>";
-                        filas += "<td>" + item.Cells[2].Value.ToString() + "</td>";
-                        filas += "<td>" + item.Cells[3].Value.ToString() + "</td>";
-                        filas += "<td>" + item.Cells[4].Value.ToString() + "</td>";
-                        filas += "</tr>";
-                        total += decimal.Parse(item.Cells[4].Value.ToString());
-                    }
-                    texto_html = texto_html.Replace("@filas", filas);
+                        Document pdf = new Document(PageSize.A4, 25, 25, 25, 25);
 
-                    texto_html = texto_html.Replace("@total", total.ToString());
+                        PdfWriter writer = PdfWriter.GetInstance(pdf, stream);
 
-                    if (saveFile.ShowDialog() == DialogResult.OK)
-                    {
-                        using (FileStream stream = new FileStream(saveFile.FileName, FileMode.Create))
+                        pdf.Open();
+
+                        pdf.Add(new Phrase(""));
+
+                        iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(Properties.Resources.Laboratorio1, System.Drawing.Imaging.ImageFormat.Png);
+
+                        img.ScaleToFit(80, 60);
+
+                        img.Alignment = iTextSharp.text.Image.UNDERLYING;
+
+                        img.SetAbsolutePosition(pdf.LeftMargin, pdf.Top - 60);
+
+                        pdf.Add(img);
+
+                        using (StringReader sr = new StringReader(texto_html))
                         {
-                            Document pdf = new Document(PageSize.A4, 25, 25, 25, 25);
+                            XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdf, sr);
+                        }
+                        pdf.Close();
 
-                            PdfWriter writer = PdfWriter.GetInstance(pdf, stream);
-
-                            pdf.Open();
-
-                            pdf.Add(new Phrase(""));
-
-                            iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(Properties.Resources.Laboratorio1, System.Drawing.Imaging.ImageFormat.Png);
-
-                            img.ScaleToFit(80, 60);
-
-                            img.Alignment = iTextSharp.text.Image.UNDERLYING;
-
-                            img.SetAbsolutePosition(pdf.LeftMargin, pdf.Top - 60);
-
-                            pdf.Add(img);
-
-                            using (StringReader sr = new StringReader(texto_html))
-                            {
-                                XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdf, sr);
-                            }
-                            pdf.Close();
-
-                            stream.Close();
-                        }                  
+                        stream.Close();
                     }
-                    compras.InsertarPedidos(CmbProducto.SelectedValue.ToString(), Convert.ToDecimal(TxtPrecio.Text), Convert.ToInt32(TxtCantidad.Text), Convert.ToDecimal(TxtSubTotal.Text), Convert.ToDecimal(TxtTotal.Text),Proveedor.CargarProveedor(CmbProducto.SelectedValue.ToString()));
+                }
+
+                while (DtgCompra.Rows.Count > 0)
+                {
+                    string Producto = DtgCompra.CurrentRow.Cells[0].Value.ToString();
+
+                    decimal Precio = Convert.ToDecimal(DtgCompra.CurrentRow.Cells[1].Value);
+
+                    int Cantidad = Convert.ToInt32(DtgCompra.CurrentRow.Cells[2].Value);
+
+                    decimal SubTotal = Convert.ToInt32(DtgCompra.CurrentRow.Cells[3].Value);
+
+                    compras.InsertarDetallePedidos(Producto,Precio,Cantidad,SubTotal,SubTotal);
+
+                    DtgCompra.Rows.RemoveAt(0);
+                                        
+                }
 
                     MessageBox.Show($"Se ha realizado el pedido exitosamente", "SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     this.Close();
-                }
             }
         }
         private void BtnClose_Click(object sender, EventArgs e)
@@ -146,32 +158,30 @@ namespace Proyecto_de_Graduacion
             {
                 try
                 {
-                    if (DtgCompra.Rows.Count == 0)
+                   int n = DtgCompra.Rows.Add();
+
+                   DtgCompra.Rows[n].Cells[0].Value = CmbProducto.Text;
+
+                   DtgCompra.Rows[n].Cells[1].Value = TxtPrecio.Text;
+
+                   DtgCompra.Rows[n].Cells[2].Value = TxtCantidad.Text;
+
+                   DtgCompra.Rows[n].Cells[3].Value = Convert.ToDecimal(TxtPrecio.Text) * Convert.ToInt32(TxtCantidad.Text);
+
+                    foreach (DataGridViewRow item in DtgCompra.Rows)
                     {
-                        MessageBox.Show("No hay examenes disponibles", "Systema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if (!item.IsNewRow)
+                        {
+                            Monto += Convert.ToDecimal(item.Cells[3].Value);
+                        }
                     }
-                    else
-                    {
-                        int n = DtgCompra.Rows.Add();
+                    TxtSubTotal.Text = Monto.ToString();
 
-                        DtgCompra.Rows[n].Cells[0].Value = CmbProducto.Text;
+                    TxtTotal.Text = Monto.ToString();
 
-                        DtgCompra.Rows[n].Cells[1].Value = TxtPrecio.Text;
+                    TxtCantidad.Clear();
 
-                        DtgCompra.Rows[n].Cells[2].Value = TxtCantidad.Text;
-
-                        DtgCompra.Rows[n].Cells[3].Value = Convert.ToDecimal(TxtPrecio.Text) * Convert.ToInt32(TxtCantidad.Text);
-
-                        Monto = Monto + Convert.ToDecimal(DtgCompra.CurrentRow.Cells[3].Value);
-
-                        TxtSubTotal.Text = Monto.ToString();
-
-                        TxtTotal.Text = Monto.ToString();
-
-                        TxtCantidad.Clear();
-
-                        TxtPrecio.Clear();
-                    }
+                   TxtPrecio.Clear();
                 }
                 catch (Exception ex)
                 {
@@ -220,17 +230,38 @@ namespace Proyecto_de_Graduacion
         }
         private void CmbProducto_DropDown(object sender, EventArgs e)
         {
-            CmbProducto.DataSource = Proveedor.CargarProductos();
+            Source.DataSource = Proveedor.CargarProductos();
 
-            CmbProducto.DisplayMember = "Producto";
+            if (Source.Count > 0)
+            {
+                CmbProducto.DataSource = Source;
 
-            CmbProducto.ValueMember = "Codigo";
+                CmbProducto.DisplayMember = "Producto";
+
+                CmbProducto.ValueMember = "Codigo";
+
+                CmbProducto.Enabled = true;
+            }
+            else
+            {
+                CmbProducto.Enabled = false;
+                CmbProducto.Text = "No hay datos disponibles";
+            }  
         }
-        private void CmbProducto_SelectedIndexChanged(object sender, EventArgs e)
+        private void CmbProducto_DropDownClosed(object sender, EventArgs e)
         {
-            string selectedValue = CmbProducto.SelectedItem.ToString();
+            if (CmbProducto.SelectedIndex != -1)
+            {
+                // Obtén el código del producto seleccionado
+                int selectedValue = Convert.ToInt32(CmbProducto.SelectedValue);
 
-            TxtPrecio.Text = Proveedor.CargarPrecio(selectedValue.ToString()).ToString();
+                // Carga y muestra el precio del producto
+                TxtPrecio.Text = Proveedor.CargarPrecio(selectedValue).ToString();
+            }
+            else
+            {
+                TxtPrecio.Text = string.Empty; // O asigna otro valor por defecto si es necesario
+            }
         }
     }
 }

@@ -15,9 +15,9 @@ namespace Capa_Modelo.ViewModel
         {
             Proveedor.InsertarProveedor(Nombre, Casa_Comercial);
         }
-        public void InsertarProducto(string Producto, decimal Precio,string Nombre)
+        public void InsertarProducto(string Producto, decimal Precio, string Nombre)
         {
-            Proveedor.InsertarProducto(Producto,Precio,Nombre);
+            Proveedor.InsertarProducto(Producto, Precio, Nombre);
         }
         public Object LeerProveedor()
         {
@@ -31,17 +31,17 @@ namespace Capa_Modelo.ViewModel
         {
             return Proveedor.CargarProducto();
         }
-        public string CargarProveedor(string Producto)
+        public string CargarProveedor(int Codigo)
         {
-            return Proveedor.CargarProveedor(Producto);
+            return Proveedor.CargarProveedor(Codigo);
         }
-        public string CargarCasa(string Producto)
+        public string CargarCasa(int Codigo)
         {
-            return Proveedor.CargarCasaComercial(Producto);
+            return Proveedor.CargarCasaComercial(Codigo);
         }
-        public decimal CargarPrecio(string Producto)
+        public decimal CargarPrecio(int Codigo)
         {
-            return Proveedor.CargarPrecio(Producto);
+            return Proveedor.CargarPrecio(Codigo);
         }
         public void ActualizarProveedor(int Cod_Proveedor, string Nombre, string Casa_Comercial)
         {

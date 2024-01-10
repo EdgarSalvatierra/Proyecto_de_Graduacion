@@ -27,100 +27,117 @@ namespace Capa_Datos.Data.Proveedores
 
             command.Parameters.Add(new SqlParameter("Cod_Proveedor", Cod_Proveedor));
 
-            conexion.cerrarconexion();
-
             command.ExecuteNonQuery();
+
+            conexion.cerrarconexion();
         }
         public void InsertarProveedor(string Nombre, string Casa_Comercial)
         {
-            command = new SqlCommand("Sp_Proveedor_Insert", conexion.abrirconexion());
-
-            command.CommandType = CommandType.StoredProcedure;
-
-            command.Parameters.Add(new SqlParameter("@Nombre", Nombre));
-
-            command.Parameters.Add(new SqlParameter("@Casa_Comercial", Casa_Comercial));
-
-            command.ExecuteNonQuery();
-
-            conexion.cerrarconexion();
-        }
-        public void InsertarProducto(string Producto, decimal Precio, string Nombre)
-        {
-            command = new SqlCommand("Sp_Producto_Insert", conexion.abrirconexion());
-
-            command.CommandType = CommandType.StoredProcedure;
-
-            command.Parameters.Add(new SqlParameter("@Producto", Producto));
-
-            command.Parameters.Add(new SqlParameter("@Precio", Precio));
-
-            command.Parameters.Add(new SqlParameter("@Nombre", Nombre));
-
-            command.ExecuteNonQuery();
-
-            conexion.cerrarconexion();
-        }
-        public DataTable CargarProducto()
-        {
-            string query = $@"Select Codigo,Producto  From tbl_Producto";
-
-            command = new SqlCommand(query, conexion.abrirconexion());
-
-            DataTable data = new DataTable();
-
-            reader = command.ExecuteReader();
-
-            if (reader.HasRows)
+            try
             {
-                data.Load(reader);
+                command = new SqlCommand("Sp_Proveedor_Insert", conexion.abrirconexion());
+
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.Add(new SqlParameter("@Nombre", Nombre));
+
+                command.Parameters.Add(new SqlParameter("@Casa_Comercial", Casa_Comercial));
+
+                command.ExecuteNonQuery();
             }
-            else
+            finally
             {
                 conexion.cerrarconexion();
             }
-
-            conexion.cerrarconexion();
-
-            return data;
         }
-        public decimal CargarPrecio(string Producto)
+        public void InsertarProducto(string Producto, decimal Precio, string Nombre)
         {
-            List<Productos> lista = new List<Productos>();
-
-            string query = $@"Select Codigo,Precio From tbl_Producto where Producto = @Producto";
-
-            command = new SqlCommand(query, conexion.abrirconexion());
-
-            command.Parameters.Add(new SqlParameter("@Producto", Producto));
-           
-            using (SqlDataReader reader = command.ExecuteReader())
+            try
             {
-                while (reader.Read())
+                command = new SqlCommand("Sp_Producto_Insert", conexion.abrirconexion());
+
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.Add(new SqlParameter("@Producto", Producto));
+
+                command.Parameters.Add(new SqlParameter("@Precio", Precio));
+
+                command.Parameters.Add(new SqlParameter("@Nombre", Nombre));
+
+                command.ExecuteNonQuery();
+            }
+            finally
+            {
+                conexion.cerrarconexion();
+            }
+        }
+        public DataTable CargarProducto()
+        {
+            try
+            {
+                string query = $@"Select Codigo,Producto  From tbl_Producto";
+
+                command = new SqlCommand(query, conexion.abrirconexion());
+
+                DataTable data = new DataTable();
+
+                reader = command.ExecuteReader();
+
+                if (reader.HasRows)
                 {
-                            // Verificar si la columna existe antes de intentar leerla
-                    if (reader.HasRows)
+                    data.Load(reader);
+                }
+                return data;
+            }
+            finally
+            {
+                conexion.cerrarconexion();
+            }        
+        }
+        public decimal CargarPrecio(int Codigo)
+        {
+            try
+            {
+                List<Productos> lista = new List<Productos>();
+
+                string query = $@"Select Precio From tbl_Producto where Codigo = @Codigo";
+
+                command = new SqlCommand(query, conexion.abrirconexion());
+
+                command.Parameters.Add(new SqlParameter("@Codigo", Codigo));
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
                     {
-                        lista.Add(new Productos
+                        // Verificar si la columna existe antes de intentar leerla
+                        if (reader.HasRows)
                         {
-                            Precio = Convert.ToDecimal(reader["Precio"])
-                        });
+                            lista.Add(new Productos
+                            {
+                                Precio = Convert.ToDecimal(reader["Precio"])
+                            });
+                        }
                     }
                 }
+                return lista.FirstOrDefault().Precio;
             }
-                 return lista.FirstOrDefault().Precio;
+            finally
+            {
+                conexion.cerrarconexion();
+            }
         }
-        public string CargarProveedor(string Producto)
+        public string CargarProveedor(int Codigo)
         {
             List<ProveedoresClass> lista = new List<ProveedoresClass>();
 
             string query = $@"Select Nombre From tbl_Proveedor as proveedor
                             inner join tbl_Producto as product on proveedor.Cod_Proveedor = product.Cod_Proveedor
-                            where product.Producto = @Producto";
+                            where product.Codigo = @Codigo";
 
             command = new SqlCommand(query, conexion.abrirconexion());
 
-            command.Parameters.Add(new SqlParameter("@Producto", Producto));
+            command.Parameters.Add(new SqlParameter("@Codigo", Codigo));
 
             using (SqlDataReader reader = command.ExecuteReader())
             {
@@ -136,19 +153,22 @@ namespace Capa_Datos.Data.Proveedores
                     }
                 }
             }
+
+            conexion.cerrarconexion();
+
             return lista.FirstOrDefault()?.Proveedor;
         }
-        public string CargarCasaComercial(string Producto)
+        public string CargarCasaComercial(int Codigo)
         {
             List<ProveedoresClass> lista = new List<ProveedoresClass>();
 
             string query = $@"Select Casa_Comercial From tbl_Proveedor as proveedor
                             inner join tbl_Producto as product on proveedor.Cod_Proveedor = product.Cod_Proveedor
-                            where product.Producto = @Producto";
+                            where product.Codigo = @Codigo";
 
             command = new SqlCommand(query, conexion.abrirconexion());
 
-            command.Parameters.Add(new SqlParameter("@Producto", Producto));
+            command.Parameters.Add(new SqlParameter("@Codigo", Codigo));
 
             using (SqlDataReader reader = command.ExecuteReader())
             {
@@ -164,23 +184,33 @@ namespace Capa_Datos.Data.Proveedores
                     }
                 }
             }
+
+            conexion.cerrarconexion();
+
             return lista.FirstOrDefault()?.Casa_Comercial;
         }
         public DataTable Read()
         {
-            command = new SqlCommand("Sp_Proveedor_Read", conexion.abrirconexion());
+            try
+            {
+                command = new SqlCommand("Sp_Proveedor_Read", conexion.abrirconexion());
 
-            command.CommandType = CommandType.StoredProcedure;
+                command.CommandType = CommandType.StoredProcedure;
 
-            SqlDataAdapter dataAdapter = new SqlDataAdapter();
+                SqlDataAdapter dataAdapter = new SqlDataAdapter();
 
-            dataAdapter.SelectCommand = command;
+                dataAdapter.SelectCommand = command;
 
-            DataTable data = new DataTable();
+                DataTable data = new DataTable();
 
-            dataAdapter.Fill(data);
+                dataAdapter.Fill(data);
 
-            return data;
+                return data;
+            }
+            finally
+            {
+                conexion.cerrarconexion();
+            }
         }
         public DataTable Search(string buscador)
         {
@@ -225,9 +255,9 @@ namespace Capa_Datos.Data.Proveedores
 
             command.Parameters.Add(new SqlParameter("@Casa_Comercial", Casa_Comercial));
 
-            conexion.cerrarconexion();
-
             command.ExecuteNonQuery();
+
+            conexion.cerrarconexion();
         }
     }
 }

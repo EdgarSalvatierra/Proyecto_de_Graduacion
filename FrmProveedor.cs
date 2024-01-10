@@ -86,8 +86,6 @@ namespace Proyecto_de_Graduacion
         }
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
-            try
-            {
                 if (!string.IsNullOrWhiteSpace(TxtProveedor.Text)
                && !string.IsNullOrWhiteSpace(TxtProducto.Text)
                && !string.IsNullOrWhiteSpace(TxtCasacomercial.Text) && !string.IsNullOrWhiteSpace(TxtPrecio.Text))
@@ -121,11 +119,7 @@ namespace Proyecto_de_Graduacion
                     MessageBox.Show("Campos Incompletos", "SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Provider.SetError(BtnGuardar,"Errodeguardar");
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message,"SQL Server",MessageBoxButtons.OK,MessageBoxIcon.Error);
-            }
+            
         }
         private void Btndardebaja_Click(object sender, EventArgs e)
         {

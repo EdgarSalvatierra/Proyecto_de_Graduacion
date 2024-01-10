@@ -92,7 +92,7 @@
             this.BtnCancelar.FlatAppearance.BorderSize = 0;
             this.BtnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCancelar.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCancelar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCancelar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.BtnCancelar.IconChar = FontAwesome.Sharp.IconChar.LeftLong;
             this.BtnCancelar.IconColor = System.Drawing.Color.White;
@@ -116,7 +116,7 @@
             this.BtnGuardar.FlatAppearance.BorderSize = 0;
             this.BtnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnGuardar.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnGuardar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnGuardar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.BtnGuardar.IconChar = FontAwesome.Sharp.IconChar.FileDownload;
             this.BtnGuardar.IconColor = System.Drawing.Color.White;
@@ -231,7 +231,7 @@
             this.CmbProducto.Size = new System.Drawing.Size(180, 27);
             this.CmbProducto.TabIndex = 4;
             this.CmbProducto.DropDown += new System.EventHandler(this.CmbProducto_DropDown);
-            this.CmbProducto.SelectedIndexChanged += new System.EventHandler(this.CmbProducto_SelectedIndexChanged);
+            this.CmbProducto.DropDownClosed += new System.EventHandler(this.CmbProducto_DropDownClosed);
             // 
             // LblProducto
             // 
@@ -275,7 +275,7 @@
             this.TxtCantidad.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.TxtCantidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtCantidad.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCantidad.Location = new System.Drawing.Point(775, 18);
+            this.TxtCantidad.Location = new System.Drawing.Point(775, 15);
             this.TxtCantidad.Name = "TxtCantidad";
             this.TxtCantidad.Size = new System.Drawing.Size(142, 27);
             this.TxtCantidad.TabIndex = 9;
@@ -323,7 +323,7 @@
             this.BtnQuitar.FlatAppearance.BorderSize = 0;
             this.BtnQuitar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.BtnQuitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnQuitar.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnQuitar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnQuitar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.BtnQuitar.Location = new System.Drawing.Point(799, 8);
             this.BtnQuitar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -339,7 +339,7 @@
             this.TxtTotal.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.TxtTotal.AutoSize = true;
             this.TxtTotal.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtTotal.Location = new System.Drawing.Point(476, 14);
+            this.TxtTotal.Location = new System.Drawing.Point(586, 13);
             this.TxtTotal.Name = "TxtTotal";
             this.TxtTotal.Size = new System.Drawing.Size(34, 19);
             this.TxtTotal.TabIndex = 13;
@@ -352,7 +352,7 @@
             this.Btnagregar.FlatAppearance.BorderSize = 0;
             this.Btnagregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.Btnagregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btnagregar.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btnagregar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btnagregar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Btnagregar.Location = new System.Drawing.Point(666, 7);
             this.Btnagregar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -368,7 +368,7 @@
             this.LblTotal.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.LblTotal.AutoSize = true;
             this.LblTotal.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTotal.Location = new System.Drawing.Point(429, 14);
+            this.LblTotal.Location = new System.Drawing.Point(539, 13);
             this.LblTotal.Name = "LblTotal";
             this.LblTotal.Size = new System.Drawing.Size(41, 19);
             this.LblTotal.TabIndex = 12;
@@ -379,7 +379,7 @@
             this.TxtSubTotal.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.TxtSubTotal.AutoSize = true;
             this.TxtSubTotal.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtSubTotal.Location = new System.Drawing.Point(335, 14);
+            this.TxtSubTotal.Location = new System.Drawing.Point(445, 13);
             this.TxtSubTotal.Name = "TxtSubTotal";
             this.TxtSubTotal.Size = new System.Drawing.Size(34, 19);
             this.TxtSubTotal.TabIndex = 11;
@@ -390,7 +390,7 @@
             this.LblSubtotal.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.LblSubtotal.AutoSize = true;
             this.LblSubtotal.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblSubtotal.Location = new System.Drawing.Point(259, 14);
+            this.LblSubtotal.Location = new System.Drawing.Point(369, 14);
             this.LblSubtotal.Name = "LblSubtotal";
             this.LblSubtotal.Size = new System.Drawing.Size(70, 19);
             this.LblSubtotal.TabIndex = 10;
@@ -422,7 +422,7 @@
             this.DtgCompra.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Corbel", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -437,7 +437,7 @@
             this.Importe});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Corbel", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -452,7 +452,7 @@
             this.DtgCompra.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -467,7 +467,7 @@
             this.DtgCompra.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.DtgCompra.RowTemplate.Height = 24;
             this.DtgCompra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DtgCompra.Size = new System.Drawing.Size(920, 414);
+            this.DtgCompra.Size = new System.Drawing.Size(920, 427);
             this.DtgCompra.TabIndex = 3;
             // 
             // producto

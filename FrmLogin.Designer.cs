@@ -170,11 +170,11 @@
             // 
             this.TxtContraseña.BackColor = System.Drawing.Color.Gainsboro;
             this.TxtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtContraseña.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtContraseña.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtContraseña.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.TxtContraseña.Location = new System.Drawing.Point(50, 9);
             this.TxtContraseña.Name = "TxtContraseña";
-            this.TxtContraseña.Size = new System.Drawing.Size(212, 19);
+            this.TxtContraseña.Size = new System.Drawing.Size(251, 21);
             this.TxtContraseña.TabIndex = 1;
             this.TxtContraseña.Text = "Ingrese su contraseña";
             this.TxtContraseña.Enter += new System.EventHandler(this.TxtContraseña_Enter);
@@ -203,11 +203,11 @@
             // 
             this.TxtUser.BackColor = System.Drawing.Color.Gainsboro;
             this.TxtUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtUser.Font = new System.Drawing.Font("Corbel", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtUser.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtUser.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.TxtUser.Location = new System.Drawing.Point(50, 7);
             this.TxtUser.Name = "TxtUser";
-            this.TxtUser.Size = new System.Drawing.Size(210, 19);
+            this.TxtUser.Size = new System.Drawing.Size(251, 21);
             this.TxtUser.TabIndex = 0;
             this.TxtUser.Text = "Ingrese su usuario";
             this.TxtUser.Enter += new System.EventHandler(this.TxtUser_Enter_1);

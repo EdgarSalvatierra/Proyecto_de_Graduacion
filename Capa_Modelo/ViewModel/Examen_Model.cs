@@ -59,6 +59,9 @@ namespace Capa_Modelo.ViewModel
                         Extension = item[3].ToString()
                     });
                 }
+
+                conexion.Close();
+
                 return infoDocumennto;
             }                
         }

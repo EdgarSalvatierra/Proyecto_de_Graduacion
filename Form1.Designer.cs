@@ -450,7 +450,7 @@
             this.ICNServicio.ForeColor = System.Drawing.Color.SteelBlue;
             this.ICNServicio.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
             this.ICNServicio.IconColor = System.Drawing.Color.SteelBlue;
-            this.ICNServicio.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.ICNServicio.IconFont = FontAwesome.Sharp.IconFont.Regular;
             this.ICNServicio.IconSize = 20;
             this.ICNServicio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ICNServicio.Location = new System.Drawing.Point(886, 26);
@@ -484,7 +484,7 @@
             this.BtnImprimir.ForeColor = System.Drawing.Color.SteelBlue;
             this.BtnImprimir.IconChar = FontAwesome.Sharp.IconChar.Dropbox;
             this.BtnImprimir.IconColor = System.Drawing.Color.SteelBlue;
-            this.BtnImprimir.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.BtnImprimir.IconFont = FontAwesome.Sharp.IconFont.Regular;
             this.BtnImprimir.IconSize = 20;
             this.BtnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnImprimir.Location = new System.Drawing.Point(716, 14);
@@ -506,7 +506,7 @@
             this.BtnEditar.ForeColor = System.Drawing.Color.SteelBlue;
             this.BtnEditar.IconChar = FontAwesome.Sharp.IconChar.FileEdit;
             this.BtnEditar.IconColor = System.Drawing.Color.SteelBlue;
-            this.BtnEditar.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.BtnEditar.IconFont = FontAwesome.Sharp.IconFont.Regular;
             this.BtnEditar.IconSize = 20;
             this.BtnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnEditar.Location = new System.Drawing.Point(296, 15);
@@ -527,7 +527,7 @@
             this.BtnDardebaja.ForeColor = System.Drawing.Color.SteelBlue;
             this.BtnDardebaja.IconChar = FontAwesome.Sharp.IconChar.TurnDown;
             this.BtnDardebaja.IconColor = System.Drawing.Color.SteelBlue;
-            this.BtnDardebaja.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.BtnDardebaja.IconFont = FontAwesome.Sharp.IconFont.Regular;
             this.BtnDardebaja.IconSize = 20;
             this.BtnDardebaja.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnDardebaja.Location = new System.Drawing.Point(511, 15);

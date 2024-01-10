@@ -10,9 +10,14 @@ namespace Capa_Modelo.ViewModel
     public class Compras_Model
     {
         ComprasData compras = new ComprasData();
-        public void InsertarPedidos(string Nom_Producto, decimal Precio, int Cantidad, decimal SubTotal, decimal Total, string Proveedor)
+
+        public void InsertarPedidos(int Codigo, decimal SubTotal, decimal Total)
         {
-            compras.Insert(Nom_Producto,Precio,Cantidad,SubTotal,Total,Proveedor);
+            compras.InsertPedidos(Codigo,SubTotal,Total);
+        }
+        public void InsertarDetallePedidos(int Codigo, decimal Precio, int Cantidad, decimal SubTotal, decimal Total)
+        {
+            compras.InsertDetallePedidos(Codigo,Precio,Cantidad,SubTotal,Total);
         }
         public Object LeerPedidos()
         {
