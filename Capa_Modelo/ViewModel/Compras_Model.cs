@@ -11,13 +11,13 @@ namespace Capa_Modelo.ViewModel
     {
         ComprasData compras = new ComprasData();
 
-        public void InsertarPedidos(int Codigo, decimal SubTotal, decimal Total)
+        public void InsertarPedidos(string Producto, decimal SubTotal, decimal Total)
         {
-            compras.InsertPedidos(Codigo,SubTotal,Total);
+            compras.InsertPedidos(Producto,SubTotal,Total);
         }
-        public void InsertarDetallePedidos(int Codigo, decimal Precio, int Cantidad, decimal SubTotal, decimal Total)
+        public void InsertarDetallePedidos(string Producto, decimal Precio, int Cantidad, decimal SubTotal, decimal Total)
         {
-            compras.InsertDetallePedidos(Codigo,Precio,Cantidad,SubTotal,Total);
+            compras.InsertDetallePedidos(Producto,Precio,Cantidad,SubTotal,Total);
         }
         public Object LeerPedidos()
         {

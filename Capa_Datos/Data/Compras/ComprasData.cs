@@ -29,13 +29,13 @@ namespace Capa_Datos.Data.Compras
 
             conexion.cerrarconexion();
         }
-        public void InsertPedidos(int Codigo, decimal SubTotal, decimal Total)
+        public void InsertPedidos(string Producto, decimal SubTotal, decimal Total)
         {
             command = new SqlCommand("Sp_Pedidos_Insert", conexion.abrirconexion());
 
             command.CommandType = CommandType.StoredProcedure;
 
-            command.Parameters.Add(new SqlParameter("@Codigo", Codigo));
+            command.Parameters.Add(new SqlParameter("Producto", Producto));
 
             command.Parameters.Add(new SqlParameter("@SubTotal", SubTotal));
 
@@ -45,13 +45,13 @@ namespace Capa_Datos.Data.Compras
 
             conexion.cerrarconexion();
         }
-        public void InsertDetallePedidos(int Codigo, decimal Precio, int Cantidad, decimal SubTotal, decimal Total)
+        public void InsertDetallePedidos(string Producto, decimal Precio, int Cantidad, decimal SubTotal, decimal Total)
         {
             command = new SqlCommand("Ms_Pedidos_Detalle_Pedidos_Insert", conexion.abrirconexion());
 
             command.CommandType = CommandType.StoredProcedure;
 
-            command.Parameters.Add(new SqlParameter("@Codigo", Codigo));
+            command.Parameters.Add(new SqlParameter("@Producto", Producto));
 
             command.Parameters.Add(new SqlParameter("@Precio", Precio));
 
