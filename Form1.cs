@@ -29,6 +29,8 @@ namespace Proyecto_de_Graduacion
 
         Usuario_Model Usuario_ = new Usuario_Model();
 
+        Configuracion_Model Configuracion = new Configuracion_Model();
+
         private int segundos;
         private int borderSize = 2;
         string usuario, contraseña;
@@ -69,6 +71,13 @@ namespace Proyecto_de_Graduacion
                 }
             }
 
+            System.Drawing.Icon iconoProyecto = System.Drawing.Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+
+            // Convertir el ícono a imagen
+            System.Drawing.Image imagenIcono = iconoProyecto.ToBitmap();
+
+            // Asignar la imagen al control PictureBox (suponiendo que Pclogo es un control PictureBox)
+            Pclogo.Image = imagenIcono;
 
             DtgFactura.DataSource = Facturacion.LeerFacturas();
 
@@ -81,6 +90,16 @@ namespace Proyecto_de_Graduacion
             DtgCitas.DataSource = Citas.LeerCitas();
 
             DtgUsuarios.DataSource = Usuario_.LeerUsuario();
+
+            LblEntidad2.Text = Configuracion.GetNombre();
+
+            Lbladministrador2.Text = Configuracion.GetAdministrador();
+
+            LblTelefono2.Text = Configuracion.GetTelefono().ToString();
+
+            Lblubicacion2.Text = Configuracion.GetUbicacion();
+
+            Lblciudad2.Text = Configuracion.GetCiudad();
         }
         private void Btnrefrescarcompra_Click(object sender, EventArgs e)
         {
@@ -462,6 +481,244 @@ namespace Proyecto_de_Graduacion
                 FrmEditarExamen editarExamen = new FrmEditarExamen(Numero,Categoria,Examen,Plantilla,Precio);
 
                 editarExamen.Show();
+            }
+        }
+
+        private void iconButton6_Click(object sender, EventArgs e)
+        {
+            if (DtgPaciente.SelectedRows.Count > 0)
+            {
+                DataGridViewRow data = DtgPaciente.SelectedRows[0];
+
+                LblCodigo.Text = data.Cells[0].Value.ToString();
+
+                TxtNombre.Text = data.Cells[1].Value.ToString();
+
+                TxtApellido.Text = data.Cells[2].Value.ToString();
+
+                DtpFecha.Text = data.Cells[3].Value.ToString();
+
+                CmbSexo.Text = data.Cells[5].Value.ToString();
+
+                txtTelefono.Text = data.Cells[6].Value.ToString();
+            }
+            BtnEditar.Enabled = false;
+
+            TxtNombre.Enabled = true;
+            TxtApellido.Enabled = true;
+            txtTelefono.Enabled = true;
+            CmbSexo.Enabled = true;
+            BtnGuardar.Enabled = true;
+            BtnCancelar.Enabled = true;
+        }
+
+        private void iconButton7_Click(object sender, EventArgs e)
+        {
+              TxtNombre.Clear();
+            TxtApellido.Clear();
+            txtTelefono.Clear();
+            DtpFecha.Focus();
+            CmbSexo.Focus();
+
+            TxtNombre.Enabled = true;
+            TxtApellido.Enabled = true;
+            txtTelefono.Enabled = true;
+            CmbSexo.Enabled = true;
+            DtpFecha.Enabled = true;
+
+            BtnGuardar.Enabled = true;
+            BtnCancelar.Enabled = true;
+            BtnNuevoPaciente.Enabled = false;
+            BtnEditarPaciente.Enabled = false;
+        }
+
+        private void TxtBuscarPaciente_Enter(object sender, EventArgs e)
+        {
+            if (TxtBuscarPaciente.Text == "Buscar Paciente")
+            {
+                TxtBuscarPaciente.Text = "";
+                TxtBuscarPaciente.ForeColor = Color.Black;
+            }
+        }
+
+        private void BtnBuscarpaciente_Click_1(object sender, EventArgs e)
+        {
+            if (!int.TryParse(TxtBuscarPaciente.Text, out _))
+            {
+                string Paciente = TxtBuscarPaciente.Text;
+
+                DtgPaciente.DataSource = paciente.LeerPacientesporId(Paciente);
+            }
+            else
+            {
+                MessageBox.Show("No existe tal dato", "SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void Btnrefrescarpaciente_Click_1(object sender, EventArgs e)
+        {
+            DtgPaciente.DataSource = paciente.LeerPacientes();
+        }
+
+        private void BtnDarPaciente_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("¿Quieres realizar esta acción?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+            if (resultado == DialogResult.Yes)
+            {
+                if (DtgPaciente.SelectedRows.Count > 0)
+                {
+                    DataGridViewRow data = DtgPaciente.SelectedRows[0];
+
+                    DateTime numeroruc = Convert.ToDateTime(data.Cells[3].Value.ToString());
+
+                    paciente.ActualizarEstado(numeroruc);
+
+                    MessageBox.Show("El Registro fue dado de baja", "SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("La Tabla esta vacia, no puede dar de baja", "SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void BtnGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!String.IsNullOrWhiteSpace(TxtNombre.Text) && !String.IsNullOrWhiteSpace(txtTelefono.Text))
+                {
+                    string Nombre = TxtNombre.Text;
+
+                    string Apellido = TxtApellido.Text;
+
+                    DateTime Nacimiento = Convert.ToDateTime(DtpFecha.Text);
+
+                    long telefono = Convert.ToInt64(txtTelefono.Text);
+
+                    string Sexo = CmbSexo.Text;
+
+                    paciente.InsertarPacientes(Nombre, Apellido, telefono, Nacimiento, Sexo);
+
+                    MessageBox.Show("Guardardo exitosamente", "SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    TxtNombre.Clear();
+
+                    TxtApellido.Clear();
+
+                    txtTelefono.Clear();
+
+                    TxtNombre.Enabled = false;
+
+                    TxtApellido.Enabled = false;
+
+                    txtTelefono.Enabled = false;
+
+                    CmbSexo.Enabled = false;
+
+                    DtpFecha.Enabled = false;
+
+                    BtnGuardar.Enabled = false;
+
+                    BtnCancelar.Enabled = false; ;
+
+                    BtnEditarPaciente.Enabled = true;
+
+                }
+                else
+                {
+                    error.SetError(BtnGuardar, "Campos incompletos, no se puede guardar");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void DtgPaciente_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (DtgPaciente.SelectedRows.Count > 0)
+                {
+                    DataGridViewRow data = DtgPaciente.SelectedRows[0];
+
+                    LblCodigo.Text = data.Cells[0].Value.ToString();
+
+                    TxtNombre.Text = data.Cells[1].Value.ToString();
+
+                    TxtApellido.Text = data.Cells[2].Value.ToString();
+
+                    DtpFecha.Text = data.Cells[3].Value.ToString();
+
+                    CmbSexo.Text = data.Cells[5].Value.ToString();
+
+                    txtTelefono.Text = data.Cells[6].Value.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void TxtBuscarFactura_Enter(object sender, EventArgs e)
+        {
+            if (TxtBuscarFactura.Text == "Buscar Factura")
+            {
+                TxtBuscarFactura.Text = "";
+                TxtBuscarFactura.ForeColor = Color.Black;
+            }
+        }
+        private void TxtBuscarResultados_Enter(object sender, EventArgs e)
+        {
+            if (TxtBuscarResultados.Text == "Buscar Resultados")
+            {
+                TxtBuscarResultados.Text = "";
+                TxtBuscarResultados.ForeColor = Color.Black;
+            }
+        }
+        private void TxtBuscarExamen_Enter(object sender, EventArgs e)
+        {
+            if (TxtBuscarExamen.Text == "Buscar Examen")
+            {
+                TxtBuscarExamen.Text = "";
+                TxtBuscarExamen.ForeColor = Color.Black;
+            }
+        }
+        private void Btndardebajacitas_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void Btnnuevacita_Click(object sender, EventArgs e)
+        {
+            FrmNuevaCita cita = new FrmNuevaCita();
+
+            cita.Show();
+        }
+
+        private void BtnDardebaja_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("¿Quieres realizar esta acción?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+            if (resultado == DialogResult.Yes)
+            {
+                if (DtgFactura.SelectedRows.Count > 0)
+                {
+                    DataGridViewRow data = DtgFactura.SelectedRows[0];
+
+                    int numeroruc = Convert.ToInt32(data.Cells[0].Value);
+
+                    Facturacion.ActualizarFacturas(numeroruc);
+
+                    MessageBox.Show("El Registro fue dado de baja", "SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("La Tabla esta vacia, no puede dar de baja", "SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

@@ -13,15 +13,35 @@ namespace Capa_Modelo.ViewModel
 
         public void InsertarProveedor(string Nombre, string Casa_Comercial)
         {
-            Proveedor.Insertar(Nombre, Casa_Comercial);
+            Proveedor.InsertarProveedor(Nombre, Casa_Comercial);
         }
-        public void LeerProveedor()
+        public void InsertarProducto(string Producto, decimal Precio,string Nombre)
         {
-            Proveedor.Read();
+            Proveedor.InsertarProducto(Producto,Precio,Nombre);
         }
-        public void LeerProveedorporId(int Cod_Proveedor)
+        public Object LeerProveedor()
         {
-            Proveedor.ReadId(Cod_Proveedor);
+            return Proveedor.Read();
+        }
+        public Object LeerProveedorporId(string buscar)
+        {
+            return Proveedor.Search(buscar);
+        }
+        public Object CargarProductos()
+        {
+            return Proveedor.CargarProducto();
+        }
+        public string CargarProveedor(string Producto)
+        {
+            return Proveedor.CargarProveedor(Producto);
+        }
+        public string CargarCasa(string Producto)
+        {
+            return Proveedor.CargarCasaComercial(Producto);
+        }
+        public decimal CargarPrecio(string Producto)
+        {
+            return Proveedor.CargarPrecio(Producto);
         }
         public void ActualizarProveedor(int Cod_Proveedor, string Nombre, string Casa_Comercial)
         {

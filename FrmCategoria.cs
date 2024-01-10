@@ -70,7 +70,10 @@ namespace Proyecto_de_Graduacion
 
         private void BtnEditar_Click(object sender, EventArgs e)
         {
+            if (true)
+            {
 
+            }
         }
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
@@ -120,6 +123,11 @@ namespace Proyecto_de_Graduacion
             BtnGuardar.Enabled = false;
 
             BtnEditar.Enabled = false;
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

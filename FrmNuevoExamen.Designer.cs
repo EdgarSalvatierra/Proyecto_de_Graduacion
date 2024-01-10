@@ -28,13 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNuevoExamen));
             this.panel1 = new System.Windows.Forms.Panel();
             this.TxtPrecio = new System.Windows.Forms.TextBox();
             this.BtnCategoria = new FontAwesome.Sharp.IconButton();
+            this.BtnEnlace = new FontAwesome.Sharp.IconButton();
             this.lblApellido = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtid_examen = new System.Windows.Forms.TextBox();
@@ -49,7 +51,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.BtnCancelar = new FontAwesome.Sharp.IconButton();
             this.BtnGuardarTodo = new FontAwesome.Sharp.IconButton();
-            this.BtnEnlace = new FontAwesome.Sharp.IconButton();
             this.BtnNuevoExamen = new FontAwesome.Sharp.IconButton();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
@@ -100,6 +101,28 @@
             this.BtnCategoria.Text = ".....";
             this.BtnCategoria.UseVisualStyleBackColor = true;
             this.BtnCategoria.Click += new System.EventHandler(this.BtnCategoria_Click);
+            // 
+            // BtnEnlace
+            // 
+            this.BtnEnlace.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.BtnEnlace.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BtnEnlace.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.BtnEnlace.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnEnlace.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnEnlace.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.BtnEnlace.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.BtnEnlace.IconColor = System.Drawing.SystemColors.Highlight;
+            this.BtnEnlace.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.BtnEnlace.IconSize = 20;
+            this.BtnEnlace.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnEnlace.Location = new System.Drawing.Point(809, 17);
+            this.BtnEnlace.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BtnEnlace.Name = "BtnEnlace";
+            this.BtnEnlace.Size = new System.Drawing.Size(46, 40);
+            this.BtnEnlace.TabIndex = 95;
+            this.BtnEnlace.Text = "....";
+            this.BtnEnlace.UseVisualStyleBackColor = false;
+            this.BtnEnlace.Click += new System.EventHandler(this.BtnEnlace_Click);
             // 
             // lblApellido
             // 
@@ -209,32 +232,32 @@
             // 
             this.Dtgexamen.AllowUserToAddRows = false;
             this.Dtgexamen.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
-            this.Dtgexamen.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.Dtgexamen.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.Dtgexamen.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Dtgexamen.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.Dtgexamen.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Dtgexamen.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.Dtgexamen.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dtgexamen.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dtgexamen.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.Dtgexamen.ColumnHeadersHeight = 40;
             this.Dtgexamen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Dtgexamen.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Dtgexamen.DefaultCellStyle = dataGridViewCellStyle3;
             this.Dtgexamen.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Dtgexamen.EnableHeadersVisualStyles = false;
             this.Dtgexamen.GridColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -244,11 +267,11 @@
             this.Dtgexamen.ReadOnly = true;
             this.Dtgexamen.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.Dtgexamen.RowHeadersWidth = 65;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black;
-            this.Dtgexamen.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.Dtgexamen.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.Dtgexamen.RowTemplate.Height = 24;
             this.Dtgexamen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Dtgexamen.Size = new System.Drawing.Size(915, 330);
@@ -309,28 +332,6 @@
             this.BtnGuardarTodo.UseVisualStyleBackColor = false;
             this.BtnGuardarTodo.Click += new System.EventHandler(this.BtnGuardarTodo_Click);
             // 
-            // BtnEnlace
-            // 
-            this.BtnEnlace.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.BtnEnlace.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnEnlace.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.BtnEnlace.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEnlace.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEnlace.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.BtnEnlace.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.BtnEnlace.IconColor = System.Drawing.SystemColors.Highlight;
-            this.BtnEnlace.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.BtnEnlace.IconSize = 20;
-            this.BtnEnlace.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnEnlace.Location = new System.Drawing.Point(809, 17);
-            this.BtnEnlace.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.BtnEnlace.Name = "BtnEnlace";
-            this.BtnEnlace.Size = new System.Drawing.Size(46, 40);
-            this.BtnEnlace.TabIndex = 95;
-            this.BtnEnlace.Text = "....";
-            this.BtnEnlace.UseVisualStyleBackColor = false;
-            this.BtnEnlace.Click += new System.EventHandler(this.BtnEnlace_Click);
-            // 
             // BtnNuevoExamen
             // 
             this.BtnNuevoExamen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
@@ -365,6 +366,7 @@
             this.Controls.Add(this.Pnlgrid);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmNuevoExamen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo Examen";

@@ -92,6 +92,7 @@
             this.btnCerrar.Size = new System.Drawing.Size(50, 50);
             this.btnCerrar.TabIndex = 48;
             this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // LblTitulo
             // 

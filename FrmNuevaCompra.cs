@@ -19,23 +19,42 @@ namespace Proyecto_de_Graduacion
     {
         Compras_Model compras = new Compras_Model();
 
+        Proveedor_Model Proveedor = new Proveedor_Model();
+
         ErrorProvider error = new ErrorProvider();
+
+        BindingSource Source = new BindingSource();
         public FrmNuevaCompra()
         {
             InitializeComponent();
         }
         private void FrmNuevaCompra_Load(object sender, EventArgs e)
         {
-            LblFecha.Text = DateTime.Now.ToLongDateString();
+            TxtFecha.Text = DateTime.Now.ToShortDateString();
+
+            Source.DataSource = Proveedor.CargarProductos();
+
+            if (Source.Count > 0)
+            {
+                CmbProducto.DataSource = Source;
+
+                CmbProducto.DisplayMember = "Producto";
+
+                CmbProducto.ValueMember = "Codigo";
+            }
+            else
+            {
+                CmbProducto.Enabled = false;
+                CmbProducto.Text = "No hay datos disponibles";
+            }
         }
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
             if ((!string.IsNullOrWhiteSpace(TxtCantidad.Text)
-                && !string.IsNullOrWhiteSpace(LBlsubtotal.Text)
-                && !string.IsNullOrWhiteSpace(lbl001.Text) &&
-                !string.IsNullOrWhiteSpace(Txtcasacomerciales.Text)
-                && !string.IsNullOrWhiteSpace(TxtPrecio.Text) &&
-                !string.IsNullOrWhiteSpace(TxtProducto.Text) && !string.IsNullOrWhiteSpace(CmbProveedor.Text)))
+                && !string.IsNullOrWhiteSpace(TxtSubTotal.Text)
+                && !string.IsNullOrWhiteSpace(TxtTotal.Text) &&
+                !string.IsNullOrWhiteSpace(TxtPrecio.Text) &&
+                !string.IsNullOrWhiteSpace(CmbProducto.Text)))
             {
                 if (DtgCompra.Rows.Count == 0)
                 {
@@ -49,15 +68,15 @@ namespace Proyecto_de_Graduacion
 
                     SaveFileDialog saveFile = new SaveFileDialog();
 
-                    saveFile.FileName = $@"PedidoaDistribuidora: {CmbProveedor.Text}.pdf ";
+                    saveFile.FileName = $@"PedidoaDistribuidora: {Proveedor.CargarProveedor(CmbProducto.SelectedValue.ToString())}.pdf ";
 
                     string texto_html = Properties.Resources.FacturaPedido;
 
                     texto_html = texto_html.Replace("@Fecha", DateTime.Now.ToLongDateString());
 
-                    texto_html = texto_html.Replace("@Proveedor", CmbProveedor.Text.ToString());
+                    texto_html = texto_html.Replace("@Proveedor", Proveedor.CargarProveedor(CmbProducto.SelectedValue.ToString()));
 
-                    texto_html = texto_html.Replace("@Distribuidora", Txtcasacomerciales.Text.ToString());
+                    texto_html = texto_html.Replace("@Distribuidora", Proveedor.CargarCasa(CmbProducto.SelectedValue.ToString()));
 
                     string filas = string.Empty;
 
@@ -107,7 +126,7 @@ namespace Proyecto_de_Graduacion
                             stream.Close();
                         }                  
                     }
-                    compras.InsertarPedidos(TxtProducto.Text, Convert.ToDecimal(TxtPrecio.Text), Convert.ToInt32(TxtCantidad.Text), Convert.ToDecimal(LBlsubtotal.Text), Convert.ToDecimal(lbl001.Text), CmbProveedor.Text.ToString());
+                    compras.InsertarPedidos(CmbProducto.SelectedValue.ToString(), Convert.ToDecimal(TxtPrecio.Text), Convert.ToInt32(TxtCantidad.Text), Convert.ToDecimal(TxtSubTotal.Text), Convert.ToDecimal(TxtTotal.Text),Proveedor.CargarProveedor(CmbProducto.SelectedValue.ToString()));
 
                     MessageBox.Show($"Se ha realizado el pedido exitosamente", "SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -115,22 +134,27 @@ namespace Proyecto_de_Graduacion
                 }
             }
         }
-        private void Btnagregar_Click(object sender, EventArgs e)
+        private void BtnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void Btnagregar_Click_1(object sender, EventArgs e)
         {
             decimal Monto = 0;
-            if (!string.IsNullOrWhiteSpace(CmbProveedor.Text) && !string.IsNullOrWhiteSpace(TxtPrecio.Text) && !string.IsNullOrWhiteSpace(Txtcasacomerciales.Text) && !string.IsNullOrWhiteSpace(TxtProducto.Text) && !string.IsNullOrWhiteSpace(TxtCantidad.Text))
+
+            if (!string.IsNullOrWhiteSpace(TxtPrecio.Text) && !string.IsNullOrWhiteSpace(CmbProducto.Text) && !string.IsNullOrWhiteSpace(TxtCantidad.Text))
             {
                 try
                 {
-                    if (DtgCompra.Rows.Count  == 0)
+                    if (DtgCompra.Rows.Count == 0)
                     {
                         MessageBox.Show("No hay examenes disponibles", "Systema", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
-                    {            
+                    {
                         int n = DtgCompra.Rows.Add();
 
-                        DtgCompra.Rows[n].Cells[0].Value = TxtProducto.Text;
+                        DtgCompra.Rows[n].Cells[0].Value = CmbProducto.Text;
 
                         DtgCompra.Rows[n].Cells[1].Value = TxtPrecio.Text;
 
@@ -140,15 +164,11 @@ namespace Proyecto_de_Graduacion
 
                         Monto = Monto + Convert.ToDecimal(DtgCompra.CurrentRow.Cells[3].Value);
 
-                        LBlsubtotal.Text = Monto.ToString();
+                        TxtSubTotal.Text = Monto.ToString();
 
-                        lbl001.Text = Monto.ToString();
-
-                        TxtProducto.Clear();
+                        TxtTotal.Text = Monto.ToString();
 
                         TxtCantidad.Clear();
-
-                        Txtcasacomerciales.Clear();
 
                         TxtPrecio.Clear();
                     }
@@ -165,10 +185,6 @@ namespace Proyecto_de_Graduacion
                 MessageBox.Show("Seleccione un elemento de la Lista y agregelo", "SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
-        private void BtnProveedor_Click(object sender, EventArgs e)
-        {
-
-        }
         private void BtnQuitar_Click(object sender, EventArgs e)
         {
             decimal Monto = 0;
@@ -184,9 +200,9 @@ namespace Proyecto_de_Graduacion
                 {
                     Monto = Monto - Convert.ToDecimal(DtgCompra.CurrentRow.Cells[1].Value);
 
-                    LBlsubtotal.Text = Monto.ToString();
+                    TxtSubTotal.Text = Monto.ToString();
 
-                    lbl001.Text = Monto.ToString();
+                    TxtTotal.Text = Monto.ToString();
 
                     DtgCompra.Rows.Remove(DtgCompra.CurrentRow);
                 }
@@ -196,9 +212,25 @@ namespace Proyecto_de_Graduacion
                 MessageBox.Show(ex.Message, "SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void BtnX_Click(object sender, EventArgs e)
+        private void BtnProveedor_Click(object sender, EventArgs e)
         {
-            this.Close();
+            FrmProveedor frmProveedor = new FrmProveedor();
+
+            frmProveedor.Show();
+        }
+        private void CmbProducto_DropDown(object sender, EventArgs e)
+        {
+            CmbProducto.DataSource = Proveedor.CargarProductos();
+
+            CmbProducto.DisplayMember = "Producto";
+
+            CmbProducto.ValueMember = "Codigo";
+        }
+        private void CmbProducto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedValue = CmbProducto.SelectedItem.ToString();
+
+            TxtPrecio.Text = Proveedor.CargarPrecio(selectedValue.ToString()).ToString();
         }
     }
 }

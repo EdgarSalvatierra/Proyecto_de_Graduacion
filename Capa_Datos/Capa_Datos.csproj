@@ -61,6 +61,8 @@
     <Compile Include="Model\Detalle_Usuario.cs" />
     <Compile Include="Model\Facturacion_list.cs" />
     <Compile Include="Model\Informacion_Entidad.cs" />
+    <Compile Include="Model\Productos.cs" />
+    <Compile Include="Model\ProveedoresClass.cs" />
     <Compile Include="Model\Registro_Paciente.cs" />
     <Compile Include="Model\Permiso.cs" />
     <Compile Include="Model\Rol.cs" />
