@@ -54,7 +54,7 @@ namespace Capa_Datos.Data.Citas
         }
         public DataTable Read()
         {
-            string query = $@"Select cod_cita as 'Codigo',nombre_completo as 'Nombre',Fecha_de_Nacimiento as 'Fecha de Nacimiento',
+            string query = $@"Select cod_cita as 'Codigo',nombre  + ' ' + apellido as 'Nombres', Fecha_de_Nacimiento as 'Fecha de Nacimiento',
              telefono as 'Telefono',motivo as 'Motivo',fecha_realizacion as 'Fecha de Cita',hora_de_realizacion as 'Hora de Cita' From tbl_Reservacion_Citas
              where Estado = 1";
 
