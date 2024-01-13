@@ -24,6 +24,8 @@ namespace Proyecto_de_Graduacion
         ErrorProvider error = new ErrorProvider();
 
         BindingSource Source = new BindingSource();
+
+        BindingSource source2 = new BindingSource();
         public FrmNuevaCompra()
         {
             InitializeComponent();
@@ -34,7 +36,27 @@ namespace Proyecto_de_Graduacion
 
             TxtFecha.Text = DateTime.Now.ToShortDateString();
 
-            Source.DataSource = Proveedor.CargarProductos();
+            source2.DataSource = Proveedor.CargarListaComercial();
+
+
+            if (source2.Count > 0)
+            {
+                CmbProveedor.DataSource = source2;
+
+                CmbProveedor.DisplayMember = "Comercial";
+
+                CmbProveedor.ValueMember = "Codigo";
+
+                CmbProveedor.Enabled = true;
+            }
+            else
+            {
+                CmbProveedor.Enabled = false;
+
+                CmbProveedor.Text = "No hay datos disponibles";
+            }
+
+            Source.DataSource = Proveedor.CargarProductos(Convert.ToInt32(CmbProveedor.SelectedValue));
 
             if (Source.Count > 0)
             {
@@ -228,26 +250,6 @@ namespace Proyecto_de_Graduacion
 
             frmProveedor.Show();
         }
-        private void CmbProducto_DropDown(object sender, EventArgs e)
-        {
-            Source.DataSource = Proveedor.CargarProductos();
-
-            if (Source.Count > 0)
-            {
-                CmbProducto.DataSource = Source;
-
-                CmbProducto.DisplayMember = "Producto";
-
-                CmbProducto.ValueMember = "Codigo";
-
-                CmbProducto.Enabled = true;
-            }
-            else
-            {
-                CmbProducto.Enabled = false;
-                CmbProducto.Text = "No hay datos disponibles";
-            }  
-        }
         private void CmbProducto_DropDownClosed(object sender, EventArgs e)
         {
             if (CmbProducto.SelectedIndex != -1)
@@ -262,6 +264,61 @@ namespace Proyecto_de_Graduacion
             {
                 TxtPrecio.Text = string.Empty; // O asigna otro valor por defecto si es necesario
             }
+        }
+        private void CmbProveedor_DropDownClosed(object sender, EventArgs e)
+        {
+            if (CmbProveedor.SelectedIndex != -1)
+            {
+
+                // Obtén el código del producto seleccionado
+                int selectedValue = Convert.ToInt32(CmbProveedor.SelectedValue);
+
+                Source.DataSource = Proveedor.CargarProductos(selectedValue);
+
+                if (Source.Count > 0)
+                {
+                    CmbProducto.DataSource = Source;
+
+                    CmbProducto.DisplayMember = "Producto";
+
+                    CmbProducto.ValueMember = "Codigo";
+
+                    CmbProducto.Enabled = true;
+                }
+                else
+                {
+                    CmbProducto.Enabled = false;
+                    CmbProducto.Text = "No hay datos disponibles";
+                }
+            }
+            else
+            {
+                CmbProveedor.Text = string.Empty; // O asigna otro valor por defecto si es necesario
+            }
+        }
+        private void CmbProveedor_DropDown(object sender, EventArgs e)
+        {
+            if (source2.Count > 0)
+            {
+                CmbProveedor.DataSource = source2;
+
+                CmbProveedor.DisplayMember = "Comercial";
+
+                CmbProveedor.ValueMember = "Codigo";
+
+                CmbProveedor.Enabled = true;
+            }
+            else
+            {
+                CmbProveedor.Enabled = false;
+
+                CmbProveedor.Text = "No hay datos disponibles";
+            }
+
+        }
+        private void BtnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

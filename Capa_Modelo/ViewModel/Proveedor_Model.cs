@@ -23,13 +23,17 @@ namespace Capa_Modelo.ViewModel
         {
             return Proveedor.Read();
         }
+        public Object CargarListaComercial()
+        {
+            return Proveedor.CargarListaComercial();
+        }
         public Object LeerProveedorporId(string buscar)
         {
             return Proveedor.Search(buscar);
         }
-        public Object CargarProductos()
+        public Object CargarProductos(int Casacomercial)
         {
-            return Proveedor.CargarProducto();
+            return Proveedor.CargarProducto(Casacomercial);
         }
         public string CargarProveedor(int Codigo)
         {

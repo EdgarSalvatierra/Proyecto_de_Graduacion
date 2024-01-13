@@ -52,6 +52,8 @@
             this.LblPrecio = new System.Windows.Forms.Label();
             this.LblCantidad = new System.Windows.Forms.Label();
             this.Pnlpreciook = new System.Windows.Forms.Panel();
+            this.CmbProveedor = new System.Windows.Forms.ComboBox();
+            this.Lblproveedor = new System.Windows.Forms.Label();
             this.BtnQuitar = new System.Windows.Forms.Button();
             this.TxtTotal = new System.Windows.Forms.Label();
             this.Btnagregar = new System.Windows.Forms.Button();
@@ -64,6 +66,8 @@
             this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LblSistemaLab = new System.Windows.Forms.Label();
+            this.BtnMinimizar = new System.Windows.Forms.Button();
             this.PnlGuardar.SuspendLayout();
             this.Pnlarriba.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -135,6 +139,8 @@
             // Pnlarriba
             // 
             this.Pnlarriba.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(80)))), ((int)(((byte)(210)))));
+            this.Pnlarriba.Controls.Add(this.BtnMinimizar);
+            this.Pnlarriba.Controls.Add(this.LblSistemaLab);
             this.Pnlarriba.Controls.Add(this.BtnClose);
             this.Pnlarriba.Dock = System.Windows.Forms.DockStyle.Top;
             this.Pnlarriba.Location = new System.Drawing.Point(0, 0);
@@ -226,11 +232,10 @@
             this.CmbProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbProducto.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CmbProducto.FormattingEnabled = true;
-            this.CmbProducto.Location = new System.Drawing.Point(93, 17);
+            this.CmbProducto.Location = new System.Drawing.Point(102, 17);
             this.CmbProducto.Name = "CmbProducto";
             this.CmbProducto.Size = new System.Drawing.Size(180, 27);
             this.CmbProducto.TabIndex = 4;
-            this.CmbProducto.DropDown += new System.EventHandler(this.CmbProducto_DropDown);
             this.CmbProducto.DropDownClosed += new System.EventHandler(this.CmbProducto_DropDownClosed);
             // 
             // LblProducto
@@ -304,6 +309,8 @@
             // 
             // Pnlpreciook
             // 
+            this.Pnlpreciook.Controls.Add(this.CmbProveedor);
+            this.Pnlpreciook.Controls.Add(this.Lblproveedor);
             this.Pnlpreciook.Controls.Add(this.BtnQuitar);
             this.Pnlpreciook.Controls.Add(this.TxtTotal);
             this.Pnlpreciook.Controls.Add(this.Btnagregar);
@@ -315,6 +322,30 @@
             this.Pnlpreciook.Name = "Pnlpreciook";
             this.Pnlpreciook.Size = new System.Drawing.Size(944, 45);
             this.Pnlpreciook.TabIndex = 16;
+            // 
+            // CmbProveedor
+            // 
+            this.CmbProveedor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.CmbProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbProveedor.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CmbProveedor.FormattingEnabled = true;
+            this.CmbProveedor.Location = new System.Drawing.Point(102, 8);
+            this.CmbProveedor.Name = "CmbProveedor";
+            this.CmbProveedor.Size = new System.Drawing.Size(180, 27);
+            this.CmbProveedor.TabIndex = 10;
+            this.CmbProveedor.DropDown += new System.EventHandler(this.CmbProveedor_DropDown);
+            this.CmbProveedor.DropDownClosed += new System.EventHandler(this.CmbProveedor_DropDownClosed);
+            // 
+            // Lblproveedor
+            // 
+            this.Lblproveedor.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.Lblproveedor.AutoSize = true;
+            this.Lblproveedor.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lblproveedor.Location = new System.Drawing.Point(12, 13);
+            this.Lblproveedor.Name = "Lblproveedor";
+            this.Lblproveedor.Size = new System.Drawing.Size(84, 19);
+            this.Lblproveedor.TabIndex = 14;
+            this.Lblproveedor.Text = "Proveedor";
             // 
             // BtnQuitar
             // 
@@ -498,6 +529,36 @@
             this.Importe.Name = "Importe";
             this.Importe.ReadOnly = true;
             // 
+            // LblSistemaLab
+            // 
+            this.LblSistemaLab.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LblSistemaLab.AutoSize = true;
+            this.LblSistemaLab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(80)))), ((int)(((byte)(210)))));
+            this.LblSistemaLab.Font = new System.Drawing.Font("Copperplate Gothic Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblSistemaLab.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.LblSistemaLab.Location = new System.Drawing.Point(367, 9);
+            this.LblSistemaLab.Name = "LblSistemaLab";
+            this.LblSistemaLab.Size = new System.Drawing.Size(211, 19);
+            this.LblSistemaLab.TabIndex = 16;
+            this.LblSistemaLab.Text = "Sistema Socorro Lab";
+            // 
+            // BtnMinimizar
+            // 
+            this.BtnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnMinimizar.FlatAppearance.BorderSize = 0;
+            this.BtnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnMinimizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnMinimizar.ForeColor = System.Drawing.SystemColors.Window;
+            this.BtnMinimizar.Location = new System.Drawing.Point(876, 4);
+            this.BtnMinimizar.Name = "BtnMinimizar";
+            this.BtnMinimizar.Size = new System.Drawing.Size(32, 29);
+            this.BtnMinimizar.TabIndex = 17;
+            this.BtnMinimizar.Text = "-";
+            this.BtnMinimizar.UseVisualStyleBackColor = true;
+            this.BtnMinimizar.Click += new System.EventHandler(this.BtnMinimizar_Click);
+            // 
             // FrmNuevaCompra
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -516,6 +577,7 @@
             this.Load += new System.EventHandler(this.FrmNuevaCompra_Load);
             this.PnlGuardar.ResumeLayout(false);
             this.Pnlarriba.ResumeLayout(false);
+            this.Pnlarriba.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.Pnlproveedor.ResumeLayout(false);
@@ -559,5 +621,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
+        private System.Windows.Forms.ComboBox CmbProveedor;
+        private System.Windows.Forms.Label Lblproveedor;
+        private System.Windows.Forms.Label LblSistemaLab;
+        private System.Windows.Forms.Button BtnMinimizar;
     }
 }

@@ -16,5 +16,15 @@ namespace Proyecto_de_Graduacion
         {
             InitializeComponent();
         }
+
+        private void BtnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void BtnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

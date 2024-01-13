@@ -63,32 +63,12 @@ namespace Proyecto_de_Graduacion
         {
             DtgProveedor.DataSource = proveedor.LeerProveedorporId(TxtBuscarProducto.Text.ToString()); ;
         }
-        private void BtnEditar_Click(object sender, EventArgs e)
-        {
-            if (DtgProveedor.SelectedRows.Count > 0)
-            {
-                DataGridViewRow data = DtgProveedor.SelectedRows[0];
-
-                TxtCodigo.Text = data.Cells[0].Value.ToString();
-
-                TxtProveedor.Text = data.Cells[1].Value.ToString();
-
-                TxtProducto.Text = data.Cells[3].Value.ToString();
-
-                TxtCasacomercial.Text = data.Cells[2].Value.ToString();
-
-                TxtPrecio.Text = data.Cells[4].Value.ToString();
-            }
-
-            BtnEditar.Enabled = false;
-
-            BtnNuevo.Enabled = false;
-        }
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
                 if (!string.IsNullOrWhiteSpace(TxtProveedor.Text)
                && !string.IsNullOrWhiteSpace(TxtProducto.Text)
-               && !string.IsNullOrWhiteSpace(TxtCasacomercial.Text) && !string.IsNullOrWhiteSpace(TxtPrecio.Text))
+               && !string.IsNullOrWhiteSpace(TxtCasacomercial.Text) && !string.IsNullOrWhiteSpace(TxtPrecio.Text)
+               || decimal.TryParse(TxtPrecio.Text,out _))
                 {
                     string Proveedor = TxtProveedor.Text;
 
@@ -104,14 +84,12 @@ namespace Proyecto_de_Graduacion
 
                     MessageBox.Show("Guardado Correctamente", "Sql Server", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    TxtProducto.Enabled = false;
                     TxtProveedor.Enabled = false;
                     TxtCasacomercial.Enabled = false;
-                    TxtPrecio.Enabled = false;
 
-                    BtnGuardar.Enabled = false;
-                    BtnEditar.Enabled = false;
-                    Btndardebaja.Enabled = false;
+                    TxtProducto.Clear();
+                    TxtPrecio.Clear();
+
                     BtnNuevo.Enabled = true;
                 }
                 else
@@ -144,6 +122,51 @@ namespace Proyecto_de_Graduacion
                 }
             }
             */
+        }
+
+        private void DtgProveedor_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (DtgProveedor.SelectedRows.Count > 0)
+            {
+                DataGridViewRow data = DtgProveedor.SelectedRows[0];
+
+                TxtCodigo.Text = data.Cells[0].Value.ToString();
+
+                TxtProveedor.Text = data.Cells[1].Value.ToString();
+
+                TxtProducto.Text = data.Cells[3].Value.ToString();
+
+                TxtCasacomercial.Text = data.Cells[2].Value.ToString();
+
+                TxtPrecio.Text = data.Cells[4].Value.ToString();
+            }
+
+            TxtProducto.Enabled = true;
+
+            TxtPrecio.Enabled = true;
+           
+        }
+
+        private void BtnEditar_Click(object sender, EventArgs e)
+        {
+            if (DtgProveedor.SelectedRows.Count > 0)
+            {
+                DataGridViewRow data = DtgProveedor.SelectedRows[0];
+
+                TxtCodigo.Text = data.Cells[0].Value.ToString();
+
+                TxtProveedor.Text = data.Cells[1].Value.ToString();
+
+                TxtProducto.Text = data.Cells[3].Value.ToString();
+
+                TxtCasacomercial.Text = data.Cells[2].Value.ToString();
+
+                TxtPrecio.Text = data.Cells[4].Value.ToString();
+            }
+
+            BtnNuevo.Enabled = false;
+
+            BtnEditar.Enabled = false;
         }
     }
 }

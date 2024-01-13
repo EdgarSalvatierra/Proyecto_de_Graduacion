@@ -71,13 +71,38 @@ namespace Capa_Datos.Data.Proveedores
                 conexion.cerrarconexion();
             }
         }
-        public DataTable CargarProducto()
+        public DataTable CargarListaComercial()
         {
             try
             {
-                string query = $@"Select Codigo,Producto  From tbl_Producto";
+                command = new SqlCommand("Sp_Cargar_Proveedor_ok", conexion.abrirconexion());
 
-                command = new SqlCommand(query, conexion.abrirconexion());
+                command.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter dataAdapter = new SqlDataAdapter();
+
+                dataAdapter.SelectCommand = command;
+
+                DataTable data = new DataTable();
+
+                dataAdapter.Fill(data);
+
+                return data;
+            }
+            finally
+            {
+                conexion.cerrarconexion();
+            }
+        }
+        public DataTable CargarProducto(int casacomercial)
+        {
+            try
+            {
+                command = new SqlCommand("Sp_Cargar_Producto_Comercial", conexion.abrirconexion());
+
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.Add(new SqlParameter("@Codigo", casacomercial));
 
                 DataTable data = new DataTable();
 
@@ -184,7 +209,6 @@ namespace Capa_Datos.Data.Proveedores
                     }
                 }
             }
-
             conexion.cerrarconexion();
 
             return lista.FirstOrDefault()?.Casa_Comercial;

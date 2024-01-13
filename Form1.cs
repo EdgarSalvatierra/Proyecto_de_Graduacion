@@ -50,6 +50,8 @@ namespace Proyecto_de_Graduacion
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            PnlNuevoPaciente.Width = 0;
+
             foreach (Control control in MaterialTabcontrollist.Controls)
             {
                 // Verifica si el control actual es un IconButton.
@@ -104,7 +106,7 @@ namespace Proyecto_de_Graduacion
         private void Btnrefrescarcompra_Click(object sender, EventArgs e)
         {
             DtgCompras.DataSource = compras.LeerPedidos();
-        } 
+        }
         private void BtnBuscarpaciente_Click(object sender, EventArgs e)
         {
             if (!int.TryParse(TxtBuscarPaciente.Text, out _))
@@ -173,38 +175,6 @@ namespace Proyecto_de_Graduacion
         private void Btnrefrescarexamen_Click(object sender, EventArgs e)
         {
             DtgExamen.DataSource = Examen.LeerExamen();
-        }
-        private void BtnBuscarCitas_Click(object sender, EventArgs e)
-        {
-            if (long.TryParse(txtBusquedaCita.Text, out _))
-            {
-                long Telefono = Convert.ToInt64(txtBusquedaCita.Text);
-
-                string Pacientes = "";
-
-                DtgCitas.DataSource = Citas.Search(Pacientes, Telefono);
-            }
-            else
-            {
-                long Telefono = 0;
-
-                string Pacientes = txtBusquedaCita.Text;
-
-                DtgCitas.DataSource = Citas.Search(Pacientes, Telefono);
-            }
-        }
-        private void Btnrefrescarcitas_Click(object sender, EventArgs e)
-        {
-            DtgCitas.DataSource = Citas.LeerCitas();
-        }
-        private void txtBusquedaCita_Enter(object sender, EventArgs e)
-        {
-            if (txtBusquedaCita.Text == "Buscar Citas")
-            {
-                txtBusquedaCita.Text = "";
-
-                txtBusquedaCita.ForeColor = Color.Black;
-            }
         }
         private void ICNCompra_Click(object sender, EventArgs e)
         {
@@ -478,43 +448,16 @@ namespace Proyecto_de_Graduacion
 
                 decimal Precio = Convert.ToDecimal(data.Cells[4].Value);
 
-                FrmEditarExamen editarExamen = new FrmEditarExamen(Numero,Categoria,Examen,Plantilla,Precio);
+                FrmEditarExamen editarExamen = new FrmEditarExamen(Numero, Categoria, Examen, Plantilla, Precio);
 
                 editarExamen.Show();
             }
         }
-
-        private void iconButton6_Click(object sender, EventArgs e)
-        {
-            if (DtgPaciente.SelectedRows.Count > 0)
-            {
-                DataGridViewRow data = DtgPaciente.SelectedRows[0];
-
-                LblCodigo.Text = data.Cells[0].Value.ToString();
-
-                TxtNombre.Text = data.Cells[1].Value.ToString();
-
-                TxtApellido.Text = data.Cells[2].Value.ToString();
-
-                DtpFecha.Text = data.Cells[3].Value.ToString();
-
-                CmbSexo.Text = data.Cells[5].Value.ToString();
-
-                txtTelefono.Text = data.Cells[6].Value.ToString();
-            }
-            BtnEditar.Enabled = false;
-
-            TxtNombre.Enabled = true;
-            TxtApellido.Enabled = true;
-            txtTelefono.Enabled = true;
-            CmbSexo.Enabled = true;
-            BtnGuardar.Enabled = true;
-            BtnCancelar.Enabled = true;
-        }
-
         private void iconButton7_Click(object sender, EventArgs e)
         {
-              TxtNombre.Clear();
+            PnlNuevoPaciente.Width = 352;
+
+            TxtNombre.Clear();
             TxtApellido.Clear();
             txtTelefono.Clear();
             DtpFecha.Focus();
@@ -531,7 +474,6 @@ namespace Proyecto_de_Graduacion
             BtnNuevoPaciente.Enabled = false;
             BtnEditarPaciente.Enabled = false;
         }
-
         private void TxtBuscarPaciente_Enter(object sender, EventArgs e)
         {
             if (TxtBuscarPaciente.Text == "Buscar Paciente")
@@ -540,7 +482,6 @@ namespace Proyecto_de_Graduacion
                 TxtBuscarPaciente.ForeColor = Color.Black;
             }
         }
-
         private void BtnBuscarpaciente_Click_1(object sender, EventArgs e)
         {
             if (!int.TryParse(TxtBuscarPaciente.Text, out _))
@@ -554,12 +495,10 @@ namespace Proyecto_de_Graduacion
                 MessageBox.Show("No existe tal dato", "SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
-
         private void Btnrefrescarpaciente_Click_1(object sender, EventArgs e)
         {
             DtgPaciente.DataSource = paciente.LeerPacientes();
-        }
-
+        } 
         private void BtnDarPaciente_Click(object sender, EventArgs e)
         {
             DialogResult resultado = MessageBox.Show("¿Quieres realizar esta acción?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
@@ -637,33 +576,6 @@ namespace Proyecto_de_Graduacion
             }
         }
 
-        private void DtgPaciente_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                if (DtgPaciente.SelectedRows.Count > 0)
-                {
-                    DataGridViewRow data = DtgPaciente.SelectedRows[0];
-
-                    LblCodigo.Text = data.Cells[0].Value.ToString();
-
-                    TxtNombre.Text = data.Cells[1].Value.ToString();
-
-                    TxtApellido.Text = data.Cells[2].Value.ToString();
-
-                    DtpFecha.Text = data.Cells[3].Value.ToString();
-
-                    CmbSexo.Text = data.Cells[5].Value.ToString();
-
-                    txtTelefono.Text = data.Cells[6].Value.ToString();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
         private void TxtBuscarFactura_Enter(object sender, EventArgs e)
         {
             if (TxtBuscarFactura.Text == "Buscar Factura")
@@ -722,6 +634,115 @@ namespace Proyecto_de_Graduacion
             }
         }
 
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            PnlNuevoPaciente.Width = 0;
+
+            TxtNombre.Clear();
+            TxtApellido.Clear();
+            txtTelefono.Clear();
+            DtpFecha.Focus();
+            CmbSexo.Focus();
+
+            TxtNombre.Enabled = true;
+            TxtApellido.Enabled = true;
+            txtTelefono.Enabled = true;
+            CmbSexo.Enabled = true;
+            DtpFecha.Enabled = true;
+
+            BtnNuevoPaciente.Enabled = true;
+            BtnEditarPaciente.Enabled = true;
+        }
+        private void BtnEditarPaciente_Click(object sender, EventArgs e)
+        {
+            PnlNuevoPaciente.Width = 352;
+
+            if (DtgPaciente.SelectedRows.Count > 0)
+            {
+                DataGridViewRow data = DtgPaciente.SelectedRows[0];
+
+                LblCodigo.Text = data.Cells[0].Value.ToString();
+
+                TxtNombre.Text = data.Cells[1].Value.ToString();
+
+                TxtApellido.Text = data.Cells[2].Value.ToString();
+
+                DtpFecha.Text = data.Cells[3].Value.ToString();
+
+                CmbSexo.Text = data.Cells[5].Value.ToString();
+
+                txtTelefono.Text = data.Cells[6].Value.ToString();
+            }
+            BtnEditar.Enabled = false;
+
+            TxtNombre.Enabled = true;
+            TxtApellido.Enabled = true;
+            txtTelefono.Enabled = true;
+            CmbSexo.Enabled = true;
+            BtnGuardar.Enabled = true;
+            BtnCancelar.Enabled = true;
+        }
+
+        private void DtgPaciente_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (DtgPaciente.SelectedRows.Count > 0)
+            {
+                DataGridViewRow data = DtgPaciente.SelectedRows[0];
+
+                LblCodigo.Text = data.Cells[0].Value.ToString();
+
+                TxtNombre.Text = data.Cells[1].Value.ToString();
+
+                TxtApellido.Text = data.Cells[2].Value.ToString();
+
+                DtpFecha.Text = data.Cells[3].Value.ToString();
+
+                CmbSexo.Text = data.Cells[5].Value.ToString();
+
+                txtTelefono.Text = data.Cells[6].Value.ToString();
+            }
+        }
+
+        private void Btnrefrescarcitas_Click_1(object sender, EventArgs e)
+        {
+            DtgCitas.DataSource = Citas.LeerCitas();
+        }
+
+        private void BtnBuscarCitas_Click_1(object sender, EventArgs e)
+        {
+            if (long.TryParse(txtBusquedaCita.Text, out _))
+            {
+                long Telefono = Convert.ToInt64(txtBusquedaCita.Text);
+
+                string Pacientes = "";
+
+                DtgCitas.DataSource = Citas.Search(Pacientes, Telefono);
+            }
+            else
+            {
+                long Telefono = 0;
+
+                string Pacientes = txtBusquedaCita.Text;
+
+                DtgCitas.DataSource = Citas.Search(Pacientes, Telefono);
+            }
+        }
+
+        private void txtBusquedaCita_Enter_1(object sender, EventArgs e)
+        {
+            if (txtBusquedaCita.Text == "Buscar Citas")
+            {
+                txtBusquedaCita.Text = "";
+
+                txtBusquedaCita.ForeColor = Color.Black;
+            }
+        }
+        private void Btnnuevacita_Click_1(object sender, EventArgs e)
+        {
+            FrmNuevaCita cita = new FrmNuevaCita();
+
+            cita.Show();
+        }
         private void ICNServicio_Click(object sender, EventArgs e)
         {
             FrmNuevoServicio servicio = new FrmNuevoServicio();

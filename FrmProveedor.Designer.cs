@@ -43,7 +43,6 @@
             this.LblRegistroCompras = new System.Windows.Forms.Label();
             this.Pnlgrid2 = new System.Windows.Forms.Panel();
             this.BtnGuardar = new FontAwesome.Sharp.IconButton();
-            this.BtnEditar = new FontAwesome.Sharp.IconButton();
             this.Btndardebaja = new FontAwesome.Sharp.IconButton();
             this.BtnNuevo = new FontAwesome.Sharp.IconButton();
             this.PnlBuscarProveedor = new System.Windows.Forms.Panel();
@@ -64,6 +63,7 @@
             this.TxtProducto = new System.Windows.Forms.TextBox();
             this.PnlGrid = new System.Windows.Forms.Panel();
             this.DtgProveedor = new System.Windows.Forms.DataGridView();
+            this.BtnEditar = new FontAwesome.Sharp.IconButton();
             this.Pnlarriba.SuspendLayout();
             this.Pnlencabezado.SuspendLayout();
             this.Pnlgrid2.SuspendLayout();
@@ -197,28 +197,6 @@
             this.BtnGuardar.Text = "Guardar";
             this.BtnGuardar.UseVisualStyleBackColor = false;
             this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
-            // 
-            // BtnEditar
-            // 
-            this.BtnEditar.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.BtnEditar.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.BtnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.BtnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEditar.Font = new System.Drawing.Font("Corbel", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEditar.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.BtnEditar.IconChar = FontAwesome.Sharp.IconChar.FileEdit;
-            this.BtnEditar.IconColor = System.Drawing.SystemColors.Highlight;
-            this.BtnEditar.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.BtnEditar.IconSize = 20;
-            this.BtnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnEditar.Location = new System.Drawing.Point(220, 19);
-            this.BtnEditar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.BtnEditar.Name = "BtnEditar";
-            this.BtnEditar.Size = new System.Drawing.Size(169, 44);
-            this.BtnEditar.TabIndex = 59;
-            this.BtnEditar.Text = "Editar ";
-            this.BtnEditar.UseVisualStyleBackColor = false;
-            this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
             // Btndardebaja
             // 
@@ -523,6 +501,29 @@
             this.DtgProveedor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DtgProveedor.Size = new System.Drawing.Size(776, 306);
             this.DtgProveedor.TabIndex = 3;
+            this.DtgProveedor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgProveedor_CellClick);
+            // 
+            // BtnEditar
+            // 
+            this.BtnEditar.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.BtnEditar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BtnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.BtnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnEditar.Font = new System.Drawing.Font("Corbel", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnEditar.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.BtnEditar.IconChar = FontAwesome.Sharp.IconChar.FileEdit;
+            this.BtnEditar.IconColor = System.Drawing.SystemColors.Highlight;
+            this.BtnEditar.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.BtnEditar.IconSize = 20;
+            this.BtnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnEditar.Location = new System.Drawing.Point(220, 19);
+            this.BtnEditar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BtnEditar.Name = "BtnEditar";
+            this.BtnEditar.Size = new System.Drawing.Size(169, 44);
+            this.BtnEditar.TabIndex = 59;
+            this.BtnEditar.Text = "Editar ";
+            this.BtnEditar.UseVisualStyleBackColor = false;
+            this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
             // FrmProveedor
             // 
@@ -571,7 +572,6 @@
         private System.Windows.Forms.Label LblRegistroCompras;
         private System.Windows.Forms.Panel Pnlgrid2;
         private FontAwesome.Sharp.IconButton Btndardebaja;
-        private FontAwesome.Sharp.IconButton BtnEditar;
         private FontAwesome.Sharp.IconButton BtnNuevo;
         private FontAwesome.Sharp.IconButton BtnGuardar;
         private System.Windows.Forms.Panel PnlBuscarProveedor;
@@ -592,5 +592,6 @@
         private System.Windows.Forms.TextBox TxtBuscarProducto;
         private System.Windows.Forms.Panel PnlGrid;
         private System.Windows.Forms.DataGridView DtgProveedor;
+        private FontAwesome.Sharp.IconButton BtnEditar;
     }
 }
