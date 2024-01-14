@@ -11,9 +11,9 @@ namespace Capa_Modelo.ViewModel
     {
         CitasData citas = new CitasData();
 
-        public void InsertarCitas(string nombre,string apellido ,DateTime Nacimiento, long telefono, string motivo, DateTime fecha, DateTime hora)
+        public void InsertarCitas(string nombre,string apellido,DateTime Nacimiento, long telefono, string motivo, DateTime fecha, DateTime hora)
         {
-            citas.Insertar(nombre, Nacimiento, telefono, motivo, fecha, hora);
+            citas.Insertar(nombre, apellido,Nacimiento, telefono, motivo, fecha, hora);
         }
         public Object LeerCitas()
         {
