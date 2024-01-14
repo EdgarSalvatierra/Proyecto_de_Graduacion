@@ -19,102 +19,133 @@ namespace Capa_Datos.Data.Compras
 
         public void Delete(int Cod_Pedidos)
         {
-            command = new SqlCommand("Ms_Pedidos_Detalles_Delete", conexion.abrirconexion());
+            try
+            {
+                command = new SqlCommand("Ms_Pedidos_Detalles_Delete", conexion.abrirconexion());
 
-            command.CommandType = System.Data.CommandType.StoredProcedure;
+                command.CommandType = System.Data.CommandType.StoredProcedure;
 
-            command.Parameters.Add(new SqlParameter("@Codigo", Cod_Pedidos));
+                command.Parameters.Add(new SqlParameter("@Codigo", Cod_Pedidos));
 
-            command.ExecuteNonQuery();
-
-            conexion.cerrarconexion();
+                command.ExecuteNonQuery();
+            }
+            finally
+            {
+                conexion.cerrarconexion();
+            }
         }
         public void InsertPedidos(string Producto, decimal SubTotal, decimal Total)
         {
-            command = new SqlCommand("Sp_Pedidos_Insert", conexion.abrirconexion());
+            try
+            {
+                command = new SqlCommand("Sp_Pedidos_Insert", conexion.abrirconexion());
 
-            command.CommandType = CommandType.StoredProcedure;
+                command.CommandType = CommandType.StoredProcedure;
 
-            command.Parameters.Add(new SqlParameter("Producto", Producto));
+                command.Parameters.Add(new SqlParameter("Producto", Producto));
 
-            command.Parameters.Add(new SqlParameter("@SubTotal", SubTotal));
+                command.Parameters.Add(new SqlParameter("@SubTotal", SubTotal));
 
-            command.Parameters.Add(new SqlParameter("@Total", Total));
+                command.Parameters.Add(new SqlParameter("@Total", Total));
 
-            command.ExecuteNonQuery();
+                command.ExecuteNonQuery();
 
-            conexion.cerrarconexion();
+            }
+            finally
+            {
+                conexion.cerrarconexion();
+            }
         }
         public void InsertDetallePedidos(string Producto, decimal Precio, int Cantidad, decimal SubTotal, decimal Total)
         {
-            command = new SqlCommand("Ms_Pedidos_Detalle_Pedidos_Insert", conexion.abrirconexion());
+            try
+            {
+                command = new SqlCommand("Ms_Pedidos_Detalle_Pedidos_Insert", conexion.abrirconexion());
 
-            command.CommandType = CommandType.StoredProcedure;
+                command.CommandType = CommandType.StoredProcedure;
 
-            command.Parameters.Add(new SqlParameter("@Producto", Producto));
+                command.Parameters.Add(new SqlParameter("@Producto", Producto));
 
-            command.Parameters.Add(new SqlParameter("@Precio", Precio));
+                command.Parameters.Add(new SqlParameter("@Precio", Precio));
 
-            command.Parameters.Add(new SqlParameter("@Cantidad", Cantidad));
+                command.Parameters.Add(new SqlParameter("@Cantidad", Cantidad));
 
-            command.Parameters.Add(new SqlParameter("@SubTotal", SubTotal));
+                command.Parameters.Add(new SqlParameter("@SubTotal", SubTotal));
 
-            command.Parameters.Add(new SqlParameter("@Total", Total));
+                command.Parameters.Add(new SqlParameter("@Total", Total));
 
-            command.ExecuteNonQuery();
-
-            conexion.cerrarconexion();
+                command.ExecuteNonQuery();
+            }
+            finally
+            {
+                conexion.cerrarconexion();
+            }
         }
         public DataTable Read()
         {
-            command = new SqlCommand("Ms_Pedidos_Detalles_Read", conexion.abrirconexion());
+            try
+            {
+                command = new SqlCommand("Ms_Pedidos_Detalles_Read", conexion.abrirconexion());
 
-            command.CommandType = CommandType.StoredProcedure;
+                command.CommandType = CommandType.StoredProcedure;
 
-            SqlDataAdapter adapter = new SqlDataAdapter();
+                SqlDataAdapter adapter = new SqlDataAdapter();
 
-            adapter.SelectCommand = command;
+                adapter.SelectCommand = command;
 
-            DataTable data = new DataTable();
+                DataTable data = new DataTable();
 
-            adapter.Fill(data);
+                adapter.Fill(data);
 
-            conexion.cerrarconexion();
-
-            return data;
+                return data;
+            }
+            finally
+            {
+                conexion.cerrarconexion();
+            }
         }
         public DataTable ReadForName(string Proveedor, string Producto)
         {
-            command = new SqlCommand("Ms_Pedidos_Detalles_ReadForName", conexion.abrirconexion());
-
-            command.CommandType = CommandType.StoredProcedure;
-
-            command.Parameters.Add(new SqlParameter("@proveedor", Proveedor));
-
-            command.Parameters.Add(new SqlParameter("@Nom_Producto", Producto));
-
-            DataTable data = new DataTable();
-
-            reader = command.ExecuteReader();
-
-            if (reader.HasRows)
+            try
             {
-                data.Load(reader);
+                command = new SqlCommand("Ms_Pedidos_Detalles_ReadForName", conexion.abrirconexion());
+
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.Add(new SqlParameter("@proveedor", Proveedor));
+
+                command.Parameters.Add(new SqlParameter("@Nom_Producto", Producto));
+
+                DataTable data = new DataTable();
+
+                reader = command.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    data.Load(reader);
+                }
+
+                return data;
             }
-
-            conexion.cerrarconexion();
-
-            return data;
+            finally
+            {
+                conexion.cerrarconexion();
+            }
         }
         public void OffEstado(int CodigoPedidos)
         {
-            string query = $@"Update tbl_Pedidos set Estado = 0 where Cod_Pedidos = '{CodigoPedidos}'";
+            try
+            {
+                string query = $@"Update tbl_Pedidos set Estado = 0 where Cod_Pedidos = '{CodigoPedidos}'";
 
-            command = new SqlCommand(query, conexion.abrirconexion());
+                command = new SqlCommand(query, conexion.abrirconexion());
 
-            command.ExecuteNonQuery();
-
-            conexion.cerrarconexion();
+                command.ExecuteNonQuery();
+            }
+            finally
+            {
+                conexion.cerrarconexion();
+            }
         }
     }
 }

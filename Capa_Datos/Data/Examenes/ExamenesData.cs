@@ -19,102 +19,141 @@ namespace Capa_Datos.Data.Examenes
 
         public void Insertar(int cod_area, string nombre,byte[] Documento,string Extension,decimal precio)
         {
-            string query = $@"insert into tbl_Examen(cod_categoria,nombre,documento,Extension,precio,cantidad,Estado) 
+            try
+            {
+                string query = $@"insert into tbl_Examen(cod_categoria,nombre,documento,Extension,precio,cantidad,Estado) 
             values((Select cod_area From  tbl_Categoria_Examen where cod_area = @codarea),@nombre,@documento,@extension,@precio,1,1)";
 
-            command = new SqlCommand(query, conexion.abrirconexion());
+                command = new SqlCommand(query, conexion.abrirconexion());
 
-            command.Parameters.Add(new SqlParameter("@codarea",cod_area));
+                command.Parameters.Add(new SqlParameter("@codarea", cod_area));
 
-            command.Parameters.Add(new SqlParameter("@nombre", nombre));
+                command.Parameters.Add(new SqlParameter("@nombre", nombre));
 
-            command.Parameters.Add(new SqlParameter("@documento", Documento));
+                command.Parameters.Add(new SqlParameter("@documento", Documento));
 
-            command.Parameters.Add(new SqlParameter("@extension", Extension));
+                command.Parameters.Add(new SqlParameter("@extension", Extension));
 
-            command.Parameters.Add(new SqlParameter("@precio", precio));
+                command.Parameters.Add(new SqlParameter("@precio", precio));
 
-            command.ExecuteNonQuery();
-
-            conexion.cerrarconexion();
+                command.ExecuteNonQuery();
+            }
+            finally
+            {
+                conexion.cerrarconexion();
+            }
         }
         public DataTable Read()
         {
-            string query = $@"select examen.cod_examen as 'Codigo Examen',categoria.categoria_Nombre as 'Categoria',
+            try
+            {
+                string query = $@"select examen.cod_examen as 'Codigo Examen',categoria.categoria_Nombre as 'Categoria',
             examen.nombre as 'Examen',examen.extension as 'Plantilla',cast(examen.precio as integer) as 'Precio del examen' 
             From tbl_Examen as examen inner join tbl_Categoria_Examen as categoria 
             on categoria.cod_area = examen.cod_categoria where categoria.Estado = 1";
 
-            command = new SqlCommand(query, conexion.abrirconexion());
+                command = new SqlCommand(query, conexion.abrirconexion());
 
-            SqlDataAdapter adapter = new SqlDataAdapter();
+                SqlDataAdapter adapter = new SqlDataAdapter();
 
-            adapter.SelectCommand = command;
+                adapter.SelectCommand = command;
 
-            DataTable data = new DataTable();
+                DataTable data = new DataTable();
 
-            adapter.Fill(data);
+                adapter.Fill(data);
 
-            conexion.cerrarconexion();
-
-            return data;
+                return data;
+            }
+            finally
+            {
+                conexion.cerrarconexion();
+            }
         }      
         public DataTable BuscarporExamen(string Examen)
         {
-            string query = $@"select cod_examen,cod_categoria,nombre,precio from tbl_Examen where  nombre Like '%' + '{Examen}' + '%'";
+            try
+            {
+                string query = $@"select cod_examen,cod_categoria,nombre,precio from tbl_Examen where  nombre Like '{Examen}' + '%'";
 
-            command = new SqlCommand(query, conexion.abrirconexion());
+                command = new SqlCommand(query, conexion.abrirconexion());
 
-            SqlDataAdapter adapter = new SqlDataAdapter();
+                SqlDataAdapter adapter = new SqlDataAdapter();
 
-            adapter.SelectCommand = command;
+                adapter.SelectCommand = command;
 
-            DataTable data = new DataTable();
+                DataTable data = new DataTable();
 
-            adapter.Fill(data);
+                adapter.Fill(data);
 
-            conexion.cerrarconexion();
-
-            return data;
+                return data;
+            }
+            finally
+            {
+                conexion.cerrarconexion();
+            }
         }
         public DataTable CargarDatos()
         {
-            string query = $@"Select cod_examen,nombre + '= $' + cast(precio as nvarchar) as 'Titulo' From tbl_Examen";
+            try
+            {
+                string query = $@"Select cod_examen,nombre + '= $' + cast(precio as nvarchar) as 'Titulo' From tbl_Examen";
 
-            command = new SqlCommand(query, conexion.abrirconexion());
+                command = new SqlCommand(query, conexion.abrirconexion());
 
-            SqlDataAdapter adapter = new SqlDataAdapter();
+                SqlDataAdapter adapter = new SqlDataAdapter();
 
-            adapter.SelectCommand = command;
+                adapter.SelectCommand = command;
 
-            DataTable data = new DataTable();
+                DataTable data = new DataTable();
 
-            adapter.Fill(data);
+                adapter.Fill(data);
 
-            conexion.cerrarconexion();
-
-            return data;
+                return data;
+            }
+            finally
+            {
+                conexion.cerrarconexion();
+            }
         }
         public void Update(int cod_categoria, string nombre, decimal precio)
         {
-            string query = $@"update tbl_Examen set nombre = '{nombre}', precio = '{precio}'
-            where cod_categoria = '{cod_categoria}'";
+            try
+            {
+                string query = $@"update tbl_Examen set nombre = @nombre, precio = @precio
+            where cod_categoria = @cod_categoria";
 
-            command = new SqlCommand(query, conexion.abrirconexion());
+                command = new SqlCommand(query, conexion.abrirconexion());
 
-            command.ExecuteNonQuery();
+                command.Parameters.Add(new SqlParameter("@nombre", nombre));
 
-            conexion.cerrarconexion();
+                command.Parameters.Add(new SqlParameter("@precio", precio));
+
+                command.Parameters.Add(new SqlParameter("@cod_categoria", cod_categoria));
+
+                command.ExecuteNonQuery();
+            }
+            finally
+            {
+                conexion.cerrarconexion();
+            }
         }
         public void Delete(int codcategoria)
         {
-            string query = $@"Delete From tbl_Examen where cod_categoria = '{codcategoria}'";
+            try
+            {
+                string query = $@"Delete From tbl_Examen where cod_categoria = @cod_categoria";
 
-            command = new SqlCommand(query, conexion.abrirconexion());
+                command = new SqlCommand(query, conexion.abrirconexion());
 
-            command.ExecuteNonQuery();
+                command.Parameters.Add(new SqlParameter("@cod_categoria", codcategoria));
 
-            conexion.cerrarconexion();
+                command.ExecuteNonQuery();
+
+            }
+            finally
+            {
+                conexion.cerrarconexion();
+            }
         }
     }
 }

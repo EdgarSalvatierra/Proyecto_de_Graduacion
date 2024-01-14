@@ -84,8 +84,6 @@ namespace Proyecto_de_Graduacion.Properties {
         ///   Busca una cadena traducida similar a &lt;!DOCTYPE html&gt;
         ///&lt;html lang=&quot;es&quot;&gt;
         ///&lt;head&gt;
-        ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
-        ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
         ///    &lt;title&gt;Factura de Pedido&lt;/title&gt;
         ///    &lt;style&gt;
         ///        body {
@@ -93,13 +91,22 @@ namespace Proyecto_de_Graduacion.Properties {
         ///            margin: 20px;
         ///            background-color: #f4f4f4;
         ///        }
+        ///        header {
+        ///            text-align: center;
+        ///            color: #333;
+        ///        }
+        ///
+        ///        #logo {
+        ///            max-width: 100px;
+        ///            max-height: 100px;
+        ///        }
+        ///
+        ///        #info-negocio {
+        ///            margin-top: 20px;
+        ///        }
         ///
         ///        .invoice {
-        ///            max-width: 600px;
-        ///            margin: 0 auto;
-        ///            background-color: #fff;
-        ///            padding: 20px;
-        ///            border-radius: [resto de la cadena truncado]&quot;;.
+        ///      [resto de la cadena truncado]&quot;;.
         /// </summary>
         internal static string FacturaPedido {
             get {
@@ -208,6 +215,26 @@ namespace Proyecto_de_Graduacion.Properties {
         internal static System.Drawing.Bitmap Iconousuario_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("Iconousuario-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imagescita {
+            get {
+                object obj = ResourceManager.GetObject("imagescita", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imagescita_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("imagescita-removebg-preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

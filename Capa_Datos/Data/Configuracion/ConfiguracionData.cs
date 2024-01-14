@@ -20,159 +20,190 @@ namespace Capa_Datos.Data.Configuracion
 
         public void InsertEntidad(string Nombre, string Administrador, long Telefono, string ubicacion, string Ciudad)
         {
-            string query = $@"Insert into tbl_Informacion_Entidad(Codigo_Configuracion,Nombre,Administrador_Actual,Telefono,Ubicacion,Ciudad,Fecha_Actualizacion)
+            try
+            {
+                string query = $@"Insert into tbl_Informacion_Entidad(Codigo_Configuracion,Nombre,Administrador_Actual,Telefono,Ubicacion,Ciudad,Fecha_Actualizacion)
                            values(1,@Nombre,@Administrador,@Telefono,@ubicacion,@ciudad,GetDate())";
 
-            command = new SqlCommand(query, conexion.abrirconexion());
+                command = new SqlCommand(query, conexion.abrirconexion());
 
-            command.Parameters.Add(new SqlParameter("@Nombre", Nombre));
+                command.Parameters.Add(new SqlParameter("@Nombre", Nombre));
 
-            command.Parameters.Add(new SqlParameter("@Administrador", Administrador));
+                command.Parameters.Add(new SqlParameter("@Administrador", Administrador));
 
-            command.Parameters.Add(new SqlParameter("@Telefono", Telefono));
+                command.Parameters.Add(new SqlParameter("@Telefono", Telefono));
 
-            command.Parameters.Add(new SqlParameter("@ubicacion", ubicacion));
+                command.Parameters.Add(new SqlParameter("@ubicacion", ubicacion));
 
-            command.Parameters.Add(new SqlParameter("@ciudad", Ciudad));
+                command.Parameters.Add(new SqlParameter("@ciudad", Ciudad));
 
-            command.ExecuteNonQuery();
-
-            conexion.cerrarconexion();
+                command.ExecuteNonQuery();
+            }
+            finally
+            {
+               conexion.cerrarconexion();
+            }
         }
         public string CargarNombre()
         {
-            List<Informacion_Entidad> lista = new List<Informacion_Entidad>();
-
-            string query = $@"select Nombre From tbl_Informacion_Entidad";
-
-            command = new SqlCommand(query, conexion.abrirconexion());
-
-            reader = command.ExecuteReader();
-
-            while (reader.Read())
+            try
             {
-                lista.Add(new Informacion_Entidad
-                {
-                    Nombre = reader["Nombre"].ToString()
-                });
-            }
-            conexion.cerrarconexion();
+                List<Informacion_Entidad> lista = new List<Informacion_Entidad>();
 
-            return lista.FirstOrDefault()?.Nombre;
+                string query = $@"select Nombre From tbl_Informacion_Entidad";
+
+                command = new SqlCommand(query, conexion.abrirconexion());
+
+                reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    lista.Add(new Informacion_Entidad
+                    {
+                        Nombre = reader["Nombre"].ToString()
+                    });
+                }
+                return lista.FirstOrDefault()?.Nombre;
+            }
+            finally
+            {
+                conexion.cerrarconexion();
+            }
         }
         public string CargarAdministrador()
         {
-            List<Informacion_Entidad> lista = new List<Informacion_Entidad>();
-
-            string query = $@"select Administrador_Actual From tbl_Informacion_Entidad";
-
-            command = new SqlCommand(query, conexion.abrirconexion());
-
-            reader = command.ExecuteReader();
-
-            while (reader.Read())
+            try
             {
-                lista.Add(new Informacion_Entidad
-                {
-                    Administrador_Actual = reader["Administrador_Actual"].ToString()
-                });
-            }
-            conexion.cerrarconexion();
+                List<Informacion_Entidad> lista = new List<Informacion_Entidad>();
 
-            return lista.FirstOrDefault()?.Administrador_Actual;
+                string query = $@"select Administrador_Actual From tbl_Informacion_Entidad";
+
+                command = new SqlCommand(query, conexion.abrirconexion());
+
+                reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    lista.Add(new Informacion_Entidad
+                    {
+                        Administrador_Actual = reader["Administrador_Actual"].ToString()
+                    });
+                }
+                return lista.FirstOrDefault()?.Administrador_Actual;
+            }
+            finally
+            {
+                conexion.cerrarconexion();
+            }
         }
         public long CargarTelefono()
         {
-            List<Informacion_Entidad> lista = new List<Informacion_Entidad>();
-
-            string query = $@"select Telefono From tbl_Informacion_Entidad";
-
-            command = new SqlCommand(query, conexion.abrirconexion());
-
-            reader = command.ExecuteReader();
-
-            while (reader.Read())
+            try
             {
-                lista.Add(new Informacion_Entidad
-                {
-                    Telefono = Convert.ToInt64(reader["Telefono"])
-                });
-            }
-            conexion.cerrarconexion();
+                List<Informacion_Entidad> lista = new List<Informacion_Entidad>();
 
-            return lista.FirstOrDefault().Telefono;
+                string query = $@"select Telefono From tbl_Informacion_Entidad";
+
+                command = new SqlCommand(query, conexion.abrirconexion());
+
+                reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    lista.Add(new Informacion_Entidad
+                    {
+                        Telefono = Convert.ToInt64(reader["Telefono"])
+                    });
+                }
+                return lista.FirstOrDefault().Telefono;
+            }
+            finally
+            {
+                conexion.cerrarconexion();
+            }
         }
         public string CargaUbicacion()
         {
-            List<Informacion_Entidad> lista = new List<Informacion_Entidad>();
-
-            string query = $@"select Ubicacion From tbl_Informacion_Entidad";
-
-            command = new SqlCommand(query, conexion.abrirconexion());
-
-            reader = command.ExecuteReader();
-
-            while (reader.Read())
+            try
             {
-                lista.Add(new Informacion_Entidad
-                {
-                    ubicacion = reader["Ubicacion"].ToString()
-                });
-            }
-            conexion.cerrarconexion();
+                List<Informacion_Entidad> lista = new List<Informacion_Entidad>();
 
-            return lista.FirstOrDefault()?.ubicacion;
+                string query = $@"select Ubicacion From tbl_Informacion_Entidad";
+
+                command = new SqlCommand(query, conexion.abrirconexion());
+
+                reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    lista.Add(new Informacion_Entidad
+                    {
+                        ubicacion = reader["Ubicacion"].ToString()
+                    });
+                }
+                return lista.FirstOrDefault()?.ubicacion;
+            }
+            finally
+            {
+                conexion.cerrarconexion();
+            }
         }
         public string CargarCiudad()
         {
-            List<Informacion_Entidad> lista = new List<Informacion_Entidad>();
-
-            string query = $@"select Ciudad From tbl_Informacion_Entidad";
-
-            command = new SqlCommand(query, conexion.abrirconexion());
-
-            reader = command.ExecuteReader();
-
-            while (reader.Read())
+            try
             {
-                lista.Add(new Informacion_Entidad
+                List<Informacion_Entidad> lista = new List<Informacion_Entidad>();
+
+                string query = $@"select Ciudad From tbl_Informacion_Entidad";
+
+                command = new SqlCommand(query, conexion.abrirconexion());
+
+                reader = command.ExecuteReader();
+
+                while (reader.Read())
                 {
-                    ciudad = reader["Ciudad"].ToString()
-                });
+                    lista.Add(new Informacion_Entidad
+                    {
+                        ciudad = reader["Ciudad"].ToString()
+                    });
+                }
+
+                return lista.FirstOrDefault()?.ciudad;
             }
-
-            conexion.cerrarconexion();
-
-            return lista.FirstOrDefault()?.ciudad;
+            finally
+            {
+                conexion.cerrarconexion();
+            }
         }
         public void Update(string Nombre, string Administrador, long Telefono, string ubicacion, string Ciudad)
         {
-            string query = $@"declare @Codigo int;
+            try
+            {
+                string query = $@"declare @Codigo int;
                             
                            set @Codigo = (Select Codigo From tbl_Informacion_Entidad where Fecha_Actualizacion = @Fecha_Actualizacion) 
 
                            Update tbl_Informacion_Entidad set Nombre = @Nombre, Administrador = @Administrador, Telefono = @Telefono, 
                            Ubicacion = @ubicacion,Ciudad = @ciudad where Codigo = @Codigo";
 
-            command = new SqlCommand(query, conexion.abrirconexion());
+                command = new SqlCommand(query, conexion.abrirconexion());
 
-            command.Parameters.Add(new SqlParameter("@Nombre", Nombre));
+                command.Parameters.Add(new SqlParameter("@Nombre", Nombre));
 
-            command.Parameters.Add(new SqlParameter("@Administrador", Administrador));
+                command.Parameters.Add(new SqlParameter("@Administrador", Administrador));
 
-            command.Parameters.Add(new SqlParameter("@Telefono", Telefono));
+                command.Parameters.Add(new SqlParameter("@Telefono", Telefono));
 
-            command.Parameters.Add(new SqlParameter("@ubicacion", ubicacion));
+                command.Parameters.Add(new SqlParameter("@ubicacion", ubicacion));
 
-            command.Parameters.Add(new SqlParameter("@ciudad", Ciudad));
+                command.Parameters.Add(new SqlParameter("@ciudad", Ciudad));
 
-            command.ExecuteNonQuery();
-
-            conexion.cerrarconexion();
-        }
-        public void Delete()
-        {
-
+                command.ExecuteNonQuery();
+            }
+            finally 
+            {
+                conexion.cerrarconexion();
+            }
         }
     }
 }

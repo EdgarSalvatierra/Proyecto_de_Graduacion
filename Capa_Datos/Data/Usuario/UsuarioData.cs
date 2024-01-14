@@ -22,143 +22,176 @@ namespace Capa_Datos.Data.Usuario
 
         public void InsertarUsuario(string usuario, string contraseña, string Roles)
         {
-            command = new SqlCommand("sp_usuario_insert", conexion.abrirconexion());
+            try
+            {
+                command = new SqlCommand("sp_usuario_insert", conexion.abrirconexion());
 
-            command.CommandType = CommandType.StoredProcedure;
+                command.CommandType = CommandType.StoredProcedure;
 
-            command.Parameters.Add(new SqlParameter("@Usuario", usuario));
+                command.Parameters.Add(new SqlParameter("@Usuario", usuario));
 
-            command.Parameters.Add(new SqlParameter("@Password", contraseña));
+                command.Parameters.Add(new SqlParameter("@Password", contraseña));
 
-            command.Parameters.Add(new SqlParameter("@Nom_Roles", Roles));
+                command.Parameters.Add(new SqlParameter("@Nom_Roles", Roles));
 
-            command.ExecuteNonQuery();
-
-            conexion.cerrarconexion();
+                command.ExecuteNonQuery();
+            }
+            finally
+            {
+                conexion.cerrarconexion();
+            }
         }
         public void InsertarDetalles(string usuario, string Nombre, string Apellido, DateTime Nacimento, long Telefono)
         {
-            command = new SqlCommand("Sp_Detalles_Insert", conexion.abrirconexion());
+            try
+            {
+                command = new SqlCommand("Sp_Detalles_Insert", conexion.abrirconexion());
 
-            command.CommandType = CommandType.StoredProcedure;
+                command.CommandType = CommandType.StoredProcedure;
 
-            command.Parameters.Add(new SqlParameter("@Nombre", Nombre));
+                command.Parameters.Add(new SqlParameter("@Nombre", Nombre));
 
-            command.Parameters.Add(new SqlParameter("@Apellido", Apellido));
+                command.Parameters.Add(new SqlParameter("@Apellido", Apellido));
 
-            command.Parameters.Add(new SqlParameter("@Fecha_de_Nacimiento", Nacimento));
+                command.Parameters.Add(new SqlParameter("@Fecha_de_Nacimiento", Nacimento));
 
-            command.Parameters.Add(new SqlParameter("@Usuario", usuario));
+                command.Parameters.Add(new SqlParameter("@Usuario", usuario));
 
-            command.Parameters.Add(new SqlParameter("@Telefono", Telefono));
+                command.Parameters.Add(new SqlParameter("@Telefono", Telefono));
 
-            command.ExecuteNonQuery();
-
-            conexion.cerrarconexion();
+                command.ExecuteNonQuery();
+            }
+            finally
+            {
+                conexion.cerrarconexion();
+            }
         }
         public DataTable Read()
         {
-            string query = $@"select us.Cod_User as 'Codigo',detalles.Nombre + ' ' + detalles.Apellido as 'Nombre',detalles.Edad,detalles.Telefono,
+            try
+            {
+                string query = $@"select us.Cod_User as 'Codigo',detalles.Nombre + ' ' + detalles.Apellido as 'Nombre',detalles.Edad,detalles.Telefono,
                            us.Usuario,us.Contraseña,rol.Nom_Roles as 'Roles de Usuario', us.Estado as 'Estado'
                            From tbl_Detalles_Usuario as detalles inner join tbl_User as us on us.Cod_User= detalles.Cod_User
                            inner join tbl_Roles as rol on rol.cod_rol = us.IdRol where us.Estado = 1";
 
-            command = new SqlCommand(query, conexion.abrirconexion());
+                command = new SqlCommand(query, conexion.abrirconexion());
 
-            SqlDataAdapter adapter = new SqlDataAdapter();
+                SqlDataAdapter adapter = new SqlDataAdapter();
 
-            adapter.SelectCommand = command;
+                adapter.SelectCommand = command;
 
-            DataTable data = new DataTable();
+                DataTable data = new DataTable();
 
-            adapter.Fill(data);
+                adapter.Fill(data);
 
-            conexion.cerrarconexion();
-
-            return data;
+                return data;
+            }
+            finally
+            {
+                conexion.cerrarconexion();
+            }
         }
 
         public DataTable ReadForId(string Roles, string Nombre)
         {
-            string query = $@"select us.Cod_User as 'Codigo',detalles.Nombre + ' ' + detalles.Apellido as 'Nombre',detalles.Edad,detalles.Telefono,
-us.Usuario,us.Contraseña,rol.Nom_Roles as 'Roles de Usuario',us.Estado as 'Estado' From tbl_Detalles_Usuario as detalles 
-inner join tbl_User as us on us.Cod_User = detalles.Cod_User
-inner join tbl_Roles as rol on rol.cod_rol = us.IdRol where rol.Nom_Roles Like '%' + '{Roles}' + '%' or detalles.Nombre Like '%' + '{Nombre}' + '%' and us.Estado = 1";
-
-            command = new SqlCommand(query, conexion.abrirconexion());
-
-            DataTable data = new DataTable();
-
-            reader = command.ExecuteReader();
-
-            if (reader.HasRows)
+            try
             {
-                data.Load(reader);
+                string query = $@"select us.Cod_User as 'Codigo',detalles.Nombre + ' ' + detalles.Apellido as 'Nombre',detalles.Edad,detalles.Telefono,
+                                us.Usuario,us.Contraseña,rol.Nom_Roles as 'Roles de Usuario',us.Estado as 'Estado' From tbl_Detalles_Usuario as detalles 
+                                inner join tbl_User as us on us.Cod_User = detalles.Cod_User
+                                inner join tbl_Roles as rol on rol.cod_rol = us.IdRol where rol.Nom_Roles Like '%' + '{Roles}' + '%' or detalles.Nombre Like '%' + '{Nombre}' + '%' and us.Estado = 1";
+
+                command = new SqlCommand(query, conexion.abrirconexion());
+
+                DataTable data = new DataTable();
+
+                reader = command.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    data.Load(reader);
+                }
+                return data;
             }
-            else
+            finally
             {
                 conexion.cerrarconexion();
             }
-
-            conexion.cerrarconexion();
-
-            return data;
         }
 
         public void Update(int cod_user, string usuario, string contraseña, string Nombre, int Edad, long Telefono, string Roles)
         {
-            command = new SqlCommand("sp_usuario_update", conexion.abrirconexion());
+            try
+            {
+                command = new SqlCommand("sp_usuario_update", conexion.abrirconexion());
 
-            command.CommandType = System.Data.CommandType.StoredProcedure;
+                command.CommandType = System.Data.CommandType.StoredProcedure;
 
-            command.Parameters.Add(new SqlParameter("@cod_user", cod_user));
+                command.Parameters.Add(new SqlParameter("@cod_user", cod_user));
 
-            command.Parameters.Add(new SqlParameter("@Nombre", Nombre));
+                command.Parameters.Add(new SqlParameter("@Nombre", Nombre));
 
-            command.Parameters.Add(new SqlParameter("@Edad", Edad));
+                command.Parameters.Add(new SqlParameter("@Edad", Edad));
 
-            command.Parameters.Add(new SqlParameter("@Telefono", Telefono));
+                command.Parameters.Add(new SqlParameter("@Telefono", Telefono));
 
-            command.Parameters.Add(new SqlParameter("@Usuario", usuario));
+                command.Parameters.Add(new SqlParameter("@Usuario", usuario));
 
-            command.Parameters.Add(new SqlParameter("@Password", contraseña));
+                command.Parameters.Add(new SqlParameter("@Password", contraseña));
 
-            command.Parameters.Add(new SqlParameter("@Nom_Roles", Roles));
+                command.Parameters.Add(new SqlParameter("@Nom_Roles", Roles));
 
-            command.ExecuteNonQuery();
-
-            conexion.cerrarconexion();
+                command.ExecuteNonQuery();
+            }
+            finally
+            {
+                conexion.cerrarconexion();
+            }
         }
         public void Off(string Usuario)
         {
-            string query = $@"Update tbl_User Set Estado = 0 where Usuario = '{Usuario}'";
+            try
+            {
+                string query = $@"Update tbl_User Set Estado = 0 where Usuario = @Usuario ";
 
-            command = new SqlCommand(query, conexion.abrirconexion());
+                command = new SqlCommand(query, conexion.abrirconexion());
 
-            command.ExecuteNonQuery();
+                command.Parameters.Add(new SqlParameter("@Usuario", Usuario));
 
-            conexion.cerrarconexion();
+                command.ExecuteNonQuery();
+            }
+            finally
+            {
+                conexion.cerrarconexion();
+            }
         }
         public bool Login(string Usuario, string Contraseña)
         {
-            string query = $@"if(exists(select * From tbl_User where Usuario = '{Usuario}' and Contraseña = '{Contraseña}' and Estado = 1))
+            try
+            {
+                string query = $@"if(exists(select * From tbl_User where Usuario = '{Usuario}' and Contraseña = '{Contraseña}' and Estado = 1))
                             Select Cod_User From tbl_User where Usuario = '{Usuario}' and Contraseña = '{Contraseña}' and Estado = 1
                    else 
                      select '0'
                ";
 
-            command = new SqlCommand(query, conexion.abrirconexion());
+                command = new SqlCommand(query, conexion.abrirconexion());
 
-            int IdUsuario = Convert.ToInt32(command.ExecuteScalar().ToString());
+                int IdUsuario = Convert.ToInt32(command.ExecuteScalar().ToString());
 
-            if (IdUsuario != 0)
-            {
-                return true;
+                if (IdUsuario != 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
-            else
+            finally
             {
-                conexion.cerrarconexion();
-                return false;
+              conexion.cerrarconexion();
             }
         }
         public static string ConvertirSha256(string texto)
@@ -177,36 +210,43 @@ inner join tbl_Roles as rol on rol.cod_rol = us.IdRol where rol.Nom_Roles Like '
         }
         public string CargarUsuario(string usuario)
         {
-            List<Detalle_Usuario> lista = new List<Detalle_Usuario>();
+            try
+            {
+                List<Detalle_Usuario> lista = new List<Detalle_Usuario>();
 
-            string query = @"SELECT detalles.Nombre + ' ' + detalles.Apellido AS NombreCompleto 
+                string query = @"SELECT detalles.Nombre + ' ' + detalles.Apellido AS NombreCompleto 
                     FROM tbl_Detalles_Usuario AS detalles 
                     INNER JOIN tbl_User AS us ON us.Cod_User = detalles.Cod_User 
                     WHERE us.Usuario = @Usuario";
 
-            using (SqlConnection connection = conexion.abrirconexion())
-            {
-                using (SqlCommand command = new SqlCommand(query, connection))
+                using (SqlConnection connection = conexion.abrirconexion())
                 {
-                    command.Parameters.AddWithValue("@Usuario", usuario);
-
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        while (reader.Read())
+                        command.Parameters.AddWithValue("@Usuario", usuario);
+
+                        using (SqlDataReader reader = command.ExecuteReader())
                         {
-                            // Verificar si la columna existe antes de intentar leerla
-                            if (reader.HasRows)
+                            while (reader.Read())
                             {
-                                lista.Add(new Detalle_Usuario
+                                // Verificar si la columna existe antes de intentar leerla
+                                if (reader.HasRows)
                                 {
-                                    Nombre = reader["NombreCompleto"].ToString()
-                                });
+                                    lista.Add(new Detalle_Usuario
+                                    {
+                                        Nombre = reader["NombreCompleto"].ToString()
+                                    });
+                                }
                             }
                         }
                     }
                 }
+                return lista.FirstOrDefault()?.Nombre;
             }
-            return lista.FirstOrDefault()?.Nombre;
+            finally
+            {
+               conexion.cerrarconexion();
+            }
         }
     }
 }

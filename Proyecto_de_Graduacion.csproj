@@ -253,6 +253,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Laboratorio.ico" />
+    <None Include="Resources\imagescita-removebg-preview.png" />
+    <None Include="Resources\imagescita.png" />
     <None Include="Resources\FacturaPedido.html" />
     <None Include="Resources\Facturas.html" />
     <None Include="Resources\logo.jpg" />
