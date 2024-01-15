@@ -53,6 +53,7 @@
     <Compile Include="ViewModel\Citas_Model.cs" />
     <Compile Include="ViewModel\Compras_Model.cs" />
     <Compile Include="ViewModel\Configuracion_Model.cs" />
+    <Compile Include="ViewModel\Dashboard.cs" />
     <Compile Include="ViewModel\Examen_Model.cs" />
     <Compile Include="ViewModel\Facturacion_Model.cs" />
     <Compile Include="ViewModel\Paciente_Model.cs" />

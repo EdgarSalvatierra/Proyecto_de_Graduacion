@@ -31,9 +31,12 @@ namespace Proyecto_de_Graduacion
 
         Configuracion_Model Configuracion = new Configuracion_Model();
 
+        Resultados_Model resultados = new Resultados_Model();
+
         private int segundos;
         private int borderSize = 2;
         string usuario, contraseña;
+        private Dashboard model;
 
         public Form1(string Usuario, string Contraseña)
         {
@@ -47,6 +50,12 @@ namespace Proyecto_de_Graduacion
             usuario = Usuario;
 
             contraseña = Contraseña;
+
+            dtpFechaInicio.Value = DateTime.Today.AddDays(-7);
+            dtpFechaFin.Value = DateTime.Now;
+            Btnsemana7.Select();
+            model = new Dashboard();
+            LoadData();
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -743,6 +752,108 @@ namespace Proyecto_de_Graduacion
 
             cita.Show();
         }
+
+        private void BtnHome_Click(object sender, EventArgs e)
+        {
+
+        }
+        //dashboard
+        private void LoadData()
+        {
+            var refreshData = model.LoadData(dtpFechaInicio.Value, dtpFechaFin.Value);
+            if (refreshData == true)
+            {
+                lbnumorder.Text = model.numorder.ToString();
+                lbTotalReve.Text = "$" + model.totalreve.ToString();
+                lbTotalProf.Text = "$" + model.totalprof.ToString();
+                lbnumcli.Text = model.numerocli.ToString();
+
+                chartreve.DataSource = model.iblist;
+                chartreve.Series[0].XValueMember = "date";
+                chartreve.Series[0].YValueMembers = "totalA";
+                chartreve.DataBind();
+
+                Console.WriteLine("Loaded view :)");
+            }
+            else Console.WriteLine("View not loaded, same query");
+        }
+        private void BtnOK_Click_1(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+        private void DisableCustomDates()
+        {
+            dtpFechaInicio.Enabled = false;
+            dtpFechaFin.Enabled = false;
+            BtnOK.Visible = false;
+        }
+        private void btnpersonal_Click_1(object sender, EventArgs e)
+        {
+            dtpFechaInicio.Enabled = true;
+            dtpFechaFin.Enabled = true;
+            BtnOK.Visible = true;
+        }
+        private void btnhoy_Click_1(object sender, EventArgs e)
+        {
+            dtpFechaInicio.Value = DateTime.Today;
+            dtpFechaFin.Value = DateTime.Now;
+            LoadData();
+            DisableCustomDates();
+        }
+
+        private void Btnsemana7_Click_1(object sender, EventArgs e)
+        {
+            dtpFechaInicio.Value = DateTime.Today.AddDays(-7);
+            dtpFechaFin.Value = DateTime.Now;
+            LoadData();
+            DisableCustomDates();
+        }
+        private void Btn30dias_Click_1(object sender, EventArgs e)
+        {
+            dtpFechaInicio.Value = DateTime.Today.AddDays(-30);
+            dtpFechaFin.Value = DateTime.Now;
+            LoadData();
+            DisableCustomDates();
+        }
+
+        private void MaterialTabcontrollist_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (MaterialTabcontrollist.SelectedTab == BtnRes_Ex)
+            {
+                DtgResultados.DataSource = resultados.LeerResultado();
+            }
+
+            if (MaterialTabcontrollist.SelectedTab == BtnFac_m)
+            {
+                DtgFactura.DataSource = Facturacion.LeerFacturas();
+            }
+
+            if (MaterialTabcontrollist.SelectedTab == BtnReg_pas)
+            {
+                DtgPaciente.DataSource = paciente.LeerPacientes();
+            }
+
+            if (MaterialTabcontrollist.SelectedTab == BtnAd_Usuario)
+            {
+                DtgUsuarios.DataSource = Usuario_.LeerUsuario();
+            }
+
+            if (MaterialTabcontrollist.SelectedTab == BtnCompras)
+            {
+                DtgCompras.DataSource = compras.LeerPedidos();
+            }
+
+            if (MaterialTabcontrollist.SelectedTab == BtnGesti_Exa)
+            {
+                DtgExamen.DataSource = Examen.LeerExamen();
+            }
+
+            if (MaterialTabcontrollist.SelectedTab == BtnCitas)
+            {
+                DtgCitas.DataSource = Citas.LeerCitas();
+            }
+        }
+
         private void ICNServicio_Click(object sender, EventArgs e)
         {
             FrmNuevoServicio servicio = new FrmNuevoServicio();
