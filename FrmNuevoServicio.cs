@@ -498,6 +498,11 @@ namespace Proyecto_de_Graduacion
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void BtnX_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 
  }

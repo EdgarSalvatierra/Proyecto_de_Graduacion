@@ -39,9 +39,6 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
-    <Reference Include="FontAwesome.Sharp, Version=6.3.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
-      <HintPath>packages\FontAwesome.Sharp.6.3.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
-    </Reference>
     <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
     </Reference>
@@ -70,12 +67,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Borrador.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Borrador.Designer.cs">
-      <DependentUpon>Borrador.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,12 +79,6 @@
     <Compile Include="FrmCategoria.Designer.cs">
       <DependentUpon>FrmCategoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmEditarExamen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmEditarExamen.Designer.cs">
-      <DependentUpon>FrmEditarExamen.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmEditarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,12 +90,6 @@
     </Compile>
     <Compile Include="FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmMDI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmMDI.Designer.cs">
-      <DependentUpon>FrmMDI.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmNuevaCita.cs">
       <SubType>Form</SubType>
@@ -154,12 +133,6 @@
     <Compile Include="FrmProveedor.Designer.cs">
       <DependentUpon>FrmProveedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmRegistrodePacientes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmRegistrodePacientes.Designer.cs">
-      <DependentUpon>FrmRegistrodePacientes.cs</DependentUpon>
-    </Compile>
     <Compile Include="Frmservicio2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,26 +141,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Borrador.resx">
-      <DependentUpon>Borrador.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCategoria.resx">
       <DependentUpon>FrmCategoria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmEditarExamen.resx">
-      <DependentUpon>FrmEditarExamen.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmEditarUsuario.resx">
       <DependentUpon>FrmEditarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmMDI.resx">
-      <DependentUpon>FrmMDI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmNuevaCita.resx">
       <DependentUpon>FrmNuevaCita.cs</DependentUpon>
@@ -209,9 +173,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmProveedor.resx">
       <DependentUpon>FrmProveedor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmRegistrodePacientes.resx">
-      <DependentUpon>FrmRegistrodePacientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frmservicio2.resx">
       <DependentUpon>Frmservicio2.cs</DependentUpon>

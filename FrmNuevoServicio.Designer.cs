@@ -35,7 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNuevoServicio));
             this.PnlFacturacion = new System.Windows.Forms.Panel();
-            this.BtnX = new FontAwesome.Sharp.IconButton();
+            this.BtnMinimizar = new System.Windows.Forms.Button();
             this.LbTitulo = new System.Windows.Forms.Label();
             this.PnlCarrito = new System.Windows.Forms.Panel();
             this.LblCita = new System.Windows.Forms.Label();
@@ -69,7 +69,7 @@
             this.Examen1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.BtnMinimizar = new System.Windows.Forms.Button();
+            this.BtnX = new System.Windows.Forms.Button();
             this.PnlFacturacion.SuspendLayout();
             this.PnlCarrito.SuspendLayout();
             this.PnlRegistro.SuspendLayout();
@@ -83,8 +83,8 @@
             // PnlFacturacion
             // 
             this.PnlFacturacion.BackColor = System.Drawing.Color.SteelBlue;
-            this.PnlFacturacion.Controls.Add(this.BtnMinimizar);
             this.PnlFacturacion.Controls.Add(this.BtnX);
+            this.PnlFacturacion.Controls.Add(this.BtnMinimizar);
             this.PnlFacturacion.Controls.Add(this.LbTitulo);
             this.PnlFacturacion.Dock = System.Windows.Forms.DockStyle.Top;
             this.PnlFacturacion.Location = new System.Drawing.Point(0, 0);
@@ -93,23 +93,20 @@
             this.PnlFacturacion.Size = new System.Drawing.Size(995, 60);
             this.PnlFacturacion.TabIndex = 1;
             // 
-            // BtnX
+            // BtnMinimizar
             // 
-            this.BtnX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnX.BackColor = System.Drawing.Color.SteelBlue;
-            this.BtnX.FlatAppearance.BorderSize = 0;
-            this.BtnX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnX.IconChar = FontAwesome.Sharp.IconChar.X;
-            this.BtnX.IconColor = System.Drawing.Color.White;
-            this.BtnX.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnX.IconSize = 20;
-            this.BtnX.Location = new System.Drawing.Point(944, 1);
-            this.BtnX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BtnX.Name = "BtnX";
-            this.BtnX.Size = new System.Drawing.Size(51, 56);
-            this.BtnX.TabIndex = 29;
-            this.BtnX.UseVisualStyleBackColor = false;
-            this.BtnX.Click += new System.EventHandler(this.BtnX_Click);
+            this.BtnMinimizar.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.BtnMinimizar.FlatAppearance.BorderSize = 0;
+            this.BtnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnMinimizar.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnMinimizar.ForeColor = System.Drawing.SystemColors.Window;
+            this.BtnMinimizar.Location = new System.Drawing.Point(889, 3);
+            this.BtnMinimizar.Name = "BtnMinimizar";
+            this.BtnMinimizar.Size = new System.Drawing.Size(49, 50);
+            this.BtnMinimizar.TabIndex = 30;
+            this.BtnMinimizar.Text = "-";
+            this.BtnMinimizar.UseVisualStyleBackColor = true;
+            this.BtnMinimizar.Click += new System.EventHandler(this.BtnMinimizar_Click);
             // 
             // LbTitulo
             // 
@@ -117,7 +114,7 @@
             this.LbTitulo.AutoSize = true;
             this.LbTitulo.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbTitulo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LbTitulo.Location = new System.Drawing.Point(281, 15);
+            this.LbTitulo.Location = new System.Drawing.Point(312, 17);
             this.LbTitulo.Name = "LbTitulo";
             this.LbTitulo.Size = new System.Drawing.Size(274, 24);
             this.LbTitulo.TabIndex = 28;
@@ -540,20 +537,20 @@
             this.Precio1.Name = "Precio1";
             this.Precio1.ReadOnly = true;
             // 
-            // BtnMinimizar
+            // BtnX
             // 
-            this.BtnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnMinimizar.FlatAppearance.BorderSize = 0;
-            this.BtnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnMinimizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnMinimizar.ForeColor = System.Drawing.SystemColors.Window;
-            this.BtnMinimizar.Location = new System.Drawing.Point(889, 3);
-            this.BtnMinimizar.Name = "BtnMinimizar";
-            this.BtnMinimizar.Size = new System.Drawing.Size(49, 50);
-            this.BtnMinimizar.TabIndex = 30;
-            this.BtnMinimizar.Text = "-";
-            this.BtnMinimizar.UseVisualStyleBackColor = true;
-            this.BtnMinimizar.Click += new System.EventHandler(this.BtnMinimizar_Click);
+            this.BtnX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnX.FlatAppearance.BorderSize = 0;
+            this.BtnX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnX.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnX.ForeColor = System.Drawing.SystemColors.Window;
+            this.BtnX.Location = new System.Drawing.Point(943, 3);
+            this.BtnX.Name = "BtnX";
+            this.BtnX.Size = new System.Drawing.Size(49, 50);
+            this.BtnX.TabIndex = 31;
+            this.BtnX.Text = "x";
+            this.BtnX.UseVisualStyleBackColor = true;
+            this.BtnX.Click += new System.EventHandler(this.BtnX_Click_1);
             // 
             // FrmNuevoServicio
             // 
@@ -590,7 +587,6 @@
         #endregion
 
         private System.Windows.Forms.Panel PnlFacturacion;
-        private FontAwesome.Sharp.IconButton BtnX;
         private System.Windows.Forms.Label LbTitulo;
         private System.Windows.Forms.Panel PnlCarrito;
         private System.Windows.Forms.Label LblCita;
@@ -625,5 +621,6 @@
         private System.Windows.Forms.Button BtnGuardar;
         private System.Windows.Forms.Button BtnCancelar;
         private System.Windows.Forms.Button BtnMinimizar;
+        private System.Windows.Forms.Button BtnX;
     }
 }

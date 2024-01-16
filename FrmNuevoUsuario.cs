@@ -31,11 +31,6 @@ namespace Proyecto_de_Graduacion
 
             CmBRoles.ValueMember = "Codigo";
         }
-        private void BtnGuardar_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -67,7 +62,7 @@ namespace Proyecto_de_Graduacion
                 }
                 else
                 {
-                    provider.SetError(button1, "Campos incompletos, complete el formulario");
+                    provider.SetError(BtnGuardar, "Campos incompletos, complete el formulario");
                 }
             }
             catch (Exception ex)

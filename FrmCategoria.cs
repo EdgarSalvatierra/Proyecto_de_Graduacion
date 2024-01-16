@@ -134,5 +134,13 @@ namespace Proyecto_de_Graduacion
         {
             DtgCategoria.DataSource = categoria.LeerCategoria();
         }
+        private void BtnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+        private void BtnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

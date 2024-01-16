@@ -756,9 +756,6 @@ namespace Proyecto_de_Graduacion
 
                 decimal Precio = Convert.ToDecimal(data.Cells[4].Value);
 
-                FrmEditarExamen editarExamen = new FrmEditarExamen(Numero, Categoria, Examen, Plantilla, Precio);
-
-                editarExamen.Show();
             }
         }
         private void Btnbuscarcitas_Click(object sender, EventArgs e)
