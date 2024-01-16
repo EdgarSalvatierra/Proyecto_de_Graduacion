@@ -33,13 +33,18 @@ namespace Proyecto_de_Graduacion
         }
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
             try
             {
                 if (!String.IsNullOrWhiteSpace(txtNombre.Text)
-                 && !String.IsNullOrWhiteSpace(txtApellido.Text) 
+                 && !String.IsNullOrWhiteSpace(txtApellido.Text)
                  && !String.IsNullOrWhiteSpace(txttelefono.Text) && !String.IsNullOrWhiteSpace(txtUsuario.Text)
                  && !String.IsNullOrWhiteSpace(txtContraseña.Text))
-                {   
+                {
                     string Nombre = txtNombre.Text;
 
                     string Apellido = txtApellido.Text;
@@ -54,15 +59,15 @@ namespace Proyecto_de_Graduacion
 
                     string Roles = CmBRoles.Text;
 
-                    usuario_Model.InsertarUsuario(Usuario,contraseña,Roles);
+                    usuario_Model.InsertarUsuario(Usuario, contraseña, Roles);
 
-                    usuario_Model.InsertarDetalles(Usuario,Nombre,Apellido,fechanacimiento,telefono);
+                    usuario_Model.InsertarDetalles(Usuario, Nombre, Apellido, fechanacimiento, telefono);
 
                     MessageBox.Show("Guardado  Correctamente", "SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    provider.SetError(BtnGuardar, "Campos incompletos, complete el formulario");
+                    provider.SetError(button1, "Campos incompletos, complete el formulario");
                 }
             }
             catch (Exception ex)

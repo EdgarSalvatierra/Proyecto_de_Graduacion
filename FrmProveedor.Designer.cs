@@ -42,13 +42,12 @@
             this.LblProveedor = new System.Windows.Forms.Label();
             this.LblRegistroCompras = new System.Windows.Forms.Label();
             this.Pnlgrid2 = new System.Windows.Forms.Panel();
-            this.BtnGuardar = new FontAwesome.Sharp.IconButton();
-            this.Btndardebaja = new FontAwesome.Sharp.IconButton();
-            this.BtnNuevo = new FontAwesome.Sharp.IconButton();
+            this.BtnEditar = new System.Windows.Forms.Button();
+            this.BtnNuevo = new System.Windows.Forms.Button();
             this.PnlBuscarProveedor = new System.Windows.Forms.Panel();
+            this.Btnrefrescar = new System.Windows.Forms.Button();
             this.LblBuscar = new System.Windows.Forms.Label();
-            this.BtnRefrescar = new FontAwesome.Sharp.IconButton();
-            this.ICNBuscador = new FontAwesome.Sharp.IconButton();
+            this.BtnBuscarProductos = new System.Windows.Forms.Button();
             this.PnlBuscare = new System.Windows.Forms.Panel();
             this.TxtBuscarProducto = new System.Windows.Forms.TextBox();
             this.Pnlok = new System.Windows.Forms.Panel();
@@ -62,8 +61,9 @@
             this.LblProducto = new System.Windows.Forms.Label();
             this.TxtProducto = new System.Windows.Forms.TextBox();
             this.PnlGrid = new System.Windows.Forms.Panel();
+            this.BtnGuardar = new System.Windows.Forms.Button();
             this.DtgProveedor = new System.Windows.Forms.DataGridView();
-            this.BtnEditar = new FontAwesome.Sharp.IconButton();
+            this.Btndardebaja = new System.Windows.Forms.Button();
             this.Pnlarriba.SuspendLayout();
             this.Pnlencabezado.SuspendLayout();
             this.Pnlgrid2.SuspendLayout();
@@ -166,9 +166,9 @@
             // 
             // Pnlgrid2
             // 
+            this.Pnlgrid2.Controls.Add(this.Btndardebaja);
             this.Pnlgrid2.Controls.Add(this.BtnGuardar);
             this.Pnlgrid2.Controls.Add(this.BtnEditar);
-            this.Pnlgrid2.Controls.Add(this.Btndardebaja);
             this.Pnlgrid2.Controls.Add(this.BtnNuevo);
             this.Pnlgrid2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Pnlgrid2.Location = new System.Drawing.Point(0, 583);
@@ -176,83 +176,59 @@
             this.Pnlgrid2.Size = new System.Drawing.Size(800, 76);
             this.Pnlgrid2.TabIndex = 18;
             // 
-            // BtnGuardar
+            // BtnEditar
             // 
-            this.BtnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.BtnGuardar.BackColor = System.Drawing.Color.White;
-            this.BtnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnGuardar.Font = new System.Drawing.Font("Corbel", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnGuardar.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.BtnGuardar.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
-            this.BtnGuardar.IconColor = System.Drawing.SystemColors.Highlight;
-            this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.BtnGuardar.IconSize = 20;
-            this.BtnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnGuardar.Location = new System.Drawing.Point(412, 19);
-            this.BtnGuardar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.Size = new System.Drawing.Size(170, 44);
-            this.BtnGuardar.TabIndex = 61;
-            this.BtnGuardar.Text = "Guardar";
-            this.BtnGuardar.UseVisualStyleBackColor = false;
-            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
-            // 
-            // Btndardebaja
-            // 
-            this.Btndardebaja.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.Btndardebaja.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Btndardebaja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.Btndardebaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btndardebaja.Font = new System.Drawing.Font("Corbel", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btndardebaja.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.Btndardebaja.IconChar = FontAwesome.Sharp.IconChar.FileCircleMinus;
-            this.Btndardebaja.IconColor = System.Drawing.SystemColors.Highlight;
-            this.Btndardebaja.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.Btndardebaja.IconSize = 20;
-            this.Btndardebaja.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btndardebaja.Location = new System.Drawing.Point(623, 19);
-            this.Btndardebaja.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Btndardebaja.Name = "Btndardebaja";
-            this.Btndardebaja.Size = new System.Drawing.Size(165, 44);
-            this.Btndardebaja.TabIndex = 60;
-            this.Btndardebaja.Text = "Dar de Baja";
-            this.Btndardebaja.UseVisualStyleBackColor = false;
-            this.Btndardebaja.Click += new System.EventHandler(this.Btndardebaja_Click);
+            this.BtnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.BtnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnEditar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
+            this.BtnEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BtnEditar.Location = new System.Drawing.Point(213, 20);
+            this.BtnEditar.Name = "BtnEditar";
+            this.BtnEditar.Size = new System.Drawing.Size(181, 44);
+            this.BtnEditar.TabIndex = 90;
+            this.BtnEditar.Text = "Editar";
+            this.BtnEditar.UseVisualStyleBackColor = true;
+            this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click_1);
             // 
             // BtnNuevo
             // 
-            this.BtnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.BtnNuevo.BackColor = System.Drawing.Color.White;
-            this.BtnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.BtnNuevo.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.BtnNuevo.BackColor = System.Drawing.Color.WhiteSmoke;
             this.BtnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnNuevo.Font = new System.Drawing.Font("Corbel", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnNuevo.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.BtnNuevo.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
-            this.BtnNuevo.IconColor = System.Drawing.SystemColors.Highlight;
-            this.BtnNuevo.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.BtnNuevo.IconSize = 20;
-            this.BtnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnNuevo.Location = new System.Drawing.Point(24, 19);
-            this.BtnNuevo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BtnNuevo.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
+            this.BtnNuevo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BtnNuevo.Location = new System.Drawing.Point(12, 19);
             this.BtnNuevo.Name = "BtnNuevo";
-            this.BtnNuevo.Size = new System.Drawing.Size(170, 44);
-            this.BtnNuevo.TabIndex = 58;
+            this.BtnNuevo.Size = new System.Drawing.Size(181, 44);
+            this.BtnNuevo.TabIndex = 89;
             this.BtnNuevo.Text = "Nuevo ";
             this.BtnNuevo.UseVisualStyleBackColor = false;
-            this.BtnNuevo.Click += new System.EventHandler(this.BtnNuevo_Click);
+            this.BtnNuevo.Click += new System.EventHandler(this.BtnNuevo_Click_1);
             // 
             // PnlBuscarProveedor
             // 
+            this.PnlBuscarProveedor.Controls.Add(this.Btnrefrescar);
             this.PnlBuscarProveedor.Controls.Add(this.LblBuscar);
-            this.PnlBuscarProveedor.Controls.Add(this.BtnRefrescar);
-            this.PnlBuscarProveedor.Controls.Add(this.ICNBuscador);
+            this.PnlBuscarProveedor.Controls.Add(this.BtnBuscarProductos);
             this.PnlBuscarProveedor.Controls.Add(this.PnlBuscare);
             this.PnlBuscarProveedor.Dock = System.Windows.Forms.DockStyle.Top;
             this.PnlBuscarProveedor.Location = new System.Drawing.Point(0, 91);
             this.PnlBuscarProveedor.Name = "PnlBuscarProveedor";
             this.PnlBuscarProveedor.Size = new System.Drawing.Size(800, 56);
             this.PnlBuscarProveedor.TabIndex = 20;
+            // 
+            // Btnrefrescar
+            // 
+            this.Btnrefrescar.BackgroundImage = global::Proyecto_de_Graduacion.Properties.Resources.refresh;
+            this.Btnrefrescar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Btnrefrescar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btnrefrescar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Btnrefrescar.Location = new System.Drawing.Point(721, 6);
+            this.Btnrefrescar.Name = "Btnrefrescar";
+            this.Btnrefrescar.Size = new System.Drawing.Size(43, 40);
+            this.Btnrefrescar.TabIndex = 88;
+            this.Btnrefrescar.UseVisualStyleBackColor = true;
+            this.Btnrefrescar.Click += new System.EventHandler(this.Btnrefrescar_Click_1);
             // 
             // LblBuscar
             // 
@@ -266,39 +242,18 @@
             this.LblBuscar.TabIndex = 6;
             this.LblBuscar.Text = "Buscar";
             // 
-            // BtnRefrescar
+            // BtnBuscarProductos
             // 
-            this.BtnRefrescar.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnRefrescar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnRefrescar.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.BtnRefrescar.IconChar = FontAwesome.Sharp.IconChar.Repeat;
-            this.BtnRefrescar.IconColor = System.Drawing.SystemColors.Highlight;
-            this.BtnRefrescar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnRefrescar.IconSize = 25;
-            this.BtnRefrescar.Location = new System.Drawing.Point(721, 9);
-            this.BtnRefrescar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.BtnRefrescar.Name = "BtnRefrescar";
-            this.BtnRefrescar.Size = new System.Drawing.Size(46, 38);
-            this.BtnRefrescar.TabIndex = 79;
-            this.BtnRefrescar.UseVisualStyleBackColor = false;
-            this.BtnRefrescar.Click += new System.EventHandler(this.BtnRefrescar_Click);
-            // 
-            // ICNBuscador
-            // 
-            this.ICNBuscador.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ICNBuscador.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ICNBuscador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ICNBuscador.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.ICNBuscador.IconChar = FontAwesome.Sharp.IconChar.Searchengin;
-            this.ICNBuscador.IconColor = System.Drawing.SystemColors.Highlight;
-            this.ICNBuscador.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ICNBuscador.IconSize = 30;
-            this.ICNBuscador.Location = new System.Drawing.Point(670, 10);
-            this.ICNBuscador.Name = "ICNBuscador";
-            this.ICNBuscador.Size = new System.Drawing.Size(45, 37);
-            this.ICNBuscador.TabIndex = 78;
-            this.ICNBuscador.UseVisualStyleBackColor = false;
-            this.ICNBuscador.Click += new System.EventHandler(this.ICNBuscador_Click);
+            this.BtnBuscarProductos.BackgroundImage = global::Proyecto_de_Graduacion.Properties.Resources.search;
+            this.BtnBuscarProductos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.BtnBuscarProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnBuscarProductos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BtnBuscarProductos.Location = new System.Drawing.Point(668, 9);
+            this.BtnBuscarProductos.Name = "BtnBuscarProductos";
+            this.BtnBuscarProductos.Size = new System.Drawing.Size(47, 37);
+            this.BtnBuscarProductos.TabIndex = 87;
+            this.BtnBuscarProductos.UseVisualStyleBackColor = true;
+            this.BtnBuscarProductos.Click += new System.EventHandler(this.BtnBuscarProductos_Click);
             // 
             // PnlBuscare
             // 
@@ -442,6 +397,20 @@
             this.PnlGrid.Size = new System.Drawing.Size(800, 334);
             this.PnlGrid.TabIndex = 23;
             // 
+            // BtnGuardar
+            // 
+            this.BtnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnGuardar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
+            this.BtnGuardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BtnGuardar.Location = new System.Drawing.Point(422, 19);
+            this.BtnGuardar.Name = "BtnGuardar";
+            this.BtnGuardar.Size = new System.Drawing.Size(181, 44);
+            this.BtnGuardar.TabIndex = 91;
+            this.BtnGuardar.Text = "Guardar";
+            this.BtnGuardar.UseVisualStyleBackColor = true;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click_1);
+            // 
             // DtgProveedor
             // 
             this.DtgProveedor.AllowUserToAddRows = false;
@@ -503,27 +472,19 @@
             this.DtgProveedor.TabIndex = 3;
             this.DtgProveedor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgProveedor_CellClick);
             // 
-            // BtnEditar
+            // Btndardebaja
             // 
-            this.BtnEditar.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.BtnEditar.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.BtnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.BtnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEditar.Font = new System.Drawing.Font("Corbel", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEditar.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.BtnEditar.IconChar = FontAwesome.Sharp.IconChar.FileEdit;
-            this.BtnEditar.IconColor = System.Drawing.SystemColors.Highlight;
-            this.BtnEditar.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.BtnEditar.IconSize = 20;
-            this.BtnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnEditar.Location = new System.Drawing.Point(220, 19);
-            this.BtnEditar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.BtnEditar.Name = "BtnEditar";
-            this.BtnEditar.Size = new System.Drawing.Size(169, 44);
-            this.BtnEditar.TabIndex = 59;
-            this.BtnEditar.Text = "Editar ";
-            this.BtnEditar.UseVisualStyleBackColor = false;
-            this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
+            this.Btndardebaja.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.Btndardebaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btndardebaja.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold);
+            this.Btndardebaja.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Btndardebaja.Location = new System.Drawing.Point(623, 19);
+            this.Btndardebaja.Name = "Btndardebaja";
+            this.Btndardebaja.Size = new System.Drawing.Size(167, 44);
+            this.Btndardebaja.TabIndex = 92;
+            this.Btndardebaja.Text = "Dar de Baja";
+            this.Btndardebaja.UseVisualStyleBackColor = true;
+            this.Btndardebaja.Click += new System.EventHandler(this.Btndardebaja_Click_1);
             // 
             // FrmProveedor
             // 
@@ -571,9 +532,6 @@
         private System.Windows.Forms.Label LblProveedor;
         private System.Windows.Forms.Label LblRegistroCompras;
         private System.Windows.Forms.Panel Pnlgrid2;
-        private FontAwesome.Sharp.IconButton Btndardebaja;
-        private FontAwesome.Sharp.IconButton BtnNuevo;
-        private FontAwesome.Sharp.IconButton BtnGuardar;
         private System.Windows.Forms.Panel PnlBuscarProveedor;
         private System.Windows.Forms.Panel Pnlok;
         private System.Windows.Forms.TextBox TxtCasacomercial;
@@ -586,12 +544,15 @@
         private System.Windows.Forms.Label LblProducto;
         private System.Windows.Forms.TextBox TxtProducto;
         private System.Windows.Forms.Label LblBuscar;
-        private FontAwesome.Sharp.IconButton BtnRefrescar;
-        private FontAwesome.Sharp.IconButton ICNBuscador;
         private System.Windows.Forms.Panel PnlBuscare;
         private System.Windows.Forms.TextBox TxtBuscarProducto;
         private System.Windows.Forms.Panel PnlGrid;
         private System.Windows.Forms.DataGridView DtgProveedor;
-        private FontAwesome.Sharp.IconButton BtnEditar;
+        private System.Windows.Forms.Button Btnrefrescar;
+        private System.Windows.Forms.Button BtnBuscarProductos;
+        private System.Windows.Forms.Button BtnNuevo;
+        private System.Windows.Forms.Button BtnEditar;
+        private System.Windows.Forms.Button BtnGuardar;
+        private System.Windows.Forms.Button Btndardebaja;
     }
 }

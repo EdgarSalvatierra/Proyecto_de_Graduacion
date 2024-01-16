@@ -36,33 +36,33 @@
             this.PnlTitullo = new System.Windows.Forms.Panel();
             this.btnCerrar = new FontAwesome.Sharp.IconButton();
             this.LblTitulo = new System.Windows.Forms.Label();
-            this.PnlLista = new System.Windows.Forms.Panel();
-            this.ICNBuscador = new FontAwesome.Sharp.IconButton();
-            this.PnlBuscare = new System.Windows.Forms.Panel();
-            this.TxtBuscarFactura = new System.Windows.Forms.TextBox();
-            this.BtnRefrescar = new FontAwesome.Sharp.IconButton();
+            this.BtnGuardar = new System.Windows.Forms.Button();
+            this.PnlOpciones = new System.Windows.Forms.Panel();
+            this.BtnCancelar = new System.Windows.Forms.Button();
+            this.BtnEditarCategoria = new System.Windows.Forms.Button();
+            this.BtnNuevaCategoria = new System.Windows.Forms.Button();
+            this.Pnlgrid = new System.Windows.Forms.Panel();
+            this.txtid = new System.Windows.Forms.TextBox();
+            this.Lblcodigo = new System.Windows.Forms.Label();
             this.ICNCategoria = new FontAwesome.Sharp.IconPictureBox();
             this.LstCategoria = new System.Windows.Forms.Label();
-            this.Pnlgrid = new System.Windows.Forms.Panel();
+            this.Pnlcodigo = new System.Windows.Forms.Panel();
+            this.PnlLista = new System.Windows.Forms.Panel();
             this.TxtCategoria = new System.Windows.Forms.TextBox();
-            this.txtid = new System.Windows.Forms.TextBox();
+            this.Btnrefrescar = new System.Windows.Forms.Button();
             this.LblCategoria = new System.Windows.Forms.Label();
-            this.Lblcodigo = new System.Windows.Forms.Label();
-            this.Pnlgridis = new System.Windows.Forms.Panel();
+            this.BtnBuscador = new System.Windows.Forms.Button();
+            this.PnlBuscare = new System.Windows.Forms.Panel();
+            this.TxtBuscarFactura = new System.Windows.Forms.TextBox();
             this.DtgCategoria = new System.Windows.Forms.DataGridView();
-            this.PnlOpciones = new System.Windows.Forms.Panel();
-            this.BtnCancelar = new FontAwesome.Sharp.IconButton();
-            this.BtnGuardar = new FontAwesome.Sharp.IconButton();
-            this.BtnNuevoExamen = new FontAwesome.Sharp.IconButton();
-            this.BtnEditar = new FontAwesome.Sharp.IconButton();
             this.PnlTitullo.SuspendLayout();
+            this.PnlOpciones.SuspendLayout();
+            this.Pnlgrid.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ICNCategoria)).BeginInit();
+            this.Pnlcodigo.SuspendLayout();
             this.PnlLista.SuspendLayout();
             this.PnlBuscare.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ICNCategoria)).BeginInit();
-            this.Pnlgrid.SuspendLayout();
-            this.Pnlgridis.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DtgCategoria)).BeginInit();
-            this.PnlOpciones.SuspendLayout();
             this.SuspendLayout();
             // 
             // PnlTitullo
@@ -106,43 +106,217 @@
             this.LblTitulo.TabIndex = 1;
             this.LblTitulo.Text = "Registro de Categorias";
             // 
+            // BtnGuardar
+            // 
+            this.BtnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnGuardar.BackColor = System.Drawing.Color.SteelBlue;
+            this.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnGuardar.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnGuardar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BtnGuardar.Location = new System.Drawing.Point(557, 22);
+            this.BtnGuardar.Name = "BtnGuardar";
+            this.BtnGuardar.Size = new System.Drawing.Size(223, 46);
+            this.BtnGuardar.TabIndex = 65;
+            this.BtnGuardar.Text = "Guardar";
+            this.BtnGuardar.UseVisualStyleBackColor = false;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click_1);
+            // 
+            // PnlOpciones
+            // 
+            this.PnlOpciones.Controls.Add(this.BtnCancelar);
+            this.PnlOpciones.Controls.Add(this.BtnGuardar);
+            this.PnlOpciones.Controls.Add(this.BtnEditarCategoria);
+            this.PnlOpciones.Controls.Add(this.BtnNuevaCategoria);
+            this.PnlOpciones.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.PnlOpciones.Location = new System.Drawing.Point(0, 629);
+            this.PnlOpciones.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.PnlOpciones.Name = "PnlOpciones";
+            this.PnlOpciones.Size = new System.Drawing.Size(1032, 85);
+            this.PnlOpciones.TabIndex = 6;
+            // 
+            // BtnCancelar
+            // 
+            this.BtnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnCancelar.BackColor = System.Drawing.Color.SteelBlue;
+            this.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCancelar.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCancelar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BtnCancelar.Location = new System.Drawing.Point(797, 22);
+            this.BtnCancelar.Name = "BtnCancelar";
+            this.BtnCancelar.Size = new System.Drawing.Size(223, 46);
+            this.BtnCancelar.TabIndex = 66;
+            this.BtnCancelar.Text = "Cancelar";
+            this.BtnCancelar.UseVisualStyleBackColor = false;
+            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click_1);
+            // 
+            // BtnEditarCategoria
+            // 
+            this.BtnEditarCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnEditarCategoria.BackColor = System.Drawing.Color.SteelBlue;
+            this.BtnEditarCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnEditarCategoria.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnEditarCategoria.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BtnEditarCategoria.Location = new System.Drawing.Point(290, 22);
+            this.BtnEditarCategoria.Name = "BtnEditarCategoria";
+            this.BtnEditarCategoria.Size = new System.Drawing.Size(223, 46);
+            this.BtnEditarCategoria.TabIndex = 64;
+            this.BtnEditarCategoria.Text = "Editar Categoria";
+            this.BtnEditarCategoria.UseVisualStyleBackColor = false;
+            this.BtnEditarCategoria.Click += new System.EventHandler(this.BtnEditarCategoria_Click);
+            // 
+            // BtnNuevaCategoria
+            // 
+            this.BtnNuevaCategoria.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnNuevaCategoria.BackColor = System.Drawing.Color.SteelBlue;
+            this.BtnNuevaCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnNuevaCategoria.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnNuevaCategoria.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BtnNuevaCategoria.Location = new System.Drawing.Point(22, 22);
+            this.BtnNuevaCategoria.Name = "BtnNuevaCategoria";
+            this.BtnNuevaCategoria.Size = new System.Drawing.Size(223, 46);
+            this.BtnNuevaCategoria.TabIndex = 63;
+            this.BtnNuevaCategoria.Text = "Nueva Categoria";
+            this.BtnNuevaCategoria.UseVisualStyleBackColor = false;
+            this.BtnNuevaCategoria.Click += new System.EventHandler(this.BtnNuevaCategoria_Click);
+            // 
+            // Pnlgrid
+            // 
+            this.Pnlgrid.Controls.Add(this.PnlLista);
+            this.Pnlgrid.Controls.Add(this.Pnlcodigo);
+            this.Pnlgrid.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Pnlgrid.Location = new System.Drawing.Point(0, 52);
+            this.Pnlgrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Pnlgrid.Name = "Pnlgrid";
+            this.Pnlgrid.Size = new System.Drawing.Size(1032, 130);
+            this.Pnlgrid.TabIndex = 7;
+            // 
+            // txtid
+            // 
+            this.txtid.Enabled = false;
+            this.txtid.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtid.Location = new System.Drawing.Point(742, 19);
+            this.txtid.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtid.Name = "txtid";
+            this.txtid.ReadOnly = true;
+            this.txtid.Size = new System.Drawing.Size(224, 27);
+            this.txtid.TabIndex = 2;
+            // 
+            // Lblcodigo
+            // 
+            this.Lblcodigo.AutoSize = true;
+            this.Lblcodigo.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lblcodigo.Location = new System.Drawing.Point(642, 22);
+            this.Lblcodigo.Name = "Lblcodigo";
+            this.Lblcodigo.Size = new System.Drawing.Size(70, 20);
+            this.Lblcodigo.TabIndex = 0;
+            this.Lblcodigo.Text = "Codigo";
+            // 
+            // ICNCategoria
+            // 
+            this.ICNCategoria.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ICNCategoria.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ICNCategoria.IconChar = FontAwesome.Sharp.IconChar.ListAlt;
+            this.ICNCategoria.IconColor = System.Drawing.SystemColors.ControlText;
+            this.ICNCategoria.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ICNCategoria.IconSize = 55;
+            this.ICNCategoria.Location = new System.Drawing.Point(16, 5);
+            this.ICNCategoria.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ICNCategoria.Name = "ICNCategoria";
+            this.ICNCategoria.Size = new System.Drawing.Size(56, 55);
+            this.ICNCategoria.TabIndex = 3;
+            this.ICNCategoria.TabStop = false;
+            // 
+            // LstCategoria
+            // 
+            this.LstCategoria.AutoSize = true;
+            this.LstCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LstCategoria.Location = new System.Drawing.Point(78, 22);
+            this.LstCategoria.Name = "LstCategoria";
+            this.LstCategoria.Size = new System.Drawing.Size(164, 20);
+            this.LstCategoria.TabIndex = 2;
+            this.LstCategoria.Text = "Lista de Categoria";
+            // 
+            // Pnlcodigo
+            // 
+            this.Pnlcodigo.Controls.Add(this.ICNCategoria);
+            this.Pnlcodigo.Controls.Add(this.Lblcodigo);
+            this.Pnlcodigo.Controls.Add(this.txtid);
+            this.Pnlcodigo.Controls.Add(this.LstCategoria);
+            this.Pnlcodigo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Pnlcodigo.Location = new System.Drawing.Point(0, 0);
+            this.Pnlcodigo.Name = "Pnlcodigo";
+            this.Pnlcodigo.Size = new System.Drawing.Size(1032, 68);
+            this.Pnlcodigo.TabIndex = 4;
+            // 
             // PnlLista
             // 
-            this.PnlLista.Controls.Add(this.ICNBuscador);
+            this.PnlLista.Controls.Add(this.TxtCategoria);
+            this.PnlLista.Controls.Add(this.Btnrefrescar);
+            this.PnlLista.Controls.Add(this.LblCategoria);
+            this.PnlLista.Controls.Add(this.BtnBuscador);
             this.PnlLista.Controls.Add(this.PnlBuscare);
-            this.PnlLista.Controls.Add(this.BtnRefrescar);
-            this.PnlLista.Controls.Add(this.ICNCategoria);
-            this.PnlLista.Controls.Add(this.LstCategoria);
             this.PnlLista.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PnlLista.Location = new System.Drawing.Point(0, 52);
+            this.PnlLista.Location = new System.Drawing.Point(0, 68);
             this.PnlLista.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PnlLista.Name = "PnlLista";
-            this.PnlLista.Size = new System.Drawing.Size(1032, 66);
-            this.PnlLista.TabIndex = 2;
+            this.PnlLista.Size = new System.Drawing.Size(1032, 58);
+            this.PnlLista.TabIndex = 10;
             // 
-            // ICNBuscador
+            // TxtCategoria
             // 
-            this.ICNBuscador.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ICNBuscador.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ICNBuscador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ICNBuscador.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.ICNBuscador.IconChar = FontAwesome.Sharp.IconChar.Searchengin;
-            this.ICNBuscador.IconColor = System.Drawing.SystemColors.Highlight;
-            this.ICNBuscador.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ICNBuscador.IconSize = 30;
-            this.ICNBuscador.Location = new System.Drawing.Point(906, 15);
-            this.ICNBuscador.Name = "ICNBuscador";
-            this.ICNBuscador.Size = new System.Drawing.Size(45, 37);
-            this.ICNBuscador.TabIndex = 80;
-            this.ICNBuscador.UseVisualStyleBackColor = false;
-            this.ICNBuscador.Click += new System.EventHandler(this.ICNBuscador_Click);
+            this.TxtCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtCategoria.Location = new System.Drawing.Point(742, 19);
+            this.TxtCategoria.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtCategoria.Name = "TxtCategoria";
+            this.TxtCategoria.Size = new System.Drawing.Size(224, 27);
+            this.TxtCategoria.TabIndex = 6;
+            // 
+            // Btnrefrescar
+            // 
+            this.Btnrefrescar.BackgroundImage = global::Proyecto_de_Graduacion.Properties.Resources.refresh;
+            this.Btnrefrescar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Btnrefrescar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btnrefrescar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Btnrefrescar.Location = new System.Drawing.Point(442, 14);
+            this.Btnrefrescar.Name = "Btnrefrescar";
+            this.Btnrefrescar.Size = new System.Drawing.Size(43, 38);
+            this.Btnrefrescar.TabIndex = 88;
+            this.Btnrefrescar.UseVisualStyleBackColor = true;
+            this.Btnrefrescar.Click += new System.EventHandler(this.Btnrefrescar_Click_1);
+            // 
+            // LblCategoria
+            // 
+            this.LblCategoria.AutoSize = true;
+            this.LblCategoria.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblCategoria.Location = new System.Drawing.Point(642, 22);
+            this.LblCategoria.Name = "LblCategoria";
+            this.LblCategoria.Size = new System.Drawing.Size(93, 20);
+            this.LblCategoria.TabIndex = 1;
+            this.LblCategoria.Text = "Categoria";
+            // 
+            // BtnBuscador
+            // 
+            this.BtnBuscador.BackgroundImage = global::Proyecto_de_Graduacion.Properties.Resources.search;
+            this.BtnBuscador.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.BtnBuscador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnBuscador.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BtnBuscador.Location = new System.Drawing.Point(389, 14);
+            this.BtnBuscador.Name = "BtnBuscador";
+            this.BtnBuscador.Size = new System.Drawing.Size(47, 37);
+            this.BtnBuscador.TabIndex = 87;
+            this.BtnBuscador.UseVisualStyleBackColor = true;
+            this.BtnBuscador.Click += new System.EventHandler(this.BtnBuscador_Click_1);
             // 
             // PnlBuscare
             // 
             this.PnlBuscare.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.PnlBuscare.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PnlBuscare.Controls.Add(this.TxtBuscarFactura);
-            this.PnlBuscare.Location = new System.Drawing.Point(529, 14);
+            this.PnlBuscare.Location = new System.Drawing.Point(12, 16);
             this.PnlBuscare.Name = "PnlBuscare";
             this.PnlBuscare.Size = new System.Drawing.Size(371, 35);
             this.PnlBuscare.TabIndex = 79;
@@ -157,111 +331,6 @@
             this.TxtBuscarFactura.Size = new System.Drawing.Size(351, 15);
             this.TxtBuscarFactura.TabIndex = 0;
             this.TxtBuscarFactura.Text = "Buscar Categoria";
-            // 
-            // BtnRefrescar
-            // 
-            this.BtnRefrescar.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnRefrescar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnRefrescar.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.BtnRefrescar.IconChar = FontAwesome.Sharp.IconChar.Repeat;
-            this.BtnRefrescar.IconColor = System.Drawing.SystemColors.Highlight;
-            this.BtnRefrescar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnRefrescar.IconSize = 25;
-            this.BtnRefrescar.Location = new System.Drawing.Point(957, 15);
-            this.BtnRefrescar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.BtnRefrescar.Name = "BtnRefrescar";
-            this.BtnRefrescar.Size = new System.Drawing.Size(46, 38);
-            this.BtnRefrescar.TabIndex = 78;
-            this.BtnRefrescar.UseVisualStyleBackColor = false;
-            this.BtnRefrescar.Click += new System.EventHandler(this.BtnRefrescar_Click);
-            // 
-            // ICNCategoria
-            // 
-            this.ICNCategoria.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ICNCategoria.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ICNCategoria.IconChar = FontAwesome.Sharp.IconChar.ListAlt;
-            this.ICNCategoria.IconColor = System.Drawing.SystemColors.ControlText;
-            this.ICNCategoria.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ICNCategoria.IconSize = 55;
-            this.ICNCategoria.Location = new System.Drawing.Point(47, 8);
-            this.ICNCategoria.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ICNCategoria.Name = "ICNCategoria";
-            this.ICNCategoria.Size = new System.Drawing.Size(56, 55);
-            this.ICNCategoria.TabIndex = 3;
-            this.ICNCategoria.TabStop = false;
-            // 
-            // LstCategoria
-            // 
-            this.LstCategoria.AutoSize = true;
-            this.LstCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LstCategoria.Location = new System.Drawing.Point(110, 22);
-            this.LstCategoria.Name = "LstCategoria";
-            this.LstCategoria.Size = new System.Drawing.Size(164, 20);
-            this.LstCategoria.TabIndex = 2;
-            this.LstCategoria.Text = "Lista de Categoria";
-            // 
-            // Pnlgrid
-            // 
-            this.Pnlgrid.Controls.Add(this.TxtCategoria);
-            this.Pnlgrid.Controls.Add(this.txtid);
-            this.Pnlgrid.Controls.Add(this.LblCategoria);
-            this.Pnlgrid.Controls.Add(this.Lblcodigo);
-            this.Pnlgrid.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Pnlgrid.Location = new System.Drawing.Point(0, 118);
-            this.Pnlgrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Pnlgrid.Name = "Pnlgrid";
-            this.Pnlgrid.Size = new System.Drawing.Size(1032, 57);
-            this.Pnlgrid.TabIndex = 3;
-            // 
-            // TxtCategoria
-            // 
-            this.TxtCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCategoria.Location = new System.Drawing.Point(697, 15);
-            this.TxtCategoria.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.TxtCategoria.Name = "TxtCategoria";
-            this.TxtCategoria.Size = new System.Drawing.Size(203, 27);
-            this.TxtCategoria.TabIndex = 6;
-            // 
-            // txtid
-            // 
-            this.txtid.Enabled = false;
-            this.txtid.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtid.Location = new System.Drawing.Point(202, 12);
-            this.txtid.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtid.Name = "txtid";
-            this.txtid.ReadOnly = true;
-            this.txtid.Size = new System.Drawing.Size(151, 27);
-            this.txtid.TabIndex = 2;
-            // 
-            // LblCategoria
-            // 
-            this.LblCategoria.AutoSize = true;
-            this.LblCategoria.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblCategoria.Location = new System.Drawing.Point(585, 18);
-            this.LblCategoria.Name = "LblCategoria";
-            this.LblCategoria.Size = new System.Drawing.Size(93, 20);
-            this.LblCategoria.TabIndex = 1;
-            this.LblCategoria.Text = "Categoria";
-            // 
-            // Lblcodigo
-            // 
-            this.Lblcodigo.AutoSize = true;
-            this.Lblcodigo.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lblcodigo.Location = new System.Drawing.Point(110, 15);
-            this.Lblcodigo.Name = "Lblcodigo";
-            this.Lblcodigo.Size = new System.Drawing.Size(70, 20);
-            this.Lblcodigo.TabIndex = 0;
-            this.Lblcodigo.Text = "Codigo";
-            // 
-            // Pnlgridis
-            // 
-            this.Pnlgridis.Controls.Add(this.DtgCategoria);
-            this.Pnlgridis.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Pnlgridis.Location = new System.Drawing.Point(0, 175);
-            this.Pnlgridis.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Pnlgridis.Name = "Pnlgridis";
-            this.Pnlgridis.Size = new System.Drawing.Size(1032, 447);
-            this.Pnlgridis.TabIndex = 5;
             // 
             // DtgCategoria
             // 
@@ -297,7 +366,7 @@
             this.DtgCategoria.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.DtgCategoria.EnableHeadersVisualStyles = false;
             this.DtgCategoria.GridColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.DtgCategoria.Location = new System.Drawing.Point(0, 45);
+            this.DtgCategoria.Location = new System.Drawing.Point(0, 206);
             this.DtgCategoria.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DtgCategoria.Name = "DtgCategoria";
             this.DtgCategoria.ReadOnly = true;
@@ -310,120 +379,17 @@
             this.DtgCategoria.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.DtgCategoria.RowTemplate.Height = 24;
             this.DtgCategoria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DtgCategoria.Size = new System.Drawing.Size(1032, 402);
-            this.DtgCategoria.TabIndex = 1;
-            this.DtgCategoria.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgCategoria_CellClick);
-            // 
-            // PnlOpciones
-            // 
-            this.PnlOpciones.Controls.Add(this.BtnCancelar);
-            this.PnlOpciones.Controls.Add(this.BtnGuardar);
-            this.PnlOpciones.Controls.Add(this.BtnNuevoExamen);
-            this.PnlOpciones.Controls.Add(this.BtnEditar);
-            this.PnlOpciones.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PnlOpciones.Location = new System.Drawing.Point(0, 629);
-            this.PnlOpciones.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.PnlOpciones.Name = "PnlOpciones";
-            this.PnlOpciones.Size = new System.Drawing.Size(1032, 85);
-            this.PnlOpciones.TabIndex = 6;
-            // 
-            // BtnCancelar
-            // 
-            this.BtnCancelar.BackColor = System.Drawing.Color.SteelBlue;
-            this.BtnCancelar.FlatAppearance.BorderSize = 0;
-            this.BtnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCancelar.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCancelar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnCancelar.IconChar = FontAwesome.Sharp.IconChar.Cancel;
-            this.BtnCancelar.IconColor = System.Drawing.Color.White;
-            this.BtnCancelar.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.BtnCancelar.IconSize = 20;
-            this.BtnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnCancelar.Location = new System.Drawing.Point(826, 22);
-            this.BtnCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(192, 48);
-            this.BtnCancelar.TabIndex = 57;
-            this.BtnCancelar.Text = "Cancelar";
-            this.BtnCancelar.UseVisualStyleBackColor = false;
-            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
-            // 
-            // BtnGuardar
-            // 
-            this.BtnGuardar.BackColor = System.Drawing.Color.SteelBlue;
-            this.BtnGuardar.FlatAppearance.BorderSize = 0;
-            this.BtnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnGuardar.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnGuardar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnGuardar.IconChar = FontAwesome.Sharp.IconChar.FileDownload;
-            this.BtnGuardar.IconColor = System.Drawing.Color.White;
-            this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.BtnGuardar.IconSize = 20;
-            this.BtnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnGuardar.Location = new System.Drawing.Point(580, 22);
-            this.BtnGuardar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.Size = new System.Drawing.Size(192, 48);
-            this.BtnGuardar.TabIndex = 56;
-            this.BtnGuardar.Text = "Guardar ";
-            this.BtnGuardar.UseVisualStyleBackColor = false;
-            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
-            // 
-            // BtnNuevoExamen
-            // 
-            this.BtnNuevoExamen.BackColor = System.Drawing.Color.SteelBlue;
-            this.BtnNuevoExamen.FlatAppearance.BorderSize = 0;
-            this.BtnNuevoExamen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.BtnNuevoExamen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnNuevoExamen.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnNuevoExamen.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnNuevoExamen.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
-            this.BtnNuevoExamen.IconColor = System.Drawing.Color.White;
-            this.BtnNuevoExamen.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.BtnNuevoExamen.IconSize = 20;
-            this.BtnNuevoExamen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnNuevoExamen.Location = new System.Drawing.Point(14, 22);
-            this.BtnNuevoExamen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.BtnNuevoExamen.Name = "BtnNuevoExamen";
-            this.BtnNuevoExamen.Size = new System.Drawing.Size(210, 48);
-            this.BtnNuevoExamen.TabIndex = 54;
-            this.BtnNuevoExamen.Text = "Nuevo Categoria";
-            this.BtnNuevoExamen.UseVisualStyleBackColor = false;
-            this.BtnNuevoExamen.Click += new System.EventHandler(this.BtnNuevoExamen_Click);
-            // 
-            // BtnEditar
-            // 
-            this.BtnEditar.BackColor = System.Drawing.Color.SteelBlue;
-            this.BtnEditar.FlatAppearance.BorderSize = 0;
-            this.BtnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.BtnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEditar.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEditar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnEditar.IconChar = FontAwesome.Sharp.IconChar.FileEdit;
-            this.BtnEditar.IconColor = System.Drawing.Color.White;
-            this.BtnEditar.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.BtnEditar.IconSize = 20;
-            this.BtnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnEditar.Location = new System.Drawing.Point(302, 22);
-            this.BtnEditar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.BtnEditar.Name = "BtnEditar";
-            this.BtnEditar.Size = new System.Drawing.Size(218, 48);
-            this.BtnEditar.TabIndex = 55;
-            this.BtnEditar.Text = "Editar Categoria";
-            this.BtnEditar.UseVisualStyleBackColor = false;
-            this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
+            this.DtgCategoria.Size = new System.Drawing.Size(1032, 423);
+            this.DtgCategoria.TabIndex = 8;
             // 
             // FrmCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1032, 714);
-            this.Controls.Add(this.PnlOpciones);
-            this.Controls.Add(this.Pnlgridis);
+            this.Controls.Add(this.DtgCategoria);
             this.Controls.Add(this.Pnlgrid);
-            this.Controls.Add(this.PnlLista);
+            this.Controls.Add(this.PnlOpciones);
             this.Controls.Add(this.PnlTitullo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -433,16 +399,16 @@
             this.Load += new System.EventHandler(this.FrmCategoria_Load);
             this.PnlTitullo.ResumeLayout(false);
             this.PnlTitullo.PerformLayout();
+            this.PnlOpciones.ResumeLayout(false);
+            this.Pnlgrid.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ICNCategoria)).EndInit();
+            this.Pnlcodigo.ResumeLayout(false);
+            this.Pnlcodigo.PerformLayout();
             this.PnlLista.ResumeLayout(false);
             this.PnlLista.PerformLayout();
             this.PnlBuscare.ResumeLayout(false);
             this.PnlBuscare.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ICNCategoria)).EndInit();
-            this.Pnlgrid.ResumeLayout(false);
-            this.Pnlgrid.PerformLayout();
-            this.Pnlgridis.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DtgCategoria)).EndInit();
-            this.PnlOpciones.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -452,24 +418,24 @@
         private System.Windows.Forms.Panel PnlTitullo;
         private FontAwesome.Sharp.IconButton btnCerrar;
         private System.Windows.Forms.Label LblTitulo;
-        private System.Windows.Forms.Panel PnlLista;
+        private System.Windows.Forms.Panel PnlOpciones;
+        private System.Windows.Forms.Button BtnNuevaCategoria;
+        private System.Windows.Forms.Button BtnEditarCategoria;
+        private System.Windows.Forms.Button BtnGuardar;
+        private System.Windows.Forms.Button BtnCancelar;
+        private System.Windows.Forms.Panel Pnlgrid;
         public FontAwesome.Sharp.IconPictureBox ICNCategoria;
         private System.Windows.Forms.Label LstCategoria;
-        private FontAwesome.Sharp.IconButton BtnRefrescar;
+        private System.Windows.Forms.Label Lblcodigo;
+        private System.Windows.Forms.TextBox txtid;
+        private System.Windows.Forms.Panel PnlLista;
+        private System.Windows.Forms.TextBox TxtCategoria;
+        private System.Windows.Forms.Button Btnrefrescar;
+        private System.Windows.Forms.Label LblCategoria;
+        private System.Windows.Forms.Button BtnBuscador;
         private System.Windows.Forms.Panel PnlBuscare;
         private System.Windows.Forms.TextBox TxtBuscarFactura;
-        private FontAwesome.Sharp.IconButton ICNBuscador;
-        private System.Windows.Forms.Panel Pnlgrid;
-        private System.Windows.Forms.TextBox TxtCategoria;
-        private System.Windows.Forms.TextBox txtid;
-        private System.Windows.Forms.Label LblCategoria;
-        private System.Windows.Forms.Label Lblcodigo;
-        private System.Windows.Forms.Panel Pnlgridis;
+        private System.Windows.Forms.Panel Pnlcodigo;
         private System.Windows.Forms.DataGridView DtgCategoria;
-        private System.Windows.Forms.Panel PnlOpciones;
-        private FontAwesome.Sharp.IconButton BtnCancelar;
-        private FontAwesome.Sharp.IconButton BtnGuardar;
-        private FontAwesome.Sharp.IconButton BtnNuevoExamen;
-        private FontAwesome.Sharp.IconButton BtnEditar;
     }
 }

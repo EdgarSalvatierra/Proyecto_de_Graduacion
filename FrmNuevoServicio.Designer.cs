@@ -62,13 +62,14 @@
             this.SubTotal = new System.Windows.Forms.Label();
             this.LBlsubtotal = new System.Windows.Forms.Label();
             this.PnlOpciones = new System.Windows.Forms.Panel();
-            this.BtnGuardar = new FontAwesome.Sharp.IconButton();
-            this.BtnCancelar = new FontAwesome.Sharp.IconButton();
-            this.BtnNuevoServicio = new FontAwesome.Sharp.IconButton();
+            this.BtnCancelar = new System.Windows.Forms.Button();
+            this.BtnGuardar = new System.Windows.Forms.Button();
+            this.BtnNuevaVent = new System.Windows.Forms.Button();
             this.DtgDetallesdeFactura = new System.Windows.Forms.DataGridView();
             this.Examen1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.BtnMinimizar = new System.Windows.Forms.Button();
             this.PnlFacturacion.SuspendLayout();
             this.PnlCarrito.SuspendLayout();
             this.PnlRegistro.SuspendLayout();
@@ -82,6 +83,7 @@
             // PnlFacturacion
             // 
             this.PnlFacturacion.BackColor = System.Drawing.Color.SteelBlue;
+            this.PnlFacturacion.Controls.Add(this.BtnMinimizar);
             this.PnlFacturacion.Controls.Add(this.BtnX);
             this.PnlFacturacion.Controls.Add(this.LbTitulo);
             this.PnlFacturacion.Dock = System.Windows.Forms.DockStyle.Top;
@@ -413,9 +415,9 @@
             // 
             // PnlOpciones
             // 
-            this.PnlOpciones.Controls.Add(this.BtnGuardar);
             this.PnlOpciones.Controls.Add(this.BtnCancelar);
-            this.PnlOpciones.Controls.Add(this.BtnNuevoServicio);
+            this.PnlOpciones.Controls.Add(this.BtnGuardar);
+            this.PnlOpciones.Controls.Add(this.BtnNuevaVent);
             this.PnlOpciones.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PnlOpciones.Location = new System.Drawing.Point(3, 350);
             this.PnlOpciones.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -423,71 +425,53 @@
             this.PnlOpciones.Size = new System.Drawing.Size(989, 75);
             this.PnlOpciones.TabIndex = 6;
             // 
-            // BtnGuardar
-            // 
-            this.BtnGuardar.BackColor = System.Drawing.Color.SteelBlue;
-            this.BtnGuardar.FlatAppearance.BorderSize = 0;
-            this.BtnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnGuardar.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnGuardar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnGuardar.IconChar = FontAwesome.Sharp.IconChar.FileDownload;
-            this.BtnGuardar.IconColor = System.Drawing.Color.White;
-            this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.BtnGuardar.IconSize = 20;
-            this.BtnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnGuardar.Location = new System.Drawing.Point(369, 22);
-            this.BtnGuardar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.Size = new System.Drawing.Size(242, 44);
-            this.BtnGuardar.TabIndex = 51;
-            this.BtnGuardar.Text = "Terminar Servicio";
-            this.BtnGuardar.UseVisualStyleBackColor = false;
-            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
-            // 
             // BtnCancelar
             // 
+            this.BtnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnCancelar.BackColor = System.Drawing.Color.SteelBlue;
-            this.BtnCancelar.FlatAppearance.BorderSize = 0;
-            this.BtnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCancelar.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCancelar.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCancelar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnCancelar.IconChar = FontAwesome.Sharp.IconChar.Cancel;
-            this.BtnCancelar.IconColor = System.Drawing.Color.White;
-            this.BtnCancelar.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.BtnCancelar.IconSize = 20;
-            this.BtnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnCancelar.Location = new System.Drawing.Point(751, 22);
-            this.BtnCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BtnCancelar.Location = new System.Drawing.Point(739, 20);
             this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(210, 44);
-            this.BtnCancelar.TabIndex = 50;
+            this.BtnCancelar.Size = new System.Drawing.Size(223, 46);
+            this.BtnCancelar.TabIndex = 66;
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.UseVisualStyleBackColor = false;
-            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click_1);
+            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
-            // BtnNuevoServicio
+            // BtnGuardar
             // 
-            this.BtnNuevoServicio.BackColor = System.Drawing.Color.SteelBlue;
-            this.BtnNuevoServicio.FlatAppearance.BorderSize = 0;
-            this.BtnNuevoServicio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.BtnNuevoServicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnNuevoServicio.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnNuevoServicio.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnNuevoServicio.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
-            this.BtnNuevoServicio.IconColor = System.Drawing.Color.White;
-            this.BtnNuevoServicio.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.BtnNuevoServicio.IconSize = 20;
-            this.BtnNuevoServicio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnNuevoServicio.Location = new System.Drawing.Point(16, 22);
-            this.BtnNuevoServicio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.BtnNuevoServicio.Name = "BtnNuevoServicio";
-            this.BtnNuevoServicio.Size = new System.Drawing.Size(199, 44);
-            this.BtnNuevoServicio.TabIndex = 30;
-            this.BtnNuevoServicio.Text = "Nueva Venta";
-            this.BtnNuevoServicio.UseVisualStyleBackColor = false;
-            this.BtnNuevoServicio.Click += new System.EventHandler(this.BtnNuevoServicio_Click_1);
+            this.BtnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnGuardar.BackColor = System.Drawing.Color.SteelBlue;
+            this.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnGuardar.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnGuardar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BtnGuardar.Location = new System.Drawing.Point(399, 20);
+            this.BtnGuardar.Name = "BtnGuardar";
+            this.BtnGuardar.Size = new System.Drawing.Size(223, 46);
+            this.BtnGuardar.TabIndex = 65;
+            this.BtnGuardar.Text = "Terminar Servicio";
+            this.BtnGuardar.UseVisualStyleBackColor = false;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click_1);
+            // 
+            // BtnNuevaVent
+            // 
+            this.BtnNuevaVent.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnNuevaVent.BackColor = System.Drawing.Color.SteelBlue;
+            this.BtnNuevaVent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnNuevaVent.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnNuevaVent.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BtnNuevaVent.Location = new System.Drawing.Point(42, 20);
+            this.BtnNuevaVent.Name = "BtnNuevaVent";
+            this.BtnNuevaVent.Size = new System.Drawing.Size(223, 46);
+            this.BtnNuevaVent.TabIndex = 64;
+            this.BtnNuevaVent.Text = "Nueva Venta";
+            this.BtnNuevaVent.UseVisualStyleBackColor = false;
+            this.BtnNuevaVent.Click += new System.EventHandler(this.BtnNuevaVent_Click);
             // 
             // DtgDetallesdeFactura
             // 
@@ -556,6 +540,21 @@
             this.Precio1.Name = "Precio1";
             this.Precio1.ReadOnly = true;
             // 
+            // BtnMinimizar
+            // 
+            this.BtnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnMinimizar.FlatAppearance.BorderSize = 0;
+            this.BtnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnMinimizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnMinimizar.ForeColor = System.Drawing.SystemColors.Window;
+            this.BtnMinimizar.Location = new System.Drawing.Point(889, 3);
+            this.BtnMinimizar.Name = "BtnMinimizar";
+            this.BtnMinimizar.Size = new System.Drawing.Size(49, 50);
+            this.BtnMinimizar.TabIndex = 30;
+            this.BtnMinimizar.Text = "-";
+            this.BtnMinimizar.UseVisualStyleBackColor = true;
+            this.BtnMinimizar.Click += new System.EventHandler(this.BtnMinimizar_Click);
+            // 
             // FrmNuevoServicio
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -618,12 +617,13 @@
         private System.Windows.Forms.Label SubTotal;
         private System.Windows.Forms.Label LBlsubtotal;
         private System.Windows.Forms.Panel PnlOpciones;
-        private FontAwesome.Sharp.IconButton BtnGuardar;
-        private FontAwesome.Sharp.IconButton BtnCancelar;
-        private FontAwesome.Sharp.IconButton BtnNuevoServicio;
         private System.Windows.Forms.DataGridView DtgDetallesdeFactura;
         private System.Windows.Forms.DataGridViewTextBoxColumn Examen1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio1;
         private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Button BtnNuevaVent;
+        private System.Windows.Forms.Button BtnGuardar;
+        private System.Windows.Forms.Button BtnCancelar;
+        private System.Windows.Forms.Button BtnMinimizar;
     }
 }

@@ -35,9 +35,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNuevaCompra));
             this.PnlGuardar = new System.Windows.Forms.Panel();
-            this.BtnCancelar = new FontAwesome.Sharp.IconButton();
-            this.BtnGuardar = new FontAwesome.Sharp.IconButton();
             this.Pnlarriba = new System.Windows.Forms.Panel();
+            this.BtnMinimizar = new System.Windows.Forms.Button();
+            this.LblSistemaLab = new System.Windows.Forms.Label();
             this.BtnClose = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.TxtFecha = new System.Windows.Forms.Label();
@@ -66,8 +66,8 @@
             this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LblSistemaLab = new System.Windows.Forms.Label();
-            this.BtnMinimizar = new System.Windows.Forms.Button();
+            this.BtnGuardar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.PnlGuardar.SuspendLayout();
             this.Pnlarriba.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -79,62 +79,13 @@
             // 
             // PnlGuardar
             // 
-            this.PnlGuardar.Controls.Add(this.BtnCancelar);
+            this.PnlGuardar.Controls.Add(this.button1);
             this.PnlGuardar.Controls.Add(this.BtnGuardar);
             this.PnlGuardar.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PnlGuardar.Location = new System.Drawing.Point(0, 639);
             this.PnlGuardar.Name = "PnlGuardar";
             this.PnlGuardar.Size = new System.Drawing.Size(944, 66);
             this.PnlGuardar.TabIndex = 4;
-            // 
-            // BtnCancelar
-            // 
-            this.BtnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnCancelar.BackColor = System.Drawing.Color.SteelBlue;
-            this.BtnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnCancelar.FlatAppearance.BorderSize = 0;
-            this.BtnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCancelar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCancelar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnCancelar.IconChar = FontAwesome.Sharp.IconChar.LeftLong;
-            this.BtnCancelar.IconColor = System.Drawing.Color.White;
-            this.BtnCancelar.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.BtnCancelar.IconSize = 20;
-            this.BtnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnCancelar.Location = new System.Drawing.Point(609, 13);
-            this.BtnCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(260, 40);
-            this.BtnCancelar.TabIndex = 59;
-            this.BtnCancelar.Text = "Cancelar";
-            this.BtnCancelar.UseVisualStyleBackColor = false;
-            // 
-            // BtnGuardar
-            // 
-            this.BtnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnGuardar.BackColor = System.Drawing.Color.SteelBlue;
-            this.BtnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnGuardar.FlatAppearance.BorderSize = 0;
-            this.BtnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnGuardar.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnGuardar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnGuardar.IconChar = FontAwesome.Sharp.IconChar.FileDownload;
-            this.BtnGuardar.IconColor = System.Drawing.Color.White;
-            this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.BtnGuardar.IconSize = 20;
-            this.BtnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnGuardar.Location = new System.Drawing.Point(68, 13);
-            this.BtnGuardar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.Size = new System.Drawing.Size(261, 40);
-            this.BtnGuardar.TabIndex = 58;
-            this.BtnGuardar.Text = "Guardar";
-            this.BtnGuardar.UseVisualStyleBackColor = false;
-            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // Pnlarriba
             // 
@@ -147,6 +98,36 @@
             this.Pnlarriba.Name = "Pnlarriba";
             this.Pnlarriba.Size = new System.Drawing.Size(944, 36);
             this.Pnlarriba.TabIndex = 13;
+            // 
+            // BtnMinimizar
+            // 
+            this.BtnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnMinimizar.FlatAppearance.BorderSize = 0;
+            this.BtnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnMinimizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnMinimizar.ForeColor = System.Drawing.SystemColors.Window;
+            this.BtnMinimizar.Location = new System.Drawing.Point(876, 4);
+            this.BtnMinimizar.Name = "BtnMinimizar";
+            this.BtnMinimizar.Size = new System.Drawing.Size(32, 29);
+            this.BtnMinimizar.TabIndex = 17;
+            this.BtnMinimizar.Text = "-";
+            this.BtnMinimizar.UseVisualStyleBackColor = true;
+            this.BtnMinimizar.Click += new System.EventHandler(this.BtnMinimizar_Click);
+            // 
+            // LblSistemaLab
+            // 
+            this.LblSistemaLab.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LblSistemaLab.AutoSize = true;
+            this.LblSistemaLab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(80)))), ((int)(((byte)(210)))));
+            this.LblSistemaLab.Font = new System.Drawing.Font("Copperplate Gothic Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblSistemaLab.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.LblSistemaLab.Location = new System.Drawing.Point(367, 9);
+            this.LblSistemaLab.Name = "LblSistemaLab";
+            this.LblSistemaLab.Size = new System.Drawing.Size(211, 19);
+            this.LblSistemaLab.TabIndex = 16;
+            this.LblSistemaLab.Text = "Sistema Socorro Lab";
             // 
             // BtnClose
             // 
@@ -529,35 +510,34 @@
             this.Importe.Name = "Importe";
             this.Importe.ReadOnly = true;
             // 
-            // LblSistemaLab
+            // BtnGuardar
             // 
-            this.LblSistemaLab.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LblSistemaLab.AutoSize = true;
-            this.LblSistemaLab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(80)))), ((int)(((byte)(210)))));
-            this.LblSistemaLab.Font = new System.Drawing.Font("Copperplate Gothic Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblSistemaLab.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LblSistemaLab.Location = new System.Drawing.Point(367, 9);
-            this.LblSistemaLab.Name = "LblSistemaLab";
-            this.LblSistemaLab.Size = new System.Drawing.Size(211, 19);
-            this.LblSistemaLab.TabIndex = 16;
-            this.LblSistemaLab.Text = "Sistema Socorro Lab";
+            this.BtnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.BtnGuardar.BackColor = System.Drawing.Color.SteelBlue;
+            this.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnGuardar.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnGuardar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BtnGuardar.Location = new System.Drawing.Point(68, 8);
+            this.BtnGuardar.Name = "BtnGuardar";
+            this.BtnGuardar.Size = new System.Drawing.Size(259, 46);
+            this.BtnGuardar.TabIndex = 68;
+            this.BtnGuardar.Text = "Guardar";
+            this.BtnGuardar.UseVisualStyleBackColor = false;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click_1);
             // 
-            // BtnMinimizar
+            // button1
             // 
-            this.BtnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnMinimizar.FlatAppearance.BorderSize = 0;
-            this.BtnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnMinimizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnMinimizar.ForeColor = System.Drawing.SystemColors.Window;
-            this.BtnMinimizar.Location = new System.Drawing.Point(876, 4);
-            this.BtnMinimizar.Name = "BtnMinimizar";
-            this.BtnMinimizar.Size = new System.Drawing.Size(32, 29);
-            this.BtnMinimizar.TabIndex = 17;
-            this.BtnMinimizar.Text = "-";
-            this.BtnMinimizar.UseVisualStyleBackColor = true;
-            this.BtnMinimizar.Click += new System.EventHandler(this.BtnMinimizar_Click);
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.SteelBlue;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.Location = new System.Drawing.Point(590, 8);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(266, 46);
+            this.button1.TabIndex = 117;
+            this.button1.Text = "Cancelar";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // FrmNuevaCompra
             // 
@@ -592,8 +572,6 @@
 
         #endregion
         private System.Windows.Forms.Panel PnlGuardar;
-        private FontAwesome.Sharp.IconButton BtnCancelar;
-        private FontAwesome.Sharp.IconButton BtnGuardar;
         private System.Windows.Forms.Panel Pnlarriba;
         private System.Windows.Forms.Button BtnClose;
         private System.Windows.Forms.Panel panel1;
@@ -625,5 +603,7 @@
         private System.Windows.Forms.Label Lblproveedor;
         private System.Windows.Forms.Label LblSistemaLab;
         private System.Windows.Forms.Button BtnMinimizar;
+        private System.Windows.Forms.Button BtnGuardar;
+        private System.Windows.Forms.Button button1;
     }
 }

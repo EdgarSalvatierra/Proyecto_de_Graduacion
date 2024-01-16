@@ -21,6 +21,43 @@ namespace Proyecto_de_Graduacion
 
         ErrorProvider provider = new ErrorProvider();
 
+        private void BtnGuardar_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!String.IsNullOrWhiteSpace(txtNombre.Text)
+                 && !String.IsNullOrWhiteSpace(txttelefono.Text) && !String.IsNullOrWhiteSpace(txtUsuario.Text)
+                 && !String.IsNullOrWhiteSpace(txtContraseña.Text))
+                {
+                    int Codigo = Convert.ToInt32(LblCodigo.Text);
+
+                    string Nombre = txtNombre.Text;
+
+                    int Edad = Convert.ToInt32(txtEdad.Text);
+
+                    long telefono = Convert.ToInt64(txttelefono.Text);
+
+                    string Usuario = txtUsuario.Text;
+
+                    string contraseña = txtContraseña.Text;
+
+                    string Roles = CmBRoles.Text;
+
+                    usuario_Model.ActualizarUsuario(Codigo, Usuario, contraseña, Nombre, Edad, telefono, Roles);
+
+                    MessageBox.Show("Guardado  Correctamente", "SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    provider.SetError(BtnGuardar, "Campos incompletos, complete el formulario");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         Roles_Model Roles1 = new Roles_Model();
         public FrmEditarUsuario(int Codigo,string Nombre,int Edad,long Telefono,string user,string contraseña,string Roles)
         {
@@ -64,39 +101,7 @@ namespace Proyecto_de_Graduacion
         }
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (!String.IsNullOrWhiteSpace(txtNombre.Text)
-                 && !String.IsNullOrWhiteSpace(txttelefono.Text) && !String.IsNullOrWhiteSpace(txtUsuario.Text)
-                 && !String.IsNullOrWhiteSpace(txtContraseña.Text))
-                {
-                    int Codigo = Convert.ToInt32(LblCodigo.Text);
-
-                    string Nombre = txtNombre.Text;
-                    
-                    int Edad = Convert.ToInt32(txtEdad.Text);
-
-                    long telefono = Convert.ToInt64(txttelefono.Text);
-
-                    string Usuario = txtUsuario.Text;
-
-                    string contraseña = txtContraseña.Text;
-
-                    string Roles = CmBRoles.Text;
-
-                    usuario_Model.ActualizarUsuario(Codigo,Usuario, contraseña, Nombre, Edad, telefono, Roles);
-
-                    MessageBox.Show("Guardado  Correctamente", "SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    provider.SetError(BtnGuardar, "Campos incompletos, complete el formulario");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+           
         }
     }
 }

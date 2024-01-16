@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.DtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.LblFecha = new System.Windows.Forms.Label();
             this.PcBox = new System.Windows.Forms.PictureBox();
             this.gbdatosdelusuario = new System.Windows.Forms.GroupBox();
@@ -45,8 +46,7 @@
             this.Gbasignacionderoles = new System.Windows.Forms.GroupBox();
             this.CmBRoles = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.BtnGuardar = new FontAwesome.Sharp.IconButton();
-            this.DtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PcBox)).BeginInit();
             this.gbdatosdelusuario.SuspendLayout();
@@ -62,6 +62,13 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(275, 257);
             this.panel2.TabIndex = 1;
+            // 
+            // DtpFechaNacimiento
+            // 
+            this.DtpFechaNacimiento.Location = new System.Drawing.Point(33, 213);
+            this.DtpFechaNacimiento.Name = "DtpFechaNacimiento";
+            this.DtpFechaNacimiento.Size = new System.Drawing.Size(200, 22);
+            this.DtpFechaNacimiento.TabIndex = 45;
             // 
             // LblFecha
             // 
@@ -239,34 +246,21 @@
             this.label4.TabIndex = 33;
             this.label4.Text = "Roles ";
             // 
-            // BtnGuardar
+            // button1
             // 
-            this.BtnGuardar.BackColor = System.Drawing.Color.SteelBlue;
-            this.BtnGuardar.FlatAppearance.BorderSize = 0;
-            this.BtnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnGuardar.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnGuardar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnGuardar.IconChar = FontAwesome.Sharp.IconChar.FileDownload;
-            this.BtnGuardar.IconColor = System.Drawing.Color.White;
-            this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.BtnGuardar.IconSize = 20;
-            this.BtnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnGuardar.Location = new System.Drawing.Point(224, 406);
-            this.BtnGuardar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.Size = new System.Drawing.Size(337, 40);
-            this.BtnGuardar.TabIndex = 50;
-            this.BtnGuardar.Text = "Guardar";
-            this.BtnGuardar.UseVisualStyleBackColor = false;
-            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
-            // 
-            // DtpFechaNacimiento
-            // 
-            this.DtpFechaNacimiento.Location = new System.Drawing.Point(33, 213);
-            this.DtpFechaNacimiento.Name = "DtpFechaNacimiento";
-            this.DtpFechaNacimiento.Size = new System.Drawing.Size(200, 22);
-            this.DtpFechaNacimiento.TabIndex = 45;
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.SteelBlue;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.Location = new System.Drawing.Point(220, 402);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(316, 46);
+            this.button1.TabIndex = 67;
+            this.button1.Text = "Guardar";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FrmNuevoUsuario
             // 
@@ -274,7 +268,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(741, 460);
-            this.Controls.Add(this.BtnGuardar);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.Gbasignacionderoles);
             this.Controls.Add(this.gbdatosdelusuario);
             this.Controls.Add(this.panel2);
@@ -310,8 +304,8 @@
         private System.Windows.Forms.ComboBox CmBRoles;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox PcBox;
-        private FontAwesome.Sharp.IconButton BtnGuardar;
         private System.Windows.Forms.Label LblFecha;
         private System.Windows.Forms.DateTimePicker DtpFechaNacimiento;
+        private System.Windows.Forms.Button button1;
     }
 }

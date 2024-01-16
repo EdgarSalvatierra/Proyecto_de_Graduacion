@@ -70,6 +70,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Borrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Borrador.Designer.cs">
+      <DependentUpon>Borrador.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Borrador.resx">
+      <DependentUpon>Borrador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -251,6 +260,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Laboratorio.ico" />
+    <None Include="Resources\refresh.png" />
+    <None Include="Resources\search.png" />
     <None Include="Resources\imagescita-removebg-preview.png" />
     <None Include="Resources\imagescita.png" />
     <None Include="Resources\FacturaPedido.html" />

@@ -55,7 +55,7 @@
             this.LBlsubtotal = new System.Windows.Forms.Label();
             this.DtgDetallesdeFactura = new System.Windows.Forms.DataGridView();
             this.PnlOpciones = new System.Windows.Forms.Panel();
-            this.BtnImprimir = new FontAwesome.Sharp.IconButton();
+            this.BtnImprimir = new System.Windows.Forms.Button();
             this.PnlFacturacion.SuspendLayout();
             this.Pnllista.SuspendLayout();
             this.GbDetallesdefactura.SuspendLayout();
@@ -358,25 +358,19 @@
             // 
             // BtnImprimir
             // 
+            this.BtnImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnImprimir.BackColor = System.Drawing.Color.SteelBlue;
-            this.BtnImprimir.FlatAppearance.BorderSize = 0;
-            this.BtnImprimir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.BtnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnImprimir.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnImprimir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BtnImprimir.IconChar = FontAwesome.Sharp.IconChar.Print;
-            this.BtnImprimir.IconColor = System.Drawing.Color.White;
-            this.BtnImprimir.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.BtnImprimir.IconSize = 30;
-            this.BtnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnImprimir.Location = new System.Drawing.Point(357, 16);
-            this.BtnImprimir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BtnImprimir.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BtnImprimir.Location = new System.Drawing.Point(391, 17);
             this.BtnImprimir.Name = "BtnImprimir";
             this.BtnImprimir.Size = new System.Drawing.Size(223, 46);
-            this.BtnImprimir.TabIndex = 3;
+            this.BtnImprimir.TabIndex = 62;
             this.BtnImprimir.Text = "Imprimir";
             this.BtnImprimir.UseVisualStyleBackColor = false;
-            this.BtnImprimir.Click += new System.EventHandler(this.BtnImprimir_Click);
+            this.BtnImprimir.Click += new System.EventHandler(this.BtnImprimir_Click_1);
             // 
             // Frmservicio2
             // 
@@ -428,6 +422,6 @@
         private System.Windows.Forms.Label LBlsubtotal;
         private System.Windows.Forms.DataGridView DtgDetallesdeFactura;
         private System.Windows.Forms.Panel PnlOpciones;
-        private FontAwesome.Sharp.IconButton BtnImprimir;
+        private System.Windows.Forms.Button BtnImprimir;
     }
 }

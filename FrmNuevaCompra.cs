@@ -77,96 +77,7 @@ namespace Proyecto_de_Graduacion
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
 
-            if (DtgCompra.Rows.Count == 0)
-            {
-                MessageBox.Show("No ha elegido ningun examen, por favor elija uno", "SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                error.SetError(DtgCompra, "Error");
-            }
-            else
-            {
-                decimal total = 0;
-
-                SaveFileDialog saveFile = new SaveFileDialog();
-
-                saveFile.FileName = $@"PedidoaDistribuidora: {Proveedor.CargarProveedor(Convert.ToInt32(CmbProducto.SelectedValue))}.pdf ";
-
-                string texto_html = Properties.Resources.FacturaPedido;
-
-                texto_html = texto_html.Replace("@Fecha", DateTime.Now.ToLongDateString());
-
-                texto_html = texto_html.Replace("@Proveedor", Proveedor.CargarProveedor(Convert.ToInt32(CmbProducto.SelectedValue)));
-
-                texto_html = texto_html.Replace("@Distribuidora", Proveedor.CargarCasa(Convert.ToInt32(CmbProducto.SelectedValue)));
-
-                string filas = string.Empty;
-
-                foreach (DataGridViewRow item in DtgCompra.Rows)
-                {
-                    filas += "<tr>";
-                    filas += "<td>" + item.Cells[0].Value.ToString() + "</td>";
-                    filas += "<td>" + item.Cells[1].Value.ToString() + "</td>";
-                    filas += "<td>" + item.Cells[2].Value.ToString() + "</td>";
-                    filas += "<td>" + item.Cells[3].Value.ToString() + "</td>";
-                    filas += "</tr>";
-                    total += decimal.Parse(item.Cells[3].Value.ToString());
-                }
-                texto_html = texto_html.Replace("@filas", filas);
-
-                texto_html = texto_html.Replace("@total", total.ToString());
-
-                if (saveFile.ShowDialog() == DialogResult.OK)
-                {
-                    using (FileStream stream = new FileStream(saveFile.FileName, FileMode.Create))
-                    {
-                        Document pdf = new Document(PageSize.A4, 25, 25, 25, 25);
-
-                        PdfWriter writer = PdfWriter.GetInstance(pdf, stream);
-
-                        pdf.Open();
-
-                        pdf.Add(new Phrase(""));
-
-                        iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(Properties.Resources.Laboratorio1, System.Drawing.Imaging.ImageFormat.Png);
-
-                        img.ScaleToFit(80, 60);
-
-                        img.Alignment = iTextSharp.text.Image.UNDERLYING;
-
-                        img.SetAbsolutePosition(pdf.LeftMargin, pdf.Top - 60);
-
-                        pdf.Add(img);
-
-                        using (StringReader sr = new StringReader(texto_html))
-                        {
-                            XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdf, sr);
-                        }
-                        pdf.Close();
-
-                        stream.Close();
-                    }
-                }
-
-                while (DtgCompra.Rows.Count > 0)
-                {
-                    string Producto = DtgCompra.CurrentRow.Cells[0].Value.ToString();
-
-                    decimal Precio = Convert.ToDecimal(DtgCompra.CurrentRow.Cells[1].Value);
-
-                    int Cantidad = Convert.ToInt32(DtgCompra.CurrentRow.Cells[2].Value);
-
-                    decimal SubTotal = Convert.ToInt32(DtgCompra.CurrentRow.Cells[3].Value);
-
-                    compras.InsertarDetallePedidos(Producto,Precio,Cantidad,SubTotal,SubTotal);
-
-                    DtgCompra.Rows.RemoveAt(0);
-                                        
-                }
-
-                    MessageBox.Show($"Se ha realizado el pedido exitosamente", "SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    this.Close();
-            }
+            
         }
         private void BtnClose_Click(object sender, EventArgs e)
         {
@@ -319,6 +230,105 @@ namespace Proyecto_de_Graduacion
         private void BtnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void BtnGuardar_Click_1(object sender, EventArgs e)
+        {
+            if (DtgCompra.Rows.Count == 0)
+            {
+                MessageBox.Show("No ha elegido ningun examen, por favor elija uno", "SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                error.SetError(DtgCompra, "Error");
+            }
+            else
+            {
+                decimal total = 0;
+
+                SaveFileDialog saveFile = new SaveFileDialog();
+
+                saveFile.FileName = $@"PedidoaDistribuidora: {Proveedor.CargarProveedor(Convert.ToInt32(CmbProducto.SelectedValue))}.pdf ";
+
+                string texto_html = Properties.Resources.FacturaPedido;
+
+                texto_html = texto_html.Replace("@Fecha", DateTime.Now.ToLongDateString());
+
+                texto_html = texto_html.Replace("@Proveedor", Proveedor.CargarProveedor(Convert.ToInt32(CmbProducto.SelectedValue)));
+
+                texto_html = texto_html.Replace("@Distribuidora", Proveedor.CargarCasa(Convert.ToInt32(CmbProducto.SelectedValue)));
+
+                string filas = string.Empty;
+
+                foreach (DataGridViewRow item in DtgCompra.Rows)
+                {
+                    filas += "<tr>";
+                    filas += "<td>" + item.Cells[0].Value.ToString() + "</td>";
+                    filas += "<td>" + item.Cells[1].Value.ToString() + "</td>";
+                    filas += "<td>" + item.Cells[2].Value.ToString() + "</td>";
+                    filas += "<td>" + item.Cells[3].Value.ToString() + "</td>";
+                    filas += "</tr>";
+                    total += decimal.Parse(item.Cells[3].Value.ToString());
+                }
+                texto_html = texto_html.Replace("@filas", filas);
+
+                texto_html = texto_html.Replace("@total", total.ToString());
+
+                if (saveFile.ShowDialog() == DialogResult.OK)
+                {
+                    using (FileStream stream = new FileStream(saveFile.FileName, FileMode.Create))
+                    {
+                        Document pdf = new Document(PageSize.A4, 25, 25, 25, 25);
+
+                        PdfWriter writer = PdfWriter.GetInstance(pdf, stream);
+
+                        pdf.Open();
+
+                        pdf.Add(new Phrase(""));
+
+                        iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(Properties.Resources.Laboratorio1, System.Drawing.Imaging.ImageFormat.Png);
+
+                        img.ScaleToFit(80, 60);
+
+                        img.Alignment = iTextSharp.text.Image.UNDERLYING;
+
+                        img.SetAbsolutePosition(pdf.LeftMargin, pdf.Top - 60);
+
+                        pdf.Add(img);
+
+                        using (StringReader sr = new StringReader(texto_html))
+                        {
+                            XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdf, sr);
+                        }
+                        pdf.Close();
+
+                        stream.Close();
+                    }
+                }
+
+                while (DtgCompra.Rows.Count > 0)
+                {
+                    string Producto = DtgCompra.CurrentRow.Cells[0].Value.ToString();
+
+                    decimal Precio = Convert.ToDecimal(DtgCompra.CurrentRow.Cells[1].Value);
+
+                    int Cantidad = Convert.ToInt32(DtgCompra.CurrentRow.Cells[2].Value);
+
+                    decimal SubTotal = Convert.ToInt32(DtgCompra.CurrentRow.Cells[3].Value);
+
+                    compras.InsertarDetallePedidos(Producto, Precio, Cantidad, SubTotal, SubTotal);
+
+                    DtgCompra.Rows.RemoveAt(0);
+
+                }
+
+                MessageBox.Show($"Se ha realizado el pedido exitosamente", "SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                this.Close();
+            }
+        }
+
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -87,12 +87,10 @@ namespace Proyecto_de_Graduacion
 
             LblFecha.Text = DateTime.Now.ToLongDateString();
         }
-
         private void BtnX_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void DtgDetallesdeFactura_Click(object sender, EventArgs e)
         {
             try
@@ -104,10 +102,11 @@ namespace Proyecto_de_Graduacion
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                error.SetError(TxtExamen,"Error incompleto");
+                error.SetError(TxtPrecio,"Erro incompleto");
             }
         }
-
-        private void BtnImprimir_Click(object sender, EventArgs e)
+        private void BtnImprimir_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -154,11 +153,11 @@ namespace Proyecto_de_Graduacion
 
                         iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(Properties.Resources.Laboratorio1, System.Drawing.Imaging.ImageFormat.Png);
 
-                        img.ScaleToFit(80,60);
+                        img.ScaleToFit(80, 60);
 
                         img.Alignment = iTextSharp.text.Image.UNDERLYING;
 
-                        img.SetAbsolutePosition(pdf.LeftMargin,pdf.Top - 60);
+                        img.SetAbsolutePosition(pdf.LeftMargin, pdf.Top - 60);
 
                         pdf.Add(img);
 
@@ -175,7 +174,9 @@ namespace Proyecto_de_Graduacion
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }          
+
+                error.SetError(BtnImprimir,"Error en el imprimir");
+            }
         }
     }
 }

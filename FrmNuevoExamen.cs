@@ -48,7 +48,32 @@ namespace Proyecto_de_Graduacion
                 Txtruta.Text = openFileDialog1.FileName;
 
         }
-        private void BtnNuevoExamen_Click(object sender, EventArgs e)
+        private void BtnCategoria_Click(object sender, EventArgs e)
+        {
+            FrmCategoria categoria = new FrmCategoria();
+
+            categoria.Show();
+        }
+        private void Dtgexamen_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                txtid_examen.Text = Dtgexamen.CurrentRow.Cells[0].Value.ToString();
+
+                CMBCategoria.Text = Dtgexamen.CurrentRow.Cells[1].Value.ToString();
+
+                txtNombre.Text = Dtgexamen.CurrentRow.Cells[2].Value.ToString();
+
+                Txtruta.Text = Dtgexamen.CurrentRow.Cells[3].Value.ToString();
+
+                TxtPrecio.Text = Dtgexamen.CurrentRow.Cells[4].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void BtnCargarPlantilla_Click(object sender, EventArgs e)
         {
             if (Dtgexamen.SelectedRows.Count > 0)
             {
@@ -76,14 +101,8 @@ namespace Proyecto_de_Graduacion
                 }
             }
         }
-        private void BtnCategoria_Click(object sender, EventArgs e)
-        {
-            FrmCategoria categoria = new FrmCategoria();
 
-            categoria.Show();
-        }
-
-        private void BtnGuardarTodo_Click(object sender, EventArgs e)
+        private void BtnGuardar_Click(object sender, EventArgs e)
         {
             byte[] archivo = null;
             Stream MyStream = openFileDialog1.OpenFile();
@@ -97,29 +116,15 @@ namespace Proyecto_de_Graduacion
             int Categoria = Convert.ToInt32(CMBCategoria.SelectedValue);
             decimal Precio = Convert.ToDecimal(TxtPrecio.Text);
 
-            examen.InsertarExamenes(Categoria,Nombre, Documento, Extension,Precio);
+            examen.InsertarExamenes(Categoria, Nombre, Documento, Extension, Precio);
 
             MessageBox.Show("Guardado  Correctamente", "SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
-        private void Dtgexamen_CellClick(object sender, DataGridViewCellEventArgs e)
+
+        private void BtnCancelar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                txtid_examen.Text = Dtgexamen.CurrentRow.Cells[0].Value.ToString();
 
-                CMBCategoria.Text = Dtgexamen.CurrentRow.Cells[1].Value.ToString();
-
-                txtNombre.Text = Dtgexamen.CurrentRow.Cells[2].Value.ToString();
-
-                Txtruta.Text = Dtgexamen.CurrentRow.Cells[3].Value.ToString();
-
-                TxtPrecio.Text = Dtgexamen.CurrentRow.Cells[4].Value.ToString();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
     }
 }

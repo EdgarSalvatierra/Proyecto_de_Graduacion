@@ -37,7 +37,6 @@ namespace Proyecto_de_Graduacion
         public FrmNuevoServicio()
         {
             InitializeComponent();
-
         }
         private void FrmNuevoServicio_Load(object sender, EventArgs e)
         {
@@ -80,57 +79,6 @@ namespace Proyecto_de_Graduacion
             BtnGuardar.Enabled = false;
 
             BtnCancelar.Enabled = false;
-        }
-        private void BtnNuevoServicio_Click_1(object sender, EventArgs e)
-        {
-            CmbPacientes.Enabled = true;
-
-            DtpFecha.Enabled = true;
-
-            DtpHora.Enabled = true;
-
-            Btnagregar.Enabled = true;
-
-            BtnQuitar.Enabled = true;
-
-            BtnGuardar.Enabled = true;
-
-            BtnCancelar.Enabled = true;
-
-            BtnNuevoServicio.Enabled = false;
-
-            try
-            {
-                CmbPacientes.DataSource = paciente.CargarPacientes();
-
-                CmbPacientes.DisplayMember = "Nombre";
-
-                CmbPacientes.ValueMember = "Cod_paciente";
-
-                DtpHora.Text = "00:00:00";
-
-                Bindi.DataSource = examenes.Cargar();
-
-                lstexamenes1.DataSource = Bindi;
-
-                lstexamenes1.DisplayMember = "Titulo";
-
-                lstexamenes1.ValueMember = "cod_examen";
-
-                DtgDetallesdeFactura.Rows.Clear();
-
-                TxtExamen.Clear();
-
-                TxtPrecio.Clear();
-
-                lbl001.Text = "00.00";
-
-                LBlsubtotal.Text = "00.00";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
         private void DtgDetallesdeFactura_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
@@ -285,14 +233,71 @@ namespace Proyecto_de_Graduacion
                 MessageBox.Show("Seleccione un elemento de la Lista y agregelo", "SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
-        private void BtnGuardar_Click(object sender, EventArgs e)
+        private void BtnX_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void BtnNuevaVent_Click(object sender, EventArgs e)
+        {
+            CmbPacientes.Enabled = true;
+
+            DtpFecha.Enabled = true;
+
+            DtpHora.Enabled = true;
+
+            Btnagregar.Enabled = true;
+
+            BtnQuitar.Enabled = true;
+
+            BtnGuardar.Enabled = true;
+
+            BtnCancelar.Enabled = true;
+
+            BtnNuevaVent.Enabled = false;
+
+            try
+            {
+                CmbPacientes.DataSource = paciente.CargarPacientes();
+
+                CmbPacientes.DisplayMember = "Nombre";
+
+                CmbPacientes.ValueMember = "Cod_paciente";
+
+                DtpHora.Text = "00:00:00";
+
+                Bindi.DataSource = examenes.Cargar();
+
+                lstexamenes1.DataSource = Bindi;
+
+                lstexamenes1.DisplayMember = "Titulo";
+
+                lstexamenes1.ValueMember = "cod_examen";
+
+                DtgDetallesdeFactura.Rows.Clear();
+
+                TxtExamen.Clear();
+
+                TxtPrecio.Clear();
+
+                lbl001.Text = "00.00";
+
+                LBlsubtotal.Text = "00.00";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void BtnGuardar_Click_1(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(TxtCodigoFactura.Text)
-                && !string.IsNullOrWhiteSpace(LBlsubtotal.Text)
-                && !string.IsNullOrWhiteSpace(lbl001.Text) &&
-                !string.IsNullOrWhiteSpace(DtpFecha.Text)
-                && !string.IsNullOrWhiteSpace(DtpHora.Text) &&
-                !string.IsNullOrWhiteSpace(CmbPacientes.Text))
+               && !string.IsNullOrWhiteSpace(LBlsubtotal.Text)
+               && !string.IsNullOrWhiteSpace(lbl001.Text) &&
+               !string.IsNullOrWhiteSpace(DtpFecha.Text)
+               && !string.IsNullOrWhiteSpace(DtpHora.Text) &&
+               !string.IsNullOrWhiteSpace(CmbPacientes.Text))
             {
                 if (DtpHora.Text == "00:00:00" || DtpFecha.Text == string.Empty)
                 {
@@ -452,12 +457,47 @@ namespace Proyecto_de_Graduacion
             {
                 MessageBox.Show("Campos incompletos, por favor rellenarlos", "SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            }
+        }
 
-        private void BtnX_Click(object sender, EventArgs e)
+        private void BtnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            try
+            {
+                CmbPacientes.DataSource = paciente.CargarPacientes();
+
+                CmbPacientes.DisplayMember = "Nombre";
+
+                CmbPacientes.ValueMember = "Cod_paciente";
+
+                DtpHora.Text = "00:00:00";
+
+                Bindi.DataSource = examenes.Cargar();
+
+                lstexamenes1.DataSource = Bindi;
+
+                lstexamenes1.DisplayMember = "Titulo";
+
+                lstexamenes1.ValueMember = "cod_examen";
+
+                DtgDetallesdeFactura.Rows.Clear();
+
+                TxtExamen.Clear();
+
+                TxtPrecio.Clear();
+
+                lbl001.Text = "00.00";
+
+                LBlsubtotal.Text = "00.00";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void BtnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 
-    }
+ }

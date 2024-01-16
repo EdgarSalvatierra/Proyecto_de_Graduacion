@@ -55,73 +55,9 @@ namespace Proyecto_de_Graduacion
                 TxtBuscarProducto.ForeColor = Color.Black;
             }
         }
-        private void BtnRefrescar_Click(object sender, EventArgs e)
-        {
-            DtgProveedor.DataSource = proveedor.LeerProveedor();
-        }
-        private void ICNBuscador_Click(object sender, EventArgs e)
-        {
-            DtgProveedor.DataSource = proveedor.LeerProveedorporId(TxtBuscarProducto.Text.ToString()); ;
-        }
-        private void BtnGuardar_Click(object sender, EventArgs e)
-        {
-                if (!string.IsNullOrWhiteSpace(TxtProveedor.Text)
-               && !string.IsNullOrWhiteSpace(TxtProducto.Text)
-               && !string.IsNullOrWhiteSpace(TxtCasacomercial.Text) && !string.IsNullOrWhiteSpace(TxtPrecio.Text)
-               || decimal.TryParse(TxtPrecio.Text,out _))
-                {
-                    string Proveedor = TxtProveedor.Text;
-
-                    string CasaComercial = TxtCasacomercial.Text;
-
-                    string Producto = TxtProducto.Text;
-
-                    decimal Precio = Convert.ToDecimal(TxtPrecio.Text);
-
-                    proveedor.InsertarProveedor(Proveedor,CasaComercial);
-
-                    proveedor.InsertarProducto(Producto, Precio,Proveedor);
-
-                    MessageBox.Show("Guardado Correctamente", "Sql Server", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    TxtProveedor.Enabled = false;
-                    TxtCasacomercial.Enabled = false;
-
-                    TxtProducto.Clear();
-                    TxtPrecio.Clear();
-
-                    BtnNuevo.Enabled = true;
-                }
-                else
-                {
-                    MessageBox.Show("Campos Incompletos", "SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Provider.SetError(BtnGuardar,"Errodeguardar");
-                }
-            
-        }
         private void Btndardebaja_Click(object sender, EventArgs e)
         {
-            /*
-            DialogResult resultado = MessageBox.Show("¿Quieres realizar esta acción?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-
-            if (resultado == DialogResult.Yes)
-            {
-                if (DtgProveedor.SelectedRows.Count > 0)
-                {
-                    DataGridViewRow data = DtgProveedor.SelectedRows[0];
-
-                    int numeroruc = Convert.ToInt32(data.Cells[0].Value);
-
-                    facturas.ActualizarFacturas(numeroruc);
-
-                    MessageBox.Show("El Registro fue dado de baja", "SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("La Tabla esta vacia, no puede dar de baja", "SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            */
+            
         }
 
         private void DtgProveedor_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -146,8 +82,29 @@ namespace Proyecto_de_Graduacion
             TxtPrecio.Enabled = true;
            
         }
+        private void BtnBuscarProductos_Click(object sender, EventArgs e)
+        {
+            DtgProveedor.DataSource = proveedor.LeerProveedorporId(TxtBuscarProducto.Text.ToString());
+        }
+        private void Btnrefrescar_Click_1(object sender, EventArgs e)
+        {
+            DtgProveedor.DataSource = proveedor.LeerProveedor();
+        }
+        private void BtnNuevo_Click_1(object sender, EventArgs e)
+        {
+            TxtProducto.Enabled = true;
+            TxtProveedor.Enabled = true;
+            TxtCasacomercial.Enabled = true;
+            TxtPrecio.Enabled = true;
 
-        private void BtnEditar_Click(object sender, EventArgs e)
+            TxtPrecio.Clear();
+            TxtProducto.Clear();
+            TxtProveedor.Clear();
+            TxtCasacomercial.Clear();
+
+            BtnNuevo.Enabled = false;
+        }
+        private void BtnEditar_Click_1(object sender, EventArgs e)
         {
             if (DtgProveedor.SelectedRows.Count > 0)
             {
@@ -167,6 +124,66 @@ namespace Proyecto_de_Graduacion
             BtnNuevo.Enabled = false;
 
             BtnEditar.Enabled = false;
+        }
+
+        private void BtnGuardar_Click_1(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(TxtProveedor.Text)
+             && !string.IsNullOrWhiteSpace(TxtProducto.Text)
+             && !string.IsNullOrWhiteSpace(TxtCasacomercial.Text) && !string.IsNullOrWhiteSpace(TxtPrecio.Text)
+             || decimal.TryParse(TxtPrecio.Text, out _))
+            {
+                string Proveedor = TxtProveedor.Text;
+
+                string CasaComercial = TxtCasacomercial.Text;
+
+                string Producto = TxtProducto.Text;
+
+                decimal Precio = Convert.ToDecimal(TxtPrecio.Text);
+
+                proveedor.InsertarProveedor(Proveedor, CasaComercial);
+
+                proveedor.InsertarProducto(Producto, Precio, Proveedor);
+
+                MessageBox.Show("Guardado Correctamente", "Sql Server", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                TxtProveedor.Enabled = false;
+                TxtCasacomercial.Enabled = false;
+
+                TxtProducto.Clear();
+                TxtPrecio.Clear();
+
+                BtnNuevo.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Campos Incompletos", "SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Provider.SetError(BtnGuardar, "Errodeguardar");
+            }
+        }
+        private void Btndardebaja_Click_1(object sender, EventArgs e)
+        {
+            /*
+            DialogResult resultado = MessageBox.Show("¿Quieres realizar esta acción?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+
+            if (resultado == DialogResult.Yes)
+            {
+                if (DtgProveedor.SelectedRows.Count > 0)
+                {
+                    DataGridViewRow data = DtgProveedor.SelectedRows[0];
+
+                    int numeroruc = Convert.ToInt32(data.Cells[0].Value);
+
+                    facturas.ActualizarFacturas(numeroruc);
+
+                    MessageBox.Show("El Registro fue dado de baja", "SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("La Tabla esta vacia, no puede dar de baja", "SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            */
         }
     }
 }

@@ -49,10 +49,10 @@
             this.Pnlgrid = new System.Windows.Forms.Panel();
             this.Dtgexamen = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.BtnCancelar = new FontAwesome.Sharp.IconButton();
-            this.BtnGuardarTodo = new FontAwesome.Sharp.IconButton();
-            this.BtnNuevoExamen = new FontAwesome.Sharp.IconButton();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.BtnCargarPlantilla = new System.Windows.Forms.Button();
+            this.BtnGuardar = new System.Windows.Forms.Button();
+            this.BtnCancelar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.Pnlgrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dtgexamen)).BeginInit();
@@ -281,82 +281,64 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.BtnCancelar);
-            this.panel2.Controls.Add(this.BtnGuardarTodo);
-            this.panel2.Controls.Add(this.BtnNuevoExamen);
+            this.panel2.Controls.Add(this.BtnGuardar);
+            this.panel2.Controls.Add(this.BtnCargarPlantilla);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 547);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(915, 93);
             this.panel2.TabIndex = 99;
             // 
-            // BtnCancelar
-            // 
-            this.BtnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.BtnCancelar.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCancelar.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCancelar.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.BtnCancelar.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
-            this.BtnCancelar.IconColor = System.Drawing.SystemColors.Highlight;
-            this.BtnCancelar.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.BtnCancelar.IconSize = 20;
-            this.BtnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnCancelar.Location = new System.Drawing.Point(697, 22);
-            this.BtnCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(206, 49);
-            this.BtnCancelar.TabIndex = 97;
-            this.BtnCancelar.Text = "Cancelar";
-            this.BtnCancelar.UseVisualStyleBackColor = false;
-            // 
-            // BtnGuardarTodo
-            // 
-            this.BtnGuardarTodo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.BtnGuardarTodo.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnGuardarTodo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.BtnGuardarTodo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnGuardarTodo.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnGuardarTodo.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.BtnGuardarTodo.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
-            this.BtnGuardarTodo.IconColor = System.Drawing.SystemColors.Highlight;
-            this.BtnGuardarTodo.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.BtnGuardarTodo.IconSize = 20;
-            this.BtnGuardarTodo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnGuardarTodo.Location = new System.Drawing.Point(366, 22);
-            this.BtnGuardarTodo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.BtnGuardarTodo.Name = "BtnGuardarTodo";
-            this.BtnGuardarTodo.Size = new System.Drawing.Size(203, 49);
-            this.BtnGuardarTodo.TabIndex = 96;
-            this.BtnGuardarTodo.Text = "Guardar";
-            this.BtnGuardarTodo.UseVisualStyleBackColor = false;
-            this.BtnGuardarTodo.Click += new System.EventHandler(this.BtnGuardarTodo_Click);
-            // 
-            // BtnNuevoExamen
-            // 
-            this.BtnNuevoExamen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.BtnNuevoExamen.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnNuevoExamen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.BtnNuevoExamen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnNuevoExamen.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnNuevoExamen.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.BtnNuevoExamen.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
-            this.BtnNuevoExamen.IconColor = System.Drawing.SystemColors.Highlight;
-            this.BtnNuevoExamen.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.BtnNuevoExamen.IconSize = 20;
-            this.BtnNuevoExamen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnNuevoExamen.Location = new System.Drawing.Point(57, 22);
-            this.BtnNuevoExamen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.BtnNuevoExamen.Name = "BtnNuevoExamen";
-            this.BtnNuevoExamen.Size = new System.Drawing.Size(198, 49);
-            this.BtnNuevoExamen.TabIndex = 94;
-            this.BtnNuevoExamen.Text = "Cargar Plantilla";
-            this.BtnNuevoExamen.UseVisualStyleBackColor = false;
-            this.BtnNuevoExamen.Click += new System.EventHandler(this.BtnNuevoExamen_Click);
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // BtnCargarPlantilla
+            // 
+            this.BtnCargarPlantilla.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnCargarPlantilla.BackColor = System.Drawing.Color.SteelBlue;
+            this.BtnCargarPlantilla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCargarPlantilla.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCargarPlantilla.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BtnCargarPlantilla.Location = new System.Drawing.Point(32, 23);
+            this.BtnCargarPlantilla.Name = "BtnCargarPlantilla";
+            this.BtnCargarPlantilla.Size = new System.Drawing.Size(286, 46);
+            this.BtnCargarPlantilla.TabIndex = 114;
+            this.BtnCargarPlantilla.Text = "Cargar Plantilla";
+            this.BtnCargarPlantilla.UseVisualStyleBackColor = false;
+            this.BtnCargarPlantilla.Click += new System.EventHandler(this.BtnCargarPlantilla_Click);
+            // 
+            // BtnGuardar
+            // 
+            this.BtnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnGuardar.BackColor = System.Drawing.Color.SteelBlue;
+            this.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnGuardar.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnGuardar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BtnGuardar.Location = new System.Drawing.Point(345, 23);
+            this.BtnGuardar.Name = "BtnGuardar";
+            this.BtnGuardar.Size = new System.Drawing.Size(250, 46);
+            this.BtnGuardar.TabIndex = 115;
+            this.BtnGuardar.Text = "Guardar";
+            this.BtnGuardar.UseVisualStyleBackColor = false;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
+            // 
+            // BtnCancelar
+            // 
+            this.BtnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnCancelar.BackColor = System.Drawing.Color.SteelBlue;
+            this.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCancelar.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCancelar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BtnCancelar.Location = new System.Drawing.Point(637, 23);
+            this.BtnCancelar.Name = "BtnCancelar";
+            this.BtnCancelar.Size = new System.Drawing.Size(266, 46);
+            this.BtnCancelar.TabIndex = 116;
+            this.BtnCancelar.Text = "Cancelar";
+            this.BtnCancelar.UseVisualStyleBackColor = false;
             // 
             // FrmNuevoExamen
             // 
@@ -396,10 +378,10 @@
         private System.Windows.Forms.Panel Pnlgrid;
         private System.Windows.Forms.DataGridView Dtgexamen;
         private System.Windows.Forms.Panel panel2;
-        private FontAwesome.Sharp.IconButton BtnCancelar;
-        private FontAwesome.Sharp.IconButton BtnGuardarTodo;
         private FontAwesome.Sharp.IconButton BtnEnlace;
-        private FontAwesome.Sharp.IconButton BtnNuevoExamen;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button BtnCargarPlantilla;
+        private System.Windows.Forms.Button BtnGuardar;
+        private System.Windows.Forms.Button BtnCancelar;
     }
 }

@@ -29,15 +29,15 @@ namespace Proyecto_de_Graduacion
         }
         private void BtnRefrescar_Click(object sender, EventArgs e)
         {
-            DtgCategoria.DataSource = categoria.LeerCategoria();
+            
         }
         private void DtgCategoria_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            BtnNuevoExamen.Enabled = false;
+            BtnNuevaCategoria.Enabled = false;
 
             BtnCancelar.Enabled = true;
 
-            BtnEditar.Enabled = true;
+            BtnEditarCategoria.Enabled = true;
 
             BtnGuardar.Enabled = true;
 
@@ -50,12 +50,14 @@ namespace Proyecto_de_Graduacion
 
         private void ICNBuscador_Click(object sender, EventArgs e)
         {
-            string categoria_nombre = TxtBuscarFactura.Text;
-
-            DtgCategoria.DataSource = categoria.LeerCategoriaporId(categoria_nombre);
+           
         }
-
-        private void BtnNuevoExamen_Click(object sender, EventArgs e)
+     
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void BtnNuevaCategoria_Click(object sender, EventArgs e)
         {
             txtid.Clear();
 
@@ -63,19 +65,18 @@ namespace Proyecto_de_Graduacion
 
             TxtCategoria.Enabled = true;
 
-            BtnNuevoExamen.Enabled = false;
+            BtnNuevaCategoria.Enabled = false;
 
-            BtnEditar.Enabled = false;
+            BtnEditarCategoria.Enabled = false;
         }
-
-        private void BtnEditar_Click(object sender, EventArgs e)
+        private void BtnEditarCategoria_Click(object sender, EventArgs e)
         {
             if (true)
             {
 
             }
         }
-        private void BtnGuardar_Click(object sender, EventArgs e)
+        private void BtnGuardar_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -99,16 +100,15 @@ namespace Proyecto_de_Graduacion
                 MessageBox.Show(ex.Message, "SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            BtnNuevoExamen.Enabled = true;
+            BtnNuevaCategoria.Enabled = true;
 
-            BtnNuevoExamen.Enabled = false;
+            BtnNuevaCategoria.Enabled = false;
 
             BtnGuardar.Enabled = false;
 
             BtnCancelar.Enabled = false;
         }
-
-        private void BtnCancelar_Click(object sender, EventArgs e)
+        private void BtnCancelar_Click_1(object sender, EventArgs e)
         {
             txtid.Enabled = false;
 
@@ -122,12 +122,17 @@ namespace Proyecto_de_Graduacion
 
             BtnGuardar.Enabled = false;
 
-            BtnEditar.Enabled = false;
+            BtnEditarCategoria.Enabled = false;
         }
-
-        private void btnCerrar_Click(object sender, EventArgs e)
+        private void BtnBuscador_Click_1(object sender, EventArgs e)
         {
-            this.Close();
+            string categoria_nombre = TxtBuscarFactura.Text;
+
+            DtgCategoria.DataSource = categoria.LeerCategoriaporId(categoria_nombre);
+        }
+        private void Btnrefrescar_Click_1(object sender, EventArgs e)
+        {
+            DtgCategoria.DataSource = categoria.LeerCategoria();
         }
     }
 }

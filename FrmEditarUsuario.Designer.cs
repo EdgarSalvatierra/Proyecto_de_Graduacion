@@ -31,22 +31,22 @@
             this.gbdatosdelusuario = new System.Windows.Forms.GroupBox();
             this.LblCodigo = new System.Windows.Forms.Label();
             this.Lblcodigo2 = new System.Windows.Forms.Label();
+            this.txttelefono = new System.Windows.Forms.TextBox();
+            this.txtEdad = new System.Windows.Forms.TextBox();
+            this.LblTelefono = new System.Windows.Forms.Label();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.lblEdad = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.lblContraseña = new System.Windows.Forms.Label();
             this.LblUsuario = new System.Windows.Forms.Label();
-            this.txttelefono = new System.Windows.Forms.TextBox();
-            this.LblTelefono = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.lblNombre = new System.Windows.Forms.Label();
             this.Pnlusuario = new System.Windows.Forms.Panel();
             this.PcBox = new System.Windows.Forms.PictureBox();
             this.Gbasignacionderoles = new System.Windows.Forms.GroupBox();
             this.CmBRoles = new System.Windows.Forms.ComboBox();
             this.LblRoles = new System.Windows.Forms.Label();
-            this.BtnGuardar = new FontAwesome.Sharp.IconButton();
-            this.txtEdad = new System.Windows.Forms.TextBox();
-            this.lblEdad = new System.Windows.Forms.Label();
+            this.BtnGuardar = new System.Windows.Forms.Button();
             this.gbdatosdelusuario.SuspendLayout();
             this.Pnlusuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PcBox)).BeginInit();
@@ -93,6 +93,66 @@
             this.Lblcodigo2.TabIndex = 21;
             this.Lblcodigo2.Text = "Codigo";
             // 
+            // txttelefono
+            // 
+            this.txttelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txttelefono.Location = new System.Drawing.Point(146, 216);
+            this.txttelefono.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txttelefono.Name = "txttelefono";
+            this.txttelefono.Size = new System.Drawing.Size(212, 27);
+            this.txttelefono.TabIndex = 16;
+            // 
+            // txtEdad
+            // 
+            this.txtEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEdad.Location = new System.Drawing.Point(146, 158);
+            this.txtEdad.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtEdad.Name = "txtEdad";
+            this.txtEdad.Size = new System.Drawing.Size(212, 27);
+            this.txtEdad.TabIndex = 11;
+            // 
+            // LblTelefono
+            // 
+            this.LblTelefono.AutoSize = true;
+            this.LblTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTelefono.Location = new System.Drawing.Point(21, 220);
+            this.LblTelefono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblTelefono.Name = "LblTelefono";
+            this.LblTelefono.Size = new System.Drawing.Size(74, 18);
+            this.LblTelefono.TabIndex = 15;
+            this.LblTelefono.Text = "Telefono";
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Location = new System.Drawing.Point(147, 104);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(212, 27);
+            this.txtNombre.TabIndex = 10;
+            // 
+            // lblEdad
+            // 
+            this.lblEdad.AutoSize = true;
+            this.lblEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEdad.Location = new System.Drawing.Point(21, 162);
+            this.lblEdad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEdad.Name = "lblEdad";
+            this.lblEdad.Size = new System.Drawing.Size(46, 18);
+            this.lblEdad.TabIndex = 9;
+            this.lblEdad.Text = "Edad";
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Location = new System.Drawing.Point(21, 104);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(68, 18);
+            this.lblNombre.TabIndex = 8;
+            this.lblNombre.Text = "Nombre";
+            // 
             // txtContraseña
             // 
             this.txtContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -132,46 +192,6 @@
             this.LblUsuario.Size = new System.Drawing.Size(67, 18);
             this.LblUsuario.TabIndex = 17;
             this.LblUsuario.Text = "Usuario";
-            // 
-            // txttelefono
-            // 
-            this.txttelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttelefono.Location = new System.Drawing.Point(146, 216);
-            this.txttelefono.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txttelefono.Name = "txttelefono";
-            this.txttelefono.Size = new System.Drawing.Size(212, 27);
-            this.txttelefono.TabIndex = 16;
-            // 
-            // LblTelefono
-            // 
-            this.LblTelefono.AutoSize = true;
-            this.LblTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTelefono.Location = new System.Drawing.Point(21, 220);
-            this.LblTelefono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LblTelefono.Name = "LblTelefono";
-            this.LblTelefono.Size = new System.Drawing.Size(74, 18);
-            this.LblTelefono.TabIndex = 15;
-            this.LblTelefono.Text = "Telefono";
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(147, 104);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(212, 27);
-            this.txtNombre.TabIndex = 10;
-            // 
-            // lblNombre
-            // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(21, 104);
-            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(68, 18);
-            this.lblNombre.TabIndex = 8;
-            this.lblNombre.Text = "Nombre";
             // 
             // Pnlusuario
             // 
@@ -235,45 +255,19 @@
             // 
             // BtnGuardar
             // 
+            this.BtnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnGuardar.BackColor = System.Drawing.Color.SteelBlue;
-            this.BtnGuardar.FlatAppearance.BorderSize = 0;
-            this.BtnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnGuardar.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnGuardar.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnGuardar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnGuardar.IconChar = FontAwesome.Sharp.IconChar.FileDownload;
-            this.BtnGuardar.IconColor = System.Drawing.Color.White;
-            this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.BtnGuardar.IconSize = 20;
-            this.BtnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnGuardar.Location = new System.Drawing.Point(224, 428);
-            this.BtnGuardar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BtnGuardar.Location = new System.Drawing.Point(269, 427);
             this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.Size = new System.Drawing.Size(337, 40);
-            this.BtnGuardar.TabIndex = 51;
+            this.BtnGuardar.Size = new System.Drawing.Size(286, 46);
+            this.BtnGuardar.TabIndex = 66;
             this.BtnGuardar.Text = "Guardar";
             this.BtnGuardar.UseVisualStyleBackColor = false;
-            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
-            // 
-            // txtEdad
-            // 
-            this.txtEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEdad.Location = new System.Drawing.Point(146, 158);
-            this.txtEdad.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtEdad.Name = "txtEdad";
-            this.txtEdad.Size = new System.Drawing.Size(212, 27);
-            this.txtEdad.TabIndex = 11;
-            // 
-            // lblEdad
-            // 
-            this.lblEdad.AutoSize = true;
-            this.lblEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEdad.Location = new System.Drawing.Point(21, 162);
-            this.lblEdad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblEdad.Name = "lblEdad";
-            this.lblEdad.Size = new System.Drawing.Size(46, 18);
-            this.lblEdad.TabIndex = 9;
-            this.lblEdad.Text = "Edad";
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click_1);
             // 
             // FrmEditarUsuario
             // 
@@ -317,8 +311,8 @@
         private System.Windows.Forms.GroupBox Gbasignacionderoles;
         private System.Windows.Forms.ComboBox CmBRoles;
         private System.Windows.Forms.Label LblRoles;
-        private FontAwesome.Sharp.IconButton BtnGuardar;
         private System.Windows.Forms.TextBox txtEdad;
         private System.Windows.Forms.Label lblEdad;
+        private System.Windows.Forms.Button BtnGuardar;
     }
 }

@@ -36,6 +36,16 @@ namespace Proyecto_de_Graduacion
 
         }
 
+        private void BtnGuardarTodo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void FrmEditarExamen_Load(object sender, EventArgs e)
         {
             LblCodigoExamen.Text = codigo.ToString();
