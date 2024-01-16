@@ -192,7 +192,6 @@ namespace Proyecto_de_Graduacion
         }
         private void BtnCompras_MouseHover(object sender, EventArgs e)
         {
-
             ToolTip toolTip = new ToolTip();
             toolTip.SetToolTip(BtnCompras, "Modulo de Recepcion de Compras");
         }
@@ -200,19 +199,6 @@ namespace Proyecto_de_Graduacion
         {
             ToolTip toolTip = new ToolTip();
             toolTip.SetToolTip(BtnRes_Ex, "Modulo de Gestion de Resultados");
-        }
-        private void BtnNuevoExamen_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void BtnEditarExamen_Click(object sender, EventArgs e)
-        {
-           
-        }
-        private void iconButton7_Click(object sender, EventArgs e)
-        {
-            
         }
         private void TxtBuscarPaciente_Enter(object sender, EventArgs e)
         {
@@ -222,11 +208,6 @@ namespace Proyecto_de_Graduacion
                 TxtBuscarPaciente.ForeColor = Color.Black;
             }
         }
-        private void BtnGuardar_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void TxtBuscarFactura_Enter(object sender, EventArgs e)
         {
             if (TxtBuscarFactura.Text == "Buscar Factura")
@@ -250,20 +231,6 @@ namespace Proyecto_de_Graduacion
                 TxtBuscarExamen.Text = "";
                 TxtBuscarExamen.ForeColor = Color.Black;
             }
-        }
-        private void Btndardebajacitas_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void Btnnuevacita_Click(object sender, EventArgs e)
-        {
-            FrmNuevaCita cita = new FrmNuevaCita();
-
-            cita.Show();
-        }
-        private void BtnCancelar_Click(object sender, EventArgs e)
-        {
-           
         }
         private void DtgPaciente_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
@@ -292,10 +259,6 @@ namespace Proyecto_de_Graduacion
 
                 txtBusquedaCita.ForeColor = Color.Black;
             }
-        }
-        private void Btnnuevacita_Click_1(object sender, EventArgs e)
-        {
-          
         }
         private void BtnHome_Click(object sender, EventArgs e)
         {
@@ -696,11 +659,10 @@ namespace Proyecto_de_Graduacion
         }
         private void BtnNuevaCompra_Click(object sender, EventArgs e)
         {
-            FrmNuevaCompra compras = new FrmNuevaCompra();
+            FrmNuevaCompra compras = new FrmNuevaCompra(usuario);
 
             compras.Show();
         }
-
         private void Btndardebajacompra_Click_1(object sender, EventArgs e)
         {
             DialogResult resultado = MessageBox.Show("¿Quieres realizar esta acción?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
@@ -867,7 +829,6 @@ namespace Proyecto_de_Graduacion
                 }
             }
         }
-
         private void BtnGuardarPaciente_Click(object sender, EventArgs e)
         {
             try

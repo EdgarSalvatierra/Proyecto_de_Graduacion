@@ -26,9 +26,13 @@ namespace Proyecto_de_Graduacion
         BindingSource Source = new BindingSource();
 
         BindingSource source2 = new BindingSource();
-        public FrmNuevaCompra()
+
+        string Usuario = "";
+        public FrmNuevaCompra(string usuario)
         {
             InitializeComponent();
+
+            Usuario = usuario;
         }
         private void FrmNuevaCompra_Load(object sender, EventArgs e)
         {
@@ -246,7 +250,7 @@ namespace Proyecto_de_Graduacion
 
                 SaveFileDialog saveFile = new SaveFileDialog();
 
-                saveFile.FileName = $@"PedidoaDistribuidora: {Proveedor.CargarProveedor(Convert.ToInt32(CmbProducto.SelectedValue))}.pdf ";
+                saveFile.FileName = $@"PedidoaDistribuidora{Proveedor.CargarProveedor(Convert.ToInt32(CmbProducto.SelectedValue))}.pdf ";
 
                 string texto_html = Properties.Resources.FacturaPedido;
 
@@ -314,10 +318,11 @@ namespace Proyecto_de_Graduacion
 
                     decimal SubTotal = Convert.ToInt32(DtgCompra.CurrentRow.Cells[3].Value);
 
-                    compras.InsertarDetallePedidos(Producto, Precio, Cantidad, SubTotal, SubTotal);
+                    compras.InsertarPedidos(Producto,Cantidad,SubTotal,Usuario);
+
+                    compras.InsertarDetallePedidos(Producto, Precio, Cantidad, SubTotal, SubTotal,Usuario);
 
                     DtgCompra.Rows.RemoveAt(0);
-
                 }
 
                 MessageBox.Show($"Se ha realizado el pedido exitosamente", "SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Information);

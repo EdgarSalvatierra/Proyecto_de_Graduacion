@@ -34,7 +34,7 @@ namespace Capa_Datos.Data.Compras
                 conexion.cerrarconexion();
             }
         }
-        public void InsertPedidos(string Producto, decimal SubTotal, decimal Total)
+        public void InsertPedidos(string Producto, decimal SubTotal, decimal Total,string Usuario)
         {
             try
             {
@@ -42,21 +42,22 @@ namespace Capa_Datos.Data.Compras
 
                 command.CommandType = CommandType.StoredProcedure;
 
-                command.Parameters.Add(new SqlParameter("Producto", Producto));
+                command.Parameters.Add(new SqlParameter("@Producto", Producto));
 
                 command.Parameters.Add(new SqlParameter("@SubTotal", SubTotal));
 
                 command.Parameters.Add(new SqlParameter("@Total", Total));
 
-                command.ExecuteNonQuery();
+                command.Parameters.Add(new SqlParameter("@Usuario", Usuario));
 
+                command.ExecuteNonQuery();
             }
             finally
             {
                 conexion.cerrarconexion();
             }
         }
-        public void InsertDetallePedidos(string Producto, decimal Precio, int Cantidad, decimal SubTotal, decimal Total)
+        public void InsertDetallePedidos(string Producto,decimal Precio,int Cantidad,decimal SubTotal,decimal Total,string Usuario)
         {
             try
             {
@@ -73,6 +74,8 @@ namespace Capa_Datos.Data.Compras
                 command.Parameters.Add(new SqlParameter("@SubTotal", SubTotal));
 
                 command.Parameters.Add(new SqlParameter("@Total", Total));
+
+                command.Parameters.Add(new SqlParameter("@Usuario", Usuario));
 
                 command.ExecuteNonQuery();
             }
