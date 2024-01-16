@@ -1,5 +1,4 @@
 ﻿using Capa_Modelo.ViewModel;
-using FontAwesome.Sharp;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using System;

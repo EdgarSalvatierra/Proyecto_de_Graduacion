@@ -35,8 +35,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNuevoExamen));
             this.panel1 = new System.Windows.Forms.Panel();
             this.TxtPrecio = new System.Windows.Forms.TextBox();
-            this.BtnCategoria = new FontAwesome.Sharp.IconButton();
-            this.BtnEnlace = new FontAwesome.Sharp.IconButton();
             this.lblApellido = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtid_examen = new System.Windows.Forms.TextBox();
@@ -62,8 +60,6 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.TxtPrecio);
-            this.panel1.Controls.Add(this.BtnCategoria);
-            this.panel1.Controls.Add(this.BtnEnlace);
             this.panel1.Controls.Add(this.lblApellido);
             this.panel1.Controls.Add(this.txtNombre);
             this.panel1.Controls.Add(this.txtid_examen);
@@ -87,42 +83,6 @@
             this.TxtPrecio.Name = "TxtPrecio";
             this.TxtPrecio.Size = new System.Drawing.Size(179, 31);
             this.TxtPrecio.TabIndex = 103;
-            // 
-            // BtnCategoria
-            // 
-            this.BtnCategoria.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.BtnCategoria.IconColor = System.Drawing.Color.Black;
-            this.BtnCategoria.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnCategoria.Location = new System.Drawing.Point(809, 90);
-            this.BtnCategoria.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.BtnCategoria.Name = "BtnCategoria";
-            this.BtnCategoria.Size = new System.Drawing.Size(46, 38);
-            this.BtnCategoria.TabIndex = 106;
-            this.BtnCategoria.Text = ".....";
-            this.BtnCategoria.UseVisualStyleBackColor = true;
-            this.BtnCategoria.Click += new System.EventHandler(this.BtnCategoria_Click);
-            // 
-            // BtnEnlace
-            // 
-            this.BtnEnlace.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.BtnEnlace.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnEnlace.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.BtnEnlace.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEnlace.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnEnlace.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.BtnEnlace.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.BtnEnlace.IconColor = System.Drawing.SystemColors.Highlight;
-            this.BtnEnlace.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.BtnEnlace.IconSize = 20;
-            this.BtnEnlace.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnEnlace.Location = new System.Drawing.Point(809, 17);
-            this.BtnEnlace.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.BtnEnlace.Name = "BtnEnlace";
-            this.BtnEnlace.Size = new System.Drawing.Size(46, 40);
-            this.BtnEnlace.TabIndex = 95;
-            this.BtnEnlace.Text = "....";
-            this.BtnEnlace.UseVisualStyleBackColor = false;
-            this.BtnEnlace.Click += new System.EventHandler(this.BtnEnlace_Click);
             // 
             // lblApellido
             // 
@@ -366,7 +326,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox Txtruta;
         private System.Windows.Forms.Label Lblruta;
-        private FontAwesome.Sharp.IconButton BtnCategoria;
         private System.Windows.Forms.ComboBox CMBCategoria;
         private System.Windows.Forms.Label LblCategoria;
         private System.Windows.Forms.TextBox TxtPrecio;
@@ -378,7 +337,6 @@
         private System.Windows.Forms.Panel Pnlgrid;
         private System.Windows.Forms.DataGridView Dtgexamen;
         private System.Windows.Forms.Panel panel2;
-        private FontAwesome.Sharp.IconButton BtnEnlace;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button BtnCargarPlantilla;
         private System.Windows.Forms.Button BtnGuardar;

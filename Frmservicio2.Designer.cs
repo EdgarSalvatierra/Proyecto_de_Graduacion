@@ -34,7 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frmservicio2));
             this.PnlFacturacion = new System.Windows.Forms.Panel();
-            this.BtnX = new FontAwesome.Sharp.IconButton();
             this.LblFecha = new System.Windows.Forms.Label();
             this.LbTitulo = new System.Windows.Forms.Label();
             this.LblFech = new System.Windows.Forms.Label();
@@ -67,7 +66,6 @@
             // PnlFacturacion
             // 
             this.PnlFacturacion.BackColor = System.Drawing.Color.SteelBlue;
-            this.PnlFacturacion.Controls.Add(this.BtnX);
             this.PnlFacturacion.Controls.Add(this.LblFecha);
             this.PnlFacturacion.Controls.Add(this.LbTitulo);
             this.PnlFacturacion.Controls.Add(this.LblFech);
@@ -77,24 +75,6 @@
             this.PnlFacturacion.Name = "PnlFacturacion";
             this.PnlFacturacion.Size = new System.Drawing.Size(943, 60);
             this.PnlFacturacion.TabIndex = 2;
-            // 
-            // BtnX
-            // 
-            this.BtnX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnX.BackColor = System.Drawing.Color.SteelBlue;
-            this.BtnX.FlatAppearance.BorderSize = 0;
-            this.BtnX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnX.IconChar = FontAwesome.Sharp.IconChar.X;
-            this.BtnX.IconColor = System.Drawing.Color.White;
-            this.BtnX.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnX.IconSize = 20;
-            this.BtnX.Location = new System.Drawing.Point(893, 1);
-            this.BtnX.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BtnX.Name = "BtnX";
-            this.BtnX.Size = new System.Drawing.Size(51, 56);
-            this.BtnX.TabIndex = 29;
-            this.BtnX.UseVisualStyleBackColor = false;
-            this.BtnX.Click += new System.EventHandler(this.BtnX_Click);
             // 
             // LblFecha
             // 
@@ -401,7 +381,6 @@
         #endregion
 
         private System.Windows.Forms.Panel PnlFacturacion;
-        private FontAwesome.Sharp.IconButton BtnX;
         private System.Windows.Forms.Label LblFecha;
         private System.Windows.Forms.Label LbTitulo;
         private System.Windows.Forms.Label LblFech;
