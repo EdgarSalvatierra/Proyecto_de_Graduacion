@@ -20,19 +20,38 @@ namespace Proyecto_de_Graduacion
         Categoria_Model categoria = new Categoria_Model();
 
         Examen_Model examen = new Examen_Model();
+
+        BindingSource source = new BindingSource();
         public FrmNuevoExamen()
         {
             InitializeComponent();
+
+            txttitulo.Focus();
+            txttitulo.KeyPress += txttitulo_KeyPress;
+            txt_precio.KeyPress += txttitulo_KeyPress;
+            BtnEnlace.KeyPress += txttitulo_KeyPress;
+            BtnGuardar.KeyPress += txttitulo_KeyPress;
         }
         private void FrmNuevoExamen_Load(object sender, EventArgs e)
         {
-            Txtruta.Enabled = false;
+            txtRuta.Enabled = false;
 
-            CMBCategoria.DataSource = categoria.LeerCategoria();
+            source.DataSource = categoria.LeerCategoria();
 
-            CMBCategoria.DisplayMember = "Area";
+            if (source.Count > 0 )
+            {
+                CMBCategoria.DataSource = source;
 
-            CMBCategoria.ValueMember = "Codigo";
+                CMBCategoria.DisplayMember = "Area";
+
+                CMBCategoria.ValueMember = "Codigo";
+            }
+            else
+            {
+                CMBCategoria.Text = "No hay datos disponibles";
+
+                CMBCategoria.Enabled = false;
+            } 
 
             Dtgexamen.DataSource = examen.LeerExamen();
         }
@@ -45,7 +64,7 @@ namespace Proyecto_de_Graduacion
             openFileDialog1.FilterIndex = 1;
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
-                Txtruta.Text = openFileDialog1.FileName;
+                txtRuta.Text = openFileDialog1.FileName;
 
         }
         private void BtnCategoria_Click(object sender, EventArgs e)
@@ -58,15 +77,11 @@ namespace Proyecto_de_Graduacion
         {
             try
             {
-                txtid_examen.Text = Dtgexamen.CurrentRow.Cells[0].Value.ToString();
+                txttitulo.Text = Dtgexamen.CurrentRow.Cells[1].Value.ToString();
 
-                CMBCategoria.Text = Dtgexamen.CurrentRow.Cells[1].Value.ToString();
+                CMBCategoria.Text = Dtgexamen.CurrentRow.Cells[2].Value.ToString();
 
-                txtNombre.Text = Dtgexamen.CurrentRow.Cells[2].Value.ToString();
-
-                Txtruta.Text = Dtgexamen.CurrentRow.Cells[3].Value.ToString();
-
-                TxtPrecio.Text = Dtgexamen.CurrentRow.Cells[4].Value.ToString();
+                txt_precio.Text = Dtgexamen.CurrentRow.Cells[3].Value.ToString();
             }
             catch (Exception ex)
             {
@@ -101,7 +116,6 @@ namespace Proyecto_de_Graduacion
                 }
             }
         }
-
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
             byte[] archivo = null;
@@ -110,21 +124,75 @@ namespace Proyecto_de_Graduacion
             MyStream.CopyTo(obj);
             archivo = obj.ToArray();
 
-            string Nombre = txtNombre.Text;
+            string Nombre =  txttitulo.Text;
             byte[] Documento = archivo;
             string Extension = openFileDialog1.SafeFileName;
             int Categoria = Convert.ToInt32(CMBCategoria.SelectedValue);
-            decimal Precio = Convert.ToDecimal(TxtPrecio.Text);
+            decimal Precio = Convert.ToDecimal(txt_precio.Text);
 
             examen.InsertarExamenes(Categoria, Nombre, Documento, Extension, Precio);
 
             MessageBox.Show("Guardado  Correctamente", "SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
+        private void BtnEnlace_Click_1(object sender, EventArgs e)
+        {
+            string Direccion = AppDomain.CurrentDomain.BaseDirectory;
+            string carpeta = Direccion + "Resultados";
+            openFileDialog1.InitialDirectory = carpeta;
+            openFileDialog1.Filter = "todas las extensiones(*.*)|*.*";
+            openFileDialog1.FilterIndex = 1;
 
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                txtRuta.Text = openFileDialog1.FileName;
+        }
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
-
+            this.Close();
+        }
+        private void txtRuta_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtRuta.Text))
+            {
+                errorProvider1.SetError(txtRuta, "Ingrese el Nombre");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(txtRuta, "");
+            }
+        }
+        private void txt_precio_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_precio.Text))
+            {
+                errorProvider1.SetError(txt_precio, "Ingrese el Nombre");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(txt_precio, "");
+            }
+        }
+        private void txttitulo_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txttitulo.Text))
+            {
+                errorProvider1.SetError(txttitulo, "Ingrese el Nombre");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(txttitulo, "");
+            }
+        }
+        private void txttitulo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                SelectNextControl((Control)sender, true, true, true, true);
+            }
         }
     }
 }

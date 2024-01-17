@@ -40,8 +40,7 @@ namespace Capa_Modelo.ViewModel
         public Object BuscarporExamen(string Examen)
         {
             return examenes.BuscarporExamen(Examen);
-        }
-       
+        }   
         public List<Examen_Model> filtroDocumentos(int id)
         {
             using (SqlConnection conexion = new SqlConnection(@"Data Source=.\SQLEXPRESS01;Initial Catalog=DBLaboratory;Integrated Security=True"))
@@ -65,7 +64,6 @@ namespace Capa_Modelo.ViewModel
                 return infoDocumennto;
             }                
         }
-
         public DataTable ArchivoId(int Id)
         {
             using (SqlConnection conexion = new SqlConnection(@"Data Source=.\SQLEXPRESS01;Initial Catalog=DBLaboratory;Integrated Security=True"))
@@ -82,7 +80,6 @@ namespace Capa_Modelo.ViewModel
                 conexion.Close();
                 return tabla;
             }            
-
         }
         public Object Cargar()
         {

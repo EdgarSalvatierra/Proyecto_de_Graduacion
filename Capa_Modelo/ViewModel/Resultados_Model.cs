@@ -30,12 +30,10 @@ namespace Capa_Modelo.ViewModel
         {
             Resultados.InsertarResultados(Nombre, NombrePaciente, Documento, Extension, Categoria, Precio);
         }
-
         public Object LeerResultado()
         {
             return Resultados.Read();
         }
-
         public List<Resultados_Model> filtroDocumentos(int id)
         {
             using (SqlConnection conexion = new SqlConnection(@"Data Source=DESKTOP-A7DCQGN;Initial Catalog=DBLaboratory;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"))
@@ -59,7 +57,6 @@ namespace Capa_Modelo.ViewModel
                 return infoDocumennto;
             }
         }
-
         public DataTable ArchivoId(int Id)
         {
             using (SqlConnection conexion = new SqlConnection(@"Data Source=DESKTOP-A7DCQGN;Initial Catalog=DBLaboratory;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"))

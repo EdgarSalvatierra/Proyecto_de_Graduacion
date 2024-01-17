@@ -157,6 +157,7 @@ namespace Capa_Modelo.ViewModel
                 Console.WriteLine("Data not refreshed, same query: {0} - {1}", fechainicio.ToString(), fechafinal.ToString());
                 return false;
             }
+
         }
     }
 }

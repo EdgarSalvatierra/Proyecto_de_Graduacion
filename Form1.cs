@@ -46,7 +46,7 @@ namespace Proyecto_de_Graduacion
             // Crea una instancia de MaterialSkinManager
             SkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
 
-            SkinManager.ColorScheme = new ColorScheme(Primary.DeepPurple700, Primary.DeepPurple600, Primary.DeepPurple500, Accent.DeepPurple400, TextShade.WHITE);
+            SkinManager.ColorScheme = new ColorScheme(Primary.DeepPurple800, Primary.DeepPurple700, Primary.DeepPurple600, Accent.DeepPurple700, TextShade.WHITE);
 
             usuario = Usuario;
 
@@ -102,6 +102,8 @@ namespace Proyecto_de_Graduacion
             DtgCitas.DataSource = Citas.LeerCitas();
 
             DtgUsuarios.DataSource = Usuario_.LeerUsuario();
+
+            DtgResultados.DataSource = resultados.LeerResultado();
 
             LblEntidad2.Text = Configuracion.GetNombre();
 
@@ -268,6 +270,7 @@ namespace Proyecto_de_Graduacion
         private void LoadData()
         {
             var refreshData = model.LoadData(dtpFechaInicio.Value, dtpFechaFin.Value);
+
             if (refreshData == true)
             {
                 lbnumorder.Text = model.numorder.ToString();
@@ -926,6 +929,21 @@ namespace Proyecto_de_Graduacion
         {
             DtgFactura.DataSource = Facturacion.LeerFacturas();
         }
+
+        private void BtnagregarResultados_Click(object sender, EventArgs e)
+        {
+            FrmEditarExamen_ resultado = new FrmEditarExamen_();
+
+            DialogResult result = resultado.ShowDialog();
+
+            DtgResultados.DataSource = resultados.LeerResultado();
+        }
+
+        private void BtnBuscarResultados_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void BtnNuevoServicio_Click_1(object sender, EventArgs e)
         {
             FrmNuevoServicio servicio = new FrmNuevoServicio();
